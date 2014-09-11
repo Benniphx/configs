@@ -68,7 +68,7 @@ Configurations
 
 Run in terminal:
 
-    git clone https://asyrjasalo@github.com/asyrjasalo/configs.git $HOME/configs
+    git clone git@github.com:asyrjasalo/configs.git $HOME/configs
     configs/bootstrap.sh -f
 
 WARNING: Using command-line argument -f replaces the files/directories
@@ -94,11 +94,11 @@ Linux
 
 Install pyenv:
 
-    git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+    git clone git@github.com:yyuu/pyenv.git ~/.pyenv
 
 Install pyenv virtualenv wrapper:
 
-    git clone git://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+    git clone git@github.com:yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
 
 OS X
@@ -117,11 +117,11 @@ Linux
 
 Install rbenv:
 
-    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+    git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
 
 Install ruby-build:
 
-    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    git clone git@github.com:sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 OS X
 ----
