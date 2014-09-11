@@ -1,0 +1,11 @@
+# for managing MySQL in OS X
+alias mystart='mysql.server start'
+alias mystop='mysql.server stop'
+
+# for managing PostgreSQL in OS X
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+
+# trail
+alias tra='cd ~/trail/trail'
+alias resdb='bundle exec rake db:drop db:create db:migrate db:seed ; bundle exec ruby doc/demo.rb ; yes | bundle exec rake sunspot:reindex'

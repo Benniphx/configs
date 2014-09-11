@@ -1,0 +1,12 @@
+{
+    "sublimelinter_executable_map": {
+        "path": "/home/asyrjasalo/.rbenv/shims",
+        "ruby": "/home/asyrjasalo/.rbenv/shims/ruby"
+    },
+
+    "sublimelinter_syntax_map":
+    {
+        "RSpec": "Ruby",
+        "Ruby on Rails": "Ruby"
+    }
+}

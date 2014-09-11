@@ -1,0 +1,21 @@
+{
+
+    "auto_complete_commit_on_tab": false,
+
+    "codeintel_syntax_map":
+    {
+        "Ruby on Rails": "ruby"
+    },
+
+    "codeintel_selected_catalogs":
+    [
+        "Rails", "jQuery"
+    ],
+
+    "codeintel_live_enabled_languages":
+    [
+        "JavaScript", "SCSS","HTML", "Ruby", "XML", "Sass", "HTML5", "CSS", "Less"
+    ],
+
+    "codeintel_snippets": false
+}
