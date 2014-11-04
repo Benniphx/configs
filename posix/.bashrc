@@ -59,10 +59,21 @@ HISTIGNORE='ls:cd:cd -:pwd:exit:date'
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
+OS_IDENTIFIER=${OSTYPE//[0-9.]/}
+
+### OS X: HOMEBREW #############################################################
+
+if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
+    # prefer GNU coreutils over the BSD variants
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+    # prefer Homebrew installed binaries over the system binaries
+    export PATH="/usr/local/bin:$PATH"
+fi
+
 ### COMPLETION #################################################################
 
 # operating system specific settings
-OS_IDENTIFIER=${OSTYPE//[0-9.]/}
 if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
     # brew install bash-completion
     BASH_COMPLETION_PATH="$(brew --prefix)/etc/bash_completion"
@@ -148,16 +159,6 @@ export PS1="$txtblu\u@\h$txtrst:$txtcyn\w$txtgrn\$(get_branch_information)$txtrs
 
 if which dircolors > /dev/null; then
   eval $(dircolors -b $HOME/.dir_colors)
-fi
-
-### OS X: HOMEBREW #############################################################
-
-if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
-    # prefer GNU coreutils over the BSD variants
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
-    # prefer Homebrew installed binaries over the system binaries
-    export PATH="/usr/local/bin:$PATH"
 fi
 
 ### JYTHON #####################################################################
