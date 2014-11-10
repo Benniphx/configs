@@ -81,12 +81,12 @@
 		".hg",
 		"CVS"
 	],
-	"font_face": "Terminus",
-	"font_options":
-	[
-		"no_antialias"
-	],
-	"font_size": 15.0,
+	"font_face": "Terminus (TTF)",
+	//"font_options":
+	//[
+	//	"no_antialias"
+	//],
+	"font_size": 21.5,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": false,
