@@ -39,6 +39,10 @@ Install Homebrew:
 
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
+Install Brew Cask:
+
+    brew install caskroom/cask/brew-cask
+
 Install utilities:
 
     brew install htop git colordiff wget
@@ -129,4 +133,3 @@ OS X
 Install rbenv and ruby-build using Homebrew:
 
     brew install rbenv ruby-build
-
