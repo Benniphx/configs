@@ -1,0 +1,17 @@
+{
+	"associated_file_extensions":
+	[
+		".txt",
+		".robot"
+	],
+	"log_level": "error",
+	"python_interpreter": "python",
+	"rfdocs_update_url": "http://rfdocs.org/dataset/download?",
+	"separator":
+	{
+		"between_args": "...  ",
+		"between_kw_and_args": "  ",
+		"kw_and_args_one_line": false
+	},
+	"show_version_in_autocomplete_box": true
+}
