@@ -11,4 +11,4 @@ if [ ! -d "$MOUNT_POINT" ]; then
   mkdir $MOUNT_POINT
 fi
 
-sudo mount -t vboxsf -o uid=$(id -u $(whoami)),gid=$(id -g $(whoami)) $1 $MOUNT_POINT
+sudo mount -t vboxsf -o uid=$(id -u),gid=$(id -g) $1 $MOUNT_POINT
