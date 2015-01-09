@@ -89,6 +89,12 @@ fi
   -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" \
     | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
+### AUTOJUMP ###################################################################
+
+if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
+    [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+fi
+
 ### PROMPT #####################################################################
 
 # prompt color shortcuts

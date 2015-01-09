@@ -77,7 +77,6 @@ alias chgrp='chgrp --preserve-root'
 alias e='env | sort'
 alias g='pgrep -l'
 alias h='history | grep'
-alias j='jobs -l'
 alias k='pkill'
 alias o='open'
 alias p="echo -e '${PATH//:/\\n}'"
