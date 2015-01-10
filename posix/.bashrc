@@ -22,7 +22,7 @@ export MANPAGER='less -X'
 ### SHELL BEHAVIOUR ############################################################
 
 # default file permissions
-umask 0077  # (files: -rw-------, dirs: -rwx------)
+umask 0077  # (u=rwx,g=,o=)
 
 # have Bash to check if the window size has changed
 shopt -s checkwinsize
