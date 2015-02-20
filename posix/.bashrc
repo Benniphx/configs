@@ -65,7 +65,7 @@ OS_IDENTIFIER=${OSTYPE//[0-9.]/}
 
 if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
     # prefer GNU coreutils and Homebrew installed binaries
-    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 
     # show man pages for GNU coreutils instead of the BSD variants
     # from: https://gist.github.com/quickshiftin/9130153
