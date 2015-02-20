@@ -11,7 +11,7 @@ if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
     # flushes the DNS cache
     alias flush='sudo killall -HUP mDNSResponder'
 
-    alias update='brew update && brew upgrade && brew cleanup'
+    alias update='brew update && brew upgrade && brew cleanup && brew cask cleanup'
 else
     alias update='sudo apt-get update && sudo apt-get upgrade -y && \
       sudo apt-get autoremove -y && sudo apt-get autoclean'
