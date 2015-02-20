@@ -64,11 +64,12 @@ OS_IDENTIFIER=${OSTYPE//[0-9.]/}
 ### OS X: HOMEBREW #############################################################
 
 if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
-    # prefer GNU coreutils over the BSD variants
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    # prefer GNU coreutils and Homebrew installed binaries
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
-    # prefer Homebrew installed binaries over the system binaries
-    export PATH="/usr/local/bin:$PATH"
+    # show man pages for GNU coreutils instead of the BSD variants
+    # from: https://gist.github.com/quickshiftin/9130153
+    alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
 fi
 
 ### COMPLETION #################################################################
