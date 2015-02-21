@@ -22,7 +22,7 @@ export MANPAGER='less -X'
 ### SHELL BEHAVIOUR ############################################################
 
 # default file permissions
-umask 0077  # (files: -rw-------, dirs: -rwx------)
+umask 0077  # (u=rwx,g=,o=)
 
 # have Bash to check if the window size has changed
 shopt -s checkwinsize
@@ -64,11 +64,12 @@ OS_IDENTIFIER=${OSTYPE//[0-9.]/}
 ### OS X: HOMEBREW #############################################################
 
 if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
-    # prefer GNU coreutils over the BSD variants
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    # prefer GNU coreutils and Homebrew installed binaries
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-    # prefer Homebrew installed binaries over the system binaries
-    export PATH="/usr/local/bin:$PATH"
+    # show man pages for GNU coreutils instead of the BSD variants
+    # from: https://gist.github.com/quickshiftin/9130153
+    alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
 fi
 
 ### COMPLETION #################################################################
@@ -88,6 +89,12 @@ fi
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" \
   -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" \
     | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
+
+### AUTOJUMP ###################################################################
+
+if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
+    [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+fi
 
 ### PROMPT #####################################################################
 
@@ -202,4 +209,4 @@ export PATH="$HOME/local/bin:$PATH"
 ### LOAD OTHER CONFIGS #########################################################
 
 [[ -f $HOME/.bash_aliases ]] && . $HOME/.bash_aliases
-[[ -f $HOME/.bash_$(hostname) ]] && . $HOME/.bash_$(hostname)
+[[ -f $HOME/.bash_local ]] && . $HOME/.bash_local

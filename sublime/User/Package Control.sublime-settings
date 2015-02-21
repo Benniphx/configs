@@ -1,4 +1,7 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AngularJS",
@@ -9,20 +12,22 @@
 		"BracketHighlighter",
 		"Chef",
 		"CoffeeScript",
+		"Color Highlighter",
 		"CSSLint",
 		"Cucumber",
 		"Cucumber Completion",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
-		"Emmet",
 		"Git Config",
 		"Handlebars",
 		"HTML-CSS-JS Prettify",
 		"HTML5",
 		"Indent XML",
+		"JavaScriptNext - ES6 Syntax",
 		"jQuery",
 		"JSONLint",
+		"LESS",
 		"Markdown Preview",
 		"Mercurial",
 		"Package Control",
