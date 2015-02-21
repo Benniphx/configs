@@ -1,42 +1,31 @@
-# ------------
-# malloc.theme
-# ------------
+### malloc.theme ###
 
-### COMMON SETTINGS ###
 
-# default foreground color (%N), -1 is the "default terminal color"
+# default foreground color (%N). -1 for default terminal background.
 default_color = "-1";
 
-# print timestamp/servertag at the end of line instead of begin
+# timestamp/servertag at the beginning of the line instead of the end
 info_eol = "false";
 
+
 abstracts = {
-
-  ### GENERIC ###
-
   # coloring of special messages
   hilight = "%Y$*%n";
   error = "%r$*%n";
 
-  ### STATUSBAR COLORS ###
-
+  # statusbar
   sb_background = "%N";
   sb_default_bg = "%N";
   sb_prompt_bg = "%W";
   sb_info_bg = "%N";
   sb_topic_bg = "%2%k";
   sb_window_bg = "%N";
-
-  ### STATUSBAR ITEMS ###
-
   prompt = " ";
   input = "%W";
   sb = "%C[%c$*%C]%n";
   sbmode = " %C(%c+%G$*%C)";
 
-  ### ACTIVITY BAR ###
-
-  # default (NEW)
+  # activity bar
   sb_act_none = "%B$*";
 
   # ',' separator
@@ -54,9 +43,10 @@ abstracts = {
   # hilight with specified color, $0 = color, $1 = text
   sb_act_hilight_color = "$0$1-%n";
 
-  # special (NEW)
+  # special
   sb_act_special = "%R$*";
 };
+
 
 formats = {
   "fe-text" = {
