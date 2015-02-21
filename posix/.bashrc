@@ -209,4 +209,4 @@ export PATH="$HOME/local/bin:$PATH"
 ### LOAD OTHER CONFIGS #########################################################
 
 [[ -f $HOME/.bash_aliases ]] && . $HOME/.bash_aliases
-[[ -f $HOME/.bash_$(hostname) ]] && . $HOME/.bash_$(hostname)
+[[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
