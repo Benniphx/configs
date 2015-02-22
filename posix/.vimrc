@@ -73,8 +73,8 @@ set tags=tags,./tags,tmp/tags,./tmp/tags
 "-------------------------------------------------------------------------------
 
 " use this theme
-set t_Co=256                     " number of colors to use
-colorscheme Tomorrow-Night-Bright       " colorscheme to use
+set t_Co=256                      " number of colors to use
+colorscheme Tomorrow-Night-Bright " colorscheme to use
 
 " make the statusbar more informative
 if has("statusline")
