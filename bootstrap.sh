@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 # This script symlinks the configs to the $HOME.
-# Run with -f to override the exising files at $HOME without confirmation.
+# Run with -f to override the exising files/symlinks at $HOME without confirmation.
+
 
 # On Windows (Vista and newer), Sublime Text configs can be symlinked by
 # opening a PowerShell as an administrator and running the following commands:
 #
-#   1. cd "$env:appdata\Sublime Text 2\Packages\"
-#   2. rmdir -recurse User
-#   3. cmd /c mklink /D User $env:userprofile\configs\sublime\User
+# cd "$env:appdata\Sublime Text 2\Packages\"
+# rmdir -recurse User
+# cmd /c mklink /D User $env:userprofile\configs\sublime\User
 
 
 SCRIPT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
@@ -24,9 +25,8 @@ SUBLIME_CONFIG_PATH="$SCRIPT_PATH/sublime"
 if [ "$OS_IDENTIFIER" == "darwin" ]; then
     # File names inside the CONFIG_PATH are enough
     DO_NOT_SYMLINK=(
-      'fonts.conf'
+      '.fonts.conf'
     )
-
     sublime_user_path="$HOME/Library/Application Support/Sublime Text $SUBLIME_VERSION/Packages/User"
 else
     sublime_user_path="$HOME/.config/sublime-text-$SUBLIME_VERSION/Packages/User"
@@ -58,7 +58,7 @@ done
 # Configs
 for source_file_name in `ls -A $CONFIG_PATH`; do
     if ( in_array "$source_file_name" "${DO_NOT_SYMLINK[@]}" ); then
-        echo "   Ignoring: $source_file_name"
+        echo "Ignoring: $source_file_name"
     else
         ln -snvi$LN_OPTS "$CONFIG_PATH/$source_file_name" "$HOME/$source_file_name"
     fi
