@@ -2,9 +2,6 @@
 
 # This script symlinks the configuration files to the home directory.
 #
-# WARNING: Using command-line argument -f replaces the files/directories
-#          with same-named symlinks at the user's $HOME.
-#
 # On Windows (Vista and newer), Sublime Text configs can be symlinked by
 # opening a PowerShell as an administrator and running the following commands:
 #
@@ -85,14 +82,9 @@ for source_file in `ls -A $CONFIG_DIR`; do
     fi
 done
 
-OLDWD="$PWD"
-cd "$THIS_DIR"
+pushd $PWD > /dev/null
 
-# vim bundles
-echo '-> Initializing vim bundles'
+echo '-> Clone vim bundles'
 git submodule --quiet update --init --recursive
 
-#echo "-> Updating vim bundles"
-#git submodule --quiet foreach git pull -q origin master
-
-cd "$OLDWD"
+popd > /dev/null

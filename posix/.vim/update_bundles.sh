@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
 
-OLDWD="$PWD"
-cd "$HOME/configs"
+pushd "$HOME/configs" > /dev/null
 
 git config -f .gitmodules --get-regexp '^submodule\..*\.path$' |
     while read path_key path
     do
         url_key=$(echo $path_key | sed 's/\.path/.url/')
         url=$(git config -f .gitmodules --get "$url_key")
-        git submodule add $url $path
+        git submodule -q add $url $path
     done
 
-cd "$OLDWD"
+echo "-> Updating vim bundles"
+git submodule -q foreach git pull -q origin master
+
+popd > /dev/null
