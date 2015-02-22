@@ -141,6 +141,6 @@
 	"use_simple_full_screen": true,
 	"use_tab_stops": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
-	"word_wrap": "auto",
+	"word_wrap": false,
 	"wrap_width": 0
 }
