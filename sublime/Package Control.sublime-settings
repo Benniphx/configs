@@ -1,11 +1,7 @@
 {
-	"in_process_packages":
-	[
-	],
 	"installed_packages":
 	[
 		"AngularJS",
-		"AngularJS (CoffeeScript)",
 		"Ansible",
 		"ApplySyntax",
 		"BeautifyRuby",
@@ -19,6 +15,7 @@
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
+		"Focus File on Sidebar",
 		"Git Config",
 		"Handlebars",
 		"HTML-CSS-JS Prettify",
@@ -37,7 +34,6 @@
 		"RSpec",
 		"Ruby Hash Converter",
 		"Sass",
-		"SCSS",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeGit",
