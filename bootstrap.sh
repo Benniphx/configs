@@ -92,7 +92,7 @@ cd "$THIS_DIR"
 echo '-> Initializing vim bundles'
 git submodule --quiet update --init --recursive
 
-echo "-> Updating vim bundles"
-git submodule --quiet foreach git pull -q origin master
+#echo "-> Updating vim bundles"
+#git submodule --quiet foreach git pull -q origin master
 
 cd "$OLDWD"
