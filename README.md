@@ -1,6 +1,6 @@
 Run in terminal:
 
-    git clone git@github.com:asyrjasalo/configs.git $HOME/configs
-    configs/bootstrap.sh -f
+    git clone git@github.com:asyrjasalo/configs.git && configs/symlink.sh
 
-WARNING: Argument -f removes the existing same-named files at the user's $HOME.
+Run symlink.sh with -f to override the existing files or symlinks at $HOME
+without any confirmation.
