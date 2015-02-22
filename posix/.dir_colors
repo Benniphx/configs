@@ -124,22 +124,33 @@ BLK 30;44
 CHR 30;44
 
 # File with execute permission
-EXEC 32
+EXEC 33
 
 # Other OS's executable
-.cmd 32
-.exe 32
-.com 32
-.bat 32
-.reg 32
-.app 32     # OSX
+.cmd 33
+.exe 33
+.com 33
+.bat 33
+.reg 33
+.app 33     # OS X
 
-# Plain text
-.txt 33
-.org 33
-.md 33
-.mkd 33
-.nfo 33
+# Plain text files
+.txt 32
+.org 32
+.md 32
+.mkd 32
+.nfo 32
+
+# GNU Autotools readme files
+*README 32
+*AUTHORS 32
+*THANKS 32
+*NEWS 32
+*INSTALL 32
+*COPYING 32
+*LICENSE 32
+*BUGS 32
+*ChangeLog 32
 
 # Binary document
 .doc 31
@@ -204,6 +215,10 @@ EXEC 32
 .pod 37
 .tex 37
 .go 37
+
+# Configuration files
+.yml 37
+.json 37
 
 # Image
 .bmp 35
@@ -292,14 +307,14 @@ EXEC 32
 .bin  1;34
 .bz   1;34
 .bz2  1;34
-.cab  1;34      # Win
+.cab  1;34      # Windows
 .deb  1;34
-.dmg  1;34      # OSX
+.dmg  1;34      # OS X
 .gem  1;34
 .gz   1;34
 .iso  1;34
 .jar  1;34
-.msi  1;34      # Win
+.msi  1;34      # Windows
 .rar  1;34
 .rpm  1;34
 .tar  1;34
@@ -332,3 +347,4 @@ EXEC 32
 .swp 30
 .swo 30
 *,v 30
+.DS_Store 30       # OS X
