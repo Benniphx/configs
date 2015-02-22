@@ -1,6 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-set -e
 
 OLDWD="$PWD"
 cd "$HOME/configs"
