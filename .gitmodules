@@ -1,9 +1,9 @@
 [submodule "posix/.vim/bundle/gitolite.vim"]
 	path = posix/.vim/bundle/gitolite.vim
 	url = git://github.com/tmatilai/gitolite.vim.git
-[submodule "posix/.vim/bundle/vim-irblack"]
-	path = posix/.vim/bundle/vim-irblack
-	url = git://github.com/wgibbs/vim-irblack.git
+[submodule "posix/.vim/bundle/vim-tomorrow-theme"]
+	path = posix/.vim/bundle/vim-tomorrow-theme
+	url = git://github.com/chriskempson/vim-tomorrow-theme.git
 [submodule "posix/.vim/bundle/supertab"]
 	path = posix/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
