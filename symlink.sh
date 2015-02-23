@@ -4,12 +4,12 @@
 # Run with -f to override the exising files/symlinks at $HOME without confirmation.
 
 
-# On Windows (Vista and newer), Sublime Text configs can be symlinked by
+# On Windows (Vista and newer), Sublime Text configs can be kind of symlinked by
 # opening a PowerShell as an administrator and running the following commands:
 #
 # cd "$env:appdata\Sublime Text 2\Packages\"
 # rmdir -recurse User
-# cmd /c mklink /D User $env:userprofile\configs\sublime\User
+# cmd /c mklink /D User $env:userprofile\configs\sublime
 
 
 SCRIPT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
