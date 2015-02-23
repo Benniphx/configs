@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script symlinks the configs to the $HOME.
+# This script symlinks the configs to $HOME.
 # Run with -f to override the exising files/symlinks at $HOME without confirmation.
 
 
