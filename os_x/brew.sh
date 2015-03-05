@@ -60,6 +60,8 @@ brew install zsh
 
 # Binary distributed
 brew install caskroom/cask/brew-cask
+brew tap caskroom/versions
+brew cask install sublime-text3
 brew cask install iterm2
 brew cask install google-chrome
 brew cask install google-drive
