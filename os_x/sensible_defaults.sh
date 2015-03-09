@@ -137,13 +137,6 @@ sudo tmutil disablelocal
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
 
-# Remove the sleep image file to save disk space
-sudo rm /Private/var/vm/sleepimage
-# Create a zero-byte file instead…
-sudo touch /Private/var/vm/sleepimage
-# …and make sure it can’t be rewritten
-sudo chflags uchg /Private/var/vm/sleepimage
-
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
 
@@ -433,12 +426,12 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 defaults write com.apple.dock wvous-tr-corner -int 2
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
-# Bottom left screen corner → Desktop
+# Bottom left screen corner → no-op
 defaults write com.apple.dock wvous-bl-corner -int 4
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
-# Bottom right screen corner → Put display to sleep
-defaults write com.apple.dock wvous-br-corner -int 10
+# Bottom right screen corner → no-op
+defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
