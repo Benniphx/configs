@@ -15,6 +15,9 @@ if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
 else
     alias update='sudo apt-get update && sudo apt-get upgrade -y && \
       sudo apt-get autoremove -y && sudo apt-get autoclean'
+    
+    alias dupdate='sudo apt-get update && sudo apt-get dist-upgrade -y && \
+      sudo apt-get autoremove -y && sudo apt-get autoclean'
 
     # alternatives to the OS X's pbtools, used by Vim for clipboard
     alias pbcopy='xsel --clipboard --input'
