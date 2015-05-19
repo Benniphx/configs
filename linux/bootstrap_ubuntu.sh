@@ -16,8 +16,8 @@ sudo apt-get dist-upgrade
 # Utilities
 sudo apt-get install build-essential htop xsel git vim curl wget colordiff screen tmux sysv-rc-conf synaptic
 
-# Browsers
-sudo apt-get install chromium-browser firefox
+# Firefox
+sudo apt-get install firefox
 
 # Compile-time requirements
 sudo apt-get install openssl libssl-dev libreadline-dev libsqlite3-dev libbz2-dev zlib1g-dev
