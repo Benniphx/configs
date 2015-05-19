@@ -12,6 +12,6 @@ git config -f .gitmodules --get-regexp '^submodule\..*\.path$' |
     done
 
 echo "-> Updating vim bundles"
-git submodule -q foreach git pull -q origin master
+git submodule update --recursive 
 
 popd > /dev/null
