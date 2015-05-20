@@ -72,4 +72,3 @@ pushd "$CONFIG_PATH" > /dev/null
 git submodule --quiet update --init --recursive
 popd > /dev/null
 
-exit 0
