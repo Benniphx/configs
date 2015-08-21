@@ -178,7 +178,7 @@ fi
 
 ### PYENV ######################################################################
 
-if [ -d "$HOME/.pyenv" ]; then
+if [ -d "$HOME/.pyenv" ] && which "pyenv" &> /dev/null ; then
   PYENV_PATH="$HOME/.pyenv/bin"
   export PATH="$PYENV_PATH:$PATH"
   eval "$(pyenv init -)"
@@ -189,7 +189,7 @@ fi
 
 ### RBENV ######################################################################
 
-if [ -d "$HOME/.rbenv" ]; then
+if [ -d "$HOME/.rbenv" ] && which "rbenv" &> /dev/null ; then
   RBENV_PATH="$HOME/.rbenv/bin"
   export PATH="$RBENV_PATH:$PATH"
   eval "$(rbenv init -)"
