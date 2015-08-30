@@ -21,15 +21,15 @@ CONFIG_PATH="$SCRIPT_PATH/posix"
 SUBLIME_CONFIG_PATH="$SCRIPT_PATH/sublime"
 
 if [ "$OS_IDENTIFIER" == "darwin" ]; then
-    # File names inside the CONFIG_PATH are enough
-    DO_NOT_SYMLINK=(
-      '.fonts.conf'
-    )
     sublime_user_path="$HOME/Library/Application Support/Sublime Text $SUBLIME_VERSION/Packages/User"
 else
     sublime_user_path="$HOME/.config/sublime-text-$SUBLIME_VERSION/Packages/User"
 fi
 
+# File names inside the CONFIG_PATH are enough
+DO_NOT_SYMLINK=(
+'.fonts.conf'
+)
 
 ### Helpers ####################################################################
 
