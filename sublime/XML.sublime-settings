@@ -1,12 +1,12 @@
 {
-    "tab_size": 2,
 	"extensions":
 	[
-		"svg",
+		"xsd",
+		"fixture.xml",
 		"xslt",
-		"xml.dist",
-        "fixture.xml",
 		"xml",
-		"xsd"
-	]
+		"xml.dist",
+		"svg"
+	],
+	"tab_size": 2
 }
