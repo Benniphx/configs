@@ -14,26 +14,26 @@ sudo apt-get update
 sudo apt-get dist-upgrade
 
 # Utilities
-sudo apt-get install build-essential htop xsel git vim curl wget colordiff screen tmux sysv-rc-conf synaptic
+sudo apt-get install -y build-essential htop xsel git vim curl wget colordiff screen tmux synaptic
 
 # Firefox
-sudo apt-get install firefox
+sudo apt-get install -y firefox
 
 # Compile-time requirements
-sudo apt-get install openssl libssl-dev libreadline-dev libsqlite3-dev libbz2-dev zlib1g-dev
+sudo apt-get install -y openssl libssl-dev libreadline-dev libsqlite3-dev libbz2-dev zlib1g-dev
 
 # Fonts: Terminus
-sudo apt-get install xfonts-terminus xfonts-terminus-oblique xfonts-terminus-dos
+sudo apt-get install -y xfonts-terminus xfonts-terminus-oblique xfonts-terminus-dos
 
 # Fonts: Microsoft true type core fonts
-sudo apt-get install ttf-mscorefonts-installer
+sudo apt-get install -y ttf-mscorefonts-installer
 
 # Install Oracle Java JDK
-sudo apt-get install oracle-java8-installer
+sudo apt-get install -y oracle-java8-installer
 
 # XFCE goodies
-sudo apt-get install xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
+sudo apt-get install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
 
 # Restricted extras (Xubuntu only)
-sudo apt-get install xubuntu-restricted-extras
+sudo apt-get install -y xubuntu-restricted-extras
 
