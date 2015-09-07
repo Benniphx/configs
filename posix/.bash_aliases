@@ -15,7 +15,7 @@ if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
 else
     alias update='sudo apt-get update && sudo apt-get upgrade -y && \
       sudo apt-get autoremove -y && sudo apt-get autoclean'
-    
+
     alias dupdate='sudo apt-get update && sudo apt-get dist-upgrade -y && \
       sudo apt-get autoremove -y && sudo apt-get autoclean'
 
@@ -134,6 +134,11 @@ extract() {
    else
        echo "'$1' is not a valid file!"
    fi
+}
+
+# fast password generator
+genpasswd() {
+  cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | fold -w $1 | head -n1
 }
 
 # fast calculator
