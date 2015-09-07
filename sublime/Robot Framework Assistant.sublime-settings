@@ -1,7 +1,6 @@
 {
 	"associated_file_extensions":
 	[
-		".txt",
 		".robot"
 	],
 	"log_level": "error",
