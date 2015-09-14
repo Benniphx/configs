@@ -1,5 +1,6 @@
 *
 
+!SublimeLinter/
 !.gitignore
 !*.sublime-settings
 !*.sublime-keymap
