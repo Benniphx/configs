@@ -82,7 +82,7 @@
 		"CVS"
 	],
 	"font_face": "Terminus (TTF)",
-	"font_size": 26.5,
+	"font_size": 21.5,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": false,
@@ -90,6 +90,8 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
+		"CoffeeScript",
+		"Python Pep8 Lint",
 		"Vintage"
 	],
 	"indent_guide_options":

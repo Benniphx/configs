@@ -1,6 +1,9 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"CoffeeScript",
+		"Python Pep8 Lint"
 	],
 	"installed_packages":
 	[
