@@ -16,9 +16,14 @@ OS_IDENTIFIER="${OSTYPE//[0-9.]/}"
 
 ### Configuration ##############################################################
 
-SUBLIME_VERSION=3       # 2 or 3
+SUBLIME_VERSION=3       # or 2
 CONFIG_PATH="$SCRIPT_PATH/posix"
 SUBLIME_CONFIG_PATH="$SCRIPT_PATH/sublime"
+
+# Give paths relative to CONFIG_PATH
+DO_NOT_SYMLINK=(
+  '.fonts.conf'
+)
 
 if [ "$OS_IDENTIFIER" == "darwin" ]; then
     sublime_user_path="$HOME/Library/Application Support/Sublime Text $SUBLIME_VERSION/Packages/User"
@@ -36,7 +41,7 @@ DO_NOT_SYMLINK=(
 function in_array() {
     local e
     for e in "${@:2}";
-        do [[ "$e" == "$1" ]] && return 0; 
+        do [[ "$e" == "$1" ]] && return 0;
     done
     return 1
 }
