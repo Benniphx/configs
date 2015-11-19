@@ -20,21 +20,14 @@ sublime_version=3       # or 2
 config_path="$script_path/posix"
 sublime_config_path="$script_path/sublime"
 
-# Give paths relative to config_path
-do_not_symlink=(
-  '.fonts.conf'
-)
+# Paths are relative to config_path
+do_not_symlink=()
 
 if [ "$os_identifier" == "darwin" ]; then
     sublime_user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
 else
     sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
 fi
-
-# File names inside the config_path are enough
-do_not_symlink=(
-'.fonts.conf'
-)
 
 ### Helpers ####################################################################
 
