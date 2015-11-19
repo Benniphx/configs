@@ -17,7 +17,7 @@ os_identifier="${OSTYPE//[0-9.]/}"
 ### Configuration ##############################################################
 
 sublime_version=3
-config_path="$script_path/posix"
+config_path="$script_path/common"
 sublime_config_path="$script_path/sublime"
 
 # Paths are relative to config_path

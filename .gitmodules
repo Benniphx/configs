@@ -1,78 +1,78 @@
-[submodule "posix/.vim/bundle/gitolite.vim"]
-	path = posix/.vim/bundle/gitolite.vim
+[submodule "common/.vim/bundle/gitolite.vim"]
+	path = common/.vim/bundle/gitolite.vim
 	url = git://github.com/tmatilai/gitolite.vim.git
-[submodule "posix/.vim/bundle/vim-tomorrow-theme"]
-	path = posix/.vim/bundle/vim-tomorrow-theme
+[submodule "common/.vim/bundle/vim-tomorrow-theme"]
+	path = common/.vim/bundle/vim-tomorrow-theme
 	url = git://github.com/chriskempson/vim-tomorrow-theme.git
-[submodule "posix/.vim/bundle/supertab"]
-	path = posix/.vim/bundle/supertab
+[submodule "common/.vim/bundle/supertab"]
+	path = common/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "posix/.vim/bundle/minibufexpl.vim"]
-	path = posix/.vim/bundle/minibufexpl.vim
+[submodule "common/.vim/bundle/minibufexpl.vim"]
+	path = common/.vim/bundle/minibufexpl.vim
 	url = git://github.com/fholgado/minibufexpl.vim.git
-[submodule "posix/.vim/bundle/nerdtree"]
-	path = posix/.vim/bundle/nerdtree
+[submodule "common/.vim/bundle/nerdtree"]
+	path = common/.vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "posix/.vim/bundle/vim-l9"]
-	path = posix/.vim/bundle/vim-l9
+[submodule "common/.vim/bundle/vim-l9"]
+	path = common/.vim/bundle/vim-l9
 	url = git://github.com/slack/vim-l9.git
-[submodule "posix/.vim/bundle/dbext.vim"]
-	path = posix/.vim/bundle/dbext.vim
+[submodule "common/.vim/bundle/dbext.vim"]
+	path = common/.vim/bundle/dbext.vim
 	url = git://github.com/vim-scripts/dbext.vim.git
-[submodule "posix/.vim/bundle/Command-T"]
-	path = posix/.vim/bundle/Command-T
+[submodule "common/.vim/bundle/Command-T"]
+	path = common/.vim/bundle/Command-T
 	url = git://github.com/vim-scripts/Command-T.git
-[submodule "posix/.vim/bundle/tComment"]
-	path = posix/.vim/bundle/tComment
+[submodule "common/.vim/bundle/tComment"]
+	path = common/.vim/bundle/tComment
 	url = git://github.com/vim-scripts/tComment.git
-[submodule "posix/.vim/bundle/vim-bufonly"]
-	path = posix/.vim/bundle/vim-bufonly
+[submodule "common/.vim/bundle/vim-bufonly"]
+	path = common/.vim/bundle/vim-bufonly
 	url = git://github.com/duff/vim-bufonly.git
-[submodule "posix/.vim/bundle/vim-ruby"]
-	path = posix/.vim/bundle/vim-ruby
+[submodule "common/.vim/bundle/vim-ruby"]
+	path = common/.vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "posix/.vim/bundle/vim-rdoc"]
-	path = posix/.vim/bundle/vim-rdoc
+[submodule "common/.vim/bundle/vim-rdoc"]
+	path = common/.vim/bundle/vim-rdoc
 	url = git://github.com/depuracao/vim-rdoc.git
-[submodule "posix/.vim/bundle/Specky"]
-	path = posix/.vim/bundle/Specky
+[submodule "common/.vim/bundle/Specky"]
+	path = common/.vim/bundle/Specky
 	url = git://github.com/vim-scripts/Specky.git
-[submodule "posix/.vim/bundle/vim-shoulda"]
-	path = posix/.vim/bundle/vim-shoulda
+[submodule "common/.vim/bundle/vim-shoulda"]
+	path = common/.vim/bundle/vim-shoulda
 	url = git://github.com/tsaleh/vim-shoulda.git
-[submodule "posix/.vim/bundle/vim-ruby-debugger"]
-	path = posix/.vim/bundle/vim-ruby-debugger
+[submodule "common/.vim/bundle/vim-ruby-debugger"]
+	path = common/.vim/bundle/vim-ruby-debugger
 	url = git://github.com/astashov/vim-ruby-debugger.git
-[submodule "posix/.vim/bundle/vim-javascript"]
-	path = posix/.vim/bundle/vim-javascript
+[submodule "common/.vim/bundle/vim-javascript"]
+	path = common/.vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule "posix/.vim/bundle/vim-coffee-script"]
-	path = posix/.vim/bundle/vim-coffee-script
+[submodule "common/.vim/bundle/vim-coffee-script"]
+	path = common/.vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "posix/.vim/bundle/vim-json"]
-	path = posix/.vim/bundle/vim-json
+[submodule "common/.vim/bundle/vim-json"]
+	path = common/.vim/bundle/vim-json
 	url = git://github.com/leshill/vim-json.git
-[submodule "posix/.vim/bundle/vim-css-color"]
-	path = posix/.vim/bundle/vim-css-color
+[submodule "common/.vim/bundle/vim-css-color"]
+	path = common/.vim/bundle/vim-css-color
 	url = git://github.com/skammer/vim-css-color.git
-[submodule "posix/.vim/bundle/vim-cucumber"]
-	path = posix/.vim/bundle/vim-cucumber
+[submodule "common/.vim/bundle/vim-cucumber"]
+	path = common/.vim/bundle/vim-cucumber
 	url = git://github.com/tpope/vim-cucumber.git
-[submodule "posix/.vim/bundle/vim-endwise"]
-	path = posix/.vim/bundle/vim-endwise
+[submodule "common/.vim/bundle/vim-endwise"]
+	path = common/.vim/bundle/vim-endwise
 	url = git://github.com/tpope/vim-endwise.git
-[submodule "posix/.vim/bundle/vim-fugitive"]
-	path = posix/.vim/bundle/vim-fugitive
+[submodule "common/.vim/bundle/vim-fugitive"]
+	path = common/.vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "posix/.vim/bundle/vim-haml"]
-	path = posix/.vim/bundle/vim-haml
+[submodule "common/.vim/bundle/vim-haml"]
+	path = common/.vim/bundle/vim-haml
 	url = git://github.com/tpope/vim-haml.git
-[submodule "posix/.vim/bundle/vim-rails"]
-	path = posix/.vim/bundle/vim-rails
+[submodule "common/.vim/bundle/vim-rails"]
+	path = common/.vim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
-[submodule "posix/.vim/bundle/vim-perl"]
-	path = posix/.vim/bundle/vim-perl
+[submodule "common/.vim/bundle/vim-perl"]
+	path = common/.vim/bundle/vim-perl
 	url = git://github.com/petdance/vim-perl.git
-[submodule "posix/.vim/bundle/robotframework-vim"]
-	path = posix/.vim/bundle/robotframework-vim
+[submodule "common/.vim/bundle/robotframework-vim"]
+	path = common/.vim/bundle/robotframework-vim
 	url = git://github.com/mfukar/robotframework-vim.git
