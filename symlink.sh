@@ -10,29 +10,29 @@
 # rmdir -recurse User
 # cmd /c mklink /D User $env:userprofile\configs\sublime
 
-SCRIPT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-OS_IDENTIFIER="${OSTYPE//[0-9.]/}"
+script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+os_identifier="${OSTYPE//[0-9.]/}"
 
 
 ### Configuration ##############################################################
 
-SUBLIME_VERSION=3       # or 2
-CONFIG_PATH="$SCRIPT_PATH/posix"
-SUBLIME_CONFIG_PATH="$SCRIPT_PATH/sublime"
+sublime_version=3       # or 2
+config_path="$script_path/posix"
+sublime_config_path="$script_path/sublime"
 
-# Give paths relative to CONFIG_PATH
-DO_NOT_SYMLINK=(
+# Give paths relative to config_path
+do_not_symlink=(
   '.fonts.conf'
 )
 
-if [ "$OS_IDENTIFIER" == "darwin" ]; then
-    sublime_user_path="$HOME/Library/Application Support/Sublime Text $SUBLIME_VERSION/Packages/User"
+if [ "$os_identifier" == "darwin" ]; then
+    sublime_user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
 else
-    sublime_user_path="$HOME/.config/sublime-text-$SUBLIME_VERSION/Packages/User"
+    sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
 fi
 
-# File names inside the CONFIG_PATH are enough
-DO_NOT_SYMLINK=(
+# File names inside the config_path are enough
+do_not_symlink=(
 '.fonts.conf'
 )
 
@@ -49,10 +49,10 @@ function in_array() {
 
 ### Main #######################################################################
 
-while getopts 'f' OPTION; do
-    case "$OPTION" in
+while getopts 'f' arg; do
+    case "$arg" in
         f)
-            LN_OPTS='f'
+            ln_args='f'
             ;;
         *)
             exit 1
@@ -61,19 +61,19 @@ while getopts 'f' OPTION; do
 done
 
 # Configs
-for source_file_name in `ls -A $CONFIG_PATH`; do
-    if ( in_array "$source_file_name" "${DO_NOT_SYMLINK[@]}" ); then
+for source_file_name in `ls -A $config_path`; do
+    if ( in_array "$source_file_name" "${do_not_symlink[@]}" ); then
         echo "Ignoring: $source_file_name"
     else
-        ln -snvi$LN_OPTS "$CONFIG_PATH/$source_file_name" "$HOME/$source_file_name"
+        ln -snvi$ln_args "$config_path/$source_file_name" "$HOME/$source_file_name"
     fi
 done
 
 # Sublime User packages and configuration
-ln -snvi$LN_OPTS "$SUBLIME_CONFIG_PATH" "$sublime_user_path"
+ln -snvi$ln_args "$sublime_config_path" "$sublime_user_path"
 
 # Vim bundles as git submodules
-pushd "$CONFIG_PATH" > /dev/null
+pushd "$config_path" > /dev/null
 git submodule --quiet update --init --recursive
 popd > /dev/null
 

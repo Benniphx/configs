@@ -2,7 +2,7 @@
 
 # See: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
 
-# Install Homebrew first
+# Homebrew first
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew upgrade
@@ -10,7 +10,7 @@ brew upgrade
 # GNU coreutils
 brew install coreutils
 
-# System duplicate formulae, install some without the 'g' prefix.
+# System duplicate formulae, without the 'g' prefix.
 brew tap homebrew/dupes
 brew install binutils
 brew install diffutils
@@ -29,7 +29,7 @@ brew install watch
 brew install wdiff --with-gettext
 brew install wget
 
-# These already exist on OS X, but dupes usually has a newer version.
+# Already exist on OS X, but homebrew/dupes usually has a newer version
 brew install bash
 brew install emacs
 brew install gdb  # gdb requires some further actions, see `brew info gdb`.
@@ -38,7 +38,7 @@ brew install m4
 brew install make
 brew install nano
 
-# Commonly used by me
+# Commonly used
 brew install ack
 brew install tree
 brew install autojump

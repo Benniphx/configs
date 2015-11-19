@@ -59,11 +59,11 @@ HISTIGNORE='ls:cd:cd -:pwd:exit:date'
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
-OS_IDENTIFIER=${OSTYPE//[0-9.]/}
+os_identifier=${OSTYPE//[0-9.]/}
 
 ### OS X: HOMEBREW #############################################################
 
-if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
+if [[ "$os_identifier" == 'darwin' ]]; then
     # prefer GNU coreutils and Homebrew installed binaries
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 
@@ -75,15 +75,15 @@ fi
 ### COMPLETION #################################################################
 
 # operating system specific settings
-if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
+if [[ "$os_identifier" == 'darwin' ]]; then
     # brew install bash-completion
-    BASH_COMPLETION_PATH="$(brew --prefix)/etc/bash_completion"
+    bash_completion_path="$(brew --prefix)/etc/bash_completion"
 else
-    BASH_COMPLETION_PATH='/etc/bash_completion'
+    bash_completion_path='/etc/bash_completion'
 fi
 
 # include additional bash completions
-[ -f $BASH_COMPLETION_PATH ] && . $BASH_COMPLETION_PATH
+[ -f $bash_completion_path ] && . $bash_completion_path
 
 # add tab completion for hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" \
@@ -92,7 +92,7 @@ fi
 
 ### AUTOJUMP ###################################################################
 
-if [[ "$OS_IDENTIFIER" == 'darwin' ]]; then
+if [[ "$os_identifier" == 'darwin' ]]; then
     [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 fi
 
@@ -170,17 +170,17 @@ fi
 
 ### JYTHON #####################################################################
 
-JYTHON_PATH=$(find $HOME -maxdepth 1 -name 'jython*' -type d | head -1)
-if [ -d "$JYTHON_PATH" ]; then
-  export JYTHON_HOME="$JYTHON_PATH"
+jython_path=$(find $HOME -maxdepth 1 -name 'jython*' -type d | head -1)
+if [ -d "$jython_path" ]; then
+  export JYTHON_HOME="$jython_path"
   export PATH="$JYTHON_HOME/bin:$PATH"
 fi
 
 ### PYENV ######################################################################
 
 if [ -d "$HOME/.pyenv" ]; then
-  PYENV_PATH="$HOME/.pyenv/bin"
-  export PATH="$PYENV_PATH:$PATH"
+  pyenv_path="$HOME/.pyenv/bin"
+  export PATH="$pyenv_path:$PATH"
   eval "$(pyenv init -)"
   if which pyenv-virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)";
@@ -190,16 +190,16 @@ fi
 ### RBENV ######################################################################
 
 if [ -d "$HOME/.rbenv" ]; then
-  RBENV_PATH="$HOME/.rbenv/bin"
-  export PATH="$RBENV_PATH:$PATH"
+  rbenv_path="$HOME/.rbenv/bin"
+  export PATH="$rbenv_path:$PATH"
   eval "$(rbenv init -)"
 fi
 
 ### OWN JARS TO CLASSPATH ######################################################
 
-JARS_PATH="$HOME/jars"
-if [ -d "$JARS_PATH" ]; then
-  export CLASSPATH=$(find "$JARS_PATH" -name '*.jar' | xargs echo | tr ' ' ':')
+jars_path="$HOME/jars"
+if [ -d "$jars_path" ]; then
+  export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
 fi
 
 ### PREFER LOCAL BINARIES ######################################################
@@ -208,5 +208,5 @@ export PATH="$HOME/local/bin:$PATH"
 
 ### LOAD OTHER CONFIGS #########################################################
 
-[[ -f $HOME/.bash_aliases ]] && . $HOME/.bash_aliases
-[[ -f $HOME/.bash_local ]] && . $HOME/.bash_local
+[[ -f "$HOME/.bash_aliases" ]] && . "$HOME/.bash_aliases"
+[[ -f "$HOME/.bash_local" ]] && . "$HOME/.bash_local"
