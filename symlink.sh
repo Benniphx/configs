@@ -16,7 +16,7 @@ os_identifier="${OSTYPE//[0-9.]/}"
 
 ### Configuration ##############################################################
 
-sublime_version=3       # or 2
+sublime_version=3
 config_path="$script_path/posix"
 sublime_config_path="$script_path/sublime"
 
@@ -69,4 +69,3 @@ ln -snvi$ln_args "$sublime_config_path" "$sublime_user_path"
 pushd "$config_path" > /dev/null
 git submodule --quiet update --init --recursive
 popd > /dev/null
-
