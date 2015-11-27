@@ -44,7 +44,7 @@
 	"drag_text": true,
 	"draw_centered": false,
 	"draw_indent_guides": true,
-	"draw_minimap_border": false,
+	"draw_minimap_border": true,
 	"draw_white_space": "selection",
 	"enable_hexadecimal_encoding": false,
 	"ensure_newline_at_eof_on_save": false,
@@ -85,13 +85,11 @@
 	"font_size": 21.5,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
-	"highlight_line": false,
+	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"hot_exit": true,
+	"hot_exit": false,
 	"ignored_packages":
 	[
-		"CoffeeScript",
-		"Python Pep8 Lint",
 		"Vintage"
 	],
 	"indent_guide_options":
@@ -113,9 +111,9 @@
 	"match_tags": true,
 	"move_to_limit_on_up_down": false,
 	"open_files_in_new_window": false,
-	"overlay_scroll_bars": "system",
+	"overlay_scroll_bars": "enabled",
 	"preview_on_click": true,
-	"remember_open_files": true,
+	"remember_open_files": false,
 	"reveal-on-activate": true,
 	"rulers":
 	[
@@ -128,7 +126,7 @@
 	"shift_tab_unindent": true,
 	"show_full_path": true,
 	"show_panel_on_build": true,
-	"show_tab_close_buttons": true,
+	"show_tab_close_buttons": false,
 	"smart_indent": true,
 	"soda_classic_tabs": true,
 	"soda_folder_icons": true,
