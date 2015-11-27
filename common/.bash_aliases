@@ -57,12 +57,8 @@ alias egrep='egrep --color=auto'
 
 alias df='df -h'
 alias du='du -h -c'
-alias diff='colordiff'
 alias ping='ping -c 5'
-alias more='less'
 alias mount='mount | column -t'
-alias mkdir='mkdir -p -v'
-alias wget='wget -c'
 
 ### Safe defaults ##############################################################
 
