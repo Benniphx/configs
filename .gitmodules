@@ -76,3 +76,6 @@
 [submodule "common/.vim/bundle/robotframework-vim"]
 	path = common/.vim/bundle/robotframework-vim
 	url = git://github.com/mfukar/robotframework-vim.git
+[submodule "common/.oh-my-zsh"]
+	path = common/.oh-my-zsh
+	url = git://github.com/robbyrussell/oh-my-zsh.git
