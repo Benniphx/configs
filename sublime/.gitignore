@@ -1,6 +1,7 @@
 *
 
-!SublimeLinter/
 !.gitignore
 !*.sublime-settings
 !*.sublime-keymap
+!*.scanners
+!*.ext-list
