@@ -137,7 +137,7 @@ alias cwd='pwd | tr -d "\n" | pbcopy'
 
 ### Sensible defaults ##########################################################
 
-alias ls='ls --color=auto -hlF --group-directories-first'
+alias ls='ls --color=auto -hF --group-directories-first'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
