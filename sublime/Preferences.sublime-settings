@@ -90,6 +90,8 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
+		"CoffeeScript",
+		"Python Pep8 Lint",
 		"Vintage"
 	],
 	"indent_guide_options":
