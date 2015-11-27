@@ -67,5 +67,5 @@ ln -snvi"$ln_args" "$sublime_config_path" "$sublime_user_path"
 
 # Vim bundles as git submodules
 pushd "$config_path" > /dev/null
-git submodule --quiet update --init --recursive
+git submodule update --depth 1 --init --recursive
 popd > /dev/null
