@@ -37,6 +37,12 @@ fi
   -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" \
     | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
+### Autojump ###################################################################
+
+if [ `uname` = 'Darwin' ]; then
+    [ -s $(brew --prefix)/etc/autojump.sh ] && . $(brew --prefix)/etc/autojump.sh
+fi
+
 ### Prompt #####################################################################
 
 txtblk='\[\e[0;30m\]' # Black - Regular
