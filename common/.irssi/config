@@ -1,0 +1,380 @@
+servers = (
+  {
+    address = "irc.nebula.fi";
+    chatnet = "IRCnet";
+    autoconnect = "yes";
+    port = "6667";
+  },
+  {
+    address = "irc.freenode.org";
+    chatnet = "FreeNode";
+    autoconnect = "yes";
+    port = "6667";
+  },
+  {
+    address = "irc.eu.efnet.info";
+    chatnet = "EFNet";
+    autoconnect = "no";
+    port = "6667";
+  },
+  {
+    address = "localhost";
+    chatnet = "BitlBee";
+    port = "6668";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  }
+);
+
+chatnets = {
+  BitlBee = {
+    type = "IRC";
+    nick = "malloc9";
+    autosendcmd = "/^MSG -BitlBee &bitlbee identify <password>";
+  };
+  IRCnet = {
+    type = "IRC";
+    autosendcmd = "";
+    max_kicks = "4";
+    max_modes = "3";
+    max_msgs = "5";
+    max_whois = "4";
+    max_query_chans = "5";
+  };
+  FreeNode = {
+    type = "IRC";
+    nick = "asyrjasalo";
+    autosendcmd = "";
+    max_kicks = "4";
+    max_modes = "4";
+    max_msgs = "1";
+    max_whois = "1";
+    max_query_chans = "5";
+  };
+  EFNet = {
+    type = "IRC";
+    autosendcmd = "";
+    max_kicks = "4";
+    max_modes = "4";
+    max_msgs = "3";
+    max_whois = "1";
+    max_query_chans = "5";
+  };
+};
+
+channels = (
+);
+
+aliases = {
+  AME = "foreach channel ${k}me $-";
+  AMSG = "foreach channel ${k}msg * $-";
+  J = "join";
+  P = "part";
+  LEAVE = "part";
+  HOST = "userhost";
+  LAST = "lastlog";
+  SAY = "msg *";
+  WII = "whois $0 $0";
+  WW = "whowas";
+  W = "window";
+  N = "names";
+  M = "msg";
+  Q = "query";
+  T = "topic";
+  K = "kick";
+  KB = "kickban";
+  KN = "knockout";
+  B = "ban";
+  MUB = "unban *";
+  UB = "unban";
+  IG = "ignore";
+  UNIG = "unignore";
+  UMODE = "mode $N";
+  WC = "window close";
+  WN = "window new hide";
+  CL = "clear";
+  CLALL = "clear -all";
+  CHAT = "dcc chat";
+  LOAD = "script load";
+  UNLOAD = "script unload";
+  IE = "mode $C +I";
+  BE = "mode $C +e";
+  UPTIME = "eval exec - expr `date +%s` - \\$F | awk '{print \"<Irssi> Client uptime: \"int(\\\\\\$1/3600/24)\" days, \"int(\\\\\\$1/3600%24)\" hours, \"int(\\\\\\$1/60%60)\" minutes, \"int(\\\\\\$1%60)\" seconds\" }'";
+  SETAWAY = "set screen_away_message";
+};
+
+statusbar = {
+  # formats:
+  # when using {templates}, the template is shown only if it's argument isn't
+  # empty unless no argument is given. for example {sb} is printed always,
+  # but {sb $T} is printed only if $T isn't empty.
+
+  items = {
+    # start/end text in statusbars
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    # treated "normally", you could change the time/user name to whatever
+    time = "{sb $Z}";
+    user = "<%U$cumode$N%n> ";
+
+    # treated specially .. window is printed with non-empty windows,
+    # window_empty is printed with empty windows
+    window = "{sb %G$winref}{sb $winname} %G$tag%c/%G$T{sbmode %G$M}";
+    window_empty = "{sb %G$winref}{sb %G$winname} %G$tag %C(%G$S%C){sbmode $usermode}{sbmode $O}{sbmode $X}";
+    prompt = "{prompt $[.15]T}";
+    prompt_empty = "{prompt $winname}";
+    topic = " $topic";
+    topic_empty = " irssi $J ($sysname $sysrelease $sysarch) ";
+
+    # all of these treated specially, they're only displayed when needed
+    lag = " %C[%clag: %G$0- sec%C]";
+    act = "{sb activity: $0-}";
+    more = "%C[%G...<<<%C]";
+  };
+
+  # there's two type of statusbars. root statusbars are either at the top
+  # of the screen or at the bottom of the screen. window statusbars are at
+  # the top/bottom of each split window in screen.
+
+  default = {
+    # the "default statusbar" to be displayed at the bottom of the window.
+    # contains all the normal items.
+    window = {
+      disabled = "no";
+      # window, root
+      type = "root";
+      # top, bottom
+      placement = "bottom";
+      # number
+      position = "0";
+      # active, inactive, always
+      visible = "active";
+      # list of items in statusbar in the display order
+      items = {
+        barstart = { priority = "100"; };
+        window_empty = { };
+        window = { };
+        usercount = { };
+        lag = { };
+        awaybar = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # statusbar to use in inactive split windows
+
+    window_inact = {
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        usercount = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # we treat input line as yet another statusbar :) It's possible to
+    # add other items before or after the input line item.
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      # we want to be at the bottom always
+      position = "10";
+      visible = "always";
+      items = {
+        time = { };
+        prompt = { };
+        prompt_empty = { };
+        user = { };
+        input = { priority = "-1"; };
+      };
+    };
+
+    # topicbar
+    topic = {
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+      items = {
+        barstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    activity = { items = { chanact = { }; }; placement = "top"; };
+  };
+};
+
+settings = {
+  core = {
+    real_name = "Anssi Syrjäsalo";
+    user_name = "malloc";
+    nick = "malloc";
+    timestamp_format = "%H:%M:%S";
+    server_reconnect_time = "5min";
+    use_proxy = "no";
+    proxy_port = "";
+    proxy_address = "";
+    resolve_prefer_ipv6 = "no";
+    server_connect_timeout = "30secs";
+    resolve_reverse_lookup = "yes";
+    quit_message = "leaving";
+    write_buffer_timeout = "0";
+    log_timestamp = "[%H:%M:%S] ";
+    log_close_string = "-------------------- Log closed %a %d.%m.%Y, %H:%M:%S --------------------";
+    log_day_changed = "------------------ Day changed to %a %d.%m.%Y, %H:%M:%S ------------------";
+    log_open_string = "-------------------- Log opened %a %d.%m.%Y, %H:%M:%S --------------------";
+    rawlog_lines = "200";
+    write_buffer_size = "0";
+    override_coredump_limit = "no";
+    awaylog_file = "~/irclogs/away.log";
+    log_create_mode = "600";
+    awaylog_level = "msgs hilight";
+    proxy_string = "CONNECT %s:%d HTTP/1.0";
+    recode_out_default_charset = "UTF-8";
+    hostname = "";
+    recode_fallback = "CP1252";
+    recode = "yes";
+  };
+  "irc/core" = {
+    alternate_nick = "malloc_";
+    ctcp_version_reply = "= irssi $J";
+    kick_first_on_kickban = "no";
+    knockout_time = "5min";
+    skip_motd = "yes";
+    ctcp_userinfo_reply = "";
+    join_auto_chans_on_invite = "yes";
+    lag_max_before_disconnect = "5min";
+    usermode = "+i";
+    max_wildcard_modes = "0";
+    cmd_queue_speed = "2200msec";
+    max_ctcp_queue = "5";
+    cmds_max_at_once = "5";
+    massjoin_max_joins = "0";
+    massjoin_max_wait = "5000";
+    channels_rejoin_unavailable = "yes";
+    lag_check_time = "5secs";
+    ban_type = "user";
+  };
+  "fe-common/core" = {
+    autolog = "yes";
+    timestamps = "yes";
+    theme = "malloc.theme";
+    completion_char = ":";
+    completion_keep_privates = "10";
+    bell_beeps = "yes";
+    print_active_channel = "no";
+    autoclose_windows = "yes";
+    autocreate_split_windows = "no";
+    completion_nicks_lowercase = "no";
+    reuse_unused_windows = "yes";
+    window_auto_change = "no";
+    beep_msg_level = "MSGS HILIGHT CTCPS NOTICES DCC DCCMSGS INVITES";
+    autocreate_query_level = "MSGS DCCMSGS";
+    beep_when_window_active = "no";
+    hilight_act_color = "%Y";
+    hilight_color = "%Y";
+    show_nickmode_empty = "no";
+    hide_server_tags = "yes";
+    hilight_level = "PUBLIC NOTICES CTCPS ACTIONS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS ";
+    activity_hilight_level = "MSGS DCCMSGS";
+    activity_hide_level = "";
+    autolog_level = "all -crap -clientcrap -clientnotice -clienterror";
+    autolog_path = "~/irclogs/$tag/$0.txt";
+    awaylog_colors = "no";
+    completion_strict = "no";
+    completion_keep_publics = "50";
+    max_command_history = "100";
+    emphasis = "no";
+    window_history = "no";
+    log_theme = "";
+    term_charset = "UTF-8";
+  };
+  "fe-common/irc" = {
+    netsplit_max_nicks = "20";
+    show_away_once = "yes";
+    netjoin_max_nicks = "20";
+    netsplit_nicks_hide_threshold = "20";
+    hide_netsplit_quits = "no";
+  };
+  "irc/notifylist" = {
+    notify_check_time = "10secs";
+    notify_whois_time = "10secs";
+  };
+  "irc/dcc" = {
+    dcc_autorename = "yes";
+    dcc_autoresume = "yes";
+    dcc_mirc_ctcp = "yes";
+    dcc_timeout = "5min";
+    dcc_autoget = "no";
+    dcc_port = "5534";
+    dcc_send_replace_space_with_underscore = "yes";
+    dcc_upload_path = "~/download/";
+    dcc_download_path = "~/download/";
+    dcc_autochat_masks = "0";
+    dcc_autoget_max_size = "0k";
+    dcc_autoget_masks = "0";
+  };
+  "irc/flood" = {
+    flood_timecheck = "8";
+    flood_max_msgs = "4";
+    autoignore_level = "DCC CTCPS";
+    autoignore_time = "10min";
+  };
+  "fe-text" = {
+    mirc_blink_fix = "yes";
+    indent = "0";
+    lag_min_show = "0ms";
+    term_force_colors = "yes";
+    autostick_split_windows = "yes";
+    scroll_page_count = "6";
+    indent_always = "no";
+    paste_verify_line_count = "1";
+    paste_detect_time = "5msecs";
+    scrollback_lines = "0";
+    scrollback_burst_remove = "10";
+    paste_join_multiline = "yes";
+    actlist_sort = "refnum";
+  };
+  "perl/core/scripts" = {
+    keepnick_quiet = "yes";
+    dontshitchannels = "";
+    usercount_show_halfops = "no";
+    banpl_type = "user";
+    chanact_header = "Chanact:";
+    chanact_abbreviate_names = "1";
+    chanact_show_alias = "yes";
+    chanact_show_all = "yes";
+    chanact_display = "$H $M$N $S";
+    chanact_chop_status = "no";
+    chanact_autorenumber = "yes";
+    chanact_display_alias = "$H$N$S";
+    chanact_separator = "%c\\|%n";
+    screen_away_message = "screen detached";
+    screen_away_repeat = "60";
+    nicklist_automode = "SCREEN";
+    nicklist_width = "12";
+    screen_away_window = "4";
+    screen_away_active = "yes";
+  };
+};
+
+logs = { };
+notifies = { };
+hilights = (
+  { text = "malloc"; nick = "no"; word = "no"; },
+  { text = "syrjasal"; nick = "yes"; word = "yes"; },
+  { text = "syrjäsalo"; nick = "yes"; word = "yes"; }
+);
+ignores = ( );
+windows = { };
