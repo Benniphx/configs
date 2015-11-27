@@ -1,7 +1,7 @@
-# Bypasses the GPL notice - yes, I am aware
+# Bypass the GPL notice - yes, I am aware
 startup_message off
 
-# Fix the stupid behaviour
+# Sensible defaults
 altscreen on
 autodetach on
 nonblock on

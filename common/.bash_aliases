@@ -1,4 +1,4 @@
-# For OS specific configuration
+
 os_identifier=${OSTYPE//[0-9.]/}
 
 if [[ "$os_identifier" == 'darwin' ]]; then
@@ -27,7 +27,7 @@ else
     alias open='xdg-open'
 fi
 
-### MOVING AROUND ##############################################################
+### Moving around ##############################################################
 
 alias cd..='cd ..'  # a common typo
 alias ..='cd ..'
@@ -38,7 +38,7 @@ alias .....='cd ../../../..'
 # copy the working directory path to the clipboard
 alias cwd='pwd | tr -d "\n" | pbcopy'
 
-### LISTINGS ###################################################################
+### Enhanced ls ################################################################
 
 alias ls='ls --color=auto -hlF --group-directories-first'
 alias lx='ls -lXB && echo Sorted by extension'
@@ -47,13 +47,13 @@ alias lt='ls -ltr && echo Sorted by date, most recent last'
 alias lc='ls -ltcr && echo Sorted by change time, most recent last'
 alias lu='ls -ltur && echo Sorted by access time, most recent last'
 
-### GREP #######################################################################
+### Grep with colors ###########################################################
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-### SENSIBLE DEFAULTS ##########################################################
+### Sensible defaults ##########################################################
 
 alias df='df -h'
 alias du='du -h -c'
@@ -64,7 +64,7 @@ alias mount='mount | column -t'
 alias mkdir='mkdir -p -v'
 alias wget='wget -c'
 
-### SAFETY #####################################################################
+### Safe defaults ##############################################################
 
 alias cp='cp -i'
 alias mv='mv -i'
@@ -73,7 +73,7 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-### SYSTEM #####################################################################
+### System #####################################################################
 
 alias e='env | sort'
 alias g='pgrep -l'
@@ -86,15 +86,15 @@ alias u='du -h -c -d 1'
 alias cpu='htop --sort-key PERCENT_CPU || top -o cpu'
 alias mem='htop --sort-key PERCENT_MEM || top -o rsize'
 
-### GIT ########################################################################
+### Git ########################################################################
 
 # add and remove new/deleted files from git index
 alias gitar='git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove'
 
-# use my open source author information for this repository
+# set open source author info for this repository
 alias gos='git config user.name "Anssi Syrjäsalo" && git config user.email anssi.syrjasalo@gmail.com'
 
-### RUBY ON RAILS ##############################################################
+### Ruby on Rails ##############################################################
 
 alias be='bundle exec'
 alias ber='bundle exec rake'
@@ -104,7 +104,7 @@ alias bers='bundle exec rails server'
 alias berc='bundle exec rails console'
 alias rmgems='for i in `gem list --no-versions`; do gem uninstall -aIx $i; done'
 
-### MISC #######################################################################
+### Misc #######################################################################
 
 # copy the output of the last command to clipboard
 alias cl='fc -e -|pbcopy'
@@ -112,7 +112,7 @@ alias cl='fc -e -|pbcopy'
 # return the public IP address
 alias ip='curl icanhazip.com'
 
-### UTILITIES ##################################################################
+### Utilities ##################################################################
 
 # fast extract
 extract() {

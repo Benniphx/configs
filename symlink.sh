@@ -20,7 +20,7 @@ sublime_version=3
 config_path="$script_path/common"
 sublime_config_path="$script_path/sublime"
 
-# Paths are relative to config_path
+# Do not symlink these paths. Paths are relative to config_path.
 do_not_symlink=()
 
 if [ "$os_identifier" == "darwin" ]; then

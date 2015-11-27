@@ -4,13 +4,13 @@ if [ -z "$PS1" ]; then
    return
 fi
 
-### EXPORTS ####################################################################
+os_identifier="${OSTYPE//[0-9.]/}"
 
-# utf-8 everywhere
+### Exports ####################################################################
+
 export LANG='en_US'
 export LC_ALL='en_US.UTF-8'
 
-# preferred editors
 export EDITOR='vim'
 export VISUAL=$EDITOR
 export SVN_EDITOR=$EDITOR
@@ -19,7 +19,7 @@ export SVN_EDITOR=$EDITOR
 export PAGER='less'
 export MANPAGER='less -X'
 
-### SHELL BEHAVIOUR ############################################################
+### Shell behaviour ############################################################
 
 # default file permissions
 umask 0077  # (u=rwx,g=,o=)
@@ -45,9 +45,8 @@ unset ignoreeof
 # disable ^S/^Q flow control
 stty -ixon
 
-### HISTORY ####################################################################
+### History ####################################################################
 
-# history settings
 HISTSIZE=100
 HISTFILESIZE=10000
 HISTCONTROL=ignoredups:ignorespace
@@ -59,9 +58,7 @@ HISTIGNORE='ls:cd:cd -:pwd:exit:date'
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
-os_identifier=${OSTYPE//[0-9.]/}
-
-### OS X: HOMEBREW #############################################################
+### OS X: Homebrew #############################################################
 
 if [[ "$os_identifier" == 'darwin' ]]; then
     # prefer GNU coreutils and Homebrew installed binaries
@@ -72,17 +69,15 @@ if [[ "$os_identifier" == 'darwin' ]]; then
     alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
 fi
 
-### COMPLETION #################################################################
+### Completion #################################################################
 
-# operating system specific settings
-if [[ "$os_identifier" == 'darwin' ]]; then
+# additional bash comletions
+if [ "$os_identifier" == 'darwin' ]; then
     # brew install bash-completion
     bash_completion_path="$(brew --prefix)/etc/bash_completion"
 else
     bash_completion_path='/etc/bash_completion'
 fi
-
-# include additional bash completions
 [ -f $bash_completion_path ] && . $bash_completion_path
 
 # add tab completion for hostnames based on ~/.ssh/config, ignoring wildcards
@@ -90,15 +85,15 @@ fi
   -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" \
     | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
-### AUTOJUMP ###################################################################
+### Autojump ###################################################################
 
 if [[ "$os_identifier" == 'darwin' ]]; then
     [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 fi
 
-### PROMPT #####################################################################
+### SCM prompt #################################################################
 
-# prompt color shortcuts
+# color shortcuts
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red
 txtgrn='\[\e[0;32m\]' # Green
@@ -133,7 +128,6 @@ bakcyn='\[\e[46m\]'   # Cyan
 bakwht='\[\e[47m\]'   # White
 txtrst='\[\e[0m\]'    # Text Reset
 
-# show scm branch name in the prompt
 parse_git_branch() {
     git branch --no-color 2> /dev/null | \
     sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
@@ -159,24 +153,15 @@ get_branch_information() {
     [ -n "$scm" ] && echo "($scm:$branch)"
 }
 
-# stylize the actual prompt
 export PS1="$txtblu\u@\h$txtrst:$txtcyn\w$txtgrn\$(get_branch_information)$txtrst\$ "
 
-### DIRCOLORS ##################################################################
+### Dircolors ##################################################################
 
 if which dircolors > /dev/null; then
   eval $(dircolors -b $HOME/.dir_colors)
 fi
 
-### JYTHON #####################################################################
-
-jython_path=$(find $HOME -maxdepth 1 -name 'jython*' -type d | head -1)
-if [ -d "$jython_path" ]; then
-  export JYTHON_HOME="$jython_path"
-  export PATH="$JYTHON_HOME/bin:$PATH"
-fi
-
-### PYENV ######################################################################
+### Pyenv ######################################################################
 
 if [ -d "$HOME/.pyenv" ]; then
   pyenv_path="$HOME/.pyenv/bin"
@@ -187,7 +172,7 @@ if [ -d "$HOME/.pyenv" ]; then
   fi
 fi
 
-### RBENV ######################################################################
+### Rbenv ######################################################################
 
 if [ -d "$HOME/.rbenv" ]; then
   rbenv_path="$HOME/.rbenv/bin"
@@ -202,11 +187,11 @@ if [ -d "$jars_path" ]; then
   export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
 fi
 
-### PREFER LOCAL BINARIES ######################################################
+### Prefer home prefixed binaries #############################################
 
 export PATH="$HOME/local/bin:$PATH"
 
-### LOAD OTHER CONFIGS #########################################################
+### Load other configs #########################################################
 
 [[ -f "$HOME/.bash_aliases" ]] && . "$HOME/.bash_aliases"
 [[ -f "$HOME/.bash_local" ]] && . "$HOME/.bash_local"
