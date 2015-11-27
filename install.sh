@@ -44,8 +44,7 @@ while getopts 'f' arg; do
     esac
 done
 
-os_identifier="${OSTYPE//[0-9.]/}"
-if [ "$os_identifier" == "darwin" ]; then
+if [ `uname` = 'Darwin' ]; then
     sublime_user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
 else
     sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"

@@ -1,6 +1,4 @@
-### .profile ###################################################################
-#
-os_identifier="${OSTYPE//[0-9.]/}"
+### .profile
 
 ### Exports ####################################################################
 
@@ -36,7 +34,7 @@ HISTIGNORE='ls:cd:cd -:pwd:exit:date'
 
 ### OS X: Homebrew #############################################################
 
-if [ "$os_identifier" = 'darwin' ]; then
+if [ `uname` = 'Darwin' ]; then
     # prefer GNU coreutils and Homebrew installed binaries
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 
@@ -47,7 +45,7 @@ fi
 
 ### Autojump ###################################################################
 
-if [ "$os_identifier" = 'darwin' ]; then
+if [ `uname` = 'Darwin' ]; then
     [ -s $(brew --prefix)/etc/autojump.sh ] && . $(brew --prefix)/etc/autojump.sh
 fi
 
@@ -97,7 +95,7 @@ export PATH="$HOME/local/bin:$PATH"
 
 ### Aliases ####################################################################
 
-if [ "$os_identifier" = 'darwin' ]; then
+if [ `uname` = 'Darwin' ]; then
     # this requires running: brew install macvim --override-system-vim
     alias vim='mvim -v'
 

@@ -1,4 +1,4 @@
-### .bashrc ####################################################################
+### .bashrc
 
 # quit if this shell is not interactive
 [ -z "$PS1" ] && return
@@ -27,8 +27,7 @@ bind '"\e[B"':history-search-forward
 
 ### Additional bash completions ################################################
 
-os_identifier="${OSTYPE//[0-9.]/}"
-if [ "$os_identifier" = 'darwin' ]; then
+if [ `uname` = 'Darwin' ]; then
     # brew install bash-completion
     bash_completion_path="$(brew --prefix)/etc/bash_completion"
 else
