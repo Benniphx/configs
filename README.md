@@ -1,4 +1,4 @@
 
-    git clone git@github.com:asyrjasalo/configs.git && configs/symlink.sh
+    git clone git@github.com:asyrjasalo/configs.git && configs/install.sh
 
-Run symlink.sh with -f to override the existing files at $HOME without prompting.
+Run install.sh with -f to override the existing files at $HOME without prompting.
