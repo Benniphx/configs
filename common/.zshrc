@@ -53,7 +53,7 @@ plugins=(autojump gem git git-extras npm pip python vagrant)
 
 ### Theme ######################################################################
 
-# Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
+# Name of the theme to load in ~/.oh-my-zsh/themes/ or $ZSH_CUSTOM/themes/
 ZSH_THEME="bullet-train"
 
 # Prompt
