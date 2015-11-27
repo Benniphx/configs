@@ -5,11 +5,11 @@ call pathogen#infect()
 
 "-------------------------------------------------------------------------------
 
-" mouse settings
 set mouse=a                     " enable mouse in all modes
 set ttymouse=xterm2             " terminal that supports mouse codes
 
-" editor settings
+set clipboard=unnamed
+
 set hidden                      " hide buffers instead of closing them
 set nocompatible                " disable vi compatible mode
 set ttyfast                     " smoother changes
@@ -72,7 +72,6 @@ set tags=tags,./tags,tmp/tags,./tmp/tags
 
 "-------------------------------------------------------------------------------
 
-" use this theme
 set t_Co=256                      " number of colors to use
 colorscheme Tomorrow-Night-Bright " colorscheme to use
 
@@ -81,11 +80,6 @@ if has("statusline")
   set laststatus=2
   set statusline=\ \ %F%m%r%h%w\ %=[%Y]\ (%{&ff},\ %{&enc})\ \{%v,\ %l/%L\}\ \ %p%%\
 endif
-
-"-------------------------------------------------------------------------------
-
-" clipboard
-set clipboard=unnamed
 
 "-------------------------------------------------------------------------------
 
@@ -186,34 +180,3 @@ let g:SuperTabContextDiscoverDiscovery =
 let g:SuperTabNoCompleteAfter=[',', '\s']
 let g:SuperTabMappingForward='<C-b>'
 let g:SuperTabMappingBackward='<C-S-b>'
-
-"-------------------------------------------------------------------------------
-
-" Ruby additions
-autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
-      \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
-
-autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
-autocmd BufRead,BufNewFile jquery.*.js        set filetype=javascript syntax=jquery
-autocmd BufRead,BufNewFile *.rd,*.rdoc        set filetype=rdoc
-autocmd BufNewFile,BufRead *.haml             set ft=haml
-autocmd BufNewFile,BufRead *.feature,*.story  set ft=cucumber
-autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
-      \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif
-
-autocmd FileType javascript,coffee      setlocal et sw=2 sts=2 isk+=$
-autocmd FileType html,xhtml,css,scss    setlocal et sw=2 sts=2
-autocmd FileType eruby,yaml,ruby        setlocal et sw=2 sts=2
-autocmd FileType cucumber               setlocal et sw=2 sts=2
-autocmd FileType sh,csh,zsh             setlocal et sw=2 sts=2
-autocmd FileType gitcommit              setlocal spell
-autocmd FileType gitconfig              setlocal noet sw=4
-autocmd FileType ruby                   setlocal comments=:#\  tw=79
-autocmd FileType vim                    setlocal et sw=2 sts=2 keywordprg=:help
-
-" these are not enabled by default in vim-ruby anymore
-autocmd FileType ruby,eruby,yaml,haml   let g:rubycomplete_rails=1
-autocmd FileType ruby,eruby,yaml,haml   let g:rubycomplete_buffer_loading=1
-autocmd FileType ruby,eruby,yaml,haml   let g:rubycomplete_classes_in_global=1
-
-autocmd Syntax   css                    syn sync minlines=50
