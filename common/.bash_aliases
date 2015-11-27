@@ -62,9 +62,12 @@ alias mount='mount | column -t'
 
 ### Safe defaults ##############################################################
 
+# prompt before override
 alias cp='cp -i'
 alias mv='mv -i'
 alias ln='ln -i'
+
+# fail upon attempt to recursively change the root directory
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
