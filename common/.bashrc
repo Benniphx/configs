@@ -11,9 +11,6 @@ shopt -s checkwinsize
 # append to the history file instead of overwriting it
 shopt -s histappend
 
-# case-insensitive globbing (e.g. in pathname expansion)
-shopt -s nocaseglob
-
 # autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
