@@ -1,7 +1,103 @@
+### .profile ###################################################################
+#
+os_identifier="${OSTYPE//[0-9.]/}"
 
-os_identifier=${OSTYPE//[0-9.]/}
+### Exports ####################################################################
 
-if [ "$os_identifier" == 'darwin' ]; then
+export LANG='en_US'
+export LC_ALL='en_US.UTF-8'
+
+export EDITOR='vim'
+export VISUAL="$EDITOR"
+export SVN_EDITOR="$EDITOR"
+
+# no clearing of the screen after quitting man
+export PAGER='less'
+export MANPAGER='less -X'
+
+### Shell behaviour ############################################################
+
+umask 0077  # default file permissions: u=rwx,g=,o=
+
+# allow exiting with ^D
+unset ignoreeof
+
+# disable ^S/^Q flow control
+stty -ixon
+
+### History ####################################################################
+
+HISTSIZE=100
+HISTFILESIZE=10000
+HISTCONTROL=ignoredups:ignorespace
+
+# make some commands not show up in history
+HISTIGNORE='ls:cd:cd -:pwd:exit:date'
+
+### OS X: Homebrew #############################################################
+
+if [ "$os_identifier" = 'darwin' ]; then
+    # prefer GNU coreutils and Homebrew installed binaries
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+    # show man pages for GNU coreutils instead of the BSD variants
+    # from: https://gist.github.com/quickshiftin/9130153
+    alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
+fi
+
+### Autojump ###################################################################
+
+if [ "$os_identifier" = 'darwin' ]; then
+    [ -s $(brew --prefix)/etc/autojump.sh ] && . $(brew --prefix)/etc/autojump.sh
+fi
+
+### Dircolors ##################################################################
+
+if which dircolors > /dev/null; then
+  eval $(dircolors -b $HOME/.dir_colors)
+fi
+
+### Pyenv ######################################################################
+
+if [ -d "$HOME/.pyenv" ]; then
+  pyenv_path="$HOME/.pyenv/bin"
+  export PATH="$pyenv_path:$PATH"
+  eval "$(pyenv init -)"
+  if which pyenv-virtualenv-init > /dev/null; then
+    eval "$(pyenv virtualenv-init -)";
+  fi
+fi
+
+### Rbenv ######################################################################
+
+if [ -d "$HOME/.rbenv" ]; then
+  rbenv_path="$HOME/.rbenv/bin"
+  export PATH="$rbenv_path:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+### Jython #####################################################################
+
+jython_path=$(find $HOME -maxdepth 1 -name 'jython*' -type d | head -1)
+if [ -d "$jython_path" ]; then
+  export JYTHON_HOME="$jython_path"
+  export PATH="$JYTHON_HOME/bin:$PATH"
+fi
+
+### Own jars to CLASSPATH ######################################################
+
+jars_path="$HOME/jars"
+if [ -d "$jars_path" ]; then
+  export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
+fi
+
+### Prefer home prefixed binaries ##############################################
+
+export PATH="$HOME/local/bin:$PATH"
+
+### Aliases ####################################################################
+
+if [ "$os_identifier" = 'darwin' ]; then
     # this requires running: brew install macvim --override-system-vim
     alias vim='mvim -v'
 
@@ -35,26 +131,16 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-# copy the working directory path to the clipboard
+### Copy current path to clipboard #############################################
+
 alias cwd='pwd | tr -d "\n" | pbcopy'
-
-### Enhanced ls ################################################################
-
-alias ls='ls --color=auto -hlF --group-directories-first'
-alias lx='ls -lXB && echo Sorted by extension'
-alias lk='ls -lSr && echo Sorted by size, biggest last'
-alias lt='ls -ltr && echo Sorted by date, most recent last'
-alias lc='ls -ltcr && echo Sorted by change time, most recent last'
-alias lu='ls -ltur && echo Sorted by access time, most recent last'
-
-### Grep with colors ###########################################################
-
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 ### Sensible defaults ##########################################################
 
+alias ls='ls --color=auto -hlF --group-directories-first'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias df='df -h'
 alias du='du -h -c'
 alias ping='ping -c 5'
@@ -67,10 +153,18 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ln='ln -i'
 
-# fail upon attempt to recursively change the root directory
+# fail upon attempt to recursively change the the root directory
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
+
+### Enhanced ls ################################################################
+
+alias lx='ls -lXB && echo Sorted by extension'
+alias lk='ls -lSr && echo Sorted by size, biggest last'
+alias lt='ls -ltr && echo Sorted by date, most recent last'
+alias lc='ls -ltcr && echo Sorted by change time, most recent last'
+alias lu='ls -ltur && echo Sorted by access time, most recent last'
 
 ### System #####################################################################
 
@@ -80,7 +174,6 @@ alias h='history | grep'
 alias k='pkill'
 alias o='open'
 alias p="echo -e '${PATH//:/\\n}'"
-alias s="source $HOME/.bash_profile"
 alias u='du -h -c -d 1'
 alias cpu='htop --sort-key PERCENT_CPU || top -o cpu'
 alias mem='htop --sort-key PERCENT_MEM || top -o rsize'

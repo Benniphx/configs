@@ -1,28 +1,9 @@
+### .bashrc ####################################################################
 
-# quit immediately if this shell is not interactive
-if [ -z "$PS1" ]; then
-   return
-fi
-
-os_identifier="${OSTYPE//[0-9.]/}"
-
-### Exports ####################################################################
-
-export LANG='en_US'
-export LC_ALL='en_US.UTF-8'
-
-export EDITOR='vim'
-export VISUAL="$EDITOR"
-export SVN_EDITOR="$EDITOR"
-
-# no clearing of the screen after quitting man
-export PAGER='less'
-export MANPAGER='less -X'
+# quit if this shell is not interactive
+[ -z "$PS1" ] && return
 
 ### Shell behaviour ############################################################
-
-# default file permissions
-umask 0077  # (u=rwx,g=,o=)
 
 # have Bash to check if the window size has changed
 shopt -s checkwinsize
@@ -39,40 +20,15 @@ shopt -s cdspell
 # combine multiline commands into one in history
 shopt -s cmdhist
 
-# allow exiting with ^D
-unset ignoreeof
+### Search history with arrows #################################################
 
-# disable ^S/^Q flow control
-stty -ixon
-
-### History ####################################################################
-
-HISTSIZE=100
-HISTFILESIZE=10000
-HISTCONTROL=ignoredups:ignorespace
-
-# make some commands not show up in history
-HISTIGNORE='ls:cd:cd -:pwd:exit:date'
-
-# search history with arrows
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
-### OS X: Homebrew #############################################################
+### Additional bash completions ################################################
 
-if [ "$os_identifier" == 'darwin' ]; then
-    # prefer GNU coreutils and Homebrew installed binaries
-    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
-
-    # show man pages for GNU coreutils instead of the BSD variants
-    # from: https://gist.github.com/quickshiftin/9130153
-    alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
-fi
-
-### Completion #################################################################
-
-# additional bash comletions
-if [ "$os_identifier" == 'darwin' ]; then
+os_identifier="${OSTYPE//[0-9.]/}"
+if [ "$os_identifier" = 'darwin' ]; then
     # brew install bash-completion
     bash_completion_path="$(brew --prefix)/etc/bash_completion"
 else
@@ -85,15 +41,8 @@ fi
   -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" \
     | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
-### Autojump ###################################################################
+### Prompt #####################################################################
 
-if [ "$os_identifier" == 'darwin' ]; then
-    [ -s $(brew --prefix)/etc/autojump.sh ] && . $(brew --prefix)/etc/autojump.sh
-fi
-
-### SCM prompt #################################################################
-
-# color shortcuts
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red
 txtgrn='\[\e[0;32m\]' # Green
@@ -155,51 +104,11 @@ get_branch_information() {
 
 export PS1="$txtblu\u@\h$txtrst:$txtcyn\w$txtgrn\$(get_branch_information)$txtrst\$ "
 
-### Dircolors ##################################################################
+### Shortcut to reload configs #################################################
 
-if which dircolors > /dev/null; then
-  eval $(dircolors -b $HOME/.dir_colors)
-fi
-
-### Pyenv ######################################################################
-
-if [ -d "$HOME/.pyenv" ]; then
-  pyenv_path="$HOME/.pyenv/bin"
-  export PATH="$pyenv_path:$PATH"
-  eval "$(pyenv init -)"
-  if which pyenv-virtualenv-init > /dev/null; then
-    eval "$(pyenv virtualenv-init -)";
-  fi
-fi
-
-### Rbenv ######################################################################
-
-if [ -d "$HOME/.rbenv" ]; then
-  rbenv_path="$HOME/.rbenv/bin"
-  export PATH="$rbenv_path:$PATH"
-  eval "$(rbenv init -)"
-fi
-
-### Jython #####################################################################
-
-jython_path=$(find $HOME -maxdepth 1 -name 'jython*' -type d | head -1)
-if [ -d "$jython_path" ]; then
-  export JYTHON_HOME="$jython_path"
-  export PATH="$JYTHON_HOME/bin:$PATH"
-fi
-
-### Own jars to CLASSPATH ######################################################
-
-jars_path="$HOME/jars"
-if [ -d "$jars_path" ]; then
-  export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
-fi
-
-### Prefer home prefixed binaries #############################################
-
-export PATH="$HOME/local/bin:$PATH"
+alias s=". $HOME/.bash_profile"
 
 ### Load other configs #########################################################
 
-[ -f "$HOME/.bash_aliases" ] && . "$HOME/.bash_aliases"
-[ -f "$HOME/.bash_local" ] && . "$HOME/.bash_local"
+[ -f "$HOME/.profile" ] && . "$HOME/.profile"
+[ -f "$HOME/.bash_local" ] && . "$HOME/.bash_local" || true

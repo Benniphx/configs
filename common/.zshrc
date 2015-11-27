@@ -1,10 +1,9 @@
+### Oh My Zsh ##################################################################
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -51,22 +50,16 @@ HIST_STAMPS="dd/mm/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# Hide username in agnoster theme
+### Hide username in agnoster theme ############################################
+
 DEFAULT_USER="asyrjasalo"
 
-# User configuration
+### Shortcut to reload configs #################################################
 
-export PATH="/home/asyrjasalo/local/bin:/home/asyrjasalo/.rbenv/shims:/home/asyrjasalo/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export LANG=en_US.UTF-8
-export EDITOR='vim'
+alias s=". $HOME/.zshrc"
 
-source "$ZSH/oh-my-zsh.sh"
+### Load other configs #########################################################
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+[ -f "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
+[ -f "$HOME/.profile" ] && source "$HOME/.profile"
+[ -f "$HOME/.zsh_local" ] && source "$HOME/.zsh_local" || true
