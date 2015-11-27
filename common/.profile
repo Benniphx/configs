@@ -125,7 +125,6 @@ fi
 
 ### Moving around ##############################################################
 
-alias cd..='cd ..'  # a common typo
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
