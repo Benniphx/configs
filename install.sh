@@ -62,6 +62,10 @@ done
 # Symlink Sublime User configuration
 ln -snvi"$ln_args" "$sublime_config_path" "$sublime_user_path"
 
+# Symlink ZSH theme
+ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
+    "$config_path/.oh-my-zsh/themes/bullet-train.zsh-theme"
+
 # Vim bundles as git submodules
 pushd "$config_path" > /dev/null
 git submodule update --depth 1 --init --recursive

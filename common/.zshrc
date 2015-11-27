@@ -54,10 +54,32 @@ plugins=(autojump gem git git-extras npm pip python vagrant)
 ### Theme ######################################################################
 
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
+ZSH_THEME="bullet-train"
 
-# Hide username@host from the prompt, if this user
-DEFAULT_USER="asyrjasalo"
+# Prompt
+BULLETTRAIN_PROMPT_SEPARATE_LINE="false"
+
+# Status
+BULLETTRAIN_STATUS_EXIT_SHOW="true"
+
+# Time
+BULLETTRAIN_TIME_BG="cyan"
+BULLETTRAIN_TIME_FG="black"
+
+# Context
+BULLETTRAIN_CONTEXT_SHOW="true"
+BULLETTRAIN_CONTEXT_DEFAULT_USER="asyrjasalo"
+
+# Dir
+BULLETTRAIN_DIR_BG="blue"
+BULLETTRAIN_DIR_FG="white"
+
+# Git
+BULLETTRAIN_GIT_BG="white"
+BULLETTRAIN_GIT_FG="black"
+
+### Nvm
+BULLETTRAIN_NVM_SHOW="true"
 
 ### Shortcut to reload configs #################################################
 
