@@ -82,3 +82,6 @@
 [submodule "zsh-extras/bullet-train-oh-my-zsh-theme"]
 	path = zsh-extras/bullet-train-oh-my-zsh-theme
 	url = git@github.com:caiogondim/bullet-train-oh-my-zsh-theme.git
+[submodule "zsh-extras/oh-my-zsh-powerline-theme"]
+	path = zsh-extras/oh-my-zsh-powerline-theme
+	url = git@github.com:jeremyFreeAgent/oh-my-zsh-powerline-theme.git
