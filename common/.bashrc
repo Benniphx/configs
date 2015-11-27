@@ -60,7 +60,7 @@ bind '"\e[B"':history-search-forward
 
 ### OS X: Homebrew #############################################################
 
-if [[ "$os_identifier" == 'darwin' ]]; then
+if [ "$os_identifier" == 'darwin' ]; then
     # prefer GNU coreutils and Homebrew installed binaries
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 
@@ -87,8 +87,8 @@ fi
 
 ### Autojump ###################################################################
 
-if [[ "$os_identifier" == 'darwin' ]]; then
-    [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+if [ "$os_identifier" == 'darwin' ]; then
+    [ -s $(brew --prefix)/etc/autojump.sh ] && . $(brew --prefix)/etc/autojump.sh
 fi
 
 ### SCM prompt #################################################################
@@ -193,5 +193,5 @@ export PATH="$HOME/local/bin:$PATH"
 
 ### Load other configs #########################################################
 
-[[ -f "$HOME/.bash_aliases" ]] && . "$HOME/.bash_aliases"
-[[ -f "$HOME/.bash_local" ]] && . "$HOME/.bash_local"
+[ -f "$HOME/.bash_aliases" ] && . "$HOME/.bash_aliases"
+[ -f "$HOME/.bash_local" ] && . "$HOME/.bash_local"

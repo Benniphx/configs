@@ -1,7 +1,7 @@
 
 os_identifier=${OSTYPE//[0-9.]/}
 
-if [[ "$os_identifier" == 'darwin' ]]; then
+if [ "$os_identifier" == 'darwin' ]; then
     # this requires running: brew install macvim --override-system-vim
     alias vim='mvim -v'
 

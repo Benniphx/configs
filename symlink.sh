@@ -33,8 +33,8 @@ fi
 
 function in_array() {
     local e
-    for e in "${@:2}";
-        do [[ "$e" == "$1" ]] && return 0;
+    for e in "${@:2}"; do
+        [ "$e" == "$1" ] && return 0;
     done
     return 1
 }
@@ -55,7 +55,7 @@ done
 
 # Configs
 for source_file_name in `ls -A $config_path`; do
-    if ( in_array "$source_file_name" "${do_not_symlink[@]}" ); then
+    if (in_array "$source_file_name" "${do_not_symlink[@]}"); then
         echo "Ignoring: $source_file_name"
     else
         ln -snvi$ln_args "$config_path/$source_file_name" "$HOME/$source_file_name"
