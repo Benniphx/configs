@@ -63,7 +63,7 @@ for source_file_name in `ls -A $config_path`; do
 done
 
 # Sublime User packages and configuration
-ln -snvi$ln_args "$sublime_config_path" "$sublime_user_path"
+ln -snvi"$ln_args" "$sublime_config_path" "$sublime_user_path"
 
 # Vim bundles as git submodules
 pushd "$config_path" > /dev/null

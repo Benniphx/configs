@@ -12,8 +12,8 @@ export LANG='en_US'
 export LC_ALL='en_US.UTF-8'
 
 export EDITOR='vim'
-export VISUAL=$EDITOR
-export SVN_EDITOR=$EDITOR
+export VISUAL="$EDITOR"
+export SVN_EDITOR="$EDITOR"
 
 # no clearing of the screen after quitting man
 export PAGER='less'
@@ -180,7 +180,15 @@ if [ -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
 fi
 
-### OWN JARS TO CLASSPATH ######################################################
+### Jython #####################################################################
+
+jython_path=$(find $HOME -maxdepth 1 -name 'jython*' -type d | head -1)
+if [ -d "$jython_path" ]; then
+  export JYTHON_HOME="$jython_path"
+  export PATH="$JYTHON_HOME/bin:$PATH"
+fi
+
+### Own jars to CLASSPATH ######################################################
 
 jars_path="$HOME/jars"
 if [ -d "$jars_path" ]; then
