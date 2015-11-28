@@ -78,6 +78,11 @@ if [ -d "$jars_path" ]; then
   export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
 fi
 
+### Autojump ###################################################################
+
+autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
+[ -s "$autojump_path" ] && . "$autojump_path"
+
 ### Prefer user binaries #######################################################
 
 export PATH="$HOME/local/bin:$PATH"
@@ -85,11 +90,6 @@ export PATH="$HOME/local/bin:$PATH"
 ### Dircolors ##################################################################
 
 which dircolors >/dev/null && eval "$(dircolors -b "$HOME"/.dir_colors)"
-
-### Autojump ###################################################################
-
-autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
-[ -s "$autojump_path" ] && . "$autojump_path"
 
 ### Thefuck ####################################################################
 
