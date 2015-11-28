@@ -96,7 +96,7 @@ BULLETTRAIN_VIRTUALENV_FG='black'
 
 ### Shortcut to reload configs #################################################
 
-alias s=". $HOME/.zshrc"
+alias s=". \"$HOME\"/.zshrc"
 
 ### Load other configs #########################################################
 

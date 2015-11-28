@@ -121,7 +121,7 @@ alias .....='cd ../../../..'
 
 ### Shortcut to reload configs #################################################
 
-alias s=". $HOME/.bash_profile"
+alias s=". \"$HOME\"/.bash_profile"
 
 ### Load other configs #########################################################
 

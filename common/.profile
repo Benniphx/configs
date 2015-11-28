@@ -38,13 +38,11 @@ fi
 
 ### Dircolors ##################################################################
 
-if which dircolors > /dev/null; then
-  eval $(dircolors -b $HOME/.dir_colors)
-fi
+which dircolors >/dev/null && eval $(dircolors -b "$HOME"/.dir_colors)
 
 ### Thefuck ####################################################################
 
-which thefuck > /dev/null && eval $(thefuck --alias)
+which thefuck >/dev/null && eval $(thefuck --alias)
 
 ### Autojump ###################################################################
 
