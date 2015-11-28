@@ -58,6 +58,3 @@
 [submodule "extras/autojump"]
 	path = extras/autojump
 	url = git://github.com/joelthelion/autojump.git
-[submodule "extras/tpm"]
-	path = extras/tpm
-	url = git://github.com/tmux-plugins/tpm.git

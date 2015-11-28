@@ -72,10 +72,9 @@ pushd "$script_path/extras/autojump" >/dev/null
     ./install.py 1>/dev/null
 popd >/dev/null
 
-### Symlink Tmux plugin manager ################################################
+### Install Tmux plugin manager ################################################
 
-mkdir -p "$HOME/.tpm/plugins"
-ln -snvi"$ln_args" "$script_path/extras/tpm" "$HOME/.tpm/plugins/tpm"
+git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
 ### Symlink ZSH theme ##########################################################
 
