@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # This script symlinks the configs to $HOME. It also initializes the vim bundles.
 # Run with -f to override the exising files/symlinks at $HOME without confirmation.
 
@@ -66,16 +64,21 @@ done
 
 ln -snvi"$ln_args" "$sublime_config_path" "$sublime_user_path"
 
-### Install/update bundles as git submodules ###################################
+### Install vim bundles as git submodules ######################################
 
 pushd "$config_path" > /dev/null
-git submodule update --depth 1 --init --recursive
+git submodule update --init --depth 1 --recursive
 popd > /dev/null
+
+### Install fonts ##############################################################
+
+. "$script_path/fonts/install.sh"
 
 ### Symlink ZSH theme ##########################################################
 
+mkdir -p "$config_path/.oh-my-zsh/custom/theme"
 ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
-    "$config_path/.oh-my-zsh/custom/themes/bullet-train.zsh-theme"
+    "$config_path/.oh-my-zsh/custom/theme/bullet-train.zsh-theme"
 
 ### Set default shell ##########################################################
 
