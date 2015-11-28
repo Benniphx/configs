@@ -85,6 +85,15 @@ if [ -d "$jars_path" ]; then
   export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
 fi
 
+### Thefuck ####################################################################
+
+which thefuck > /dev/null && eval $(thefuck --alias)
+
+### Autojump ###################################################################
+
+autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
+[ -s "$autojump_path" ] && . "$autojump_path"
+
 ### Prefer home prefixed binaries ##############################################
 
 export PATH="$HOME/local/bin:$PATH"
