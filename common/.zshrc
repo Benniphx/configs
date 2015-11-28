@@ -100,6 +100,6 @@ alias s=". \"$HOME\"/.zshrc"
 
 ### Load other configs #########################################################
 
-[ -f "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
-[ -f "$HOME/.profile" ] && source "$HOME/.profile"
-[ -f "$HOME/.zsh_local" ] && source "$HOME/.zsh_local" || true
+[ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
+[ -f "$HOME/.profile" ] && . "$HOME/.profile"
+[ -f "$HOME/.zsh_local" ] && . "$HOME/.zsh_local" || true

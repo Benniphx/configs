@@ -36,19 +36,6 @@ if [ `uname` = 'Darwin' ]; then
     alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
 fi
 
-### Dircolors ##################################################################
-
-which dircolors >/dev/null && eval $(dircolors -b "$HOME"/.dir_colors)
-
-### Thefuck ####################################################################
-
-which thefuck >/dev/null && eval $(thefuck --alias)
-
-### Autojump ###################################################################
-
-autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
-[ -s "$autojump_path" ] && . "$autojump_path"
-
 ### Nvm ########################################################################
 
 nvm_dir="$HOME/.nvm"
@@ -64,7 +51,7 @@ if [ -d "$HOME/.pyenv" ]; then
   export PATH="$pyenv_path:$PATH"
   eval "$(pyenv init -)"
   if which pyenv-virtualenv-init > /dev/null; then
-    eval "$(pyenv virtualenv-init -)";
+    eval "$(pyenv virtualenv-init -)"
   fi
 fi
 
@@ -91,9 +78,22 @@ if [ -d "$jars_path" ]; then
   export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
 fi
 
-### Prefer home prefixed binaries ##############################################
+### Prefer user binaries #######################################################
 
 export PATH="$HOME/local/bin:$PATH"
+
+### Dircolors ##################################################################
+
+which dircolors >/dev/null && eval "$(dircolors -b "$HOME"/.dir_colors)"
+
+### Autojump ###################################################################
+
+autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
+[ -s "$autojump_path" ] && . "$autojump_path"
+
+### Thefuck ####################################################################
+
+which thefuck >/dev/null && eval "$(thefuck --alias)"
 
 ### Aliases ####################################################################
 
