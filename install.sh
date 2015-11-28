@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # This script symlinks the configs to $HOME. It also initializes the vim bundles.
 # Run with -f to override the exising files/symlinks at $HOME without confirmation.
 
