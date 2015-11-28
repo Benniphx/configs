@@ -19,7 +19,9 @@ config_path="$script_path/common"
 sublime_config_path="$script_path/sublime"
 
 # Do not symlink these paths. Paths are relative to config_path.
-do_not_symlink=()
+do_not_symlink=(
+    ".irssi"
+)
 
 ### Helpers ####################################################################
 
