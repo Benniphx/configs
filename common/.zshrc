@@ -63,8 +63,8 @@ BULLETTRAIN_PROMPT_SEPARATE_LINE="false"
 BULLETTRAIN_STATUS_EXIT_SHOW="true"
 
 # Time
-BULLETTRAIN_TIME_BG="cyan"
-BULLETTRAIN_TIME_FG="black"
+BULLETTRAIN_TIME_BG="black"
+BULLETTRAIN_TIME_FG="white"
 
 # Context
 BULLETTRAIN_CONTEXT_SHOW="true"
@@ -73,13 +73,18 @@ BULLETTRAIN_CONTEXT_DEFAULT_USER="asyrjasalo"
 # Dir
 BULLETTRAIN_DIR_BG="blue"
 BULLETTRAIN_DIR_FG="white"
+BULLETTRAIN_DIR_EXTENDED="2"
 
 # Git
-BULLETTRAIN_GIT_BG="white"
+BULLETTRAIN_GIT_BG="cyan"
 BULLETTRAIN_GIT_FG="black"
 
-### Nvm
+### Node.js nvm
 BULLETTRAIN_NVM_SHOW="true"
+
+### Pyenv
+BULLETTRAIN_VIRTUALENV_BG="yellow"
+BULLETTRAIN_VIRTUALENV_FG="black"
 
 ### Shortcut to reload configs #################################################
 
