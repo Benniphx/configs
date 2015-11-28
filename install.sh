@@ -79,7 +79,7 @@ git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 ### Install Vundle #############################################################
 
 git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
-vim +PluginInstall +qall
+echo -ne '\n' | vim +PluginInstall +qall
 
 ### Symlink ZSH theme ##########################################################
 

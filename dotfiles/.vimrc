@@ -1,13 +1,13 @@
 "-------------------------------------------------------------------------------
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Required for Vundle
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
-
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'ervandew/supertab'
 Plugin 'fholgado/minibufexpl.vim'
@@ -25,9 +25,7 @@ Plugin 'skammer/vim-css-color'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'petdance/vim-perl'
-
 call vundle#end()
-filetype plugin indent on
 
 "-------------------------------------------------------------------------------
 
@@ -35,6 +33,7 @@ set mouse=a                     " enable mouse in all modes
 set ttymouse=xterm2             " terminal that supports mouse codes
 
 set clipboard=unnamed
+filetype plugin indent on
 
 set hidden                      " hide buffers instead of closing them
 set ttyfast                     " smoother changes
