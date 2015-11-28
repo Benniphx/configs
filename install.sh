@@ -76,6 +76,10 @@ popd >/dev/null
 
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
+### Install Vundle #############################################################
+
+git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
+
 ### Install Vim plugins using Vundle ###########################################
 
 vim +PluginInstall +qall
