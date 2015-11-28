@@ -33,7 +33,7 @@ function in_array() {
     return 1
 }
 
-### Main #######################################################################
+### Parse arguments ############################################################
 
 while getopts 'f' arg; do
     case "$arg" in
@@ -46,13 +46,14 @@ while getopts 'f' arg; do
     esac
 done
 
+### Symlink configs ############################################################
+
 if [ `uname` = 'Darwin' ]; then
     sublime_user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
 else
     sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
 fi
 
-# Symlink configs
 for source_file_name in `ls -A $config_path`; do
     if (in_array "$source_file_name" "${do_not_symlink[@]}"); then
         echo "Ignoring: $source_file_name"
@@ -61,14 +62,28 @@ for source_file_name in `ls -A $config_path`; do
     fi
 done
 
-# Symlink Sublime User configuration
+### Symlink Sublime User configuration #########################################
+
 ln -snvi"$ln_args" "$sublime_config_path" "$sublime_user_path"
 
-# Symlink ZSH theme
+### Symlink ZSH theme ##########################################################
+
 ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
     "$config_path/.oh-my-zsh/custom/themes/bullet-train.zsh-theme"
 
-# Vim bundles as git submodules
+### Ask to set ZSH as the default shell ########################################
+
+echo ""
+read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
+case "$set_zsh" in
+    [yY][eE][sS]|[yY])
+        echo "Setting the user's shell to ZSH. Sudo password might be asked."
+        chsh -s /bin/zsh
+        ;;
+esac
+
+### Install/update bundles as git submodules ###################################
+
 pushd "$config_path" > /dev/null
 git submodule update --depth 1 --init --recursive
 popd > /dev/null
