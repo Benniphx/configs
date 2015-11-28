@@ -66,6 +66,12 @@ done
 
 ln -snvi"$ln_args" "$sublime_config_path" "$sublime_user_path"
 
+### Install/update bundles as git submodules ###################################
+
+pushd "$config_path" > /dev/null
+git submodule update --depth 1 --init --recursive
+popd > /dev/null
+
 ### Symlink ZSH theme ##########################################################
 
 ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
@@ -83,9 +89,3 @@ if [ $(echo "$SHELL") != '/usr/bin/zsh' ]; then
             ;;
     esac
 fi
-
-### Install/update bundles as git submodules ###################################
-
-pushd "$config_path" > /dev/null
-git submodule update --depth 1 --init --recursive
-popd > /dev/null
