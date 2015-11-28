@@ -1,7 +1,33 @@
-"===============================================================================
+"-------------------------------------------------------------------------------
 
-" load bundles
-call pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'ervandew/supertab'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'slack/vim-l9'
+Plugin 'vim-scripts/dbext.vim'
+Plugin 'vim-scripts/Command-T'
+Plugin 'vim-scripts/tComment'
+Plugin 'duff/vim-bufonly'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'leshill/vim-json'
+Plugin 'skammer/vim-css-color'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'petdance/vim-perl'
+
+call vundle#end()
+filetype plugin indent on
 
 "-------------------------------------------------------------------------------
 
@@ -11,7 +37,6 @@ set ttymouse=xterm2             " terminal that supports mouse codes
 set clipboard=unnamed
 
 set hidden                      " hide buffers instead of closing them
-set nocompatible                " disable vi compatible mode
 set ttyfast                     " smoother changes
 set lazyredraw                  " don't draw unless necessary
 set title                       " try to show the filename in the terminal title
@@ -22,7 +47,6 @@ set novisualbell                " turn off visual bell
 set noerrorbells                " disable error bells
 
 syntax on                       " use syntax highlighting
-filetype plugin indent on       " enable plugins and indentation
 set fileformats=unix,dos,mac    " try to detect line endings of the file
 
 set showmode                    " display editing mode

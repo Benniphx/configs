@@ -7,6 +7,3 @@
 [submodule "extras/autojump"]
 	path = extras/autojump
 	url = git://github.com/joelthelion/autojump.git
-[submodule "dotfiles/.vim/bundle/Vundle.vim"]
-	path = dotfiles/.vim/bundle/Vundle.vim
-	url = git@github.com:VundleVim/Vundle.vim.git

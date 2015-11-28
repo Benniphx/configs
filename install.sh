@@ -76,6 +76,10 @@ popd >/dev/null
 
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
+### Install Vim plugins using Vundle ###########################################
+
+vim +PluginInstall +qall
+
 ### Symlink ZSH theme ##########################################################
 
 mkdir -p "$dotfiles_path/.oh-my-zsh/custom/themes"
