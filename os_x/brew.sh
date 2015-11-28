@@ -25,6 +25,7 @@ brew install gnutls
 brew install grep --with-default-names
 brew install gzip
 brew install screen
+brew install tmux
 brew install watch
 brew install wdiff --with-gettext
 brew install wget
@@ -74,6 +75,6 @@ brew cask install sublime-text
 brew cask install virtualbox
 brew cask install ukelele
 
-# Final clean up
+# Final clean ups
 brew cleanup
 brew cask cleanup
