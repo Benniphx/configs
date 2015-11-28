@@ -49,7 +49,7 @@ HIST_STAMPS='dd.mm.yyyy'
 
 # Which Oh My Zsh plugins to load.
 # Add wisely, too many plugins slow down startup.
-plugins=(gem git git-extras npm pip python vagrant)
+plugins=(autojump gem git git-extras npm pip python vagrant)
 
 ### Theme ######################################################################
 
