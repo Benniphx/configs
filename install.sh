@@ -77,15 +77,20 @@ popd > /dev/null
 ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
     "$config_path/.oh-my-zsh/custom/themes/bullet-train.zsh-theme"
 
-### Ask to set ZSH as the default shell ########################################
+### Set default shell ##########################################################
 
-if [ $(echo "$SHELL") != '/usr/bin/zsh' ]; then
-    echo ""
-    read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
-    case "$set_zsh" in
-        [yY][eE][sS]|[yY])
-            echo "Setting the user's shell to ZSH. Sudo password might be asked."
-            chsh -s /bin/zsh
-            ;;
-    esac
-fi
+case $(echo "$SHELL") in
+    */zsh)
+        echo "ZSH already set to the default shell."
+        ;;
+    *)
+        echo ""
+        read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
+        case "$set_zsh" in
+            [yY][eE][sS]|[yY])
+                echo "Setting the user's shell to ZSH. Sudo password might be asked."
+                chsh -s /bin/zsh
+                ;;
+        esac
+        ;;
+esac
