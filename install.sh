@@ -84,7 +84,13 @@ ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-
 
 ### Set default shell ##########################################################
 
-case $(echo "$SHELL") in
+if [ `uname` = 'Darwin' ]; then
+    default_shell=$(dscl . -read "$HOME" UserShell)
+else
+    default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
+fi
+
+case $(echo "$default_shell") in
     */zsh)
         echo "ZSH already set to the default shell."
         ;;
