@@ -13,7 +13,7 @@
 	],
 	"auto_complete_with_fields": true,
 	"auto_indent": true,
-	"auto_match_enabled": true,
+	"auto_match_enabled": false,
 	"binary_file_patterns":
 	[
 		"*.jpg",
