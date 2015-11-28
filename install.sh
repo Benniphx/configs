@@ -5,10 +5,10 @@ script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 ### Configuration ##############################################################
 
 sublime_version=3
-config_path="$script_path/common"
-sublime_config_path="$script_path/sublime"
+dotfiles_path="$script_path/dotfiles"
+sublime_dotfiles_path="$script_path/sublime"
 
-# Do not symlink these paths. Paths are relative to config_path.
+# Do not symlink these paths. Paths are relative to dotfiles_path.
 do_not_symlink=(
     ".irssi"
 )
@@ -44,21 +44,21 @@ else
     sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
 fi
 
-for source_file_name in `ls -A $config_path`; do
+for source_file_name in `ls -A $dotfiles_path`; do
     if (in_array "$source_file_name" "${do_not_symlink[@]}"); then
         echo "Ignoring: $source_file_name"
     else
-        ln -snvi"$ln_args" "$config_path/$source_file_name" "$HOME/$source_file_name"
+        ln -snvi"$ln_args" "$dotfiles_path/$source_file_name" "$HOME/$source_file_name"
     fi
 done
 
 ### Symlink Sublime User configuration #########################################
 
-ln -snvi"$ln_args" "$sublime_config_path" "$sublime_user_path"
+ln -snvi"$ln_args" "$sublime_dotfiles_path" "$sublime_user_path"
 
 ### Install vim bundles as git submodules ######################################
 
-pushd "$config_path" > /dev/null
+pushd "$dotfiles_path" > /dev/null
 git submodule update --init --depth 1 --recursive
 popd > /dev/null
 
@@ -74,9 +74,9 @@ popd >/dev/null
 
 ### Symlink ZSH theme ##########################################################
 
-mkdir -p "$config_path/.oh-my-zsh/custom/themes"
+mkdir -p "$dotfiles_path/.oh-my-zsh/custom/themes"
 ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
-    "$config_path/.oh-my-zsh/custom/themes/bullet-train.zsh-theme"
+    "$dotfiles_path/.oh-my-zsh/custom/themes/bullet-train.zsh-theme"
 
 ### Set default shell ##########################################################
 
