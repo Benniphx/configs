@@ -56,7 +56,7 @@ done
 
 ln -snvi"$ln_args" "$sublime_dotfiles_path" "$sublime_user_path"
 
-### Install vim bundles as git submodules ######################################
+### Install submodules #########################################################
 
 pushd "$dotfiles_path" > /dev/null
 git submodule update --init --depth 1 --recursive
@@ -79,9 +79,6 @@ git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 ### Install Vundle #############################################################
 
 git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
-
-### Install Vim plugins using Vundle ###########################################
-
 vim +PluginInstall +qall
 
 ### Symlink ZSH theme ##########################################################
