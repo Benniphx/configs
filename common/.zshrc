@@ -81,7 +81,7 @@ BULLETTRAIN_DIR_FG='white'
 BULLETTRAIN_DIR_EXTENDED='2'
 
 # git
-BULLETTRAIN_GIT_BG='cyan'
+BULLETTRAIN_GIT_BG='white'
 BULLETTRAIN_GIT_FG='black'
 
 ### node.js nvm
