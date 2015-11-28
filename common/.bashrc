@@ -19,14 +19,14 @@ shopt -s histappend
 # combine multiline commands into one in history
 shopt -s cmdhist
 
-# History file
+# history file
 HISTSIZE=10000
 HISTFILESIZE=10000
 HISTCONTROL=ignoreboth
 HISTIGNORE='ls:cd:bg:fg:history:pwd:exit:date:s'
-HISTTIMEFORMAT='%d.%m.%Y %T    '
+HISTTIMEFORMAT='%d.%m.%Y %H:%M  '
 
-# Save and reload the history after each command finishes
+# save and reload the history after each command finishes
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # search history with arrows

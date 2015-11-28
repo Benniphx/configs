@@ -28,6 +28,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
+# I am using thefuck for corrections so this is uncommented.
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
@@ -41,57 +42,54 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS='dd/mm/yyyy'
+HIST_STAMPS='dd.mm.yyyy'
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Which Oh My Zsh plugins to load.
+# Add wisely, too many plugins slow down startup.
 plugins=(gem git git-extras npm pip python vagrant)
 
 ### Theme ######################################################################
 
-# Name of the theme to load in ~/.oh-my-zsh/themes/ or $ZSH_CUSTOM/themes/
+# name of the theme to load in ~/.oh-my-zsh/themes/ or $ZSH_CUSTOM/themes/
 ZSH_THEME='bullet-train'
 
-# Prompt
+# prompt
 BULLETTRAIN_PROMPT_SEPARATE_LINE='true'
 
-# Status
+# status
 BULLETTRAIN_STATUS_EXIT_SHOW='true'
 
-# Time
+# time
 BULLETTRAIN_TIME_BG='black'
 BULLETTRAIN_TIME_FG='white'
 
-# Context
+# context
 BULLETTRAIN_CONTEXT_SHOW='true'
 BULLETTRAIN_CONTEXT_DEFAULT_USER='asyrjasalo'
 
-# Rbenv
+# rbenv
 BULLETTRAIN_RUBY_SHOW='true'
 BULLETTRAIN_RUBY_BG='magenta'
 BULLETTRAIN_RUBY_FG='black'
 
-# Dir
+# dir
 BULLETTRAIN_DIR_BG='blue'
 BULLETTRAIN_DIR_FG='white'
 BULLETTRAIN_DIR_EXTENDED='2'
 
-# Git
+# git
 BULLETTRAIN_GIT_BG='cyan'
 BULLETTRAIN_GIT_FG='black'
 
-### Node.js nvm
+### node.js nvm
 BULLETTRAIN_NVM_SHOW='true'
 BULLETTRAIN_NVM_BG='green'
 BULLETTRAIN_NVM_FG='black'
 
-### Pyenv
+### pyenv
 BULLETTRAIN_VIRTUALENV_SHOW='true'
 BULLETTRAIN_VIRTUALENV_BG='yellow'
 BULLETTRAIN_VIRTUALENV_FG='black'
