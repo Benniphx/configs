@@ -78,9 +78,9 @@ popd > /dev/null
 
 ### Symlink ZSH theme ##########################################################
 
-mkdir -p "$config_path/.oh-my-zsh/custom/theme"
+mkdir -p "$config_path/.oh-my-zsh/custom/themes"
 ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
-    "$config_path/.oh-my-zsh/custom/theme/bullet-train.zsh-theme"
+    "$config_path/.oh-my-zsh/custom/themes/bullet-train.zsh-theme"
 
 ### Set default shell ##########################################################
 
