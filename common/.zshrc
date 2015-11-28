@@ -1,4 +1,6 @@
-### Oh My Zsh
+### .zshrc
+
+### Oh My Zsh ##################################################################
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -39,7 +41,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS='dd/mm/yyyy'
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -54,41 +56,45 @@ plugins=(gem git git-extras npm pip python vagrant)
 ### Theme ######################################################################
 
 # Name of the theme to load in ~/.oh-my-zsh/themes/ or $ZSH_CUSTOM/themes/
-ZSH_THEME="bullet-train"
+ZSH_THEME='bullet-train'
 
 # Prompt
-BULLETTRAIN_PROMPT_SEPARATE_LINE="false"
+BULLETTRAIN_PROMPT_SEPARATE_LINE='true'
 
 # Status
-BULLETTRAIN_STATUS_EXIT_SHOW="true"
+BULLETTRAIN_STATUS_EXIT_SHOW='true'
 
 # Time
-BULLETTRAIN_TIME_BG="black"
-BULLETTRAIN_TIME_FG="white"
+BULLETTRAIN_TIME_BG='black'
+BULLETTRAIN_TIME_FG='white'
 
 # Context
-BULLETTRAIN_CONTEXT_SHOW="true"
-BULLETTRAIN_CONTEXT_DEFAULT_USER="asyrjasalo"
+BULLETTRAIN_CONTEXT_SHOW='true'
+BULLETTRAIN_CONTEXT_DEFAULT_USER='asyrjasalo'
 
 # Rbenv
-BULLETTRAIN_RUBY_BG="magenta"
-BULLETTRAIN_RUBY_FG="black"
+BULLETTRAIN_RUBY_SHOW='true'
+BULLETTRAIN_RUBY_BG='magenta'
+BULLETTRAIN_RUBY_FG='black'
 
 # Dir
-BULLETTRAIN_DIR_BG="blue"
-BULLETTRAIN_DIR_FG="white"
-BULLETTRAIN_DIR_EXTENDED="2"
+BULLETTRAIN_DIR_BG='blue'
+BULLETTRAIN_DIR_FG='white'
+BULLETTRAIN_DIR_EXTENDED='2'
 
 # Git
-BULLETTRAIN_GIT_BG="cyan"
-BULLETTRAIN_GIT_FG="black"
+BULLETTRAIN_GIT_BG='cyan'
+BULLETTRAIN_GIT_FG='black'
 
 ### Node.js nvm
-BULLETTRAIN_NVM_SHOW="true"
+BULLETTRAIN_NVM_SHOW='true'
+BULLETTRAIN_NVM_BG='green'
+BULLETTRAIN_NVM_FG='black'
 
 ### Pyenv
-BULLETTRAIN_VIRTUALENV_BG="yellow"
-BULLETTRAIN_VIRTUALENV_FG="black"
+BULLETTRAIN_VIRTUALENV_SHOW='true'
+BULLETTRAIN_VIRTUALENV_BG='yellow'
+BULLETTRAIN_VIRTUALENV_FG='black'
 
 ### Shortcut to reload configs #################################################
 

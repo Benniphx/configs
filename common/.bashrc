@@ -3,22 +3,33 @@
 # quit if this shell is not interactive
 [ -z "$PS1" ] && return
 
-### Shell behaviour ############################################################
+### Bash builtins ##############################################################
 
 # have Bash to check if the window size has changed
 shopt -s checkwinsize
 
-# append to the history file instead of overwriting it
-shopt -s histappend
-
 # autocorrect typos in path names when using `cd`
 shopt -s cdspell
+
+### History ####################################################################
+
+# append to the history file instead of overwriting it
+shopt -s histappend
 
 # combine multiline commands into one in history
 shopt -s cmdhist
 
-### Search history with arrows #################################################
+# History file
+HISTSIZE=10000
+HISTFILESIZE=10000
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:cd:bg:fg:history:pwd:exit:date:s'
+HISTTIMEFORMAT='%d.%m.%Y %T    '
 
+# Save and reload the history after each command finishes
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# search history with arrows
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
@@ -33,9 +44,9 @@ fi
 [ -f $bash_completion_path ] && . $bash_completion_path
 
 # add tab completion for hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" \
+[ -e "$HOME/.ssh/config" ] && complete -o 'default' -o 'nospace' \
   -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" \
-    | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
+    | cut -d ' ' -f2 | tr ' ' '\n')" scp sftp ssh
 
 ### Prompt #####################################################################
 
@@ -99,6 +110,14 @@ get_branch_information() {
 }
 
 export PS1="$txtblu\u@\h$txtrst:$txtcyn\w$txtgrn\$(get_branch_information)$txtrst\$ "
+
+### Moving around ##############################################################
+
+alias cd..='cd ..'  # a common typo
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 ### Shortcut to reload configs #################################################
 

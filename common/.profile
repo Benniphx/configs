@@ -2,14 +2,14 @@
 
 ### Exports ####################################################################
 
-export TERM="xterm-256color"
-
 export LANG='en_US'
 export LC_ALL='en_US.UTF-8'
 
 export EDITOR='vim'
 export VISUAL="$EDITOR"
 export SVN_EDITOR="$EDITOR"
+
+export TERM='xterm-256color'
 
 # no clearing of the screen after quitting man
 export PAGER='less'
@@ -19,20 +19,11 @@ export MANPAGER='less -X'
 
 umask 0077  # default file permissions: u=rwx,g=,o=
 
-# allow exiting with ^D
+# allow exiting shell with ^D
 unset ignoreeof
 
 # disable ^S/^Q flow control
 stty -ixon
-
-### History ####################################################################
-
-HISTSIZE=100
-HISTFILESIZE=10000
-HISTCONTROL=ignoredups:ignorespace
-
-# make some commands not show up in history
-HISTIGNORE='ls:cd:cd -:pwd:exit:date'
 
 ### OS X: Homebrew #############################################################
 
@@ -49,6 +40,23 @@ fi
 
 if which dircolors > /dev/null; then
   eval $(dircolors -b $HOME/.dir_colors)
+fi
+
+### Thefuck ####################################################################
+
+which thefuck > /dev/null && eval $(thefuck --alias)
+
+### Autojump ###################################################################
+
+autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
+[ -s "$autojump_path" ] && . "$autojump_path"
+
+### Nvm ########################################################################
+
+nvm_dir="$HOME/.nvm"
+if [ -s "$nvm_dir/nvm.sh" ]; then
+  export NVM_DIR="$nvm_dir"
+  . "$nvm_dir/nvm.sh"
 fi
 
 ### Pyenv ######################################################################
@@ -72,7 +80,7 @@ fi
 
 ### Jython #####################################################################
 
-jython_path=$(find $HOME -maxdepth 1 -name 'jython*' -type d | head -1)
+jython_path=$(find "$HOME" -maxdepth 1 -name 'jython*' -type d | head -1)
 if [ -d "$jython_path" ]; then
   export JYTHON_HOME="$jython_path"
   export PATH="$JYTHON_HOME/bin:$PATH"
@@ -84,15 +92,6 @@ jars_path="$HOME/jars"
 if [ -d "$jars_path" ]; then
   export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
 fi
-
-### Thefuck ####################################################################
-
-which thefuck > /dev/null && eval $(thefuck --alias)
-
-### Autojump ###################################################################
-
-autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
-[ -s "$autojump_path" ] && . "$autojump_path"
 
 ### Prefer home prefixed binaries ##############################################
 
@@ -125,13 +124,6 @@ else
     # open anything, similar to 'open' in OS X
     alias open='xdg-open'
 fi
-
-### Moving around ##############################################################
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 
 ### Copy current path to clipboard #############################################
 
@@ -170,6 +162,7 @@ alias lu='ls -ltur && echo Sorted by access time, most recent last'
 
 ### System #####################################################################
 
+alias r='reset'
 alias e='env | sort'
 alias g='pgrep -l'
 alias h='history | grep'
@@ -187,16 +180,6 @@ alias gitar='git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-i
 
 # set open source author info for this repository
 alias gos='git config user.name "Anssi Syrjäsalo" && git config user.email anssi.syrjasalo@gmail.com'
-
-### Ruby on Rails ##############################################################
-
-alias be='bundle exec'
-alias ber='bundle exec rake'
-alias bes='bundle exec rake spec'
-alias bec='bundle exec cucumber'
-alias bers='bundle exec rails server'
-alias berc='bundle exec rails console'
-alias rmgems='for i in `gem list --no-versions`; do gem uninstall -aIx $i; done'
 
 ### Misc #######################################################################
 
