@@ -73,14 +73,16 @@ ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-
 
 ### Ask to set ZSH as the default shell ########################################
 
-echo ""
-read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
-case "$set_zsh" in
-    [yY][eE][sS]|[yY])
-        echo "Setting the user's shell to ZSH. Sudo password might be asked."
-        chsh -s /bin/zsh
-        ;;
-esac
+if [ $(echo "$SHELL") != '/usr/bin/zsh' ]; then
+    echo ""
+    read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
+    case "$set_zsh" in
+        [yY][eE][sS]|[yY])
+            echo "Setting the user's shell to ZSH. Sudo password might be asked."
+            chsh -s /bin/zsh
+            ;;
+    esac
+fi
 
 ### Install/update bundles as git submodules ###################################
 
