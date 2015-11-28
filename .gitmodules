@@ -55,3 +55,6 @@
 [submodule "zsh-extras/bullet-train-oh-my-zsh-theme"]
 	path = zsh-extras/bullet-train-oh-my-zsh-theme
 	url = git@github.com:caiogondim/bullet-train-oh-my-zsh-theme.git
+[submodule "extras/autojump"]
+	path = extras/autojump
+	url = git://github.com/joelthelion/autojump.git

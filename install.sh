@@ -74,7 +74,13 @@ popd > /dev/null
 
 ### Install fonts ##############################################################
 
-. "$script_path/fonts/install.sh"
+"$script_path/fonts/install.sh"
+
+### Install autojump ###########################################################
+
+pushd "$script_path/extras/autojump" >/dev/null
+    ./install.py >/dev/null
+popd >/dev/null
 
 ### Symlink ZSH theme ##########################################################
 

@@ -42,7 +42,6 @@ brew install nano
 # Commonly used
 brew install ack
 brew install tree
-brew install autojump
 brew install thefuck
 brew install bash-completion
 brew install htop-osx
