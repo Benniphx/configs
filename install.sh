@@ -79,7 +79,7 @@ popd > /dev/null
 ### Install autojump ###########################################################
 
 pushd "$script_path/extras/autojump" >/dev/null
-    ./install.py >/dev/null
+    ./install.py 1>/dev/null
 popd >/dev/null
 
 ### Symlink ZSH theme ##########################################################
