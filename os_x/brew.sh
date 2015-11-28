@@ -30,7 +30,7 @@ brew install watch
 brew install wdiff --with-gettext
 brew install wget
 
-# Already exist on OS X, but homebrew/dupes usually has a newer version
+# Likely already installed but homebrew/dupes usually has a newer version
 brew install bash
 brew install emacs
 brew install gdb  # gdb requires some further actions, see `brew info gdb`.
@@ -43,11 +43,13 @@ brew install nano
 brew install ack
 brew install tree
 brew install autojump
+brew install thefuck
 brew install bash-completion
 brew install htop-osx
 brew install colordiff
 brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
+brew install nvm
 brew install file-formula
 brew install git
 brew install less
@@ -59,22 +61,29 @@ brew install vim --override-system-vi
 brew install macvim --override-system-vim --custom-system-icons
 brew install zsh
 
-# Binary distributed
+# Set up Homebrew Cask
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
-brew cask install sublime-text3
+
+# Terminal
 brew cask install iterm2
+
+# Editors
+brew cask install sublime-text3
+
+# Browsers
 brew cask install google-chrome
-brew cask install google-drive
-brew cask install evernote
 brew cask install firefox
-brew cask install bettertouchtool
-brew cask install libreoffice
+
+# Misc
 brew cask install spotify
-brew cask install sublime-text
-brew cask install virtualbox
+brew cask install google-drive
+brew cask install libreoffice
+
+# Keyboard tools
+brew cask install bettertouchtool
 brew cask install ukelele
 
-# Final clean ups
+# Do final clean ups
 brew cleanup
 brew cask cleanup
