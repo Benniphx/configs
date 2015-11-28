@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-# This script symlinks the configs to $HOME. It also initializes the vim bundles.
-# Run with -f to override the exising files/symlinks at $HOME without confirmation.
-
-# On Windows (Vista and newer), Sublime Text configs can be kind of symlinked by
-# opening a PowerShell as an administrator and running the following commands:
-#
-# cd "$env:appdata\Sublime Text 3\Packages\"
-# rmdir -recurse User
-# cmd /c mklink /D User $env:userprofile\configs\sublime
-
 script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 ### Configuration ##############################################################
