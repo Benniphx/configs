@@ -34,11 +34,11 @@ sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
 
 # Xmonad related
-sudo apt-get install xmonad xmobar dmenu gmrun trayer yeganesh scrot \
+sudo apt-get install -y xmonad xmobar dmenu gmrun trayer yeganesh scrot \
     suckless-tools
 
 # Rbenv and ruby-build
-sudo apt-get install rbenv ruby-build
+sudo apt-get install -y rbenv ruby-build
 
 # Restricted extras (Xubuntu only)
 sudo apt-get install -y xubuntu-restricted-extras
