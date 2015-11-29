@@ -30,11 +30,14 @@ call vundle#end()
 
 "-------------------------------------------------------------------------------
 
+filetype plugin indent on
+
 set mouse=a                     " enable mouse in all modes
 set ttymouse=xterm2             " terminal that supports mouse codes
 
-set clipboard=unnamed
-filetype plugin indent on
+set clipboard=unnamedplus       " Copy to system clipboard
+set paste                       " Paste from a windows or from vim
+set go+=a                       " Visual selection automatically copied to the clipboard
 
 set hidden                      " hide buffers instead of closing them
 set ttyfast                     " smoother changes
@@ -66,6 +69,7 @@ set shiftwidth=4                " number of spaces to insert on indent
 set smarttab                    " uses shiftwidth instead of tabstop at s.o.l
 set expandtab                   " expand tabs to spaces
 set backspace=indent,eol,start  " enable backspace for these actions
+set list listchars=tab:»·,trail:·
 
 set number                      " display line numbers
 set foldlevel=100               " fold nothing by default
@@ -110,14 +114,12 @@ endif
 
 " toggling paste indenting mode
 noremap <silent> <F2> :set invpaste<CR>:set paste?<CR>
-set paste
 
 " toggling wrapping
 noremap <silent> <F3> :set invwrap<CR>:set wrap?<CR>
 
 " toggling displaying of invisible characters
 noremap <silent> <F4> :set invlist<CR>:set list?<CR>
-set list listchars=tab:»·,trail:·
 
 " strip all trailing whitespaces
 noremap <silent> <F5> :%s/\s\+$//<CR>:let @/=''<CR>
