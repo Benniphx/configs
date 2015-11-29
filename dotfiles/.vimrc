@@ -108,16 +108,6 @@ endif
 
 "-------------------------------------------------------------------------------
 
-" ctrl+a is select all
-noremap <C-A>       gggH<C-O>G
-inoremap <C-A>      <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-A>      <C-C>gggH<C-O>G
-onoremap <C-A>      <C-C>gggH<C-O>G
-snoremap <C-A>      <C-C>gggH<C-O>G
-xnoremap <C-A>      <C-C>ggVG
-
-"-------------------------------------------------------------------------------
-
 " toggling paste indenting mode
 noremap <silent> <F2> :set invpaste<CR>:set paste?<CR>
 set paste
