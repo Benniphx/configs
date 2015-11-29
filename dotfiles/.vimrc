@@ -30,7 +30,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+
 "Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'elzr/vim-json'
@@ -165,15 +167,12 @@ highlight Pmenu ctermbg=238 gui=bold
 
 "-------------------------------------------------------------------------------
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
 
 " NERDtree
 let g:NERDTreeWinPos='right'
@@ -185,16 +184,11 @@ let g:NERDTreeDirArrows=1
 let g:NERDTreeMouseMode=3
 nnoremap <C-e> :NERDTreeToggle<CR>
 
-" Supertab
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-let g:SuperTabContextDiscoverDiscovery =
-    \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
-let g:SuperTabNoCompleteAfter=[',', '\s']
-let g:SuperTabMappingForward='<C-b>'
-let g:SuperTabMappingBackward='<C-S-b>'
-
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
