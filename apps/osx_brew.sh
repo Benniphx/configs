@@ -70,23 +70,23 @@ brew install nvm
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-# Terminal
+# Terminals
 brew cask install iterm2
 
 # Editors
 brew cask install sublime-text3
+brew cask install libreoffice
 
 # Browsers
 brew cask install google-chrome
 brew cask install firefox
 
 # Misc
-brew cask install spotify
 brew cask install google-drive
-brew cask install libreoffice
+brew cask install spotify
 
 # Keyboard tools
-brew cask install bettertouchtool
+brew cask install amethyst
 brew cask install ukelele
 
 # Do final clean ups
