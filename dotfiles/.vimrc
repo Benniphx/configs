@@ -35,9 +35,9 @@ filetype plugin indent on
 set mouse=a                     " enable mouse in all modes
 set ttymouse=xterm2             " terminal that supports mouse codes
 
-set clipboard=unnamedplus       " Copy to system clipboard
-set paste                       " Paste from a windows or from vim
-set go+=a                       " Visual selection automatically copied to the clipboard
+set clipboard=unnamedplus       " copy to system clipboard
+set paste                       " paste from a windows or from vim
+set go+=a                       " visual selection automatically copied to the clipboard
 
 set hidden                      " hide buffers instead of closing them
 set ttyfast                     " smoother changes
