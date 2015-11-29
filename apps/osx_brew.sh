@@ -52,6 +52,7 @@ brew install htop-osx
 brew install colordiff
 brew install file-formula
 brew install git
+brew install tig
 brew install less
 brew install openssh
 brew install rsync
