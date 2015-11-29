@@ -90,6 +90,7 @@ set cindent
 
 set nobackup                    " don't keep backup after close
 set writebackup                 " do keep a backup while working
+
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set tags=tags,./tags,tmp/tags,./tmp/tags
