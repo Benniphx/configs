@@ -23,7 +23,7 @@ umask 0077  # default file permissions: u=rwx,g=,o=
 unset ignoreeof
 
 # disable ^S/^Q flow control
-stty -ixon
+#stty -ixon
 
 ### OS X: Homebrew #############################################################
 
