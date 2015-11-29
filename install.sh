@@ -42,13 +42,7 @@ while getopts 'f' arg; do
     esac
 done
 
-### Symlink configs ############################################################
-
-if [ `uname` = 'Darwin' ]; then
-    sublime_user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
-else
-    sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
-fi
+### Symlink dotfiles ###########################################################
 
 for source_file_name in `ls -A $dotfiles_path`; do
     if (in_array "$source_file_name" "${do_not_symlink[@]}"); then
@@ -58,7 +52,20 @@ for source_file_name in `ls -A $dotfiles_path`; do
     fi
 done
 
+### Symlink htoprc in .config as well on Linux distributions ###################
+
+if [ `uname` != 'Darwin' ]; then
+    mkdir -p "$HOME/.config/htop"
+    ln -snvi"$ln_args" "$dotfiles_path/.htoprc" "$HOME/.config/htop/htoprc"
+fi
+
 ### Symlink Sublime User configuration #########################################
+
+if [ `uname` = 'Darwin' ]; then
+    sublime_user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
+else
+    sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
+fi
 
 ln -snvi"$ln_args" "$sublime_dotfiles_path" "$sublime_user_path"
 
