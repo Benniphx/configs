@@ -29,10 +29,6 @@ HISTTIMEFORMAT='%d.%m.%Y %H:%M  '
 # save and reload the history after each command finishes
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-# search history with arrows
-bind '"\e[A"':history-search-backward
-bind '"\e[B"':history-search-forward
-
 ### Additional bash completions ################################################
 
 if [ `uname` = 'Darwin' ]; then
