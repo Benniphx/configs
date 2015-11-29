@@ -50,9 +50,6 @@ brew install thefuck
 brew install bash-completion
 brew install htop-osx
 brew install colordiff
-brew install pyenv pyenv-virtualenv
-brew install rbenv ruby-build
-brew install nvm
 brew install file-formula
 brew install git
 brew install less
@@ -63,6 +60,11 @@ brew install p7zip
 brew install vim --override-system-vi
 brew install macvim --override-system-vim --custom-system-icons
 brew install zsh
+
+# Version managers
+brew install pyenv pyenv-virtualenv
+brew install rbenv ruby-build
+brew install nvm
 
 # Set up Homebrew Cask
 brew install caskroom/cask/brew-cask
