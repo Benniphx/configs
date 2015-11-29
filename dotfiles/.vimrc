@@ -25,6 +25,7 @@ Plugin 'skammer/vim-css-color'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'petdance/vim-perl'
+Plugin 'bling/vim-airline'
 call vundle#end()
 
 "-------------------------------------------------------------------------------
@@ -203,3 +204,7 @@ let g:SuperTabContextDiscoverDiscovery =
 let g:SuperTabNoCompleteAfter=[',', '\s']
 let g:SuperTabMappingForward='<C-b>'
 let g:SuperTabMappingBackward='<C-S-b>'
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
