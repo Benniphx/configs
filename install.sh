@@ -23,6 +23,12 @@ function in_array() {
     return 1
 }
 
+function git_clone_or_pull {
+    local url="$1"
+    local target="$2"
+    git -C "$target" pull || git clone "$url" "$target"
+}
+
 ### Parse arguments ############################################################
 
 while getopts 'f' arg; do
@@ -56,6 +62,10 @@ done
 
 ln -snvi"$ln_args" "$sublime_dotfiles_path" "$sublime_user_path"
 
+### Install Oh-My-Zsh ##########################################################
+
+git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
+
 ### Install submodules #########################################################
 
 pushd "$dotfiles_path" > /dev/null
@@ -68,24 +78,25 @@ popd > /dev/null
 
 ### Install autojump ###########################################################
 
-pushd "$script_path/extras/autojump" >/dev/null
-    ./install.py 1>/dev/null
+git_clone_or_pull git://github.com/joelthelion/autojump.git /tmp/autojump
+pushd /tmp/autojump >/dev/null
+./install.py 1>/dev/null
 popd >/dev/null
 
 ### Install Tmux plugin manager ################################################
 
-git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+git_clone_or_pull https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
 ### Install Vundle #############################################################
 
-git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
+git_clone_or_pull https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
 echo -ne '\n' | vim +PluginInstall +qall
 
 ### Symlink ZSH theme ##########################################################
 
-mkdir -p "$dotfiles_path/.oh-my-zsh/custom/themes"
-ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
-    "$dotfiles_path/.oh-my-zsh/custom/themes/bullet-train.zsh-theme"
+#mkdir -p "$dotfiles_path/.oh-my-zsh/custom/themes"
+#ln -snvi"$ln_args" "$script_path/zsh-extras/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme" \
+#    "$dotfiles_path/.oh-my-zsh/custom/themes/bullet-train.zsh-theme"
 
 ### Set default shell ##########################################################
 
