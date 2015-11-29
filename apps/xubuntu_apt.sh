@@ -33,5 +33,8 @@ sudo apt-get install -y oracle-java8-installer
 # XFCE goodies
 sudo apt-get install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
 
+# Rbenv and ruby-build
+sudo apt-get install rbenv ruby-build
+
 # Restricted extras (Xubuntu only)
 sudo apt-get install -y xubuntu-restricted-extras
