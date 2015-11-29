@@ -52,7 +52,7 @@ for source_file_name in `ls -A $dotfiles_path`; do
     fi
 done
 
-### Symlink htoprc in .config as well on Linux distributions ###################
+### Symlink htoprc for Linux distributions #####################################
 
 if [ `uname` != 'Darwin' ]; then
     mkdir -p "$HOME/.config/htop"
