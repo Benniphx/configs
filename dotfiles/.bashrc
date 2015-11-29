@@ -37,7 +37,7 @@ if [ `uname` = 'Darwin' ]; then
 else
     bash_completion_path='/etc/bash_completion'
 fi
-[ -f $bash_completion_path ] && . $bash_completion_path
+[ -f "$bash_completion_path" ] && . "$bash_completion_path"
 
 # add tab completion for hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o 'default' -o 'nospace' \
