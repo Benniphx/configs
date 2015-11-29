@@ -33,8 +33,9 @@ sudo apt-get install -y oracle-java8-installer
 # XFCE goodies
 sudo apt-get install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
 
-# Xmonad
-sudo apt-get install xmonad suckless-tools gmrun
+# Xmonad related
+sudo apt-get install xmonad xmobar dmenu gmrun trayer yeganesh scrot \
+    suckless-tools
 
 # Rbenv and ruby-build
 sudo apt-get install rbenv ruby-build
