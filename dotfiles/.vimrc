@@ -7,25 +7,42 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'ervandew/supertab'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'slack/vim-l9'
-Plugin 'vim-scripts/dbext.vim'
-Plugin 'vim-scripts/Command-T'
-Plugin 'vim-scripts/tComment'
-Plugin 'duff/vim-bufonly'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'leshill/vim-json'
-Plugin 'skammer/vim-css-color'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'petdance/vim-perl'
+
 Plugin 'bling/vim-airline'
+Plugin 'chriskempson/vim-tomorrow-theme'
+
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ap/vim-css-color'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ggreer/the_silver_searcher'
+Plugin 'godlygeek/tabular'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'majutsushi/tagbar'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+"Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'elzr/vim-json'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'moll/vim-node'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+
 call vundle#end()
 
 "-------------------------------------------------------------------------------
@@ -102,6 +119,7 @@ set tags=tags,./tags,tmp/tags,./tmp/tags
 "-------------------------------------------------------------------------------
 
 set t_Co=256                      " number of colors to use
+set background=dark
 colorscheme Tomorrow-Night-Bright " colorscheme to use
 
 " make the statusbar more informative
@@ -147,22 +165,15 @@ highlight Pmenu ctermbg=238 gui=bold
 
 "-------------------------------------------------------------------------------
 
-" Command-T
-let g:CommandTMatchWindowAtTop=1
-let g:CommandTMaxHeight=30
-nmap <C-d> :CommandT<CR>
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" Minibufexpl.vim
-let g:miniBufExplorerMoreThanOne=2
-let g:miniBufExplMaxSize=3
-let g:miniBufExplSplitBelow=0
-let g:miniBufExplMapWindowNavVim=1
-let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplUseSingleClick=1
-let g:miniBufExplModSelTarget=1
-let g:miniBufExplorerDebugLevel=0
-let g:miniBufExplorerDebugMode=3
-nnoremap <C-b> :TMiniBufExplorer<cr>
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " NERDtree
 let g:NERDTreeWinPos='right'
@@ -173,20 +184,6 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=1
 let g:NERDTreeMouseMode=3
 nnoremap <C-e> :NERDTreeToggle<CR>
-
-" Taglist
-let g:Tlist_Auto_Open=0
-let g:Tlist_Use_Left_Window=1
-let g:Tlist_WinWidth=24
-let g:Tlist_Sort_Type = "name"
-let g:Tlist_Use_SingleClick=1
-let g:Tlist_Compact_Format=1
-let g:Tlist_Exit_OnlyWindow=1
-let g:Tlist_File_Fold_Auto_Close=1
-let g:Tlist_Enable_Fold_Column=0
-let g:Tlist_Show_Menu=1
-let g:Tlist_Show_One_File=1
-nnoremap <C-f> :TlistToggle<CR>
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
