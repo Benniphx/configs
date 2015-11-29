@@ -32,7 +32,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'elzr/vim-json'
@@ -170,9 +169,6 @@ highlight Pmenu ctermbg=238 gui=bold
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
 
 " NERDtree
 let g:NERDTreeWinPos='right'
