@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 fonts_dir=$( cd "$( dirname "$0" )" && pwd )
 
