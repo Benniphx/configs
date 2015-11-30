@@ -48,7 +48,8 @@ for source_file_name in `ls -A $dotfiles_path`; do
     if (in_array "$source_file_name" "${do_not_symlink[@]}"); then
         echo "Ignoring: $source_file_name"
     else
-        ln -snvi"$ln_args" "$dotfiles_path/$source_file_name" "$HOME/$source_file_name"
+        ln -snvi"$ln_args" "$dotfiles_path/$source_file_name" \
+            "$HOME/$source_file_name"
     fi
 done
 
@@ -77,7 +78,8 @@ popd > /dev/null
 
 ### Install Oh-My-Zsh ##########################################################
 
-git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
+git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git \
+    "$HOME/.oh-my-zsh"
 
 git_clone_or_pull https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git \
     "$HOME/.oh-my-zsh/custom/themes"
@@ -95,11 +97,13 @@ popd >/dev/null
 
 ### Install Tmux plugin manager ################################################
 
-git_clone_or_pull https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+git_clone_or_pull https://github.com/tmux-plugins/tpm \
+    "$HOME/.tmux/plugins/tpm"
 
 ### Install Vundle #############################################################
 
-git_clone_or_pull https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
+git_clone_or_pull https://github.com/VundleVim/Vundle.vim.git \
+    "$HOME/.vim/bundle/Vundle.vim"
 echo -ne '\n' | vim +PluginInstall +qall 2>/dev/null
 
 ### Set default shell ##########################################################
@@ -119,7 +123,7 @@ case $(echo "$default_shell") in
         read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
         case "$set_zsh" in
             [yY][eE][sS]|[yY])
-                echo "Setting the user's shell to ZSH. Sudo password might be asked."
+                echo "Setting user shell to ZSH. Sudo password might be asked."
                 chsh -s /bin/zsh
                 ;;
         esac
