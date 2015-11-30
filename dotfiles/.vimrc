@@ -31,6 +31,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 
+" cd ~/.vim/bundle/YouCompleteMe && /usr/bin/python install.py --clang-completer
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'elixir-lang/vim-elixir'
