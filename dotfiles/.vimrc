@@ -139,9 +139,6 @@ vnoremap <silent> <S-TAB> <gv
 nnoremap <C-n> :bnext<cr>
 nnoremap <C-p> :bprev<cr>
 
-" change autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
-
 "-------------------------------------------------------------------------------
 
 " Airline
