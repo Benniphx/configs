@@ -15,14 +15,14 @@ sudo apt-get dist-upgrade
 
 # utilities
 sudo apt-get install -y build-essential htop xsel git vim vim-gtk curl wget \
-    colordiff screen tmux synaptic openssl
+    colordiff screen tmux synaptic openssl cmake
 
 # browsers
 sudo apt-get install -y chromium-browser firefox
 
 # usual compile-time requirements
 sudo apt-get install -y libssl-dev libreadline-dev libsqlite3-dev \
-    libbz2-dev zlib1g-dev
+    libbz2-dev zlib1g-dev python-dev
 
 # Microsoft true type core fonts
 sudo apt-get install -y ttf-mscorefonts-installer

@@ -31,7 +31,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'elzr/vim-json'
@@ -54,7 +54,10 @@ set mouse=a                     " enable mouse in all modes
 set ttymouse=xterm2             " terminal that supports mouse codes
 
 set clipboard=unnamedplus       " copy to system clipboard
-set paste                       " paste from a windows or from vim
+
+"set paste
+set pastetoggle=<F2>
+
 set go+=a                       " visual selection automatically copied to the clipboard
 
 set hidden                      " hide buffers instead of closing them
