@@ -135,10 +135,6 @@ endif
 vnoremap <silent> <TAB> >gv
 vnoremap <silent> <S-TAB> <gv
 
-" switching buffers
-nnoremap <C-n> :bnext<cr>
-nnoremap <C-p> :bprev<cr>
-
 "-------------------------------------------------------------------------------
 
 " Airline
