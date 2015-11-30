@@ -131,22 +131,6 @@ endif
 
 "-------------------------------------------------------------------------------
 
-" toggling paste indenting mode
-noremap <silent> <F2> :set invpaste<CR>:set paste?<CR>
-
-" toggling wrapping
-noremap <silent> <F3> :set invwrap<CR>:set wrap?<CR>
-
-" convert tabs to spaces
-:command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
-noremap <silent> <F6> :Tab2Space<CR>
-
-" convert spaces to tabs
-:command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
-noremap <silent> <F7> :Space2Tab<CR>
-
-"-------------------------------------------------------------------------------
-
 " enable tab indent and shift+tab unindent also in visual mode
 vnoremap <silent> <TAB> >gv
 vnoremap <silent> <S-TAB> <gv
