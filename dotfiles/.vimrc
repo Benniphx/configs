@@ -137,21 +137,19 @@ vnoremap <silent> <S-TAB> <gv
 
 "-------------------------------------------------------------------------------
 
-" Airline
+" vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" NERDtree
-let g:NERDTreeWinPos='right'
-let g:NERDTreeWinSize=30
-let g:NERDChristmasTree=1
-let g:NERDTreeShowLineNumbers=0
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeDirArrows=1
-let g:NERDTreeMouseMode=3
-nnoremap <C-e> :NERDTreeToggle<CR>
+" vim-gitgutter
+let g:gitgutter_avoid_cmd_prompt_on_windows = 0
 
-" Syntastic
+" nerdtree and vim-nerdtree-tabs
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeMouseMode=3
+nnoremap <C-e> :NERDTreeTabsToggle<CR>
+
+" syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -159,3 +157,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" vim-node
+" open new file in a vertical split instead of horizontal
+autocmd User Node
+  \ if &filetype == "javascript" |
+  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+  \ endif
+
+" ansible-vim
+let g:ansible_name_highlight = 'd'
