@@ -137,12 +137,6 @@ noremap <silent> <F2> :set invpaste<CR>:set paste?<CR>
 " toggling wrapping
 noremap <silent> <F3> :set invwrap<CR>:set wrap?<CR>
 
-" toggling displaying of invisible characters
-noremap <silent> <F4> :set invlist<CR>:set list?<CR>
-
-" strip all trailing whitespaces
-noremap <silent> <F5> :%s/\s\+$//<CR>:let @/=''<CR>
-
 " convert tabs to spaces
 :command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
 noremap <silent> <F6> :Tab2Space<CR>
