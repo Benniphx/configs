@@ -9,8 +9,8 @@ Run `install.sh` with `-f` to override the existing paths without prompting.
 
 ## Sublime Text and Windows
 
-On Windows (Vista and newer) Sublime Text configs can be kind of symlinked by
-opening a PowerShell as an administrator and running the following commands:
+On Windows Vista and later, Sublime Text configs can be kind of symlinked in
+an administrator PowerShell:
 
 ```
 cd "$env:appdata\Sublime Text 3\Packages\"
