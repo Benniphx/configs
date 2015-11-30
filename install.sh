@@ -116,14 +116,14 @@ fi
 
 case $(echo "$default_shell") in
     */zsh)
-        echo "ZSH already set to the default shell."
+        echo "ZSH already set to the user's default shell."
         ;;
     *)
         echo ""
         read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
         case "$set_zsh" in
             [yY][eE][sS]|[yY])
-                echo "Setting user shell to ZSH. Sudo password might be asked."
+                echo "Sudo password might be asked."
                 chsh -s /bin/zsh
                 ;;
         esac
