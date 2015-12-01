@@ -59,8 +59,7 @@ brew install openssh
 brew install rsync
 brew install unzip
 brew install p7zip
-brew install vim --override-system-vi
-brew install macvim --override-system-vim --custom-system-icons
+brew install macvim --with-override-system-vim --custom-system-icons
 brew install zsh
 
 # Version managers

@@ -98,7 +98,6 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 ### Aliases ####################################################################
 
 if [ `uname` = 'Darwin' ]; then
-    # this requires running: brew install macvim --override-system-vim
     alias vim='mvim -v'
 
     # removes annoying .DS_Store files from the given path
