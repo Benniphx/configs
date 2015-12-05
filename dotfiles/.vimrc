@@ -141,6 +141,14 @@ vnoremap <silent> <S-TAB> <gv
 
 "-------------------------------------------------------------------------------
 
+" fast buffer and tab switching
+map <C-j> :bprev<CR>
+map <C-k> :bnext<CR>
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+
+"-------------------------------------------------------------------------------
+
 " vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
