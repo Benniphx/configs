@@ -50,6 +50,7 @@ fi
 if [ -d "$HOME/.pyenv" ]; then
   pyenv_path="$HOME/.pyenv/bin"
   export PATH="$pyenv_path:$PATH"
+  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
   eval "$(pyenv init -)"
   if which pyenv-virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)"
