@@ -95,6 +95,11 @@ pushd /tmp/autojump >/dev/null
 ./install.py 1>/dev/null
 popd >/dev/null
 
+### Install SCM Breeze #########################################################
+
+git_clone_or_pull git://github.com/ndbroadbent/scm_breeze.git \
+    "$HOME/.scm_breeze"
+
 ### Install Tmux plugin manager ################################################
 
 git_clone_or_pull https://github.com/tmux-plugins/tpm \

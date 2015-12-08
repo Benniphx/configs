@@ -85,6 +85,11 @@ fi
 autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
 [ -s "$autojump_path" ] && . "$autojump_path"
 
+### SCM Breeze #################################################################
+
+scm_breeze_path="$HOME/.scm_breeze"
+[ -s "$scm_breeze_path/scm_breeze.sh" ] && . "$scm_breeze_path/scm_breeze.sh"
+
 ### Prefer user binaries #######################################################
 
 export PATH="$HOME/local/bin:$PATH"
