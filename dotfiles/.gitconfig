@@ -43,3 +43,6 @@
     default = current
 [core]
     quotepath = off
+    autocrlf = input
+[fetch]
+    prune= true
