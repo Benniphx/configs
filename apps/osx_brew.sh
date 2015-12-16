@@ -85,6 +85,7 @@ brew cask install firefox
 # Misc
 brew cask install google-drive
 brew cask install spotify
+brew cask install real-vnc
 
 # Keyboard tools
 brew cask install amethyst
