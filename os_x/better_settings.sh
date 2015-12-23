@@ -425,8 +425,8 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulat
 defaults write com.apple.dock wvous-tl-corner -int 0
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
-# Top right screen corner → Show Desktop
-defaults write com.apple.dock wvous-tr-corner -int 4
+# Top right screen corner → no-op
+defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Bottom right screen corner → Display sleep
