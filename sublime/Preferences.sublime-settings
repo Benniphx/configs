@@ -91,6 +91,7 @@
 	"ignored_packages":
 	[
 		"CoffeeScript",
+		"Markdown",
 		"Python Pep8 Lint",
 		"Vintage"
 	],
