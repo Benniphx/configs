@@ -24,8 +24,8 @@ umask 0027
 # allow exiting shell with ^D
 unset ignoreeof
 
-# disable ^S/^Q flow control
-#stty -ixon
+# disable stop (^S) and continue (^Q) flow control signals
+# stty -ixon
 
 ### OS X: Homebrew #############################################################
 
