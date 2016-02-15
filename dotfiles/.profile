@@ -18,7 +18,8 @@ export MANPAGER='less -X'
 
 ### Shell behaviour ############################################################
 
-umask 0077  # default file permissions: u=rwx,g=,o=
+# default file permissions: u=rwx,g=rx,o=
+umask 0027
 
 # allow exiting shell with ^D
 unset ignoreeof
