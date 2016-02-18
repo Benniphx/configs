@@ -45,27 +45,29 @@ brew install nano
 
 # Commonly used
 brew install ack
-brew install tree
-brew install cmake
-brew install thefuck
 brew install bash-completion
-brew install htop-osx
+brew install cmake
 brew install colordiff
 brew install file-formula
 brew install git
-brew install tig
+brew install htop-osx
 brew install less
 brew install openssh
-brew install rsync
-brew install unzip
 brew install p7zip
 brew install macvim --with-override-system-vim --custom-system-icons
+brew install rsync
+brew install shellcheck
+brew install thefuck
+brew install tig
+brew install tree
+brew install unzip
 brew install zsh
 
 # Version managers
+brew install nvm
 brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
-brew install nvm
+
 
 # Set up Homebrew Cask
 brew install caskroom/cask/brew-cask
@@ -75,17 +77,17 @@ brew tap caskroom/versions
 brew cask install iterm2
 
 # Editors
-brew cask install sublime-text3
 brew cask install libreoffice
+brew cask install sublime-text3
 
 # Browsers
-brew cask install google-chrome
 brew cask install firefox
+brew cask install google-chrome
 
 # Misc
 brew cask install google-drive
-brew cask install spotify
 brew cask install real-vnc
+brew cask install spotify
 
 # Keyboard tools
 brew cask install amethyst
