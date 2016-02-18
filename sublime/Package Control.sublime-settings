@@ -47,6 +47,7 @@
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
+		"SublimeLinter-shellcheck",
 		"SublimeREPL",
 		"SyncedSideBar",
 		"Theme - Soda",
