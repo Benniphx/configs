@@ -32,7 +32,7 @@
     out = push -u
     outgoing = log @{u}..
     lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
-    mg = merge --no-ff
+    mg = merge
     undo = checkout --
     unstage = reset HEAD --
     ready = rebase -i @{u}
