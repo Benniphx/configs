@@ -21,9 +21,9 @@
 [alias]
     a = add
     amend = commit --amend
-    ba = branch -av
+    b = branch -av
     bd = branch -d
-    ci = commit -v
+    c = commit -v
     co = checkout
     con = diff --name-only --diff-filter=UU
     df = diff
@@ -37,7 +37,7 @@
     unstage = reset HEAD --
     ready = rebase -i @{u}
     st = status -sb
-    standup = log --since '1 day ago' --oneline --author anssi.syrjasalo@
+    daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
     discard = reset --hard HEAD
 [push]
     default = current
