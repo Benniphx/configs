@@ -95,6 +95,15 @@ BULLETTRAIN_VIRTUALENV_SHOW='true'
 BULLETTRAIN_VIRTUALENV_BG='yellow'
 BULLETTRAIN_VIRTUALENV_FG='black'
 
+### mercurial
+BULLETTRAIN_HG_SHOW='true'
+
+### command execution time
+BULLETTRAIN_EXEC_TIME_SHOW='true'
+BULLETTRAIN_EXEC_TIME_ELAPSED=5
+BULLETTRAIN_EXEC_TIME_BG='cyan'
+BULLETTRAIN_EXEC_TIME_FG='black'
+
 ### Shortcut to reload configs #################################################
 
 alias s=". \"$HOME\"/.zshrc"
