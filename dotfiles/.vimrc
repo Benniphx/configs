@@ -52,7 +52,11 @@ call vundle#end()
 filetype plugin indent on
 
 set mouse=a                     " enable mouse in all modes
-set ttymouse=xterm2             " terminal that supports mouse codes
+
+" terminal that supports mouse codes
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 set clipboard=unnamedplus       " copy to system clipboard
 
