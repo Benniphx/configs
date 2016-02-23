@@ -20,6 +20,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ggreer/the_silver_searcher'
+Plugin 'rking/ag.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
@@ -189,4 +190,7 @@ let g:ansible_name_highlight = 'd'
 
 " tagbar
 nmap <c-t> :TagbarToggle<CR>
+
+" ag.vim (the silver searcher)
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
