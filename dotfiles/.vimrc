@@ -163,12 +163,13 @@ let g:airline#extensions#tabline#enabled = 1
 " vim-gitgutter
 let g:gitgutter_avoid_cmd_prompt_on_windows = 0
 
-" nerdtree and vim-nerdtree-tabs
+" nerdtree
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=3
 let g:NERDTreeShowHidden=1
-let g:nerdtree_tabs_autofind=1
 
+" vim-nerdtree-tabs
+let g:nerdtree_tabs_autofind=1
 nnoremap <C-e> :NERDTreeTabsToggle<CR>
 
 " syntastic
@@ -191,7 +192,7 @@ autocmd User Node
 " tagbar
 nmap <c-t> :TagbarToggle<CR>
 
-" ag.vim (the silver searcher)
+" ag.vim (uses the silver searcher instead of ack-grep)
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " vim-indent-guides
