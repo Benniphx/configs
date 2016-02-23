@@ -12,6 +12,9 @@ sudo apt-add-repository -y ppa:webupd8team/java
 # Add Neovim repository
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 
+# Add tmux repository
+sudo add-apt-repository -y ppa:pi-rho/dev
+
 # Do a full upgrade first to get the system up to date
 sudo apt-get update
 sudo apt-get dist-upgrade -y
