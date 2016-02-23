@@ -89,8 +89,10 @@ brew cask install google-drive
 brew cask install real-vnc
 brew cask install spotify
 
-# Keyboard tools
+# Window managers
 brew cask install amethyst
+
+# Keyboard tools
 brew cask install ukelele
 
 # Do final clean ups
