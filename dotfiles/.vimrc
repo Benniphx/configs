@@ -169,6 +169,8 @@ let g:gitgutter_avoid_cmd_prompt_on_windows = 0
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=3
 let g:NERDTreeShowHidden=1
+let g:nerdtree_tabs_autofind=1
+
 nnoremap <C-e> :NERDTreeTabsToggle<CR>
 
 " syntastic
