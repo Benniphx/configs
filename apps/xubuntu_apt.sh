@@ -11,7 +11,7 @@ sudo apt-add-repository -y ppa:webupd8team/java
 
 # Do a full upgrade first to get the system up to date
 sudo apt-get update
-sudo apt-get dist-upgrade
+sudo apt-get dist-upgrade -y
 
 # utilities
 sudo apt-get install -y build-essential htop xsel git vim vim-gtk curl wget \
