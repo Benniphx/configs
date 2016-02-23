@@ -58,7 +58,8 @@ if !has('nvim')
   set ttymouse=xterm2
 endif
 
-set clipboard=unnamedplus       " copy to system clipboard
+" copy to system clipboard
+set clipboard^=unnamed,unnamedplus
 
 "set paste
 set pastetoggle=<F2>
