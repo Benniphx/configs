@@ -106,8 +106,6 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 ### Aliases ####################################################################
 
 if [ `uname` = 'Darwin' ]; then
-    alias vim='mvim -v'
-
     # removes annoying .DS_Store files from the given path
     alias rmds='find . -name '.DS_Store' -exec rm -f {} \;'
 
