@@ -69,7 +69,6 @@ brew install nvm
 brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
 
-
 # Set up Homebrew Cask
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
