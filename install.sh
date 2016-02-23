@@ -99,8 +99,7 @@ popd >/dev/null
 
 git_clone_or_pull git://github.com/ndbroadbent/scm_breeze.git \
     "$HOME/.scm_breeze"
-
-"$HOME/.scm_breeze/install.sh"
+# "$HOME/.scm_breeze/install.sh"
 
 ### Install Tmux plugin manager ################################################
 
