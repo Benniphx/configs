@@ -111,7 +111,7 @@ alias s=". \"$HOME\"/.zshrc"
 ### Automatically list contents when changing directory ########################
 
 function chpwd() {
-  ls
+  ls -al
 }
 
 ### Load other configs #########################################################
