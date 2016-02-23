@@ -16,7 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to Oh My Zsh Automatically upgrade itself without prompting
-# DISABLE_UPDATE_PROMPT=true
+DISABLE_UPDATE_PROMPT=true
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
