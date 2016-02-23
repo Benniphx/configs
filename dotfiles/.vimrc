@@ -8,11 +8,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+" Plugin manager
 Plugin 'VundleVim/Vundle.vim'
 
+" UI
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/vim-tomorrow-theme'
 
+" Add-ons
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ap/vim-css-color'
 Plugin 'bronson/vim-trailing-whitespace'
@@ -29,12 +32,12 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neocomplcache.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-Plugin 'Shougo/neocomplcache.vim'
-
+" Language support
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elixir-lang/vim-elixir'
