@@ -44,7 +44,6 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'moll/vim-node'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
-"Plugin 'pearofducks/ansible-vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
@@ -189,9 +188,6 @@ autocmd User Node
   \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
   \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
   \ endif
-
-" ansible-vim
-let g:ansible_name_highlight = 'd'
 
 " tagbar
 nmap <c-t> :TagbarToggle<CR>
