@@ -186,3 +186,7 @@ autocmd User Node
 
 " ansible-vim
 let g:ansible_name_highlight = 'd'
+
+" tagbar
+nmap <c-t> :TagbarToggle<CR>
+
