@@ -104,15 +104,15 @@ BULLETTRAIN_EXEC_TIME_ELAPSED=5
 BULLETTRAIN_EXEC_TIME_BG='cyan'
 BULLETTRAIN_EXEC_TIME_FG='black'
 
-### Shortcut to reload configs #################################################
-
-alias s=". \"$HOME\"/.zshrc"
-
 ### Automatically list contents when changing directory ########################
 
 function chpwd() {
-  ls -al
+    ls --color=auto -ahlF --group-directories-first
 }
+
+### Shortcut to reload configs #################################################
+
+alias s=". \"$HOME\"/.zshrc"
 
 ### Load other configs #########################################################
 
