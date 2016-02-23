@@ -9,6 +9,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Add Oracle Java repository
 sudo apt-add-repository -y ppa:webupd8team/java
 
+# Add Neovim repository
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
+
 # Do a full upgrade first to get the system up to date
 sudo apt-get update
 sudo apt-get dist-upgrade -y
@@ -16,6 +19,9 @@ sudo apt-get dist-upgrade -y
 # utilities
 sudo apt-get install -y build-essential htop xsel git vim vim-gtk curl wget \
     colordiff screen tmux synaptic openssl cmake silversearcher-ag
+
+# neovim
+sudo apt-get install -y neovim
 
 # browsers
 sudo apt-get install -y chromium-browser firefox
