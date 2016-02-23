@@ -26,7 +26,7 @@ function in_array() {
 function git_clone_or_pull {
     local url="$1"
     local target="$2"
-    git -C "$target" pull 2>/dev/null || git clone --depth 1 "$url" "$target"
+    git -C "$target" pull --rebase 2>/dev/null || git clone --depth 1 "$url" "$target"
 }
 
 ### Parse arguments ############################################################
