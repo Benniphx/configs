@@ -108,6 +108,12 @@ BULLETTRAIN_EXEC_TIME_FG='black'
 
 alias s=". \"$HOME\"/.zshrc"
 
+### Automatically list contents when changing directory ########################
+
+function chpwd() {
+  ls
+}
+
 ### Load other configs #########################################################
 
 [ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
