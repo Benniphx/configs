@@ -59,6 +59,7 @@ brew install neovim/neovim/neovim
 brew install rsync
 brew install shellcheck
 brew install thefuck
+brew install the_silver_searcher
 brew install tig
 brew install tree
 brew install unzip

@@ -15,7 +15,7 @@ sudo apt-get dist-upgrade
 
 # utilities
 sudo apt-get install -y build-essential htop xsel git vim vim-gtk curl wget \
-    colordiff screen tmux synaptic openssl cmake
+    colordiff screen tmux synaptic openssl cmake silversearcher-ag
 
 # browsers
 sudo apt-get install -y chromium-browser firefox
