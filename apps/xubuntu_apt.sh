@@ -19,6 +19,10 @@ sudo add-apt-repository -y ppa:pi-rho/dev
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
+# usual compile-time requirements
+sudo apt-get install -y libssl-dev libreadline-dev libsqlite3-dev \
+    libbz2-dev zlib1g-dev python-dev
+
 # utilities
 sudo apt-get install -y build-essential htop xsel git vim vim-gtk curl wget \
     colordiff screen tmux synaptic openssl cmake silversearcher-ag
@@ -29,9 +33,8 @@ sudo apt-get install -y neovim
 # browsers
 sudo apt-get install -y chromium-browser firefox
 
-# usual compile-time requirements
-sudo apt-get install -y libssl-dev libreadline-dev libsqlite3-dev \
-    libbz2-dev zlib1g-dev python-dev
+# chat programs
+sudo apt-get install -y profanity
 
 # Microsoft true type core fonts
 sudo apt-get install -y ttf-mscorefonts-installer
@@ -49,5 +52,6 @@ sudo apt-get install -y xmonad xmobar dmenu gmrun trayer yeganesh scrot \
 # rbenv and ruby-build
 sudo apt-get install -y rbenv ruby-build
 
-# restricted extras
+# Xubuntu restricted extras
 sudo apt-get install -y xubuntu-restricted-extras
+
