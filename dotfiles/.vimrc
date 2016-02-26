@@ -166,6 +166,9 @@ let g:airline#extensions#tabline#enabled = 1
 " vim-gitgutter
 let g:gitgutter_avoid_cmd_prompt_on_windows = 0
 
+" ctrlp
+let g:ctrlp_show_hidden = 1
+
 " nerdtree
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=3
