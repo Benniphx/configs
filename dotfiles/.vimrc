@@ -1,4 +1,4 @@
-"-------------------------------------------------------------------------------
+"--- Vundle --------------------------------------------------------------------
 
 " Required for Vundle
 set nocompatible
@@ -19,6 +19,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ap/vim-css-color'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'editorconfig/editorconfig-vim'
@@ -52,10 +53,10 @@ Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()
 
-"-------------------------------------------------------------------------------
-
 filetype plugin indent on
 
+
+"--- Mouse ---------------------------------------------------------------------
 set mouse=a                     " enable mouse in all modes
 
 " terminal that supports mouse codes
@@ -63,14 +64,14 @@ if !has('nvim')
   set ttymouse=xterm2
 endif
 
-" copy to system clipboard
+
+"-- Clipboard ------------------------------------------------------------------
 set clipboard^=unnamed,unnamedplus
-
-"set paste
 set pastetoggle=<F2>
+set go+=a              " visual selection automatically copied to the clipboard
 
-set go+=a                       " visual selection automatically copied to the clipboard
 
+"--- General -------------------------------------------------------------------
 set hidden                      " hide buffers instead of closing them
 set ttyfast                     " smoother changes
 set lazyredraw                  " don't draw unless necessary
@@ -131,8 +132,8 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set tags=tags,./tags,tmp/tags,./tmp/tags
 
-"-------------------------------------------------------------------------------
 
+"--- UI ------------------------------------------------------------------------
 set t_Co=256                      " number of colors to use
 set background=dark
 colorscheme Tomorrow-Night-Bright " colorscheme to use
@@ -143,33 +144,46 @@ if has("statusline")
   set statusline=\ \ %F%m%r%h%w\ %=[%Y]\ (%{&ff},\ %{&enc})\ \{%v,\ %l/%L\}\ \ %p%%\
 endif
 
-"-------------------------------------------------------------------------------
 
+"--- Custom mappings -----------------------------------------------------------
 " enable tab indent and shift+tab unindent also in visual mode
 vnoremap <silent> <TAB> >gv
 vnoremap <silent> <S-TAB> <gv
 
-"-------------------------------------------------------------------------------
+
+"--- vim-tmux-navigator --------------------------------------------------------
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+
+" workaround for https://github.com/neovim/neovim/issues/2048
+if has('nvim')
+  nmap <bs> :<C-u>TmuxNavigateLeft<cr>
+endif
 
 " fast buffer and tab switching
-map <C-j> :bprev<CR>
-map <C-k> :bnext<CR>
-map <C-l> :tabn<CR>
-map <C-h> :tabp<CR>
+noremap <C-left> :bprev<CR>
+noremap <C-right> :bnext<CR>
+noremap <C-up> :tabn<CR>
+noremap <C-down> :tabp<CR>
 
-"- Plugin settings -------------------------------------------------------------
 
-" vim-airline
+" --- vim-airline --------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" vim-gitgutter
+
+"--- vim-gitgutter -------------------------------------------------------------
 let g:gitgutter_avoid_cmd_prompt_on_windows = 0
 
-" ctrlp
+
+"--- ctrlp.vim -----------------------------------------------------------------
 let g:ctrlp_show_hidden = 1
 
-" nerdtree
+
+"--- NERDTree ------------------------------------------------------------------
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=3
 let g:NERDTreeShowHidden=1
@@ -182,16 +196,19 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:nerdtree_tabs_autofind=1
 nnoremap <C-e> :NERDTreeTabsToggle<CR>
 
-" syntastic
+
+"--- Syntastic -----------------------------------------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-" vim-node
+
+"--- vim-node ------------------------------------------------------------------
 " open new file in a vertical split instead of horizontal
 autocmd User Node
   \ if &filetype == "javascript" |
@@ -199,13 +216,17 @@ autocmd User Node
   \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
   \ endif
 
-" tagbar
-nmap <c-t> :TagbarToggle<CR>
 
-" ag.vim (uses the silver searcher instead of ack-grep)
+"--- tagbar --------------------------------------------------------------------
+nmap <C-t> :TagbarToggle<CR>
+
+
+"--- ag.vim --------------------------------------------------------------------
+" uses the silver searcher instead of ack-grep
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" vim-indent-guides
+
+"--- vim-indent-guides ---------------------------------------------------------
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
@@ -213,7 +234,8 @@ let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black   ctermbg=238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey  ctermbg=236
 
-"- NeoComplCache ---------------------------------------------------------------
+
+"--- NeoComplCache -------------------------------------------------------------
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
@@ -243,4 +265,3 @@ endif
 let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
