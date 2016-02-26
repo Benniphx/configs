@@ -174,6 +174,10 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=3
 let g:NERDTreeShowHidden=1
 
+" open nerdtree on startup if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " vim-nerdtree-tabs
 let g:nerdtree_tabs_autofind=1
 nnoremap <C-e> :NERDTreeTabsToggle<CR>
