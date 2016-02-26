@@ -218,7 +218,7 @@ extract() {
 
 # fast password generator
 genpasswd() {
-  cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | fold -w $1 | head -n1
+    cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | fold -w $1 | head -n1
 }
 
 # fast calculator
