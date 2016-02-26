@@ -242,15 +242,6 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_auto_select = 0
 let g:neocomplcache_auto_completion_start_length = 3
 
-" Workaround for not showing popup when moving in insert mode
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <Left> neocomplcache#close_popup() . "\<Left>"
-inoremap <expr> <Right> neocomplcache#close_popup() . "\<Right>"
-inoremap <expr> <Up> neocomplcache#close_popup() . "\<Up>"
-inoremap <expr> <Down> neocomplcache#close_popup() . "\<Down>"
-inoremap <expr> <Cr> neocomplcache#close_popup() . "\<Cr>"
-inoremap <expr> <Bs> neocomplcache#cancel_popup() . "\<Bs>"
-
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
