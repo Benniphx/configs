@@ -24,8 +24,8 @@ sudo apt-get install -y libssl-dev libreadline-dev libsqlite3-dev \
     libbz2-dev zlib1g-dev python-dev
 
 # utilities
-sudo apt-get install -y build-essential htop xsel git vim vim-gtk curl wget \
-    colordiff screen tmux synaptic openssl cmake silversearcher-ag
+sudo apt-get install -y build-essential cmake colordiff curl git htop \
+    openssl ranger screen silversearcher-ag synaptic tmux vim vim-gtk wget xsel
 
 # neovim
 sudo apt-get install -y neovim

@@ -56,6 +56,7 @@ brew install openssh
 brew install p7zip
 brew install macvim --with-override-system-vim --custom-system-icons
 brew install neovim/neovim/neovim
+brew install ranger
 brew install rsync
 brew install shellcheck
 brew install thefuck
