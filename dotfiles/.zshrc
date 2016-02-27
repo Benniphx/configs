@@ -49,7 +49,7 @@ HIST_STAMPS='dd.mm.yyyy'
 
 # Which Oh My Zsh plugins to load.
 # Add wisely, too many plugins slow down startup.
-plugins=(brew docker gem git git-extras npm pip python ssh-agent tmux vagrant)
+plugins=(brew docker git pip ssh-agent vagrant)
 
 ### Theme ######################################################################
 
