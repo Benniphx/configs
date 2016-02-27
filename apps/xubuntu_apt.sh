@@ -55,3 +55,6 @@ sudo apt-get install -y rbenv ruby-build
 # Xubuntu restricted extras
 sudo apt-get install -y xubuntu-restricted-extras
 
+# Do final clean ups
+sudo apt-get -y autoremove
+sudo apt-get autoclean
