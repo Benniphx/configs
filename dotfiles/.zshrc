@@ -49,7 +49,7 @@ HIST_STAMPS='dd.mm.yyyy'
 
 # Which Oh My Zsh plugins to load.
 # Add wisely, too many plugins slow down startup.
-plugins=(brew docker gem git git-extras npm pip python ssh-agent vagrant)
+plugins=(brew docker gem git git-extras npm pip python ssh-agent tmux vagrant)
 
 ### Theme ######################################################################
 
@@ -104,6 +104,8 @@ BULLETTRAIN_EXEC_TIME_ELAPSED=5
 BULLETTRAIN_EXEC_TIME_BG='cyan'
 BULLETTRAIN_EXEC_TIME_FG='black'
 
+[ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
+
 ### Automatically list contents when changing directory ########################
 
 function chpwd() {
@@ -116,6 +118,5 @@ alias s=". \"$HOME\"/.zshrc"
 
 ### Load other configs #########################################################
 
-[ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
 [ -f "$HOME/.zsh_local" ] && . "$HOME/.zsh_local" || true
