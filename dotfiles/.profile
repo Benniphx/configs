@@ -86,10 +86,9 @@ fi
 autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
 [ -s "$autojump_path" ] && . "$autojump_path"
 
-### SCM Breeze #################################################################
+### SCM puff #################################################################
 
-scm_breeze_path="$HOME/.scm_breeze"
-[ -s "$scm_breeze_path/scm_breeze.sh" ] && . "$scm_breeze_path/scm_breeze.sh"
+which scmpuff >/dev/null && eval "$(scmpuff init -s)"
 
 ### Prefer user binaries #######################################################
 
