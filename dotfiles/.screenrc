@@ -26,9 +26,3 @@ attrcolor b ".I"
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d.%m.%Y %{W}%c %{g}]'
 
-# Startup windows
-screen -t server   0
-screen -t console  1
-screen -t editor   2
-screen -t remote   3
-select 1
