@@ -147,9 +147,13 @@ endif
 
 
 "--- Custom mappings -----------------------------------------------------------
-" enable tab indent and shift+tab unindent also in visual mode
-vnoremap <silent> <TAB> >gv
-vnoremap <silent> <S-TAB> <gv
+" tab to indent and shift+tab to unindent also when in visual mode
+vnoremap <silent> <Tab> >gv
+vnoremap <silent> <S-Tab> <gv
+
+" fast buffer switching
+nnoremap <silent> <Tab> :bnext<CR>
+nnoremap <silent> <S-Tab> :bprevious<CR>
 
 
 "--- vim-tmux-navigator --------------------------------------------------------
@@ -163,12 +167,6 @@ nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 if has('nvim')
   nmap <bs> :<C-u>TmuxNavigateLeft<cr>
 endif
-
-" fast buffer and tab switching
-noremap <C-left> :bprev<CR>
-noremap <C-right> :bnext<CR>
-noremap <C-up> :tabn<CR>
-noremap <C-down> :tabp<CR>
 
 
 " --- vim-airline --------------------------------------------------------------
