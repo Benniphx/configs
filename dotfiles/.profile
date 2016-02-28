@@ -25,7 +25,7 @@ umask 0027
 unset ignoreeof
 
 # disable stop (^S) and continue (^Q) flow control signals
-# stty -ixon
+stty -ixon
 
 ### OS X: Homebrew #############################################################
 
