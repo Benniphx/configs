@@ -235,6 +235,11 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black   ctermbg=238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey  ctermbg=236
 
 
+
+"--- vim-json ------------------------------------------------------------------
+let g:vim_json_syntax_conceal = 0
+
+
 "--- NeoComplCache -------------------------------------------------------------
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_camel_case_completion = 1
