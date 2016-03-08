@@ -129,9 +129,23 @@ set cindent
 set nobackup                    " don't keep backup after close
 set writebackup                 " do keep a backup while working
 
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set tags=tags,./tags,tmp/tags,./tmp/tags
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+
+set tags=./tags
+
+set undofile
+set undodir=~/.vim-tmp/undo//
+
+
+" --- Autoreload vim configs after changes -------------------------------------
+
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
+set autoread
 
 
 "--- UI ------------------------------------------------------------------------
@@ -261,3 +275,4 @@ endif
 let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
