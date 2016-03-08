@@ -160,6 +160,8 @@ if has("statusline")
   set statusline=\ \ %F%m%r%h%w\ %=[%Y]\ (%{&ff},\ %{&enc})\ \{%v,\ %l/%L\}\ \ %p%%\
 endif
 
+highlight ColorColumn ctermbg=234
+
 
 "--- Custom mappings -----------------------------------------------------------
 " tab to indent and shift+tab to unindent also when in visual mode
