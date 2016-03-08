@@ -107,6 +107,7 @@ git_clone_or_pull https://github.com/VundleVim/Vundle.vim.git \
 echo -ne '\n' | vim +PluginInstall +qall 2>/dev/null
 
 ### Symlink Neovim configs #####################################################
+
 ln -s"$ln_args" "$HOME/.vim" "$HOME/.config/nvim"
 ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
@@ -133,3 +134,4 @@ case $(echo "$default_shell") in
         esac
         ;;
 esac
+
