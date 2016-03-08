@@ -104,6 +104,7 @@ set smarttab                    " uses shiftwidth instead of tabstop at s.o.l
 set expandtab                   " expand tabs to spaces
 set backspace=indent,eol,start  " enable backspace for these actions
 set list listchars=tab:»·,trail:·
+set colorcolumn=80
 
 set number                      " display line numbers
 set foldlevel=100               " fold nothing by default
