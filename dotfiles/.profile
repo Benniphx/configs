@@ -184,7 +184,7 @@ alias gos='git config user.name "Anssi Syrjäsalo" && git config user.email anss
 alias cl='fc -e -|pbcopy'
 
 # return the public IP address
-alias ip='curl icanhazip.com'
+alias myip='curl icanhazip.com'
 
 ### Utilities ##################################################################
 
