@@ -29,11 +29,11 @@ $VERSION = "0.5.7";
 # veli@piipiip.net   /window_alias code
 # qrczak@knm.org.pl  chanact_abbreviate_names
 # qerub@home.se      Extra chanact_show_mode and chanact_chop_status
-# 
+#
 #########
 # USAGE
 ###
-# 
+#
 # copy the script to ~/.irssi/scripts/
 #
 # In irssi:
@@ -85,11 +85,11 @@ $VERSION = "0.5.7";
 #		    $H : Start highlightning
 #		    $S : Stop highlightning
 #		* example:
-#		
+#
 #		      /set chanact_display $H$N:$M.$S$C
-#		      
+#
 #		    will give you on #irssi.de if you have voice
-#		    
+#
 #		      [3:+.#irssi.de]
 #
 #		    with '3:+.' highlighted and the channel name printed in regular color
@@ -97,7 +97,7 @@ $VERSION = "0.5.7";
 # /set chanact_display_alias <string>
 #   as 'chanact_display' but is used if the window has an alias and
 #   'chanact_show_alias' is set to on.
-# 
+#
 # /set chanact_show_names <ON|OFF>
 #		* ON  : show the channelnames after the number/alias
 #		* OFF : don't show the names
@@ -120,7 +120,7 @@ $VERSION = "0.5.7";
 #
 # /set chanact_autorenumber <ON|OFF>
 #		* ON  : Move the window automatically to first available slot
-#		        starting from "chanact_renumber_start" when assigning 
+#		        starting from "chanact_renumber_start" when assigning
 #		        an alias to window. Also moves the window back to a
 #		        first available slot from refnum 1 when the window
 #		        loses it's alias.
@@ -139,7 +139,7 @@ $VERSION = "0.5.7";
 # 		             beginning of the channel name.
 # 		* example  :
 # 		    To shorten a lot of debian channels:
-# 		    
+#
 # 			/set chanact_remove_prefix deb(ian.(devel-)?)?
 #
 #########
@@ -178,21 +178,21 @@ sub chanact {
 	if ($needRemake) {
 		remake();
 	}
-	
+
 	$item->default_handler($get_size_only, $actString, undef, 1);
 }
 
 # this is the real creation method
 sub remake() {
 	my ($afternumber,$finish,$hilight,$mode,$number,$display);
-	my $separator = Irssi::settings_get_str('chanact_separator'); 
+	my $separator = Irssi::settings_get_str('chanact_separator');
 	my $abbrev = Irssi::settings_get_int('chanact_abbreviate_names');
 	my $remove_prefix = Irssi::settings_get_str('chanact_remove_prefix');
 	my $remove_hash = Irssi::settings_get_bool('chanact_remove_hash');
-	
+
 	$actString = "%C[%n";
 	foreach my $win (sort { ($a->{refnum}) <=> ($b->{refnum})} Irssi::windows) {
-	
+
 		# since irssi is single threaded this shouldn't happen
 		!ref($win) && next;
 
@@ -207,7 +207,7 @@ sub remake() {
 		    && $name eq "(status)") {
 			$name = "S";
 		}
-	
+
 		# check if we should show the mode
 		$mode = "";
 		if ($active->{type} eq "CHANNEL") {
@@ -219,7 +219,7 @@ sub remake() {
 
 			my $nick = $channel->nick_find($server->{nick});
 			!ref($nick) && next;
-			
+
 			if ($nick->{op}) {
 				$mode = "@";
 			} elsif ($nick->{voice}) {
@@ -258,13 +258,13 @@ sub remake() {
 			$name =~ s/^[&#+!=]//;
 		}
 
-		if (Irssi::settings_get_bool('chanact_show_alias') == 1 && 
+		if (Irssi::settings_get_bool('chanact_show_alias') == 1 &&
 				$win->{name} =~ /^[a-zA-Z+]$/) {
 			$number = $win->{name};
-			$display = Irssi::settings_get_str('chanact_display_alias'); 
+			$display = Irssi::settings_get_str('chanact_display_alias');
 		} else {
 			$number = $win->{refnum};
-			$display = Irssi::settings_get_str('chanact_display'); 
+			$display = Irssi::settings_get_str('chanact_display');
 		}
 
 		$actString .= expand($display,"C",$name,"N",$number,"M",$mode,"H",$hilight,"S","}{sb_background}").$separator;
@@ -272,16 +272,15 @@ sub remake() {
 
 	# assemble the final string
 	if ($actString ne "") {
-	    
+
 		# Remove the last separator
 		#$actString =~ s/$separator$//;
-		
-		# malloc
+
 		chop($actString);
         chop($actString);
 		chop($actString);
 		$actString .= "%C]";
-				
+
 		if (Irssi::settings_get_bool('chanact_show_all') == 1) {
 			$actString = $actString;
 		} else {
@@ -307,29 +306,29 @@ sub chanactHasChanged()
 sub cmd_window_unalias {
 	my ($data, $server, $witem) = @_;
 	my $rn_start = Irssi::settings_get_int('chanact_renumber_start');
-	
-	unless ($data =~ /^[a-zA-Z]$/ || 
+
+	unless ($data =~ /^[a-zA-Z]$/ ||
 			Irssi::active_win()->{name} =~ /^[a-zA-Z]$/) {
 		Irssi::print("Usage: /window_unalias <char>");
 		Irssi::print("or /window_alias in window that has an alias.");
 		return;
 	}
-	
+
 	if ($data eq '') { $data = Irssi::active_win()->{name}; }
 
 	if (my $oldwin = Irssi::window_find_name($data)) {
 		$oldwin->set_name(undef);
 		Irssi::print("Removed alias with the key '$data'.");
-		
-		if (Irssi::settings_get_bool('chanact_autorenumber') == 1 && 
+
+		if (Irssi::settings_get_bool('chanact_autorenumber') == 1 &&
 				$oldwin->{refnum} >= $rn_start) {
 			my $old_refnum = $oldwin->{refnum};
-			
+
 			# Find the first available slot and move the window
 			my $newnum = 1;
 			while (Irssi::window_find_refnum($newnum) ne "") { $newnum++; }
 			$oldwin->set_refnum($newnum);
-			
+
 			Irssi::print("and moved it to from $old_refnum to $newnum");
 		}
 	}
@@ -347,23 +346,23 @@ sub cmd_window_alias {
 	}
 
 	cmd_window_unalias($data, $server, $witem);
-	
+
 	my $window = $witem->window();
 	my $winnum = $window->{refnum};
-	
+
 	if (Irssi::settings_get_bool('chanact_autorenumber') == 1 &&
 			$window->{refnum} < $rn_start) {
 		my $old_refnum = $window->{refnum};
 
 		$winnum = $rn_start;
- 
+
 		# Find the first available slot and move the window
 		while (Irssi::window_find_refnum($winnum) ne "") { $winnum++; }
 		$window->set_refnum($winnum);
-		
+
 		Irssi::print("Moved the window from $old_refnum to $winnum");
 	}
-	
+
 	$window->set_name($data);
 	$server->command("/bind meta-$data change_window $winnum");
 	Irssi::print("Window $winnum is now known as '$data'");
@@ -435,10 +434,10 @@ Irssi::signal_add_last('window refnum changed', 'refnum_changed');
 #
 # 0.5.6
 # - fixed a bug (#1) reported by Wouter Coekaert
-# 
+#
 # 0.5.5
 # - some speedups from David Leadbeater <dgl@dgl.cx>
-# 
+#
 # 0.5.4
 # - added help for chanact_display_alias
 #
@@ -451,7 +450,7 @@ Irssi::signal_add_last('window refnum changed', 'refnum_changed');
 # - removed unused chanact_show_name settings (thx to Qerub)
 # - fixed $mode display
 # - guarded reference operations to (hopefully) fix errors on server disconnect
-# 
+#
 # 0.5.1
 # - small typo fixed
 #
@@ -459,7 +458,7 @@ Irssi::signal_add_last('window refnum changed', 'refnum_changed');
 # - changed chanact_show_mode to chanact_display. reversed changes from
 #   Qerub through that, but kept funcionality.
 # - removed chanact_color_all since it is no longer needed
-# 
+#
 # 0.4.3
 # - changes by Qerub
 #   + added chanact_show_mode to show the mode just before the channel name

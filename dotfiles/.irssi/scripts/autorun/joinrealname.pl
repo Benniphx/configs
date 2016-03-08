@@ -1,7 +1,7 @@
 
 use Irssi 20011207;
 use strict;
-use vars qw($VERSION %IRSSI); 
+use vars qw($VERSION %IRSSI);
 $VERSION = "0.8.5";
 
 
@@ -130,7 +130,7 @@ sub request_whois {
 
   # ignore all whois replies except the first line of the WHOIS reply
   my $redir_arg = $whois_query.' '.join(' ', @whois_nicks);
-  $server->redirect_event("whois", 1, $redir_arg, 0, 
+  $server->redirect_event("whois", 1, $redir_arg, 0,
 			  "redir autorealname_whois_last", {
 			    "event 311" => "redir autorealname_whois",
 			    "event 401" => "redir autorealname_whois_unknown",

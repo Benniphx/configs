@@ -75,12 +75,12 @@ sub event_join {
 		Irssi::statusbar_items_redraw('join_notice');
 		my $window = Irssi::window_find_item($nick);
 		if($window){
-			$window->printformat(Irssi::MSGLEVEL_JOINS, 'join', $nick, $address, $channel); 
+			$window->printformat(Irssi::MSGLEVEL_JOINS, 'join', $nick, $address, $channel);
 		}
 	}
 }
 sub join_notice {
-	my ($item, $get_size_only) = @_; 
+	my ($item, $get_size_only) = @_;
 	my $line;
 	foreach my $key (keys(%online) ){
 		$line = $line." ".$key;
@@ -90,7 +90,7 @@ sub join_notice {
 		$line = "";
 	} else {
 		$item->default_handler($get_size_only, "", undef, 1);
-	} 
+	}
 }
 sub empty {
 	my $nick = shift;

@@ -53,7 +53,7 @@ sub event_notice {
 	if( $server->{tag} eq $bitlbee_server->{tag} && $msg =~ /.*Changed name to.*/ ){
 		my $friendly_name = $msg;
 		$friendly_name =~ s/.*Changed name to `(.*)'.*/$1/;
-		my $window = $server->window_find_item($nick);	
+		my $window = $server->window_find_item($nick);
 		if ($window) {
 			$window->printformat(MSGLEVEL_CRAP, 'nick_change', $nick, $address, 'changed name to `'.$friendly_name.'`');
 			Irssi::signal_stop();
@@ -63,7 +63,7 @@ sub event_notice {
 			#$window->printformat(MSGLEVEL_CRAP, 'nick_change', $nick, $address, 'changed name to `'.$friendly_name.'`');
 			#Irssi::signal_stop();
 		}
-	}		
+	}
 };
 
 Irssi::signal_add_last('message irc notice', 'event_notice');

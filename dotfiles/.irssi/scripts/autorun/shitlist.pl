@@ -1,10 +1,10 @@
 # bitchx-like shitlist
 
 # for irssi 0.7.98 (level 4 requires later)
-# Copyright (C) 2001 Timo Sirainen 
+# Copyright (C) 2001 Timo Sirainen
 # (partly based on friends.pl by Erkki Seppälä)
 # shitlist exception channels patch by evilcat macova@raw.thesocket.net
-# /SET dontshitchannels #channel1 #channel2  
+# /SET dontshitchannels #channel1 #channel2
 # changed shitlist exception to be case insensitive by SinusPL admin@sinuspl.net
 # improved message (now shows channel) by SinusPL admin@sinuspl.net
 
@@ -58,7 +58,7 @@ sub exec_shit {
 
   if ($shit->{level} == 3) {
     # kickban user
-    # shasta@01/06/17: set ban using correct shitmask, not using 
+    # shasta@01/06/17: set ban using correct shitmask, not using
     #                  current ban_type; also, check if we should
     #                  kick, or ban first (will work only with
     #                  irssi dated on 2001-05-12 and newer)
@@ -80,31 +80,31 @@ sub check_shit {
   my $channel_lowcase= '';
   my $ichanbool = "0";
   foreach my $shit (@shitlist) {
-    if ((exists $shit->{channels}->{'*'} || 
-	 exists $shit->{channels}->{$channel}) && 
+    if ((exists $shit->{channels}->{'*'} ||
+	 exists $shit->{channels}->{$channel}) &&
 	Irssi::mask_match_address($shit->{nickmask}, $nick, $host)) {
       # shasta@01/06/17: check if we are a chanop on $channel...
       my $chan = Irssi::channel_find($channel);
-      if ($chan->{chanop}) { 
+      if ($chan->{chanop}) {
       # shasta@01/06/17: ... if so,
       # shit matches
-foreach $ignorechannel (split / /, Irssi::settings_get_str("dontshitchannels")) 
+foreach $ignorechannel (split / /, Irssi::settings_get_str("dontshitchannels"))
 {
 	$channel_lowcase=$channel;
 	$channel_lowcase=~tr/A-Z/a-z/;
 	$ignorechannel_lowcase=$ignorechannel;
 	$ignorechannel_lowcase=~tr/A-Z/a-z/;
-	
+
  	if ( $ignorechannel_lowcase eq $channel_lowcase ) { $ichanbool = 1; }
 }
-if ( $ichanbool == 1 )  
-{ 
+if ( $ichanbool == 1 )
+{
 	Irssi::print("Excluded channel $channel_lowcase, not kicking $nick, shit $host");
 }
-else 
-{	
+else
+{
 	Irssi::print("SHIT on channel $channel_lowcase, kicking $nick!$host");
-	exec_shit($server, $shit, $nick, $channel, $is_op); 
+	exec_shit($server, $shit, $nick, $channel, $is_op);
 }
       }
       last;
@@ -204,7 +204,7 @@ sub load_shitlist {
     }
     close(F);
   }
-  Irssi::printformat(MSGLEVEL_CLIENTNOTICE, 'shitlist_loaded', 
+  Irssi::printformat(MSGLEVEL_CLIENTNOTICE, 'shitlist_loaded',
                      $shit_file, scalar(@shitlist));
 }
 
@@ -218,7 +218,7 @@ sub save_shitlist {
 
   for (my $c = 0; $c < @shitlist; ++$c) {
     print(F join("\t", $shitlist[$c]->{nickmask}, $shitlist[$c]->{level},
-                 $shitlist[$c]->{reason}, 
+                 $shitlist[$c]->{reason},
 		 get_shit_channels($shitlist[$c])) . "\n");
   }
   close(F);
@@ -260,7 +260,7 @@ sub cmd_delshit {
   my ($index) = split(" ", $_[0], 1);
   my $shit = splice(@shitlist, $index, 1);
   if ($shit) {
-    Irssi::printformat(MSGLEVEL_CLIENTNOTICE, 'shitlist_del', 
+    Irssi::printformat(MSGLEVEL_CLIENTNOTICE, 'shitlist_del',
                         $shit->{nickmask});
     save_shitlist();
   } else {
@@ -274,7 +274,7 @@ sub cmd_shitlist {
   } else {
     Irssi::printformat(MSGLEVEL_CLIENTCRAP, 'shitlist_header');
     for (my $c = 0; $c < @shitlist ; ++$c) {
-      Irssi::printformat(MSGLEVEL_CLIENTCRAP, 'shitlist_line', 
+      Irssi::printformat(MSGLEVEL_CLIENTCRAP, 'shitlist_line',
                 $c, $shitlist[$c]->{nickmask},
 		$shitlist[$c]->{level},
 		join(",", get_shit_channels($shitlist[$c])),

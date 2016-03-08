@@ -53,7 +53,7 @@ sub get_channel {
 sub irc_notice {
 	return unless $get_completions;
 	my( $server, $msg, $from, $address, $target ) = @_;
-	
+
 	if( $msg =~ s/^COMPLETIONS // )	{
 		$root_nick = $from;
 		if( $msg eq 'OK' ) {
@@ -63,7 +63,7 @@ sub irc_notice {
 			$get_completions = 0;
 		}
 		@commands = ( @commands, $msg );
-		
+
 		Irssi::signal_stop();
 	}
 }
@@ -74,7 +74,7 @@ sub complete_word {
 	if ($channel eq $bitlbee_channel or $channel eq $root_nick or $linestart =~ /^\/(msg|query) \Q$root_nick\E */i){
 		$linestart =~ s/^\/(msg|query) \Q$root_nick\E *//i;
 		$linestart =~ s/^\Q$root_nick\E[:,] *//i;
-		foreach my $command(@commands) {	
+		foreach my $command(@commands) {
 			if ($command =~ /^$word/i) {
 				push @$complist, $command;
 		    	}

@@ -43,7 +43,7 @@ sub blist {
   ($list, $word) = split(/ /, $args, 2);
   if (Irssi::active_win->{'active'}->{'name'} eq $bitlbee_channel) {
     Irssi::active_win()->command("msg $bitlbee_channel blist $list");
-    Irssi::signal_add('event privmsg', 'grep');  
+    Irssi::signal_add('event privmsg', 'grep');
   } else {
     print "Only use in $bitlbee_channel.";
   }
@@ -55,7 +55,7 @@ sub grep {
   if ($text =~ /$word/ && $target =~ /$bitlbee_channel/){
     ##do nothing
   } else {Irssi::signal_stop();}
-  if ($text =~ /buddies/ && $target =~/$bitlbee_channel/){Irssi::signal_remove('event privmsg', 'grep');} 
+  if ($text =~ /buddies/ && $target =~/$bitlbee_channel/){Irssi::signal_remove('event privmsg', 'grep');}
 }
 
 Irssi::command_bind('blist','blist');

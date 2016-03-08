@@ -53,7 +53,7 @@ sub cmd_ban {
 
 	my $chan;
 	my ($channel) = $args =~ /^([^\s]+)/;
-	
+
 	if (($server->ischannel($channel))) {
 		$args =~ s/^[^\s]+\s?//;
 		return unless ($args);
@@ -94,34 +94,34 @@ sub cmd_ban {
 	for my $cmd (split("\"", $args)) {
 		($cmdwhen && !$cmdwhat) and $cmdwhat = $cmd, next;
 	for my $arg (split(/ +/, $cmd)) {
-		next unless $arg;	
+		next unless $arg;
 		$arg =~ /^-(normal|host|user|domain|crap|ip|class)$/ and $bantype = $1, next;
 		$arg eq "-before" and $cmdwhen = 1, next;
 		$arg eq "-after" and $cmdwhen = 2, next;
-	
+
 		if (index($arg, "@") == -1) {
 			my $n;
 			if ($n = $chan->nick_find($arg)) {
 				# nick is on channel
 
 				my ($user, $host) = split("@", $n->{host});
-				
+
 				if ($bantype eq "ip" || $bantype eq "class") {
 					# requested ip ban, forking
 					my $pid = &ban_fork;
 					unless (defined $pid) {	# error
-						$cmdwhen = $cmdwhat = 0;	
+						$cmdwhen = $cmdwhat = 0;
 						$b{$channel}--;
 						next;
 					} elsif ($pid) {	# parent
-						$cmdwhen = $cmdwhat = 0;	
+						$cmdwhen = $cmdwhat = 0;
 						next;
 					}
 					my $ia = gethostbyname($host);
 					unless ($ia) {
 						print($parent "error $channel %R>>%n Couldn't resolve $host.\n");
 					} else {
-						print($parent "execute $server->{tag} $channel " . (($n->{op})? $arg : 0) . " " . make_ban($user, inet_ntoa($ia), $bantype) . " $cmdwhen $cmdwhat\n"); 
+						print($parent "execute $server->{tag} $channel " . (($n->{op})? $arg : 0) . " " . make_ban($user, inet_ntoa($ia), $bantype) . " $cmdwhen $cmdwhat\n");
 					}
 					close $parent; POSIX::_exit(1);
 				}
@@ -151,7 +151,7 @@ sub cmd_ban {
 			ban_execute($chan, 0, $ban, $max, $cmdwhen, $cmdwhat);
 		}
 
-		$cmdwhen = $cmdwhat = 0;	
+		$cmdwhen = $cmdwhat = 0;
 	}
 	}
 }
@@ -181,16 +181,16 @@ sub userhost_red {
 	$data =~ s/^[^ ]* :?//;
 
 	my $uh = shift @userhosts;
-	
+
 	unless ($data && $data =~ /^([^=\*]*)\*?=.(.*)@(.*)/ && lc($1) eq $uh->{nick}) {
 		Irssi::print("%R>>%n No such nickname: $uh->{nick}");
 		$b{$uh->{channel}}--;
 		flush_mode($uh->{chanhash}) unless ($b{$uh->{channel}});
 		return;
 	}
-	
+
 	my ($user, $host) = (lc($2), lc($3));
-	
+
 	if ($uh->{bantype} eq "ip" || $uh->{bantype} eq "class") {
 		# requested ip ;/
 		my $pid = &ban_fork;
@@ -204,11 +204,11 @@ sub userhost_red {
 		unless ($ia) {
 			print($parent "error " . $uh->{channel} . " %R>>%n Couldn't resolve $host.\n");
 		} else {
-			print($parent "execute " . $uh->{tag} . " " . $uh->{channel} . " 0 " . make_ban($user, inet_ntoa($ia), $uh->{bantype}) . " " . $uh->{cmdwhen} . " " . $uh->{cmdwhat} . "\n"); 
+			print($parent "execute " . $uh->{tag} . " " . $uh->{channel} . " 0 " . make_ban($user, inet_ntoa($ia), $uh->{bantype}) . " " . $uh->{cmdwhen} . " " . $uh->{cmdwhat} . "\n");
 		}
 		close $parent; POSIX::_exit(1);
 	}
-	
+
 	my $serv = Irssi::server_find_tag($uh->{tag});
 	ban_execute($uh->{chanhash}, 0, make_ban($user, $host, $uh->{bantype}), $serv->{max_modes_in_cmd}, $uh->{cmdwhen}, $uh->{cmdwhat});
 }
@@ -218,7 +218,7 @@ sub ban_execute ($$$$$$) {
 
 	my $no = 0;
 	my $channel = $chan->{name};
-	
+
 	for my $hash ($chan->bans()) {
 		if (mask_match($ban, $hash->{ban})) {
 			# should display also who set the ban (if available)
@@ -228,7 +228,7 @@ sub ban_execute ($$$$$$) {
 		} elsif (mask_match($hash->{ban}, $ban)) {
 			push_mode($chan, "-b", $hash->{ban}, $max);
 		}
-	}	
+	}
 
 	unless ($no) {
 		my ($cmdmode, $cmdarg);
@@ -239,7 +239,7 @@ sub ban_execute ($$$$$$) {
 				flush_mode($chan); # flush all -b conflicting bans
 				$chan->command($cmdwhat); # execute
 			} else { # command is MODE, we can add it to queue
-				push_mode($chan, $cmdmode, $cmdarg, $max);	
+				push_mode($chan, $cmdmode, $cmdarg, $max);
 			}
 		}
 		push_mode($chan, "-o", $nick, $max) if ($nick);
@@ -291,15 +291,15 @@ sub ifork {
 	delete $ftag{$rh};
 	close $rh;
 }
-						
+
 sub make_ban ($$$) {
 	my ($user, $host, $bantype) = @_;
-					
+
 	$user =~ s/^[~+\-=^]/*/;
 	if ($bantype eq "ip") {
 		$host =~ s/\.[0-9]+$/.*/;
 	} elsif ($bantype eq "class") {
-		$user = "*";	
+		$user = "*";
 		$host =~ s/\.[0-9]+$/.*/;
 	} elsif ($bantype eq "user") {
 		$host = "*";

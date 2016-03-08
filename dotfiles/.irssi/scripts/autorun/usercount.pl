@@ -55,7 +55,7 @@ sub usercount {
     $format .= '%6%k %n%G'.$normal if (defined $normal);
     $format =~ s/ $//;
     $format .= "%C)}";
- 
+
 
   $item->default_handler($get_size_only, $format, undef, 1);
 }
@@ -109,7 +109,7 @@ sub refresh_check {
    return if $wi->{name} ne $channel->{name};
    return if $wi->{server}->{tag} ne $channel->{server}->{tag};
 
-   # don't refresh immediately, or we'll end up refreshing 
+   # don't refresh immediately, or we'll end up refreshing
    # a lot around netsplits
    $recalc = 1;
    Irssi::timeout_remove($timeout_tag) if ($timeout_tag > 0);

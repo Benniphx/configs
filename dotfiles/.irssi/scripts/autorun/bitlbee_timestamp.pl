@@ -57,7 +57,7 @@ sub privmsg {
 	# What we need to match: ^B[^B^B^B2010-03-21 16:33:41^B]^B
 
 	if( $server->{tag} eq $bitlbee_server->{tag} ){
-	
+
 		my ($target, $text) = split(/ :/, $data, 2);
 
 		#if( $text =~ /^B[^B^B^B[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}^B]^B/ ){
@@ -87,12 +87,12 @@ sub privmsg {
 					my($year, $month, $day) = split(/-/, $date);
 					my $dt = DateTime->new(year => $year, month => $month, day => $day);
 					my $formatted_date = $day.' '.$dt->month_abbr.' '.$year;
-					
+
 					$window->print('Day changed to '.$formatted_date, MSGLEVEL_NEVER);
 				}
 			}
 			$prev_date = $date;
-			
+
 			Irssi::settings_set_str('timestamp_format', $time);
 			Irssi::signal_continue($server, $target . ' :' . $text, $nick, $address);
 			my $escaped = $tf;
