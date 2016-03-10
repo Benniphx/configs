@@ -26,7 +26,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ggreer/the_silver_searcher'
 Plugin 'rking/ag.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -205,16 +205,34 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 "--- NERDTree ------------------------------------------------------------------
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=3
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidded=1
+let g:NERDTreeChDirMode=2
+
+nnoremap <C-e> :NERDTreeToggle<CR>
 
 " open nerdtree on startup if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" vim-nerdtree-tabs
-let g:nerdtree_tabs_autofind=1
-nnoremap <C-e> :NERDTreeTabsToggle<CR>
+" track the open file in nerdtree
+function! IsNTOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
 
+function! SyncTree()
+  if &modifiable && IsNTOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+autocmd BufEnter * call SyncTree()
+
+" autorefresh nerdtree
+autocmd BufEnter * if IsNTOpen() | execute 'normal R' | endif
+
+" vim-nerdtree-tabs
+"let g:nerdtree_tabs_autofind=1
 
 "--- Syntastic -----------------------------------------------------------------
 set statusline+=%#warningmsg#
@@ -283,5 +301,6 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 
 
 " --- Language specific indentation rules --------------------------------------
+autocmd FileType json setl sw=2 sts=2 et
 autocmd FileType ruby setl sw=2 sts=2 et
 
