@@ -123,6 +123,9 @@ set nowrap                      " no wrap by default
 set whichwrap+=<,>,[,]          " wrap also when using arrow keys
 
 set autoindent                  " indentation settings
+set nosmartindent
+set nocindent
+set indentexpr=
 
 set nobackup                    " don't keep backup after close
 set writebackup                 " do keep a backup while working
