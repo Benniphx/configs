@@ -305,6 +305,7 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 
 
 " --- Language specific indentation rules --------------------------------------
+autocmd FileType yaml setl sw=2 sts=2 et
 autocmd FileType json setl sw=2 sts=2 et
 autocmd FileType ruby setl sw=2 sts=2 et
 
