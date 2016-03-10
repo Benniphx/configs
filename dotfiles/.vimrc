@@ -125,7 +125,6 @@ set whichwrap+=<,>,[,]          " wrap also when using arrow keys
 set autoindent                  " indentation settings
 set nosmartindent
 set nocindent
-set indentexpr=
 
 set nobackup                    " don't keep backup after close
 set writebackup                 " do keep a backup while working
@@ -305,7 +304,7 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 
 
 " --- Language specific indentation rules --------------------------------------
-autocmd FileType yaml setl sw=2 sts=2 et
+autocmd FileType yaml setl sw=2 sts=2 et indentexpr=
 autocmd FileType json setl sw=2 sts=2 et
 autocmd FileType ruby setl sw=2 sts=2 et
 
