@@ -198,6 +198,9 @@ let g:gitgutter_avoid_cmd_prompt_on_windows = 0
 "--- ctrlp.vim -----------------------------------------------------------------
 let g:ctrlp_show_hidden = 1
 
+" search in MRU, files and buffers at the same time
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 
 "--- NERDTree ------------------------------------------------------------------
 let g:NERDTreeMinimalUI=1
