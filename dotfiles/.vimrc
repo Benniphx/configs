@@ -219,8 +219,12 @@ function! IsNTOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 
+function! IsNTFocused()
+  return -1 != match(expand('%'), 'NERD_Tree') 
+endfunction
+
 function! SyncTree()
-  if &modifiable && IsNTOpen() && strlen(expand('%')) > 0 && !&diff
+  if &modifiable && IsNTOpen() && !IsNTFocused() && strlen(expand('%')) > 0 && !&diff
     NERDTreeFind
     wincmd p
   endif
