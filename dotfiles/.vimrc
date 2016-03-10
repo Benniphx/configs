@@ -39,7 +39,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Language support
-Plugin 'chase/vim-ansible-yaml'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elixir-lang/vim-elixir'
