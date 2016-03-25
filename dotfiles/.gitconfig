@@ -21,7 +21,8 @@
 [alias]
     a = add
     amend = commit --amend
-    b = branch -av
+    b = branch -v
+    ba = branch -av
     bd = branch -d
     c = commit -v
     co = checkout
