@@ -29,7 +29,7 @@ brew install gnutls --with-default-names
 brew install grep --with-default-names
 brew install gzip
 brew install screen
-brew install tmux
+brew install tmux reattach-to-user-namespace
 brew install watch
 brew install wdiff --with-gettext
 brew install wget
