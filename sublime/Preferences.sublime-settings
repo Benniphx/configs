@@ -14,6 +14,14 @@
 	"auto_complete_with_fields": true,
 	"auto_indent": true,
 	"auto_match_enabled": false,
+	"hide_sidebar_change_count_trigger": 5,
+	"show_sidebar_on_activated": true,
+	"show_sidebar_on_new": true,
+	"show_sidebar_on_load": false,
+	"show_sidebar_on_clone": true,
+	"show_sidebar_on_save": false,
+	"show_sidebar_on_close": false,
+	"autohide_sidebar_verbose_logging": false,
 	"binary_file_patterns":
 	[
 		"*.jpg",
