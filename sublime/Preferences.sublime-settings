@@ -136,7 +136,7 @@
 	"show_sidebar_on_close": false,
 	"show_sidebar_on_load": false,
 	"show_sidebar_on_new": true,
-	"show_sidebar_on_save": false,
+	"show_sidebar_on_save": true,
 	"show_tab_close_buttons": false,
 	"smart_indent": true,
 	"soda_classic_tabs": true,
