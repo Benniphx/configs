@@ -74,6 +74,11 @@ if [ -d "$jython_path" ]; then
   export PATH="$JYTHON_HOME/bin:$PATH"
 fi
 
+### Go #########################################################################
+
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
 ### Own jars to CLASSPATH ######################################################
 
 jars_path="$HOME/jars"
