@@ -32,10 +32,6 @@ stty -ixon
 if [ `uname` = 'Darwin' ]; then
     # add brew installed binaries to path
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
-
-    # show man pages for GNU coreutils instead of the BSD variants
-    # from: https://gist.github.com/quickshiftin/9130153
-    alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
 fi
 
 ### Nvm ########################################################################
