@@ -31,7 +31,17 @@ stty -ixon
 
 if [ `uname` = 'Darwin' ]; then
     # add brew installed binaries to path
-    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
+    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+    coreutils_bin_path="$(brew --prefix coreutils)/libexec/gnubin"
+    if [ -d "$coreutils_bin_path" ]; then
+      export PATH="$coreutils_bin_path:$PATH"
+    fi
+
+    findutils_bin_path="$(brew --prefix findutils)/libexec/gnubin"
+    if [ -d "$findutils_bin_path" ]; then
+      export PATH="$findutils_bin_path:$PATH"
+    fi
 fi
 
 ### Nvm ########################################################################
