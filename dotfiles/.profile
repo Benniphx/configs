@@ -30,7 +30,7 @@ stty -ixon
 ### OS X: Homebrew #############################################################
 
 if [ `uname` = 'Darwin' ]; then
-    # prefer GNU coreutils and Homebrew installed binaries
+    # add brew installed binaries to path
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH"
 
     # show man pages for GNU coreutils instead of the BSD variants
