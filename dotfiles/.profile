@@ -72,8 +72,10 @@ fi
 
 ### Go #########################################################################
 
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+go_path="$HOME/go"
+if [ -d "$go_path" ]; then
+  export PATH="$go_path/bin:$PATH"
+fi
 
 ### Own jars to CLASSPATH ######################################################
 
