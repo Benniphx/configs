@@ -13,11 +13,11 @@ sudo apt-add-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 
 # Do a full upgrade first to get the system up to date
-sudo apt-get update
-sudo apt-get dist-upgrade -y
+sudo apt update
+sudo apt dist-upgrade -y
 
 # usual compile-time requirements
-sudo apt-get install -y libssl-dev libreadline-dev libsqlite3-dev \
+sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev \
     libbz2-dev zlib1g-dev python-dev
 
 # utilities
@@ -25,33 +25,33 @@ sudo apt-get install -y build-essential cmake colordiff curl git htop \
     openssl ranger screen silversearcher-ag synaptic tmux vim vim-gtk wget xsel
 
 # neovim
-sudo apt-get install -y neovim
+sudo apt install -y neovim
 
 # browsers
 sudo apt-get install -y chromium-browser firefox
 
 # chat programs
-sudo apt-get install -y profanity
+sudo apt install -y profanity
 
 # Microsoft true type core fonts
-sudo apt-get install -y ttf-mscorefonts-installer
+sudo apt install -y ttf-mscorefonts-installer
 
 # Oracle Java JDK
-sudo apt-get install -y oracle-java8-installer
+sudo apt install -y oracle-java8-installer
 
 # XFCE goodies
-sudo apt-get install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
+sudo apt install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
 
 # xmonad related
-sudo apt-get install -y xmonad xmobar dmenu gmrun trayer yeganesh scrot \
+sudo apt install -y xmonad xmobar dmenu gmrun trayer yeganesh scrot \
     suckless-tools
 
 # rbenv and ruby-build
 sudo apt-get install -y rbenv ruby-build
 
 # Xubuntu restricted extras
-sudo apt-get install -y xubuntu-restricted-extras
+sudo apt install -y xubuntu-restricted-extras
 
 # Do final clean ups
-sudo apt-get -y autoremove
-sudo apt-get autoclean
+sudo apt -y autoremove
+sudo apt autoclean
