@@ -31,8 +31,8 @@ sudo apt install -y build-essential cmake colordiff curl git htop openssl \
 # neovim
 sudo apt install -y neovim
 
-# browsers
-sudo apt-get install -y chromium-browser firefox
+# firefox
+sudo apt install -y firefox
 
 # chat programs
 sudo apt install -y profanity
