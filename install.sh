@@ -111,27 +111,28 @@ echo -ne '\n' | vim +PluginInstall +qall 2>/dev/null
 ln -s"$ln_args" "$HOME/.vim" "$HOME/.config/nvim"
 ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
-### Set default shell ##########################################################
+### Set zsh as the default shell ###############################################
 
-if [ `uname` = 'Darwin' ]; then
-    default_shell=$(dscl . -read "$HOME" UserShell)
-else
-    default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
+if which zsh >/dev/null ; then
+    if [ `uname` = 'Darwin' ]; then
+        default_shell=$(dscl . -read "$HOME" UserShell)
+    else
+        default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
+    fi
+
+    case $(echo "$default_shell") in
+        */zsh)
+            echo "ZSH already set to the user's default shell."
+            ;;
+        *)
+            echo ""
+            read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
+            case "$set_zsh" in
+                [yY][eE][sS]|[yY])
+                    echo "Sudo password might be asked."
+                    chsh -s /bin/zsh
+                    ;;
+            esac
+            ;;
+    esac
 fi
-
-case $(echo "$default_shell") in
-    */zsh)
-        echo "ZSH already set to the user's default shell."
-        ;;
-    *)
-        echo ""
-        read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
-        case "$set_zsh" in
-            [yY][eE][sS]|[yY])
-                echo "Sudo password might be asked."
-                chsh -s /bin/zsh
-                ;;
-        esac
-        ;;
-esac
-
