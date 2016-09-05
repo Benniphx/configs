@@ -54,7 +54,7 @@ sudo apt install -y oracle-java8-installer
 sudo apt install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
 
 # xmonad and apps
-sudo apt install -y xmonad xmobar gmrun trayer yeganesh scrot suckless-tools
+sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
 
 # Xubuntu restricted extras
 sudo apt install -y xubuntu-restricted-extras
