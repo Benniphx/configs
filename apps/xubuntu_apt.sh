@@ -7,10 +7,10 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Add Oracle Java repository
-sudo apt-add-repository -y ppa:webupd8team/java
+sudo sh -c 'echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-ubuntu-java-xenial.list'
 
 # Add Neovim repository
-sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo sh -c 'echo "deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu xenial main" > /etc/apt/sources.list.d/neovim-ppa-ubuntu-unstable-xenial.list'
 
 # Add Google Chrome repository
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
