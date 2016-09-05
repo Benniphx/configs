@@ -120,26 +120,26 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 ### Aliases ####################################################################
 
 if [ `uname` = 'Darwin' ]; then
-    # removes annoying .DS_Store files from the given path
-    alias rmds='find . -name '.DS_Store' -exec rm -f {} \;'
+  # removes annoying .DS_Store files from the given path
+  alias rmds='find . -name '.DS_Store' -exec rm -f {} \;'
 
-    # flushes the DNS cache
-    alias flush='sudo killall -HUP mDNSResponder'
+  # flushes the DNS cache
+  alias flush='sudo killall -HUP mDNSResponder'
 
-    alias update='brew update && brew upgrade && brew cleanup && brew cask cleanup'
+  alias update='brew update && brew upgrade && brew cleanup && brew cask cleanup'
 else
-    alias update='sudo apt-get update && sudo apt-get upgrade -y && \
-      sudo apt-get autoremove -y && sudo apt-get autoclean'
+  alias update='sudo apt-get update && sudo apt-get upgrade -y && \
+    sudo apt-get autoremove -y && sudo apt-get autoclean'
 
-    alias dupdate='sudo apt-get update && sudo apt-get dist-upgrade -y && \
-      sudo apt-get autoremove -y && sudo apt-get autoclean'
+  alias dupdate='sudo apt-get update && sudo apt-get dist-upgrade -y && \
+    sudo apt-get autoremove -y && sudo apt-get autoclean'
 
-    # alternatives to the OS X's pbtools, used by Vim for clipboard
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
+  # alternatives to the OS X's pbtools, used by Vim for clipboard
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
 
-    # open anything, similar to 'open' in OS X
-    alias open='xdg-open'
+  # open anything, similar to 'open' in OS X
+  alias open='xdg-open'
 fi
 
 ### Copy current path to clipboard #############################################
@@ -205,37 +205,38 @@ alias myip='curl icanhazip.com'
 
 # fast extract
 extract() {
-   if [ -f $1 ] ; then
-       case $1 in
-           *.tar.bz2)   tar xvjf $1    ;;
-           *.tar.gz)    tar xvzf $1    ;;
-           *.bz2)       bunzip2 $1     ;;
-           *.rar)       unrar x $1     ;;
-           *.gz)        gunzip $1      ;;
-           *.tar)       tar xvf $1     ;;
-           *.tbz2)      tar xvjf $1    ;;
-           *.tgz)       tar xvzf $1    ;;
-           *.zip)       unzip $1       ;;
-           *.Z)         uncompress $1  ;;
-           *.7z)        7z x $1        ;;
-           *)           echo "don't know how to extract '$1'..." ;;
-       esac
-   else
-       echo "'$1' is not a valid file!"
-   fi
+ if [ -f $1 ] ; then
+   case $1 in
+     *.tar.bz2)   tar xvjf $1    ;;
+     *.tar.gz)    tar xvzf $1    ;;
+     *.bz2)       bunzip2 $1     ;;
+     *.rar)       unrar x $1     ;;
+     *.gz)        gunzip $1      ;;
+     *.tar)       tar xvf $1     ;;
+     *.tbz2)      tar xvjf $1    ;;
+     *.tgz)       tar xvzf $1    ;;
+     *.zip)       unzip $1       ;;
+     *.Z)         uncompress $1  ;;
+     *.7z)        7z x $1        ;;
+     *)           echo "don't know how to extract '$1'..." ;;
+   esac
+ else
+   echo "'$1' is not a valid file!"
+ fi
 }
 
 # fast password generator
 genpasswd() {
-    cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | fold -w $1 | head -n1
+  cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | \
+    fold -w $1 | head -n1
 }
 
 # fast calculator
 c() {
-    echo "${1}" | bc -l
+  echo "${1}" | bc -l
 }
 
 # fast find
 f() {
-    find ${2:-$PWD} -name $1
+  find ${2:-$PWD} -name $1
 }

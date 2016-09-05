@@ -18,15 +18,15 @@ sudo apt dist-upgrade -y
 
 # usual compile-time requirements
 sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev \
-    libbz2-dev zlib1g-dev python-dev
+  libbz2-dev zlib1g-dev python-dev
 
 # ruby
 sudo apt install ruby
 
 # utilities
 sudo apt install -y build-essential cmake colordiff curl git htop openssl \
-    python-setuptools ranger screen silversearcher-ag synaptic tmux vim \
-    vim-gtk wget xsel zsh
+  python-setuptools ranger screen silversearcher-ag synaptic tmux vim \
+  vim-gtk wget xsel zsh
 
 # neovim
 sudo apt install -y neovim

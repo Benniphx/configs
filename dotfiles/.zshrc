@@ -119,7 +119,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 ### Automatically list contents when changing directory ########################
 
 function chpwd() {
-    ls --color=auto -ahlF --group-directories-first
+  ls --color=auto -ahlF --group-directories-first
 }
 
 

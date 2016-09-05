@@ -32,10 +32,9 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 ### Additional bash completions ################################################
 
 if [ `uname` = 'Darwin' ]; then
-    # brew install bash-completion
-    bash_completion_path="$(brew --prefix)/etc/bash_completion"
+  bash_completion_path="$(brew --prefix)/etc/bash_completion"
 else
-    bash_completion_path='/etc/bash_completion'
+  bash_completion_path='/etc/bash_completion'
 fi
 [ -f "$bash_completion_path" ] && . "$bash_completion_path"
 
@@ -81,28 +80,28 @@ bakwht='\[\e[47m\]'   # White
 txtrst='\[\e[0m\]'    # Text Reset
 
 parse_git_branch() {
-    git branch --no-color 2> /dev/null | \
-    sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+  git branch --no-color 2> /dev/null | \
+  sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
 parse_git_dirty() {
-    [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] \
-    && echo "*"
+  [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] \
+  && echo "*"
 }
 
 parse_hg_branch() {
-    hg branch 2>/dev/null | sed 's#\(.*\)#\1#'
+  hg branch 2>/dev/null | sed 's#\(.*\)#\1#'
 }
 
 get_branch_information() {
-    branch=$(parse_hg_branch)
-    if [ -n "$branch" ]; then
-        scm='hg'
-    else
-        branch=$(parse_git_branch)
-        [ -n "$branch" ] && scm='git'
-    fi
-    [ -n "$scm" ] && echo "($scm:$branch)"
+  branch=$(parse_hg_branch)
+  if [ -n "$branch" ]; then
+    scm='hg'
+  else
+    branch=$(parse_git_branch)
+    [ -n "$branch" ] && scm='git'
+  fi
+  [ -n "$scm" ] && echo "($scm:$branch)"
 }
 
 export PS1="$txtblu\u@\h$txtrst:$txtcyn\w$txtgrn\$(get_branch_information)$txtrst\$ "
