@@ -27,21 +27,23 @@ unset ignoreeof
 # disable stop (^S) and continue (^Q) flow control signals
 stty -ixon
 
-### OS X: Homebrew #############################################################
+### Homebrew/Linuxbrew #########################################################
 
 if [ `uname` = 'Darwin' ]; then
-    # add brew installed binaries to path
-    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+  # prepend homebrew installed binaries to path
+  export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-    coreutils_bin_path="$(brew --prefix coreutils)/libexec/gnubin"
-    if [ -d "$coreutils_bin_path" ]; then
-      export PATH="$coreutils_bin_path:$PATH"
-    fi
+  coreutils_bin_path="$(brew --prefix coreutils)/libexec/gnubin"
+  [ -d "$coreutils_bin_path" ] && export PATH="$coreutils_bin_path:$PATH"
 
-    findutils_bin_path="$(brew --prefix findutils)/libexec/gnubin"
-    if [ -d "$findutils_bin_path" ]; then
-      export PATH="$findutils_bin_path:$PATH"
-    fi
+  findutils_bin_path="$(brew --prefix findutils)/libexec/gnubin"
+  [ -d "$findutils_bin_path" ] && export PATH="$findutils_bin_path:$PATH"
+else
+  if [ -d "$HOME/.linuxbrew" ]; then
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+  fi
 fi
 
 ### Nvm ########################################################################
