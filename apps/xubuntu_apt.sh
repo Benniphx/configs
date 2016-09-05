@@ -20,6 +20,9 @@ sudo apt dist-upgrade -y
 sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev \
     libbz2-dev zlib1g-dev python-dev
 
+# ruby
+sudo apt install ruby
+
 # utilities
 sudo apt-get install -y build-essential cmake colordiff curl git htop \
     openssl ranger screen silversearcher-ag synaptic tmux vim vim-gtk wget xsel
