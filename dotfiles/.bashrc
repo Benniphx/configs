@@ -118,6 +118,10 @@ alias .....='cd ../../../..'
 
 alias s=". \"$HOME\"/.bash_profile"
 
+### disable stop (^S) and continue (^Q) flow control signals ###################
+
+stty -ixon
+
 ### Load other configs #########################################################
 
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"

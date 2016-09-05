@@ -24,9 +24,6 @@ umask 0027
 # allow exiting shell with ^D
 unset ignoreeof
 
-# disable stop (^S) and continue (^Q) flow control signals
-stty -ixon
-
 ### Homebrew/Linuxbrew #########################################################
 
 if [ `uname` = 'Darwin' ]; then

@@ -122,6 +122,10 @@ function chpwd() {
 
 alias s=". \"$HOME\"/.zshrc"
 
+### disable stop (^S) and continue (^Q) flow control signals ###################
+
+stty -ixon
+
 ### Load other configs #########################################################
 
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
