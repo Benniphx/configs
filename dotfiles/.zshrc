@@ -51,7 +51,6 @@ HIST_STAMPS='dd.mm.yyyy'
 # Add wisely, too many plugins slow down startup.
 plugins=(brew brew-cask docker docker-compose git pip ssh-agent vagrant)
 
-
 ### Theme ######################################################################
 
 # name of the theme to load in ~/.oh-my-zsh/themes/ or $ZSH_CUSTOM/themes/
@@ -105,16 +104,13 @@ BULLETTRAIN_EXEC_TIME_ELAPSED=5
 BULLETTRAIN_EXEC_TIME_BG='cyan'
 BULLETTRAIN_EXEC_TIME_FG='black'
 
-
 ### Enable SSH agent forwarding ################################################
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-
 ### Load Oh My Zsh #############################################################
 
 [ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
-
 
 ### Automatically list contents when changing directory ########################
 
@@ -122,11 +118,9 @@ function chpwd() {
   ls --color=auto -ahlF --group-directories-first
 }
 
-
 ### Shortcut to reload config ##################################################
 
 alias s=". \"$HOME\"/.zshrc"
-
 
 ### Load other configs #########################################################
 
