@@ -50,9 +50,6 @@ sudo apt install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
 sudo apt install -y xmonad xmobar dmenu gmrun trayer yeganesh scrot \
     suckless-tools
 
-# rbenv and ruby-build
-sudo apt-get install -y rbenv ruby-build
-
 # Xubuntu restricted extras
 sudo apt install -y xubuntu-restricted-extras
 
