@@ -12,29 +12,36 @@ sudo apt-add-repository -y ppa:webupd8team/java
 # Add Neovim repository
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 
+# Add Google Chrome repository
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
 # Do a full upgrade first to get the system up to date
 sudo apt update
 sudo apt dist-upgrade -y
 
-# usual compile-time requirements
+# The common compile-time requirements
 sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev \
   libbz2-dev zlib1g-dev python-dev
 
-# ruby
-sudo apt install ruby
+# Ruby
+sudo apt install -y ruby
 
 # utilities
 sudo apt install -y build-essential cmake colordiff curl git htop openssl \
   python-setuptools ranger screen silversearcher-ag synaptic tmux vim \
   vim-gtk wget xsel zsh
 
-# neovim
+# Neovim
 sudo apt install -y neovim
 
-# firefox
+# Firefox
 sudo apt install -y firefox
 
-# chat programs
+# Google Chrome
+sudo apt install -y google-chrome-stable
+
+# Profanity
 sudo apt install -y profanity
 
 # Microsoft true type core fonts
@@ -46,12 +53,12 @@ sudo apt install -y oracle-java8-installer
 # XFCE goodies
 sudo apt install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
 
-# xmonad related
+# xmonad and apps
 sudo apt install -y xmonad xmobar gmrun trayer yeganesh scrot suckless-tools
 
 # Xubuntu restricted extras
 sudo apt install -y xubuntu-restricted-extras
 
-# Do final clean ups
+# Do the final clean ups
 sudo apt -y autoremove
 sudo apt autoclean
