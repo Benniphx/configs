@@ -93,7 +93,6 @@ brew cask install google-chrome
 
 # Misc
 brew cask install google-drive
-brew cask install real-vnc
 brew cask install spotify
 
 # Window managers
