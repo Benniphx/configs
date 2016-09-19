@@ -43,7 +43,6 @@
 		"Ruby Hash Converter",
 		"Sass",
 		"Shell Turtlestein",
-		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-shellcheck",
@@ -51,7 +50,6 @@
 		"SyncedSideBar",
 		"Theme - Soda",
 		"VCS Gutter",
-		"View In Browser",
-		"WordCount"
+		"View In Browser"
 	]
 }
