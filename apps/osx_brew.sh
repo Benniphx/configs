@@ -48,6 +48,7 @@ brew install ack
 brew install bash-completion
 brew install cmake
 brew install colordiff
+brew install diff-so-fancy
 brew install file-formula
 brew install git
 brew install htop-osx
