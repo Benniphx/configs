@@ -85,7 +85,7 @@ brew cask install iterm2
 
 # Editors
 brew cask install libreoffice
-brew cask install sublime-text3
+brew cask install sublime-text
 
 # Browsers
 brew cask install firefox
