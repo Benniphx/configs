@@ -45,7 +45,7 @@
 	"drag_text": true,
 	"draw_centered": false,
 	"draw_indent_guides": true,
-	"draw_minimap_border": true,
+	"draw_minimap_border": false,
 	"draw_white_space": "selection",
 	"enable_hexadecimal_encoding": false,
 	"ensure_newline_at_eof_on_save": true,
