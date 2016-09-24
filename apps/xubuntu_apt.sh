@@ -10,13 +10,6 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-# Add Oracle Java repository
-sudo sh -c 'echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-ubuntu-java-xenial.list'
-
-# Add Google Chrome repository
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
-
 # Do a full upgrade first to get the system up to date
 sudo apt update
 sudo apt dist-upgrade -y
@@ -33,16 +26,21 @@ sudo apt install -y build-essential curl git htop openssl python-setuptools \
   screen synaptic vim vim-gtk wget xsel zsh
 
 # Google Chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
+sudo apt update
 sudo apt install -y google-chrome-stable
 
 # Microsoft true type core fonts
 sudo apt install -y ttf-mscorefonts-installer
 
 # Oracle Java JDK
+sudo sh -c 'echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-ubuntu-java-xenial.list'
+sudo apt update
 sudo apt install -y oracle-java8-installer
 
 # XFCE goodies
-sudo apt install -y xfce4-goodies gtk2-engines-murrine gtk2-engines-pixbuf
+sudo apt install -y xfce4-goodies gtk2-engines-murrine murrine-themes
 
 # xmonad and apps
 sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
