@@ -110,7 +110,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 ### Load Oh My Zsh #############################################################
 
-[ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
+[[ -f "$ZSH/oh-my-zsh.sh" ]] && . "$ZSH/oh-my-zsh.sh"
 
 ### Automatically list contents when changing directory ########################
 
@@ -128,5 +128,5 @@ stty -ixon
 
 ### Load other configs #########################################################
 
-[ -f "$HOME/.profile" ] && . "$HOME/.profile"
-[ -f "$HOME/.zsh_local" ] && . "$HOME/.zsh_local" || true
+[[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
+[[ -f "$HOME/.zsh_local" ]] && . "$HOME/.zsh_local" || true

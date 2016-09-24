@@ -219,7 +219,7 @@ function! IsNTOpen()
 endfunction
 
 function! IsNTFocused()
-  return -1 != match(expand('%'), 'NERD_Tree') 
+  return -1 != match(expand('%'), 'NERD_Tree')
 endfunction
 
 function! SyncTree()

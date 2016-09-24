@@ -18,7 +18,7 @@ do_not_symlink=(
 in_array() {
   local e
   for e in "${@:2}"; do
-    [ "$e" == "$1" ] && return 0;
+    [[ "$e" == "$1" ]] && return 0;
   done
   return 1
 }
@@ -26,7 +26,8 @@ in_array() {
 git_clone_or_pull() {
   local url="$1"
   local target="$2"
-  git -C "$target" pull --rebase 2>/dev/null || git clone --depth 1 "$url" "$target"
+  git -C "$target" pull --rebase 2>/dev/null || git clone --depth 1 "$url" \
+    "$target"
 }
 
 ### Parse arguments ############################################################
@@ -55,14 +56,14 @@ done
 
 ### Symlink htoprc for Linux distributions #####################################
 
-if [ `uname` != 'Darwin' ]; then
+if [[ `uname` != 'Darwin' ]]; then
   mkdir -p "$HOME/.config/htop"
   ln -snvi"$ln_args" "$dotfiles_path/.htoprc" "$HOME/.config/htop/htoprc"
 fi
 
 ### Symlink Sublime User configuration #########################################
 
-if [ `uname` = 'Darwin' ]; then
+if [[ `uname` = 'Darwin' ]]; then
   sublime_user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
 else
   sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
@@ -81,7 +82,8 @@ popd > /dev/null
 git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git \
   "$HOME/.oh-my-zsh"
 
-git_clone_or_pull https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git \
+git_clone_or_pull \
+  https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git \
   "$HOME/.oh-my-zsh/custom/themes"
 
 ### Install fonts ##############################################################
@@ -113,8 +115,8 @@ ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 ### Set zsh as the default shell ###############################################
 
-if which zsh >/dev/null ; then
-  if [ `uname` = 'Darwin' ] ; then
+if which zsh >/dev/null; then
+  if [{ `uname` = 'Darwin' ]]; then
     default_shell=$(dscl . -read "$HOME" UserShell)
   else
     default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)

@@ -1,7 +1,7 @@
 ### .bashrc
 
 # quit if this shell is not interactive
-[ -z "$PS1" ] && return
+[[ -z "$PS1" ]] && return
 
 ### Bash builtins ##############################################################
 
@@ -31,15 +31,15 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 ### Additional bash completions ################################################
 
-if [ `uname` = 'Darwin' ]; then
+if [[ `uname` = 'Darwin' ]]; then
   bash_completion_path="$(brew --prefix)/etc/bash_completion"
 else
   bash_completion_path='/etc/bash_completion'
 fi
-[ -f "$bash_completion_path" ] && . "$bash_completion_path"
+[[ -f "$bash_completion_path" ]] && . "$bash_completion_path"
 
 # add tab completion for hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o 'default' -o 'nospace' \
+[[ -e "$HOME/.ssh/config" ]] && complete -o 'default' -o 'nospace' \
   -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" \
     | cut -d ' ' -f2 | tr ' ' '\n')" scp sftp ssh
 
@@ -86,7 +86,7 @@ parse_git_branch() {
 
 parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] \
-  && echo "*"
+    && echo "*"
 }
 
 parse_hg_branch() {
@@ -95,13 +95,13 @@ parse_hg_branch() {
 
 get_branch_information() {
   branch=$(parse_hg_branch)
-  if [ -n "$branch" ]; then
+  if [[ -n "$branch" ]]; then
     scm='hg'
   else
     branch=$(parse_git_branch)
-    [ -n "$branch" ] && scm='git'
+    [[ -n "$branch" ]] && scm='git'
   fi
-  [ -n "$scm" ] && echo "($scm:$branch)"
+  [[ -n "$scm" ]] && echo "($scm:$branch)"
 }
 
 export PS1="$txtblu\u@\h$txtrst:$txtcyn\w$txtgrn\$(get_branch_information)$txtrst\$ "
@@ -124,5 +124,5 @@ stty -ixon
 
 ### Load other configs #########################################################
 
-[ -f "$HOME/.profile" ] && . "$HOME/.profile"
-[ -f "$HOME/.bash_local" ] && . "$HOME/.bash_local" || true
+[[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
+[[ -f "$HOME/.bash_local" ]] && . "$HOME/.bash_local" || true

@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
 fonts_dir=$( cd "$( dirname "$0" )" && pwd )
-
 find_command="find \"$fonts_dir\" \( -name '*.[o,t]tf' -or -name '*.pcf.gz' \) -type f -print0"
 
-if [ `uname` = 'Darwin' ]; then
+if [[ `uname` = 'Darwin' ]]; then
   font_dir="$HOME/Library/Fonts"
 else
   font_dir="$HOME/.local/share/fonts"
@@ -16,7 +15,7 @@ echo "Copying fonts..."
 eval $find_command | xargs -0 -I % cp "%" "$font_dir/"
 
 # Reset font cache on Linux
-if command -v fc-cache @>/dev/null ; then
+if command -v fc-cache @>/dev/null; then
   echo "Resetting font cache, this may take a moment..."
   fc-cache -f $font_dir
 fi

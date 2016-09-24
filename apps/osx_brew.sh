@@ -4,7 +4,7 @@
 # https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
 
 # Install Homebrew if not exists
-if ! which brew >/dev/null ; then
+if ! which brew >/dev/null; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 

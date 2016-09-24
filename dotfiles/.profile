@@ -26,17 +26,17 @@ unset ignoreeof
 
 ### Homebrew/Linuxbrew #########################################################
 
-if [ `uname` = 'Darwin' ]; then
+if [[ `uname` = 'Darwin' ]]; then
   # prepend homebrew installed binaries to path
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
   coreutils_bin_path="$(brew --prefix coreutils)/libexec/gnubin"
-  [ -d "$coreutils_bin_path" ] && export PATH="$coreutils_bin_path:$PATH"
+  [[ -d "$coreutils_bin_path" ]] && export PATH="$coreutils_bin_path:$PATH"
 
   findutils_bin_path="$(brew --prefix findutils)/libexec/gnubin"
-  [ -d "$findutils_bin_path" ] && export PATH="$findutils_bin_path:$PATH"
+  [[ -d "$findutils_bin_path" ]] && export PATH="$findutils_bin_path:$PATH"
 else
-  if [ -d "$HOME/.linuxbrew" ]; then
+  if [[ -d "$HOME/.linuxbrew" ]]; then
     export PATH="$HOME/.linuxbrew/bin:$PATH"
     export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
     export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
@@ -46,14 +46,13 @@ fi
 ### Nvm ########################################################################
 
 nvm_dir="$HOME/.nvm"
-if [ -s "$nvm_dir/nvm.sh" ]; then
-  export NVM_DIR="$nvm_dir"
-  . "$nvm_dir/nvm.sh"
+if [[ -d "$nvm_dir" ]]; then
+  [[ -s "$nvm_dir/nvm.sh" ]] && export NVM_DIR="$nvm_dir" && . "$nvm_dir/nvm.sh"
 fi
 
 ### Pyenv ######################################################################
 
-if [ -d "$HOME/.pyenv" ]; then
+if [[ -d "$HOME/.pyenv" ]]; then
   pyenv_path="$HOME/.pyenv/bin"
   export PATH="$pyenv_path:$PATH"
   export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -65,7 +64,7 @@ fi
 
 ### Rbenv ######################################################################
 
-if [ -d "$HOME/.rbenv" ]; then
+if [[ -d "$HOME/.rbenv" ]]; then
   rbenv_path="$HOME/.rbenv/bin"
   export PATH="$rbenv_path:$PATH"
   eval "$(rbenv init -)"
@@ -74,7 +73,7 @@ fi
 ### Jython #####################################################################
 
 jython_path=$(find "$HOME" -maxdepth 1 -name 'jython*' -type d | head -1)
-if [ -d "$jython_path" ]; then
+if [[ -d "$jython_path" ]]; then
   export JYTHON_HOME="$jython_path"
   export PATH="$JYTHON_HOME/bin:$PATH"
 fi
@@ -82,21 +81,21 @@ fi
 ### Go #########################################################################
 
 go_path="$HOME/go"
-if [ -d "$go_path" ]; then
+if [[ -d "$go_path" ]]; then
   export PATH="$go_path/bin:$PATH"
 fi
 
 ### Own jars to CLASSPATH ######################################################
 
 jars_path="$HOME/jars"
-if [ -d "$jars_path" ]; then
+if [[ -d "$jars_path" ]]; then
   export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
 fi
 
 ### Autojump ###################################################################
 
 autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
-[ -s "$autojump_path" ] && . "$autojump_path"
+[[ -s "$autojump_path" ]] && . "$autojump_path"
 
 ### SCM puff #################################################################
 
@@ -116,7 +115,7 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 
 ### Aliases ####################################################################
 
-if [ `uname` = 'Darwin' ]; then
+if [[ `uname` = 'Darwin' ]]; then
   # removes annoying .DS_Store files from the given path
   alias rmds='find . -name '.DS_Store' -exec rm -f {} \;'
 
@@ -202,7 +201,7 @@ alias myip='curl icanhazip.com'
 
 # fast extract
 extract() {
- if [ -f $1 ] ; then
+ if [[ -f $1 ]]; then
    case $1 in
      *.tar.bz2)   tar xvjf $1    ;;
      *.tar.gz)    tar xvzf $1    ;;
