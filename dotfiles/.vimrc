@@ -106,6 +106,8 @@ set list listchars=tab:»·,trail:·
 set colorcolumn=80
 
 set number                      " display line numbers
+set relativenumber
+
 set foldlevel=100               " fold nothing by default
 set foldcolumn=1                " the width of the fold column
 
