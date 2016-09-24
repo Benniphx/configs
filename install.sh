@@ -2,6 +2,13 @@
 
 script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
+### Configuration ##############################################################
+
+# Do not symlink these paths. Paths are relative to $dotfiles_path.
+do_not_symlink=(
+  ".irssi"
+)
+
 ### Helpers ####################################################################
 
 in_array() {

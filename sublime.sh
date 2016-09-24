@@ -8,11 +8,6 @@ sublime_version=3
 dotfiles_path="$script_path/dotfiles"
 sublime_dotfiles_path="$script_path/sublime"
 
-# Do not symlink these paths. Paths are relative to $dotfiles_path.
-do_not_symlink=(
-  ".irssi"
-)
-
 ### Parse arguments ############################################################
 
 while getopts 'f' arg; do
