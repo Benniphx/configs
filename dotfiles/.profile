@@ -186,9 +186,6 @@ alias mem='htop --sort-key PERCENT_MEM || top -o rsize'
 # add and remove new/deleted files from git index
 alias gitar='git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove'
 
-# set open source author info for this repository
-alias gos='git config user.name "Anssi Syrjäsalo" && git config user.email anssi.syrjasalo@gmail.com'
-
 ### Misc #######################################################################
 
 # copy the output of the last command to clipboard
