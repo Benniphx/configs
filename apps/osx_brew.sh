@@ -47,6 +47,7 @@ brew install nano
 brew install ack
 brew install bash-completion
 brew install cmake
+brew install ctags
 brew install colordiff
 brew install diff-so-fancy
 brew install file-formula
