@@ -74,6 +74,9 @@ brew cask install amethyst
 # Keyboard remapping tools
 brew cask install ukelele
 
+# Password managers
+brew cask install keepassx
+
 # Do final clean ups
 brew cleanup
 brew cask cleanup
