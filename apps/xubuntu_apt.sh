@@ -42,9 +42,6 @@ sudo apt install -y neovim
 # Google Chrome
 sudo apt install -y google-chrome-stable
 
-# Profanity (Irssi style XMPP client)
-sudo apt install -y profanity
-
 # Microsoft true type core fonts
 sudo apt install -y ttf-mscorefonts-installer
 
