@@ -94,8 +94,8 @@ fi
 
 ### Autojump ###################################################################
 
-autojump_path="$HOME/.autojump/etc/profile.d/autojump.sh"
-[[ -s "$autojump_path" ]] && . "$autojump_path"
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && \
+  . $(brew --prefix)/etc/profile.d/autojump.sh
 
 ### SCM puff #################################################################
 

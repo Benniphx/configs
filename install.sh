@@ -65,6 +65,10 @@ pushd "$dotfiles_path" > /dev/null
 git submodule update --init --depth 1 --recursive
 popd > /dev/null
 
+### Install fonts ##############################################################
+
+"$script_path/fonts/install.sh"
+
 ### Install Oh-My-Zsh ##########################################################
 
 git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git \
@@ -73,17 +77,6 @@ git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git \
 git_clone_or_pull \
   https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git \
   "$HOME/.oh-my-zsh/custom/themes"
-
-### Install fonts ##############################################################
-
-"$script_path/fonts/install.sh"
-
-### Install autojump ###########################################################
-
-git_clone_or_pull git://github.com/joelthelion/autojump.git /tmp/autojump
-pushd /tmp/autojump >/dev/null
-./install.py 1>/dev/null
-popd >/dev/null
 
 ### Install Tmux plugin manager ################################################
 

@@ -7,6 +7,7 @@ brew upgrade
 
 # Commonly used
 brew install ack
+brew install autojump
 brew install bash-completion
 brew install ctags
 brew install colordiff
