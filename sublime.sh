@@ -5,7 +5,6 @@ script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 ### Configuration ##############################################################
 
 sublime_version=3
-dotfiles_path="$script_path/dotfiles"
 sublime_dotfiles_path="$script_path/sublime"
 
 ### Parse arguments ############################################################
