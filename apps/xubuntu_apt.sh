@@ -23,7 +23,7 @@ sudo apt install -y ruby
 
 # utilities
 sudo apt install -y build-essential htop openssl python-setuptools synaptic \
-  vim vim-gtk wget xsel zsh
+  wget xsel zsh
 
 # Google Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | \
