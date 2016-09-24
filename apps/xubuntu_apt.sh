@@ -22,8 +22,8 @@ sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev libbz2-dev \
 sudo apt install -y ruby
 
 # utilities
-sudo apt install -y build-essential curl git htop openssl python-setuptools \
-  screen synaptic vim vim-gtk wget xsel zsh
+sudo apt install -y build-essential htop openssl python-setuptools synaptic \
+  vim vim-gtk wget xsel
 
 # Google Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

@@ -7,17 +7,24 @@ brew upgrade
 
 # Commonly used
 brew install ack
+brew install bash-completion
 brew install ctags
 brew install colordiff
+brew install curl
 brew install diff-so-fancy
 brew install file-formula
+brew install git
 brew install neovim/neovim/neovim
 brew install ranger
+brew install rsync
+brew install shellcheck
+brew install screen
 brew install scmpuff
 brew install thefuck
 brew install the_silver_searcher
 brew install tig
 brew install tmux
+brew install zsh
 
 # Version managers
 brew install node nvm
