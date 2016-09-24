@@ -15,7 +15,7 @@ do_not_symlink=(
 
 ### Helpers ####################################################################
 
-function in_array() {
+in_array() {
   local e
   for e in "${@:2}"; do
     [ "$e" == "$1" ] && return 0;
@@ -23,7 +23,7 @@ function in_array() {
   return 1
 }
 
-function git_clone_or_pull {
+git_clone_or_pull() {
   local url="$1"
   local target="$2"
   git -C "$target" pull --rebase 2>/dev/null || git clone --depth 1 "$url" "$target"
@@ -114,7 +114,7 @@ ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 ### Set zsh as the default shell ###############################################
 
 if which zsh >/dev/null ; then
-  if [ `uname` = 'Darwin' ]; then
+  if [ `uname` = 'Darwin' ] ; then
     default_shell=$(dscl . -read "$HOME" UserShell)
   else
     default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
