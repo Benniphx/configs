@@ -7,7 +7,14 @@ Run this:
 Run `install.sh` with `-f` to override the existing paths without prompting.
 
 
-## Sublime Text and Windows
+## Sublime Text
+
+### OS X / Linux distros
+
+Run `sublime.sh` with `-f` to override the already installed user packages
+
+
+### Windows
 
 On Windows Vista and later, Sublime Text configs can be linked in administrator PowerShell:
 

@@ -2,17 +2,6 @@
 
 script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-### Configuration ##############################################################
-
-sublime_version=3
-dotfiles_path="$script_path/dotfiles"
-sublime_dotfiles_path="$script_path/sublime"
-
-# Do not symlink these paths. Paths are relative to $dotfiles_path.
-do_not_symlink=(
-  ".irssi"
-)
-
 ### Helpers ####################################################################
 
 in_array() {
@@ -60,16 +49,6 @@ if [[ `uname` != 'Darwin' ]]; then
   mkdir -p "$HOME/.config/htop"
   ln -snvi"$ln_args" "$dotfiles_path/.htoprc" "$HOME/.config/htop/htoprc"
 fi
-
-### Symlink Sublime User configuration #########################################
-
-if [[ `uname` = 'Darwin' ]]; then
-  sublime_user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
-else
-  sublime_user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
-fi
-
-ln -snvi"$ln_args" "$sublime_dotfiles_path" "$sublime_user_path"
 
 ### Install submodules if any ##################################################
 
