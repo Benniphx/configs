@@ -22,15 +22,15 @@ sudo apt update
 sudo apt dist-upgrade -y
 
 # The common compile-time requirements
-sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev \
-  libbz2-dev zlib1g-dev python-dev
+sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev libbz2-dev \
+  zlib1g-dev python-dev
 
 # Ruby
 sudo apt install -y ruby
 
 # utilities
-sudo apt install -y build-essential cmake curl git htop openssl \
-  python-setuptools screen synaptic tmux vim vim-gtk wget xsel zsh
+sudo apt install -y build-essential curl git htop openssl python-setuptools \
+  screen synaptic vim vim-gtk wget xsel zsh
 
 # Google Chrome
 sudo apt install -y google-chrome-stable

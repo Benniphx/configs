@@ -14,7 +14,7 @@ brew upgrade
 # GNU coreutils
 brew install coreutils
 
-# System duplicate formulae, without the 'g' prefix.
+# System duplicate formulae
 brew tap homebrew/dupes
 brew install binutils
 brew install diffutils
@@ -29,7 +29,6 @@ brew install gnutls
 brew install grep
 brew install gzip
 brew install screen
-brew install tmux reattach-to-user-namespace
 brew install watch
 brew install wdiff --with-gettext
 brew install wget
@@ -45,14 +44,13 @@ brew install nano
 
 # Commonly used
 brew install bash-completion
-brew install cmake
-brew install file-formula
 brew install git
 brew install htop-osx
 brew install less
 brew install openssh
 brew install p7zip
 brew install macvim --with-override-system-vim --custom-system-icons
+brew install reattach-to-user-namespace
 brew install rsync
 brew install shellcheck
 brew install tree
