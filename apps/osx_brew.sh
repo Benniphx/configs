@@ -47,6 +47,7 @@ brew install reattach-to-user-namespace
 brew install tree
 brew install unzip
 brew install watch
+brew install zsh
 
 # Set up Homebrew Cask
 brew install caskroom/cask/brew-cask
