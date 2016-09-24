@@ -32,8 +32,8 @@ sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev \
 sudo apt install -y ruby
 
 # utilities
-sudo apt install -y build-essential cmake colordiff curl git htop openssl \
-  python-setuptools ranger screen silversearcher-ag synaptic tmux vim \
+sudo apt install -y build-essential cmake ctags colordiff curl git htop }
+  openssl python-setuptools ranger screen silversearcher-ag synaptic tmux vim \
   vim-gtk wget xsel zsh
 
 # Neovim
