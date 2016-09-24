@@ -39,9 +39,6 @@ sudo apt install -y build-essential cmake ctags colordiff curl git htop }
 # Neovim
 sudo apt install -y neovim
 
-# Firefox
-sudo apt install -y firefox
-
 # Google Chrome
 sudo apt install -y google-chrome-stable
 
