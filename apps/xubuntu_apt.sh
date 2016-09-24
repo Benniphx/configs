@@ -3,7 +3,7 @@
 # Ask for the sudo password upfront
 sudo -v
 
-# Keep alive the sudo until the script has finished
+# Keep alive the sudo until this script has finished
 while true; do
   sudo -n true
   sleep 60
