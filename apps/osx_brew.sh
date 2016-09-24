@@ -11,11 +11,9 @@ fi
 brew update
 brew upgrade
 
-# GNU coreutils
-brew install coreutils
-
-# System duplicate formulae
+# GNU utilities
 brew tap homebrew/dupes
+brew install coreutils  # GNU Coreutils are g-prefixed
 brew install binutils
 brew install diffutils
 brew install ed

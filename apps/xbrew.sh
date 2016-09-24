@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-# Targeted both for Homebrew and Linuxbrew
+# These can be installed by Homebrew (OS X) or Linuxbrew (Linux distros)
 
 brew update
 brew upgrade
 
 # Commonly used
 brew install ack
-brew install cmake
 brew install ctags
 brew install colordiff
 brew install diff-so-fancy
@@ -21,7 +20,7 @@ brew install tig
 brew install tmux
 
 # Version managers
-brew install node
+brew install node nvm
 brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
 
