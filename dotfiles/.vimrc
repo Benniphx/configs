@@ -204,7 +204,7 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 "--- NERDTree ------------------------------------------------------------------
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=3
-let g:NERDTreeShowHidded=1
+let g:NERDTreeShowHidden=1
 let g:NERDTreeChDirMode=2
 
 nnoremap <C-e> :NERDTreeToggle<CR>
