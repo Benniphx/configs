@@ -25,7 +25,6 @@ brew install thefuck
 brew install the_silver_searcher
 brew install tig
 brew install tmux
-brew install zsh
 
 # Version managers
 brew install node nvm
