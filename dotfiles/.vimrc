@@ -96,9 +96,9 @@ set nostartofline               " don't jump to the first column when scrolling
 set scrolloff=5                 " keep n lines around cursor when scrolling vertically
 set sidescrolloff=10            " keep n columns around cursor when scrolling horizontally
 
-set tabstop=4                   " number of spaces for a tab
-set softtabstop=4               " number of spaces to insert when tab/backspace
-set shiftwidth=4                " number of spaces to insert on indent
+set tabstop=2                   " number of spaces for a tab
+set softtabstop=2               " number of spaces to insert when tab/backspace
+set shiftwidth=2                " number of spaces to insert on indent
 set smarttab                    " uses shiftwidth instead of tabstop at s.o.l
 set expandtab                   " expand tabs to spaces
 set backspace=indent,eol,start  " enable backspace for these actions
