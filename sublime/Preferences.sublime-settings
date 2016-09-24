@@ -129,7 +129,7 @@
 	"shift_tab_unindent": true,
 	"show_full_path": true,
 	"show_panel_on_build": true,
-	"show_tab_close_buttons": false,
+	"show_tab_close_buttons": true,
 	"smart_indent": true,
 	"soda_classic_tabs": true,
 	"soda_folder_icons": true,
