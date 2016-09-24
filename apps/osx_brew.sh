@@ -44,12 +44,8 @@ brew install make
 brew install nano
 
 # Commonly used
-brew install ack
 brew install bash-completion
 brew install cmake
-brew install ctags
-brew install colordiff
-brew install diff-so-fancy
 brew install file-formula
 brew install git
 brew install htop-osx
@@ -57,22 +53,11 @@ brew install less
 brew install openssh
 brew install p7zip
 brew install macvim --with-override-system-vim --custom-system-icons
-brew install neovim/neovim/neovim
-brew install ranger
 brew install rsync
-brew install scmpuff
 brew install shellcheck
-brew install thefuck
-brew install the_silver_searcher
-brew install tig
 brew install tree
 brew install unzip
 brew install zsh
-
-# Version managers
-brew install node
-brew install pyenv pyenv-virtualenv
-brew install rbenv ruby-build
 
 # Set up Homebrew Cask
 brew install caskroom/cask/brew-cask

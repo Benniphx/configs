@@ -115,19 +115,19 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 
 ### Aliases ####################################################################
 
+alias br='brew update && brew upgrade && brew cleanup'
+
 if [[ `uname` = 'Darwin' ]]; then
   # removes annoying .DS_Store files from the given path
   alias rmds='find . -name '.DS_Store' -exec rm -f {} \;'
 
   # flushes the DNS cache
   alias flush='sudo killall -HUP mDNSResponder'
-
-  alias update='brew update && brew upgrade && brew cleanup && brew cask cleanup'
 else
-  alias update='sudo apt-get update && sudo apt-get upgrade -y && \
+  alias agu='sudo apt-get update && sudo apt-get upgrade -y && \
     sudo apt-get autoremove -y && sudo apt-get autoclean'
 
-  alias dupdate='sudo apt-get update && sudo apt-get dist-upgrade -y && \
+  alias agdu='sudo apt-get update && sudo apt-get dist-upgrade -y && \
     sudo apt-get autoremove -y && sudo apt-get autoclean'
 
   # alternatives to the OS X's pbtools, used by Vim for clipboard
