@@ -69,12 +69,9 @@ brew install unzip
 brew install zsh
 
 # Version managers
-brew install node nvm
+brew install node
 brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
-
-# Chat programs
-brew install profanity --with-terminal-notifier
 
 # Set up Homebrew Cask
 brew install caskroom/cask/brew-cask
@@ -84,21 +81,21 @@ brew tap caskroom/versions
 brew cask install iterm2
 
 # Editors
-brew cask install libreoffice
 brew cask install sublime-text
 
 # Browsers
-brew cask install firefox
 brew cask install google-chrome
 
-# Misc
+# Sync utilities
 brew cask install google-drive
+
+# Players
 brew cask install spotify
 
 # Window managers
 brew cask install amethyst
 
-# Keyboard tools
+# Keyboard remapping tools
 brew cask install ukelele
 
 # Do final clean ups
