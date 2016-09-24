@@ -104,7 +104,7 @@ ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 ### Set zsh as the default shell ###############################################
 
 if which zsh >/dev/null; then
-  if [{ `uname` = 'Darwin' ]]; then
+  if [[ `uname` = 'Darwin' ]]; then
     default_shell=$(dscl . -read "$HOME" UserShell)
   else
     default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
