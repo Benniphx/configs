@@ -26,6 +26,8 @@
 		"PowerShell",
 		"Robot Framework Assistant",
 		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-shellcheck",
 		"SublimeREPL",
 		"SyncedSideBar",
 		"Theme - Fox",
