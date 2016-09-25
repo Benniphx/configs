@@ -18,36 +18,36 @@ sudo apt dist-upgrade -y
 sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev libbz2-dev \
   zlib1g-dev python-dev
 
-# Ruby
-sudo apt install -y ruby
-
-# utilities
+# The common utilities
 sudo apt install -y build-essential htop openssl python-setuptools synaptic \
-  wget xsel zsh
+	wget xsel zsh
 
-# Google Chrome
+# Google Chrome (not Chromium)
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | \
   sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
 sudo apt update
 sudo apt install -y google-chrome-stable
 
-# Microsoft true type core fonts
-sudo apt install -y ttf-mscorefonts-installer
-
 # Oracle Java JDK
 sudo sh -c 'echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-ubuntu-java-xenial.list'
 sudo apt update
 sudo apt install -y oracle-java8-installer
 
+# Microsoft true type core fonts
+sudo apt install -y ttf-mscorefonts-installer
+
 # XFCE goodies
 sudo apt install -y xfce4-goodies gtk2-engines-murrine murrine-themes
+
+# Xubuntu restricted extras
+sudo apt install -y xubuntu-restricted-extras
 
 # xmonad and apps
 sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
 
-# Xubuntu restricted extras
-sudo apt install -y xubuntu-restricted-extras
+# This should be installed by xbrew.sh but it sometimes fails with Linuxbrew
+sudo apt install -y shellcheck
 
 # Do the final clean ups
 sudo apt -y autoremove
