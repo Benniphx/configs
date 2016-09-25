@@ -2,8 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"CoffeeScript",
-		"Python Pep8 Lint"
 	],
 	"installed_packages":
 	[
@@ -12,7 +10,6 @@
 		"Auto Refresh",
 		"AutoFileName",
 		"BracketHighlighter",
-		"CoffeeScript",
 		"Color Highlighter",
 		"ColorPicker",
 		"ConvertToUTF8",
@@ -27,7 +24,6 @@
 		"Package Control",
 		"PackageResourceViewer",
 		"PowerShell",
-		"Python Pep8 Lint",
 		"Robot Framework Assistant",
 		"SublimeCodeIntel",
 		"SublimeREPL",
