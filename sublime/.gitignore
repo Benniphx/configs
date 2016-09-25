@@ -1,7 +1,8 @@
 *
 
 !.gitignore
-!*.sublime-settings
-!*.sublime-keymap
-!*.scanners
 !*.ext-list
+!*.tmTheme
+!*.scanners
+!*.sublime-keymap
+!*.sublime-settings

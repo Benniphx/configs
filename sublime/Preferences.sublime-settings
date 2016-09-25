@@ -37,7 +37,7 @@
 	"caret_style": "smooth",
 	"close_sidebar_if_opened": false,
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Theme - Fox/fox.dark.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/fox.dark (SL).tmTheme",
 	"copy_with_empty_selection": true,
 	"create_window_at_startup": false,
 	"default_encoding": "UTF-8",
