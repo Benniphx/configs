@@ -19,12 +19,12 @@
 
     "codeintel_disabled_languages":
     [
-        "Python"
+        "Python", "Python3"
     ],
 
     "codeintel_live_disabled_languages":
     [
-        "Python"
+        "Python", "Python3"
     ],
 
     "codeintel_snippets": false
