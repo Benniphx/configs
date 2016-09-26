@@ -126,6 +126,11 @@ alias s=". \"$HOME\"/.zshrc"
 
 stty -ixon
 
+### Load iTerm2 shell addons ###################################################
+
+iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
+[[ -e "$iterm2_addons" ]] && . "$iterm2_addons"
+
 ### Load other configs #########################################################
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
