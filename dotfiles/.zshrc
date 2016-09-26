@@ -129,4 +129,4 @@ stty -ixon
 ### Load other configs #########################################################
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
-[[ -f "$HOME/.zsh_local" ]] && . "$HOME/.zsh_local" || true
+[[ -f "$HOME/.zshrc_local" ]] && . "$HOME/.zshrc_local" || true
