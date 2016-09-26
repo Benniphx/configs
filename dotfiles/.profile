@@ -170,7 +170,6 @@ alias lu='ls -ltur && echo Sorted by access time, most recent last'
 
 ### System #####################################################################
 
-alias r='reset'
 alias e="$EDITOR"
 alias g='pgrep -l'
 alias h='history'
