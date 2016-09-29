@@ -122,6 +122,7 @@
 	"preview_on_click": true,
 	"remember_full_screen": true,
 	"remember_open_files": true,
+	"reveal-all-tabs": false,
 	"rulers":
 	[
 		80,
