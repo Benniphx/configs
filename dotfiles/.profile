@@ -103,7 +103,7 @@ which scmpuff >/dev/null && eval "$(scmpuff init -s)"
 
 ### Prefer user binaries #######################################################
 
-export PATH="$HOME/local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 ### Dircolors ##################################################################
 
