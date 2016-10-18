@@ -23,9 +23,9 @@
 
     # Short and self-explanatory helpers
     amend = commit --amend --reuse-message=HEAD
+    cloner = clone --recursive
     conflicts = diff --name-only --diff-filter=UU
     contributors = shortlog --summary --numbered
-    cloner = clone --recursive
     daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
     discard = reset --hard HEAD
     incoming = !git remote update -p; log ..@{u}
