@@ -61,5 +61,6 @@
     newHighlight = green bold 22
 [merge]
     ff = false
+    log = true
 [pull]
 	rebase = true
