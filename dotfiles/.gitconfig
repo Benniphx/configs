@@ -11,10 +11,10 @@
     b = branch -v
     ba = branch -av
     bd = branch -d
-    co = checkout
     ca = !git add -A && git commit -av
     cb = checkout -b
     ci = commit -v
+    co = checkout
     conflicts = diff --name-only --diff-filter=UU
     contributors = shortlog --summary --numbered
     daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
