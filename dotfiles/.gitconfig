@@ -47,6 +47,7 @@
 [core]
     quotepath = off
     autocrlf = input
+    trustctime = false
 [fetch]
     prune = true
 [pager]
