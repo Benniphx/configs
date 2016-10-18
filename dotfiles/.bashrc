@@ -125,4 +125,4 @@ stty -ixon
 ### Load other configs #########################################################
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
-[[ -f "$HOME/.bash_local" ]] && . "$HOME/.bash_local" || true
+[[ -f "$HOME/.bashrc_local" ]] && . "$HOME/.bashrc_local" || true
