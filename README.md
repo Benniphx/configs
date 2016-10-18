@@ -9,7 +9,7 @@ Run `install.sh` with `-f` to override the existing paths without prompting.
 
 ## Sublime Text
 
-### OS X / Linux distros
+### OS X and Linux distros
 
 Run `sublime.sh` with `-f` to override the currently installed user packages.
 
