@@ -43,6 +43,7 @@
     contributors = shortlog --summary --numbered
 [push]
     default = current
+    followTags = true
 [core]
     quotepath = off
     autocrlf = input
