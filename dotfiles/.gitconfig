@@ -40,6 +40,7 @@
     st = status -sb
     daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
     discard = reset --hard HEAD
+    contributors = shortlog --summary --numbered
 [push]
     default = current
 [core]
