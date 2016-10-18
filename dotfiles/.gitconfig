@@ -1,23 +1,11 @@
-[code]
-    ignorecase = false
+### User info ##################################################################
+
 [user]
     name = Anssi Syrjäsalo
     email = anssi.syrjasalo@gmail.com
-[color]
-    ui = auto
-[color "branch"]
-    current = green reverse
-    local = green
-    remote = magenta
-[color "diff"]
-    meta = yellow bold
-    frag = yellow
-    old = red bold
-    new = green bold
-[color "status"]
-    added = green
-    changed = red bold
-    untracked = magenta bold
+
+### Aliases ####################################################################
+
 [alias]
     a = add
     amend = commit --amend
@@ -27,59 +15,103 @@
     c = commit -v
     co = checkout
     con = diff --name-only --diff-filter=UU
+    contributors = shortlog --summary --numbered
+    daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
     df = diff
+    discard = reset --hard HEAD
     in = pull --rebase
     incoming = !git remote update -p; log ..@{u}
-    out = push -u
-    outgoing = log @{u}..
     lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
     mg = merge
-    undo = checkout --
-    unstage = reset HEAD --
+    out = push -u
+    outgoing = log @{u}..
     ready = rebase -i @{u}
     st = status -sb
-    daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
-    discard = reset --hard HEAD
-    contributors = shortlog --summary --numbered
-[apply]
-    whitespace = fix
-[push]
-    default = current
-    followTags = true
+    undo = checkout --
+    unstage = reset HEAD --
+
+### Colors #####################################################################
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = green reverse
+    local = green
+    remote = magenta
+
+[color "diff"]
+    frag = yellow
+    meta = yellow bold
+    new = green bold
+    old = red bold
+
+[color "diff-highlight"]
+    newNormal = green bold
+    newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+
+[color "status"]
+    added = green
+    changed = red bold
+    untracked = magenta bold
+
+### General settings ###########################################################
+
+[code]
+    ignorecase = false
+
 [core]
-    quotepath = off
     autocrlf = input
-    trustctime = false
     precomposeunicode = false
+    quotepath = off
+    trustctime = false
     whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-[diff]
-    renames = copies
-[diff "bin"]
-    textconv = hexdump -v -C
-[fetch]
-    prune = true
+
 [pager]
     diff = diff-so-fancy | less --tabs=1,5 -RFX
     show = diff-so-fancy | less --tabs=1,5 -RFX
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
+
+### Command specific settings ##################################################
+
+[apply]
+    whitespace = fix
+
+[diff]
+    renames = copies
+
+[diff "bin"]
+    textconv = hexdump -v -C
+
+[fetch]
+    prune = true
+
 [merge]
     ff = false
     log = true
+
 [pull]
 	rebase = true
+
+[push]
+    default = current
+    followTags = true
+
+### URL shorthands #############################################################
+
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
     pushInsteadOf = "git://github.com/"
+
 [url "git://github.com/"]
     insteadOf = "github:"
+
 [url "git@gist.github.com:"]
     insteadOf = "gst:"
     pushInsteadOf = "gist:"
     pushInsteadOf = "git://gist.github.com/"
+
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
