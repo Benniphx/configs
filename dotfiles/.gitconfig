@@ -41,6 +41,8 @@
     daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
     discard = reset --hard HEAD
     contributors = shortlog --summary --numbered
+[apply]
+    whitespace = fix
 [push]
     default = current
     followTags = true
