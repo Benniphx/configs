@@ -7,22 +7,18 @@
 ### Aliases ####################################################################
 
 [alias]
-    a = add
     amend = commit --amend --reuse-message=HEAD
     b = branch -v
     ba = branch -av
     bd = branch -d
-    c = commit -v
-    co = checkout
-    con = diff --name-only --diff-filter=UU
+    co = commit -v
+    conflicts = diff --name-only --diff-filter=UU
     contributors = shortlog --summary --numbered
     daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
-    df = diff
     discard = reset --hard HEAD
     in = pull --rebase
     incoming = !git remote update -p; log ..@{u}
     lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
-    mg = merge
     out = push -u
     outgoing = log @{u}..
     ready = rebase -i @{u}
