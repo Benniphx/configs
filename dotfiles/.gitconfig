@@ -52,6 +52,8 @@
     trustctime = false
     precomposeunicode = false
     whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+[diff]
+    renames = copies
 [fetch]
     prune = true
 [pager]
