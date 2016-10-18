@@ -52,6 +52,7 @@ brew install zsh
 # Set up Homebrew Cask
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
+brew tap buo/cask-upgrade
 
 # Terminals
 brew cask install iterm2
