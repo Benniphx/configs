@@ -115,7 +115,7 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 
 ### Aliases ####################################################################
 
-alias br='brew update && brew upgrade && brew cleanup && brew cask cleanup'
+alias br='brew update && brew upgrade && brew cleanup'
 
 if [[ `uname` = 'Darwin' ]]; then
   # removes annoying .DS_Store files from the given path
