@@ -118,6 +118,9 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 alias br='brew update && brew upgrade && brew cleanup'
 
 if [[ `uname` = 'Darwin' ]]; then
+  # brew cask upgrade
+  alias brc='brew update && brew cu && brew cask cleanup'
+
   # removes annoying .DS_Store files from the given path
   alias rmds='find . -name '.DS_Store' -exec rm -f {} \;'
 
