@@ -12,6 +12,7 @@
     ba = branch -av
     bd = branch -d
     co = checkout
+    ca = !git add -A && git commit -av
     cb = checkout -b
     ci = commit -v
     conflicts = diff --name-only --diff-filter=UU
