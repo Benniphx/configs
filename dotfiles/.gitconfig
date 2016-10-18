@@ -48,6 +48,7 @@
     quotepath = off
     autocrlf = input
     trustctime = false
+    precomposeunicode = false
 [fetch]
     prune = true
 [pager]
