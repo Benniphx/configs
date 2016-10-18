@@ -18,6 +18,7 @@
 	in = pull --rebase
 	out = push -u
 	r = remote -v
+	rem = reset HEAD --
 	st = status -sb
 	t = tag -l
 
@@ -33,7 +34,6 @@
 	pullr = !"git pull; git submodule foreach git pull origin master"
 	ready = rebase -i @{u}
 	undo = checkout --
-	unstage = reset HEAD --
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
