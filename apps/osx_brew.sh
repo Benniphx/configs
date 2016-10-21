@@ -11,42 +11,36 @@ fi
 brew update
 brew upgrade
 
-# GNU Coreutils are g-prefixed
-brew install coreutils
-
-# Might be already installed but homebrew/dupes usually has a newer version
+# Might be already installed but homebrew/dupes usually has newer versions
 brew tap homebrew/dupes
-brew install bash
-brew install binutils
 brew install diffutils
-brew install ed
+brew install gpatch
+brew install gzip
+brew install less
+brew install nano
+
+# GNU utils are g-prefixed (but can also be installed --with-default-names)
+brew install coreutils
 brew install findutils
 brew install gawk
-brew install gdb  # gdb requires some further actions, see `brew info gdb`.
-brew install gpatch
 brew install gnu-indent
 brew install gnu-sed
 brew install gnu-tar
 brew install gnu-which
-brew install gnutls
 brew install grep
-brew install gzip
-brew install m4
 brew install make
-brew install nano
-brew install wdiff --with-gettext
-brew install wget
 
-# Commonly used
+# Commonly used from homebrew-core
+brew install bash
 brew install htop-osx
-brew install less
-brew install openssh
 brew install p7zip
+brew install pstree
 brew install macvim --with-override-system-vim --custom-system-icons
 brew install reattach-to-user-namespace
 brew install tree
-brew install unzip
 brew install watch
+brew install wdiff --with-gettext
+brew install wget
 brew install zsh
 
 # Set up Homebrew Cask
