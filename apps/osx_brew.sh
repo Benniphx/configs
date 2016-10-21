@@ -50,6 +50,9 @@ brew cask install ukelele
 # Password managers
 brew cask install keepassx
 
+# GPG Suite
+brew cask install gpgtools
+
 # Do final clean ups
 brew cleanup
 brew cask cleanup
