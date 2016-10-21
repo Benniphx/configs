@@ -190,9 +190,6 @@ alias gitar='git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-i
 
 ### Misc #######################################################################
 
-# copy the output of the last command to clipboard
-alias cl='fc -e -|pbcopy'
-
 # return the public IP address
 alias myip='curl icanhazip.com'
 
