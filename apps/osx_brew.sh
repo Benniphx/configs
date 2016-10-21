@@ -35,7 +35,7 @@ brew install bash
 brew install htop-osx
 brew install p7zip
 brew install pstree
-brew install macvim --with-override-system-vim --custom-system-icons
+brew install macvim --with-override-system-vim
 brew install reattach-to-user-namespace
 brew install tree
 brew install watch
