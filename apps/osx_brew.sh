@@ -15,8 +15,8 @@ brew install gnu-indent
 brew install gnu-sed
 brew install gnu-tar
 brew install gnu-which
-brew install grep
-brew install make
+brew install homebrew/dupes/grep
+brew install homebrew/dupes/make
 
 # OS X fix for tmux+pbcopy+pbpaste combination
 brew install reattach-to-user-namespace
