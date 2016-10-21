@@ -20,7 +20,6 @@ brew install make
 
 # Mac OS X specific
 brew install htop-osx
-brew install macvim --with-override-system-vim
 brew install reattach-to-user-namespace
 
 # Set up Homebrew Cask
