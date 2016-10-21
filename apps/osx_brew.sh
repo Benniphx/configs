@@ -18,8 +18,7 @@ brew install gnu-which
 brew install grep
 brew install make
 
-# Mac OS X specific
-brew install htop-osx
+# OS X fix for tmux+pbcopy+pbpaste combination
 brew install reattach-to-user-namespace
 
 # Set up Homebrew Cask

@@ -24,6 +24,7 @@ brew install ctags
 brew install curl
 brew install diff-so-fancy
 brew install git
+brew install htop
 brew install neovim/neovim/neovim
 brew install p7zip
 brew install pstree
