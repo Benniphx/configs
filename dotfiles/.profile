@@ -134,8 +134,9 @@ if [[ `uname` = 'Darwin' ]]; then
   # Clean up LaunchServices to remove duplicates in the “Open With” menu
   alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'
 
-  # Mute sounds
+  # Mute or unmute sounds
   alias mute='osascript -e "set volume output muted true"'
+  alias blast='osascript -e "set volume output muted false"'
 
   # Lock the screen
   alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
