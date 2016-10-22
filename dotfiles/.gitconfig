@@ -18,7 +18,7 @@
 	in = pull --rebase
 	out = push -u
 	r = remote -v
-	rem = reset HEAD --
+	rem = reset HEAD
 	st = status -sb
 	t = tag -l
 
