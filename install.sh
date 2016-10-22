@@ -69,15 +69,6 @@ popd > /dev/null
 
 "$script_path/fonts/install.sh"
 
-### Install Oh-My-Zsh ##########################################################
-
-git_clone_or_pull https://github.com/robbyrussell/oh-my-zsh.git \
-  "$HOME/.oh-my-zsh"
-
-git_clone_or_pull \
-  https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git \
-  "$HOME/.oh-my-zsh/custom/themes"
-
 ### Install Tmux plugin manager ################################################
 
 git_clone_or_pull https://github.com/tmux-plugins/tpm \

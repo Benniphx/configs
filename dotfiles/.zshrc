@@ -1,60 +1,26 @@
 ### .zshrc
 
-### Oh My Zsh ##################################################################
+### Zplug ######################################################################
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Homebrew/Linuxbrew: brew install zplug
+export ZPLUG_HOME='/usr/local/opt/zplug'
+source "$ZPLUG_HOME/init.zsh"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+zplug "plugins/git", from:oh-my-zsh
+zplug 'plugins/ssh-agent', from:oh-my-zsh
+zplug 'plugins/docker', from:oh-my-zsh
+zplug 'plugins/docker-compose', from:oh-my-zsh
+zplug 'plugins/pip', from:oh-my-zsh
+zplug 'plugins/vagrant', from:oh-my-zsh
+zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"*.zsh-theme"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+zplug check || zplug install
+zplug load
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+### Bullet-train settings ######################################################
 
-# Uncomment to Oh My Zsh Automatically upgrade itself without prompting
-DISABLE_UPDATE_PROMPT=true
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# I am using thefuck for corrections so this is uncommented.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS='dd.mm.yyyy'
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which Oh My Zsh plugins to load.
-# Add wisely, too many plugins slow down startup.
-plugins=(brew brew-cask docker docker-compose git pip ssh-agent vagrant)
-
-### Theme ######################################################################
-
-# name of the theme to load in ~/.oh-my-zsh/themes/ or $ZSH_CUSTOM/themes/
-ZSH_THEME='bullet-train'
+# Make sure the prompt is able to be generated properly
+setopt prompt_subst
 
 # prompt
 BULLETTRAIN_PROMPT_SEPARATE_LINE='true'
@@ -103,14 +69,6 @@ BULLETTRAIN_EXEC_TIME_SHOW='true'
 BULLETTRAIN_EXEC_TIME_ELAPSED=5
 BULLETTRAIN_EXEC_TIME_BG='cyan'
 BULLETTRAIN_EXEC_TIME_FG='black'
-
-### Enable SSH agent forwarding ################################################
-
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-
-### Load Oh My Zsh #############################################################
-
-[[ -f "$ZSH/oh-my-zsh.sh" ]] && . "$ZSH/oh-my-zsh.sh"
 
 ### Automatically list contents when changing directory ########################
 

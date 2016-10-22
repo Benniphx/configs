@@ -38,6 +38,7 @@ brew install tree
 brew install watch
 brew install wdiff --with-gettext
 brew install wget
+brew install zplug
 brew install zsh
 
 # Version managers
