@@ -138,6 +138,9 @@
 [fetch]
 	prune = true
 
+[help]
+	autocorrect = 1
+
 [merge]
 	ff = false
 	log = true
