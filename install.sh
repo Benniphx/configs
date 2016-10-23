@@ -103,9 +103,14 @@ if which zsh >/dev/null; then
       read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
       case "$set_zsh" in
         [yY][eE][sS]|[yY])
-            echo "Sudo password might be asked."
+          echo "Sudo password might be asked."
+          if [[ `uname` = 'Darwin' ]]; then
+            sudo dscl . -create "$HOME" UserShell /usr/local/bin/zsh
+          else
+            # echo "/usr/local/bin/zsh" || sudo tee --append "/etc/shells"
             chsh -s /bin/zsh
-            ;;
+          fi
+          ;;
       esac
       ;;
   esac
