@@ -7,11 +7,12 @@ export ZPLUG_HOME='/usr/local/opt/zplug'
 source "$ZPLUG_HOME/init.zsh"
 
 zplug "plugins/git", from:oh-my-zsh
-zplug 'plugins/ssh-agent', from:oh-my-zsh
-zplug 'plugins/docker', from:oh-my-zsh
-zplug 'plugins/docker-compose', from:oh-my-zsh
-zplug 'plugins/pip', from:oh-my-zsh
-zplug 'plugins/vagrant', from:oh-my-zsh
+zplug "plugins/ssh-agent", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/docker-compose", from:oh-my-zsh
+zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/vagrant", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting"
 zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"*.zsh-theme"
 
 zplug check || zplug install
