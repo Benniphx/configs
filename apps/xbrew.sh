@@ -27,6 +27,7 @@ brew install htop
 brew install httpie
 brew install neovim/neovim/neovim
 brew install p7zip
+brew install peco
 brew install pstree
 brew install ranger
 brew install shellcheck
