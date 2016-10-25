@@ -13,6 +13,7 @@ zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "jimeh/zsh-peco-history"
 zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"*.zsh-theme"
 
 zplug check || zplug install
