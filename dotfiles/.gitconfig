@@ -129,6 +129,9 @@
 [apply]
 	whitespace = fix
 
+[commit]
+	gpgSign = true
+
 [diff]
 	renames = copies
 
