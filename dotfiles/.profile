@@ -45,9 +45,9 @@ fi
 
 ### Nvm ########################################################################
 
-nvm_dir="$HOME/.nvm"
-if [[ -d "$nvm_dir" ]]; then
-  [[ -s "$nvm_dir/nvm.sh" ]] && export NVM_DIR="$nvm_dir" && . "$nvm_dir/nvm.sh"
+if [[ -d "$HOME/.nvm" ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  [[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh"
 fi
 
 ### Pyenv ######################################################################
