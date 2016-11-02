@@ -44,7 +44,6 @@ brew install zplug
 brew install zsh
 
 # Version managers
-brew install node nvm
 brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
 
