@@ -47,5 +47,9 @@ brew install zsh
 brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
 
+# AWS command line tools
+brew install awscli
+brew install aws-shell
+
 # Do final clean up
 brew cleanup
