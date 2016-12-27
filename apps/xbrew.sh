@@ -50,6 +50,7 @@ brew install rbenv ruby-build
 # AWS command line tools
 brew install awscli
 brew install aws-shell
+brew install aws-elasticbeanstalk
 
 # Do final clean up
 brew cleanup
