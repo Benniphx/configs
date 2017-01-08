@@ -1,174 +1,174 @@
 ### User info ##################################################################
 
 [user]
-	name = Anssi Syrjäsalo
-	email = anssi.syrjasalo@gmail.com
+  name = Anssi Syrjäsalo
+  email = anssi.syrjasalo@gmail.com
 
 ### Aliases ####################################################################
 
 [alias]
-	# Shortcuts
-	b = branch -v
-	ba = branch -av
-	bd = branch -d
-	cb = checkout -b
-	ci = commit -v
-	cia = !git add -A && git commit -av
-	co = checkout
-	in = pull --rebase --recurse-submodules
-	out = push -u
-	r = remote -v
-	rem = reset HEAD
-	st = status -sb
-	t = tag -l
+  # Shortcuts
+  b = branch -v
+  ba = branch -av
+  bd = branch -d
+  cb = checkout -b
+  ci = commit -v
+  cia = !git add -A && git commit -av
+  co = checkout
+  in = pull --rebase --recurse-submodules
+  out = push -u
+  r = remote -v
+  rem = reset HEAD
+  st = status -sb
+  t = tag -l
 
-	# Short and self-explanatory helpers
-	amend = commit --amend --reuse-message=HEAD
-	cloner = clone --recursive
-	conflicts = diff --name-only --diff-filter=UU
-	contributors = shortlog --summary --numbered
-	daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
-	discard = reset --hard HEAD
-	incoming = !git remote update -p; log ..@{u}
-	outgoing = log @{u}..
-	pullr = !"git pull; git submodule foreach git pull origin master"
-	ready = rebase -i @{u}
-	undo = checkout --
+  # Short and self-explanatory helpers
+  amend = commit --amend --reuse-message=HEAD
+  cloner = clone --recursive
+  conflicts = diff --name-only --diff-filter=UU
+  contributors = shortlog --summary --numbered
+  daily = log --since '1 day ago' --oneline --author anssi.syrjasalo@
+  discard = reset --hard HEAD
+  incoming = !git remote update -p; log ..@{u}
+  outgoing = log @{u}..
+  pullr = !"git pull; git submodule foreach git pull origin master"
+  ready = rebase -i @{u}
+  undo = checkout --
 
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  # Show the diff between the latest commit and the current state
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
-	# `git di $number` shows the diff between the state `$number` revisions ago
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+  # `git di $number` shows the diff between the state `$number` revisions ago
+  di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
-	# Remove branches already merged to master
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  # Remove branches already merged to master
+  dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
-	# Find branches containing commit
-	fb = "!f() { git branch -a --contains $1; }; f"
+  # Find branches containing commit
+  fb = "!f() { git branch -a --contains $1; }; f"
 
-	# Find commits by source code
-	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+  # Find commits by source code
+  fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
 
-	# Find commits by commit message
-	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+  # Find commits by commit message
+  fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
-	# Find tags containing commit
-	ft = "!f() { git describe --always --contains $1; }; f"
+  # Find tags containing commit
+  ft = "!f() { git describe --always --contains $1; }; f"
 
-	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+  # Switch to a branch, creating it if necessary
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
-	# Visualize git log
-	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+  # Visualize git log
+  lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
 
-	# Merge GitHub pull request on top of the current branch, or if
-	# a branch name is specified, on top of the specified branch
-	mpr = "!f() { \
-		declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
-		declare branch=\"${2:-$currentBranch}\"; \
-		if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-			git fetch origin refs/pull/$1/head:pr/$1 && \
-			git checkout -B $branch && \
-			git rebase $branch pr/$1 && \
-			git checkout -B $branch && \
-			git merge pr/$1 && \
-			git branch -D pr/$1 && \
-			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
-		fi \
-	}; f"
+  # Merge GitHub pull request on top of the current branch, or if
+  # a branch name is specified, on top of the specified branch
+  mpr = "!f() { \
+    declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
+    declare branch=\"${2:-$currentBranch}\"; \
+    if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
+      git fetch origin refs/pull/$1/head:pr/$1 && \
+      git checkout -B $branch && \
+      git rebase $branch pr/$1 && \
+      git checkout -B $branch && \
+      git merge pr/$1 && \
+      git branch -D pr/$1 && \
+      git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
+    fi \
+  }; f"
 
-	# Remove the old tag with this name and tag the latest commit with it
-	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+  # Remove the old tag with this name and tag the latest commit with it
+  retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
 
 ### Colors #####################################################################
 
 [color]
-	ui = auto
+  ui = auto
 
 [color "branch"]
-	current = green reverse
-	local = green
-	remote = magenta
+  current = green reverse
+  local = green
+  remote = magenta
 
 [color "diff"]
-	frag = yellow
-	meta = yellow bold
-	new = green bold
-	old = red bold
+  frag = yellow
+  meta = yellow bold
+  new = green bold
+  old = red bold
 
 [color "diff-highlight"]
-	newNormal = green bold
-	newHighlight = green bold 22
-	oldNormal = red bold
-	oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
 
 [color "status"]
-	added = green
-	changed = red bold
-	untracked = magenta bold
+  added = green
+  changed = red bold
+  untracked = magenta bold
 
 ### General settings ###########################################################
 
 [code]
-	ignorecase = false
+  ignorecase = false
 
 [core]
-	autocrlf = input
-	precomposeunicode = false
-	quotepath = off
-	trustctime = false
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+  autocrlf = input
+  precomposeunicode = false
+  quotepath = off
+  trustctime = false
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [pager]
-	diff = diff-so-fancy | less --tabs=1,5 -RFX
-	show = diff-so-fancy | less --tabs=1,5 -RFX
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX
 
 ### Command specific settings ##################################################
 
 [apply]
-	whitespace = fix
+  whitespace = fix
 
 [commit]
-	gpgSign = true
+  gpgSign = false
 
 [diff]
-	renames = copies
+  renames = copies
 
 [diff "bin"]
-	textconv = hexdump -v -C
+  textconv = hexdump -v -C
 
 [fetch]
-	prune = true
+  prune = true
 
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 [merge]
-	ff = false
-	log = true
+  ff = false
+  log = true
 
 [pull]
-	rebase = true
+  rebase = true
 
 [push]
-	default = current
-	followTags = true
+  default = current
+  followTags = true
 
 ### URL shorthands #############################################################
 
 [url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
 
 [url "git://github.com/"]
-	insteadOf = "github:"
+  insteadOf = "github:"
 
 [url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
-	insteadOf = "gist:"
+  insteadOf = "gist:"
