@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-# Install Homebrew if not exists
-if ! which brew >/dev/null; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if [[ `uname` = 'Darwin' ]]; then
+    if ! which brew >/dev/null; then
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+  else
+    echo "These are for OS Homebrew (OS X) only."
+    exit 1
+  fi
 fi
 
 brew update

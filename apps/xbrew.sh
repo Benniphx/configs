@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-# These can be installed by Homebrew (OS X) or Linuxbrew (Linux distros)
+# Install brew if not exists
+if ! which brew >/dev/null; then
+  if [[ `uname` = 'Darwin' ]]; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  fi
+fi
+
 brew update
 
 # From homebrew-dupes
