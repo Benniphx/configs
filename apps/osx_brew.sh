@@ -15,6 +15,7 @@ brew install gnu-indent
 brew install gnu-sed
 brew install gnu-tar
 brew install gnu-which
+brew install shellcheck
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/make
 

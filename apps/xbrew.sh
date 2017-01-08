@@ -31,7 +31,6 @@ brew install p7zip
 brew install peco
 brew install pstree
 brew install ranger
-brew install shellcheck
 brew install scmpuff
 brew install thefuck
 brew install the_silver_searcher
