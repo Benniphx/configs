@@ -36,6 +36,9 @@ sudo apt install -y oracle-java8-installer
 # Microsoft true type core fonts
 sudo apt install -y ttf-mscorefonts-installer
 
+# Xfce necessities
+sudo apt install -y xfce4-pulseaudio-plugin
+
 # xmonad and apps
 sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
 
