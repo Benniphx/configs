@@ -45,7 +45,6 @@ brew install the_silver_searcher
 brew install tig
 brew install tmux
 brew install tree
-brew install watch
 brew install wdiff --with-gettext
 brew install wget
 brew install zplug
