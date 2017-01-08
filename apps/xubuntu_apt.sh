@@ -19,8 +19,8 @@ sudo apt install -y libssl-dev libreadline-dev libsqlite3-dev libbz2-dev \
   zlib1g-dev python-dev
 
 # The common utilities
-sudo apt install -y build-essential htop openssl python-setuptools synaptic \
-	wget xsel zsh
+sudo apt install -y build-essential openssl python-setuptools wget xsel \
+	zsh
 
 # Google Chrome (not Chromium)
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | \
