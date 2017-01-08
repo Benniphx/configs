@@ -26,18 +26,21 @@ unset ignoreeof
 
 ### Homebrew/Linuxbrew #########################################################
 
-if which brew >/dev/null; then
-  if [[ `uname` = 'Darwin' ]]; then
-    # prepend homebrew installed binaries to path
-    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+if [[ `uname` = 'Darwin' ]]; then
+  # prepend homebrew installed binaries to path
+  export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
+  if which brew >/dev/null; then
     coreutils_bin_path="$(brew --prefix coreutils)/libexec/gnubin"
     [[ -d "$coreutils_bin_path" ]] && export PATH="$coreutils_bin_path:$PATH"
 
     findutils_bin_path="$(brew --prefix findutils)/libexec/gnubin"
     [[ -d "$findutils_bin_path" ]] && export PATH="$findutils_bin_path:$PATH"
-  else
-    export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+  fi
+else
+  export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+
+  if which brew >/dev/null; then
     export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
     export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
     export XDG_DATA_DIRS="$HOME/.linuxbrew/share:$XDG_DATA_DIRS"

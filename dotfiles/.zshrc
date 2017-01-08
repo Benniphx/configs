@@ -2,11 +2,14 @@
 
 ### Zplug ######################################################################
 
-# Homebrew/Linuxbrew: brew install zplug
-if which brew >/dev/null; then
-  export ZPLUG_HOME="$(brew --prefix zplug)"
-  source "$ZPLUG_HOME/init.zsh"
+if [[ `uname` = 'Darwin' ]]; then
+	zplug_home="/usr/local/opt/zplug"
+else
+	zplug_home="$HOME/.linuxbrew/opt/zplug"
 fi
+export ZPLUG_HOME="$zplug_home"
+
+source "$ZPLUG_HOME/init.zsh"
 
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/ssh-agent", from:oh-my-zsh
