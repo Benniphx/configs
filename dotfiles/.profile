@@ -26,20 +26,21 @@ unset ignoreeof
 
 ### Homebrew/Linuxbrew #########################################################
 
-if [[ `uname` = 'Darwin' ]]; then
-  # prepend homebrew installed binaries to path
-  export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+if which brew >/dev/null; then
+  if [[ `uname` = 'Darwin' ]]; then
+    # prepend homebrew installed binaries to path
+    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-  coreutils_bin_path="$(brew --prefix coreutils)/libexec/gnubin"
-  [[ -d "$coreutils_bin_path" ]] && export PATH="$coreutils_bin_path:$PATH"
+    coreutils_bin_path="$(brew --prefix coreutils)/libexec/gnubin"
+    [[ -d "$coreutils_bin_path" ]] && export PATH="$coreutils_bin_path:$PATH"
 
-  findutils_bin_path="$(brew --prefix findutils)/libexec/gnubin"
-  [[ -d "$findutils_bin_path" ]] && export PATH="$findutils_bin_path:$PATH"
-else
-  if [[ -d "$HOME/.linuxbrew" ]]; then
+    findutils_bin_path="$(brew --prefix findutils)/libexec/gnubin"
+    [[ -d "$findutils_bin_path" ]] && export PATH="$findutils_bin_path:$PATH"
+  else
     export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
     export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
     export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+    export XDG_DATA_DIRS="$HOME/.linuxbrew/share:$XDG_DATA_DIRS"
   fi
 fi
 
@@ -94,8 +95,10 @@ fi
 
 ### Autojump ###################################################################
 
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && \
-  . $(brew --prefix)/etc/profile.d/autojump.sh
+if which brew >/dev/null; then
+  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && \
+    . $(brew --prefix)/etc/profile.d/autojump.sh
+fi
 
 ### SCM puff #################################################################
 

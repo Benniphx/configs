@@ -31,12 +31,10 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 ### Additional bash completions ################################################
 
-if [[ `uname` = 'Darwin' ]]; then
+if which brew >/dev/null; then
   bash_completion_path="$(brew --prefix)/etc/bash_completion"
-else
-  bash_completion_path='/etc/bash_completion'
+  [[ -f "$bash_completion_path" ]] && . "$bash_completion_path"
 fi
-[[ -f "$bash_completion_path" ]] && . "$bash_completion_path"
 
 # add tab completion for hostnames based on ~/.ssh/config, ignoring wildcards
 [[ -e "$HOME/.ssh/config" ]] && complete -o 'default' -o 'nospace' \
