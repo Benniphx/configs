@@ -43,7 +43,7 @@ sudo apt install -y xfce4-goodies gtk2-engines-murrine murrine-themes
 # xmonad and apps
 sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
 
-# This should be installed by xbrew.sh but it sometimes fails with Linuxbrew
+# This fails when install by linuxbrew
 sudo apt install -y shellcheck
 
 # Do the final clean ups
