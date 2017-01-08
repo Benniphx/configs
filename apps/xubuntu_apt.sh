@@ -40,9 +40,6 @@ sudo apt install -y ttf-mscorefonts-installer
 # XFCE goodies
 sudo apt install -y xfce4-goodies gtk2-engines-murrine murrine-themes
 
-# Xubuntu restricted extras
-sudo apt install -y xubuntu-restricted-extras
-
 # xmonad and apps
 sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
 
