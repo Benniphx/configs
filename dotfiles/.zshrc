@@ -4,8 +4,8 @@
 
 # Homebrew/Linuxbrew: brew install zplug
 if which brew >/dev/null; then
-	export ZPLUG_HOME="$(brew --prefix zplug)"
-	source "$ZPLUG_HOME/init.zsh"
+  export ZPLUG_HOME="$(brew --prefix zplug)"
+  source "$ZPLUG_HOME/init.zsh"
 fi
 
 zplug "plugins/git", from:oh-my-zsh
