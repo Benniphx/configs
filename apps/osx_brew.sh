@@ -31,7 +31,7 @@ brew install watch
 brew install reattach-to-user-namespace
 
 # Set up Homebrew Cask
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
 brew tap caskroom/versions
 brew tap buo/cask-upgrade
 
