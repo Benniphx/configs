@@ -54,7 +54,7 @@ done
 
 ### Symlink htoprc for Linux distributions #####################################
 
-if [[ `uname` != 'Darwin' ]]; then
+if [[ "$OSTYPE" = linux-gnu* ]]; then
   mkdir -p "$HOME/.config/htop"
   ln -snvi"$ln_args" "$dotfiles_path/.htoprc" "$HOME/.config/htop/htoprc"
 fi
@@ -88,7 +88,7 @@ ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 ### Set zsh as the default shell ###############################################
 
 if which zsh >/dev/null; then
-  if [[ `uname` = 'Darwin' ]]; then
+  if [[ "$OSTYPE" = darwin* ]]; then
     default_shell=$(dscl . -read "$HOME" UserShell)
   else
     default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
@@ -104,7 +104,7 @@ if which zsh >/dev/null; then
       case "$set_zsh" in
         [yY][eE][sS]|[yY])
           echo "Sudo password might be asked."
-          if [[ `uname` = 'Darwin' ]]; then
+          if [[ "$OSTYPE" = darwin* ]]; then
             sudo dscl . -create "$HOME" UserShell /usr/local/bin/zsh
           else
             # echo "/usr/local/bin/zsh" || sudo tee --append "/etc/shells"

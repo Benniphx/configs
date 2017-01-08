@@ -2,7 +2,7 @@
 
 # Install brew if not exists
 if ! which brew >/dev/null; then
-  if [[ `uname` = 'Darwin' ]]; then
+  if [[ "$OSTYPE" = darwin* ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"

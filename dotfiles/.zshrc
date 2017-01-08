@@ -2,7 +2,7 @@
 
 ### Zplug ######################################################################
 
-if [[ `uname` = 'Darwin' ]]; then
+if [[ "$OSTYPE" = darwin* ]]; then
 	zplug_home="/usr/local/opt/zplug"
 else
 	zplug_home="$HOME/.linuxbrew/opt/zplug"

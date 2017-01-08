@@ -22,7 +22,7 @@ done
 
 ### Symlink Sublime User configuration #########################################
 
-if [[ $(uname) = 'Darwin' ]]; then
+if [[ "$OSTYPE" = darwin* ]]; then
   user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
 else
   user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"

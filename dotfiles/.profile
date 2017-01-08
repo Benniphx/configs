@@ -26,7 +26,7 @@ unset ignoreeof
 
 ### Homebrew/Linuxbrew #########################################################
 
-if [[ `uname` = 'Darwin' ]]; then
+if [[ "$OSTYPE" = darwin* ]]; then
   # prepend homebrew installed binaries to path
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
@@ -124,7 +124,7 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 # Upgrade Homebrew/Linuxbrew formulas
 alias br='brew update && brew upgrade && brew cleanup'
 
-if [[ `uname` = 'Darwin' ]]; then
+if [[ "$OSTYPE" = darwin* ]]; then
   # Brew cask upgrade
   alias brc='brew update && brew cu && brew cask cleanup'
 
