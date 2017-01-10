@@ -87,31 +87,31 @@ ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 ### Set zsh as the default shell ###############################################
 
-if which zsh >/dev/null; then
-  if [[ "$OSTYPE" = darwin* ]]; then
-    default_shell=$(dscl . -read "$HOME" UserShell)
-  else
-    default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
-  fi
+if [[ "$OSTYPE" = darwin* ]]; then
+  brew_zsh_path="/usr/local/bin/zsh"
+  default_shell=$(dscl . -read "$HOME" UserShell)
+else
+  brew_zsh_path="$HOME/.linuxbrew/bin/zsh"
+  default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
+fi
 
-  case $(echo "$default_shell") in
-    */zsh)
-      echo "ZSH already set to the user's default shell."
-      ;;
-    *)
-      echo ""
-      read -p "Set ZSH as the user's default shell [y\N] > " -r set_zsh
-      case "$set_zsh" in
-        [yY][eE][sS]|[yY])
-          echo "Sudo password might be asked."
-          if [[ "$OSTYPE" = darwin* ]]; then
-            sudo dscl . -create "$HOME" UserShell /usr/local/bin/zsh
-          else
-            # echo "/usr/local/bin/zsh" || sudo tee --append "/etc/shells"
-            chsh -s /bin/zsh
+if [[ -e "$brew_zsh_path" ]]; then
+  if [[ "$default_shell" = "$brew_zsh_path" ]]; then
+    echo "Brew ZSH already set to the user's default shell."
+  else
+    echo ""
+    read -p "Set brew ZSH as the user's default shell [y\N] > " -r set_zsh
+    case "$set_zsh" in
+      [yY][eE][sS]|[yY])
+        echo "Sudo might be asked..."
+        if [[ "$OSTYPE" = darwin* ]]; then
+          sudo dscl . -create "$HOME" UserShell "$brew_zsh_path"
+        else
+          if grep -Fxq "$brew_zsh_path" /etc/shells; then
+            echo "$brew_zsh_path" || sudo tee --append "/etc/shells"
           fi
-          ;;
-      esac
-      ;;
-  esac
+         fi
+        ;;
+    esac
+  fi
 fi

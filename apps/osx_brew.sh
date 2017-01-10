@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
-if [[ "$OSTYPE" = darwin* ]]; then
-    if ! which brew >/dev/null; then
-      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-  else
-    echo "These are for OS Homebrew (OS X) only."
-    exit 1
-  fi
+[[ "$OSTYPE" = darwin* ]] || (echo "These are OS X only brews." ; exit 1)
+
+if ! which brew >/dev/null; then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 brew update
