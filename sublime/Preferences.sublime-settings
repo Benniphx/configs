@@ -87,7 +87,7 @@
 		"CVS"
 	],
 	"font_face": "Terminus (TTF)",
-	"font_size": 16,
+	"font_size": 15,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": true,
