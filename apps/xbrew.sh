@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Install brew if not exists
 if ! which brew >/dev/null; then
   if [[ "$OSTYPE" = darwin* ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -11,7 +10,7 @@ fi
 
 brew update
 
-# From homebrew-dupes
+# homebrew-dupes
 brew install homebrew/dupes/diffutils
 brew install homebrew/dupes/gpatch
 brew install homebrew/dupes/gzip
@@ -21,7 +20,7 @@ brew install homebrew/dupes/nano
 brew install homebrew/dupes/rsync
 brew install homebrew/dupes/screen
 
-# From homebrew-core
+# homebrew-core
 brew install ack
 brew install autojump
 brew install bash
@@ -50,14 +49,14 @@ brew install wget
 brew install zplug
 brew install zsh
 
-# Version managers
+# devenv
 brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
+brew install nvm
 
-# AWS command line tools
+# AWS CLI tools
 brew install awscli
 brew install aws-shell
 brew install aws-elasticbeanstalk
 
-# Do final clean up
 brew cleanup

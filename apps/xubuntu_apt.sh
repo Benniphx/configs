@@ -42,9 +42,8 @@ sudo apt install -y xfce4-pulseaudio-plugin
 # xmonad and apps
 sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
 
-# This fails when installed by linuxbrew
+# This fails on Linuxbrew
 sudo apt install -y shellcheck
 
-# Do the final clean ups
 sudo apt -y autoremove
 sudo apt autoclean
