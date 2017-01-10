@@ -89,7 +89,7 @@ ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 if [[ "$OSTYPE" = darwin* ]]; then
   brew_zsh_path="/usr/local/bin/zsh"
-  default_shell=$(dscl . -read "$HOME" UserShell)
+  default_shell=$(dscl . -read "$HOME" UserShell | cut -d' ' -f2)
 else
   brew_zsh_path="$HOME/.linuxbrew/bin/zsh"
   default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
