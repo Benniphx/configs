@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-[[ "$OSTYPE" = darwin* ]] || (echo "These are OS X only brews." ; exit 1)
+if [[ "$OSTYPE" != darwin* ]]; then
+  echo "These are OS X only brews."
+  exit 1
+fi
 
 if ! which brew >/dev/null; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
