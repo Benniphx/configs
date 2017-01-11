@@ -107,9 +107,10 @@ if [[ -e "$brew_zsh_path" ]]; then
         if [[ "$OSTYPE" = darwin* ]]; then
           sudo dscl . -create "$HOME" UserShell "$brew_zsh_path"
         else
-          if grep -Fxq "$brew_zsh_path" /etc/shells; then
-            echo "$brew_zsh_path" || sudo tee --append "/etc/shells"
+          if ! grep "$brew_zsh_path" /etc/shells >/dev/null; then
+            echo "$brew_zsh_path" | sudo tee --append /etc/shells
           fi
+          chsh -s "$brew_zsh_path"
          fi
         ;;
     esac
