@@ -9,6 +9,7 @@ dotfiles_path="$script_path/dotfiles"
 # Do not symlink these paths. Paths are relative to $dotfiles_path.
 do_not_symlink=(
   ".irssi"
+  ".config"
 )
 
 ### Helpers ####################################################################
@@ -57,6 +58,16 @@ done
 if [[ "$OSTYPE" = linux-gnu* ]]; then
   mkdir -p "$HOME/.config/htop"
   ln -snvi"$ln_args" "$dotfiles_path/.htoprc" "$HOME/.config/htop/htoprc"
+fi
+
+### Symlink XFCE for Linux distributions #####################################
+
+if [[ "$OSTYPE" = linux-gnu* ]]; then
+  xfce_configs_path="$HOME/.config/xfce4"
+  if [[ ! -L "$xfce_configs_path" ]]; then
+    mv -i "$xfce_configs_path" "${xfce_configs_path}-old"
+    ln -snvi"$ln_args" "$dotfiles_path/.config/xfce4" "$xfce_configs_path"
+  fi
 fi
 
 ### Install submodules if any ##################################################

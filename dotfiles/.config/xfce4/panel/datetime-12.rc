@@ -1,0 +1,5 @@
+layout=3
+date_font=Terminus (TTF) Medium 16
+time_font=Terminus (TTF) Bold 16
+date_format=%A, %B %d, %Y
+time_format=%H:%M
