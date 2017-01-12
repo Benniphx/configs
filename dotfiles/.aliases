@@ -103,6 +103,9 @@ alias mem='htop --sort-key PERCENT_MEM || top -o rsize'
 
 ### Misc #######################################################################
 
+# Alias 'vim' to 'nvim'
+alias vim='nvim'
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
