@@ -24,6 +24,11 @@ zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"*.zsh-theme"
 zplug check || zplug install
 zplug load
 
+# configure history
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+
 ### Bullet-train settings ######################################################
 
 # Make sure the prompt is able to be generated properly

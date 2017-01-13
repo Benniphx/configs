@@ -19,9 +19,10 @@ shopt -s histappend
 # combine multiline commands into one in history
 shopt -s cmdhist
 
-# history file
-HISTSIZE=10000
+# configure history
+HISTFILE="$HOME/.bash_history"
 HISTFILESIZE=10000
+HISTSIZE=10000
 HISTCONTROL=ignoreboth
 HISTIGNORE='ls:cd:bg:fg:history:pwd:exit:date:s'
 HISTTIMEFORMAT='%d.%m.%Y %H:%M  '
