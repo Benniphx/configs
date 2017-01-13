@@ -28,7 +28,6 @@ brew install bash-completion
 brew install colordiff
 brew install ctags
 brew install curl
-brew install diff-so-fancy
 brew install git
 brew install htop
 brew install httpie
