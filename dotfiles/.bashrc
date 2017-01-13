@@ -124,4 +124,5 @@ stty -ixon
 ### Load other configs #########################################################
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
+[[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
 [[ -f "$HOME/.bashrc_local" ]] && . "$HOME/.bashrc_local" || true
