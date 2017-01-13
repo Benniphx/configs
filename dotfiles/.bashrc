@@ -125,4 +125,4 @@ stty -ixon
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
 [[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
-[[ -f "$HOME/.bashrc_local" ]] && . "$HOME/.bashrc_local" || true
+[[ -f "$HOME/.rclocal" ]] && . "$HOME/.rclocal" || true

@@ -121,4 +121,4 @@ iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
 [[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
-[[ -f "$HOME/.zshrc_local" ]] && . "$HOME/.zshrc_local" || true
+[[ -f "$HOME/.rclocal" ]] && . "$HOME/.rclocal" || true
