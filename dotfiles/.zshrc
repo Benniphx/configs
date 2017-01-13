@@ -24,10 +24,27 @@ zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"*.zsh-theme"
 zplug check || zplug install
 zplug load
 
-# configure history
+### History ####################################################################
+
+# This is unset on some environments
 HISTFILE="$HOME/.zsh_history"
+
+# Increase sizes
 HISTSIZE=10000
 SAVEHIST=10000
+
+# Share history between shells
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history
+
+# Show timestamps in history
+alias history='fc -El 1'
 
 ### Bullet-train settings ######################################################
 
