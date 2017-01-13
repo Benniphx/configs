@@ -3,11 +3,10 @@
 ### Zplug ######################################################################
 
 if [[ "$OSTYPE" = darwin* ]]; then
-	zplug_home="/usr/local/opt/zplug"
+  export ZPLUG_HOME="/usr/local/opt/zplug"
 else
-	zplug_home="$HOME/.linuxbrew/opt/zplug"
+  export ZPLUG_HOME="$HOME/.linuxbrew/opt/zplug"
 fi
-export ZPLUG_HOME="$zplug_home"
 
 source "$ZPLUG_HOME/init.zsh"
 
