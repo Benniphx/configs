@@ -1,46 +1,76 @@
 #!/usr/bin/env bash
 
-# Forked from:
+# Originally forked from:
 # https://github.com/trek10inc/awsume/blob/40a527abea/awsume
 
-if [[ -z "$1" ]] ; then
-  echo "Missing profile name"
-else
-  [[ "$2" == "refresh" ]] && rm ~/.aws/cli/cache/${1}-*
+### Helpers ####################################################################
 
-  if aws sts get-caller-identity --profile "$1" >/dev/null ; then
-    read token key id <<< $(
-      cat ~/.aws/cli/cache/${1}-*.json | python -c 'import json, sys
-creds = json.load(sys.stdin)["Credentials"]
-print(" ".join(creds[_] for _ in ("SessionToken","SecretAccessKey","AccessKeyId")))'
-    )
+exit_no_role() {
+  local role_name="$1"
 
-    region=$(aws configure get region --profile "$1")
+  echo -e "\nProfile '$role_name' has no role_arn defined"
+  exit 1
+}
 
-    if [[ "$2" == "show" ]]; then
-      echo "export AWS_SESSION_TOKEN=$token"
-      echo "export AWS_SECRET_ACCESS_KEY=$key"
-      echo "export AWS_ACCESS_KEY_ID=$id"
+exit_print_usage() {
+  echo "Usage: awsrole <profile> <role_to_assume> [mfa_token]"
+  exit 64
+}
 
-      if [[ -z "$region" ]]; then
-        echo "No region set."
-      else
-        echo "export AWS_REGION=$region"
-        echo "export AWS_DEFAULT_REGION=$region"
-      fi
-    fi
+get_user_details() {
+  local profile_name="$1"
 
-    echo "$token"
-    export AWS_SESSION_TOKEN="$token"
-    export AWS_SECRET_ACCESS_KEY="$key"
-    export AWS_ACCESS_KEY_ID="$id"
+  local identity_json=$(aws sts get-caller-identity --profile "$profile_name")
+  [[ -z "$identity_json" ]] && exit 1
 
-    if [[ -z "$region" ]] ; then
-      unset AWS_REGION
-      unset AWS_DEFAULT_REGION
-    else
-      export AWS_REGION="$region"
-      export AWS_DEFAULT_REGION="$region"
-    fi
+  read account_id user_arn <<< $(echo "$identity_json" | python -c '
+import json, sys
+creds = json.load(sys.stdin)
+print(" ".join(creds[_] for _ in ("Account","Arn")))')
+  username=$(echo "$user_arn" | cut -d '/' -f2)
+}
+
+get_sts_for_user() {
+  local profile_name="$1"
+  local role_name="$2"
+  if [[ -n "$3" ]] ; then
+    local mfa_num="--serial-number arn:aws:iam::$account_id:mfa/$username"
+    local mfa_token="--token $3"
   fi
-fi
+
+  local sts_token_json=$(aws sts assume-role \
+    --duration-seconds 900 \
+    --profile "$profile_name" \
+    --role-session-name "${profile_name}-via-sts" \
+    --role-arn "arn:aws:iam::$account_id:role/$role_name" \
+    $mfa_num \
+    $mfa_token
+  )
+  [[ -z "$sts_token_json" ]] && exit 1
+
+  read token key id <<< $(echo "$sts_token_json" | python -c '
+import json, sys
+creds = json.load(sys.stdin)["Credentials"]
+values = ("SessionToken","SecretAccessKey","AccessKeyId")
+print(" ".join(creds[_] for _ in values))
+  ')
+
+  export AWS_SESSION_TOKEN="$token"
+  export AWS_SECRET_ACCESS_KEY="$key"
+  export AWS_ACCESS_KEY_ID="$id"
+}
+
+print_session_env() {
+  echo "Paste these in your shell:"
+  echo "export AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN"
+  echo "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
+  echo "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
+}
+
+### Main #######################################################################
+
+[[ $# -lt 2 ]] && exit_print_usage
+
+get_user_details "$1"
+get_sts_for_user "$1" "$2" "$3"
+print_session_env
