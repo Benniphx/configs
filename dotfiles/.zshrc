@@ -121,4 +121,8 @@ iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
 [[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
-[[ -f "$HOME/.rclocal" ]] && . "$HOME/.rclocal" || true
+[[ -f "$HOME/.rclocal" ]] && . "$HOME/.rclocal"
+
+#### Restore tmux ##############################################################
+
+[[ -n "$TMUX" ]] || tmux attach -d -t "local" || tmux new -s "local"
