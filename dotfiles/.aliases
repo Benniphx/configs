@@ -66,7 +66,6 @@ fi
 
 ### More sensible defaults #####################################################
 
-alias ls='ls --color=auto -hlF --group-directories-first'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -81,11 +80,13 @@ alias chgrp='chgrp --preserve-root'
 
 ### Enhanced ls ################################################################
 
-alias lx='ls -lXB && echo Sorted by extension'
-alias lk='ls -lSr && echo Sorted by size, biggest last'
-alias lt='ls -ltr && echo Sorted by date, most recent last'
-alias lc='ls -ltcr && echo Sorted by change time, most recent last'
-alias lu='ls -ltur && echo Sorted by access time, most recent last'
+alias ls='ls --color=auto'
+alias la='ls -alh --group-directories-first --time-style="+%d%b%y %H:%M:%S"'
+alias le='la -XB && echo Sorted by extension'
+alias lb='la -Sr && echo Sorted by size, biggest last'
+alias lt='la -tr && echo Sorted by date, most recent last'
+alias lu='la -tcr && echo Sorted by change time, most recent last'
+alias lr='la -tur && echo Sorted by access time, most recent last'
 
 ### Shortcuts ##################################################################
 
