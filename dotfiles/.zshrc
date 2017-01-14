@@ -50,6 +50,20 @@ alias history='fc -El 1'
 # Make sure the prompt is able to be generated properly
 setopt prompt_subst
 
+BULLETTRAIN_PROMPT_ORDER=(
+  context
+  dir
+  git
+  hg
+  go
+  ruby
+  virtualenv
+  nvm
+  custom
+  status
+  cmd_exec_time
+)
+
 # prompt
 BULLETTRAIN_PROMPT_SEPARATE_LINE='true'
 BULLETTRAIN_PROMPT_ADD_NEWLINE='false'
