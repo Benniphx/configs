@@ -66,9 +66,9 @@ fi
 
 ### More sensible defaults #####################################################
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias grep='grep --color'
+alias fgrep='fgrep --color'
+alias egrep='egrep --color'
 alias ping='ping -c 5'
 alias mount='mount | column -t'
 
@@ -80,7 +80,7 @@ alias chgrp='chgrp --preserve-root'
 
 ### Enhanced ls ################################################################
 
-alias ls='ls --color=auto -g -h --time-style="+%d%b%y %H:%M:%S"'
+alias ls='ls --color -h --group-directories-first --time-style="+%d%b%y %H:%M:%S"'
 
 alias l='ls -al'
 alias le='l -XB && echo Ordered by extension'
