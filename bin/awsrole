@@ -5,13 +5,6 @@
 
 ### Helpers ####################################################################
 
-exit_no_role() {
-  local role_name="$1"
-
-  echo -e "\nProfile '$role_name' has no role_arn defined"
-  exit 1
-}
-
 exit_print_usage() {
   echo "Usage: awsrole <profile> <role_to_assume> [mfa_token]"
   exit 64
