@@ -42,6 +42,14 @@ while getopts 'f' arg; do
   esac
 done
 
+### Symlink bin ###########################################################
+
+local_bin_path="$HOME/.local/bin"
+if [[ ! -L "$local_bin_path" ]]; then
+  mv -i "$local_bin_path" "${local_bin_path}-old"
+  ln -snvi"$ln_args" "$script_path/bin" "$local_bin_path"
+fi
+
 ### Symlink dotfiles ###########################################################
 
 for source_file_name in `ls -A $dotfiles_path`; do
