@@ -115,7 +115,7 @@ alias .....='cd ../../../..'
 
 ### Shortcut to reload configs #################################################
 
-alias s=". \"$HOME\"/.bash_profile"
+alias s=". \"$HOME\"/.bashrc"
 
 ### disable stop (^S) and continue (^Q) flow control signals ###################
 
