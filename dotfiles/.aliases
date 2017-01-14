@@ -125,17 +125,17 @@ alias week='date +%V'
 
 ### Utilities ##################################################################
 
-# Fast calculator
+# Quick calculator
 c() {
   echo "${1}" | bc -l
 }
 
-# Fast find
+# Quick find by file name
 f() {
   find ${2:-$PWD} -name $1
 }
 
-# Fast password generator
+# Quick password generator
 genpasswd() {
   cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | \
     fold -w $1 | head -n1

@@ -1,6 +1,6 @@
 ### .bashrc
 
-# quit if this shell is not interactive
+# quit if shell not interactive
 [[ -z "$PS1" ]] && return
 
 ### Bash builtins ##############################################################
@@ -117,7 +117,7 @@ alias .....='cd ../../../..'
 
 alias s=". \"$HOME\"/.bashrc"
 
-### disable stop (^S) and continue (^Q) flow control signals ###################
+### disable stop (^S) and continue (^Q) signals ################################
 
 stty -ixon
 
