@@ -100,7 +100,6 @@ alias p='pgrep -i -l'
 alias u='du -h -c -d 1'
 alias dl='cd ~/Downloads'
 alias path="echo -e '${PATH//:/\\n}'"
-alias reload="exec $SHELL -l"
 alias cpu='htop --sort-key PERCENT_CPU || top -o cpu'
 alias mem='htop --sort-key PERCENT_MEM || top -o rsize'
 
@@ -142,16 +141,8 @@ genpasswd() {
     fold -w $1 | head -n1
 }
 
-# Stopwatch
-timer() {
-  echo 'Timer started. Stop with Ctrl-D.'
-  date
-  time cat
-  date
-}
-
-# Fast extract
-extract() {
+# Quick extract
+ext() {
  if [[ -f $1 ]]; then
    case $1 in
      *.tar.bz2)   tar xvjf $1    ;;
