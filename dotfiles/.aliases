@@ -91,6 +91,7 @@ alias lr='la -tur && echo Sorted by access time, most recent last'
 ### Shortcuts ##################################################################
 
 alias e="$EDITOR"
+alias g='ag'
 alias h='history'
 alias k='pkill -i -l'
 alias o='open'

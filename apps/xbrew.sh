@@ -21,7 +21,6 @@ brew install homebrew/dupes/rsync
 brew install homebrew/dupes/screen
 
 # homebrew-core
-brew install ack
 brew install autojump
 brew install bash
 brew install bash-completion
