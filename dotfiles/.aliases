@@ -80,7 +80,7 @@ alias chgrp='chgrp --preserve-root'
 
 ### Enhanced ls ################################################################
 
-alias ls='ls --color -h --group-directories-first --time-style="+%d%b%y %H:%M:%S"'
+alias ls='ls --color -h --group-directories-first --time-style="+%d%b%y %H:%M.%S"'
 
 alias l='ls -al'
 alias le='l -XB && echo Ordered by extension'
