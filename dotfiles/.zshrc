@@ -101,7 +101,7 @@ BULLETTRAIN_EXEC_TIME_FG='black'
 ### Automatically list contents when changing directory ########################
 
 function chpwd() {
-  ls --color=auto -ahlF --group-directories-first
+  ls -a --color=auto --group-directories-first
 }
 
 ### Shortcut to reload config ##################################################
