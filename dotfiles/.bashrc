@@ -28,7 +28,7 @@ HISTIGNORE='ls:cd:bg:fg:history:pwd:exit:date:s'
 HISTTIMEFORMAT='%d.%m.%Y %H:%M  '
 
 # save and reload the history after each command finishes
-PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+PROMPT_COMMAND="history -a; history -c; history -r;"
 
 ### Additional bash completions ################################################
 
