@@ -139,9 +139,9 @@ f() {
 }
 
 # Quick password generator
-genpasswd() {
+genpass() {
   cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | \
-    fold -w $1 | head -n1
+    fold -w $1 | head -n1 | pbcopy
 }
 
 # Quick extract
