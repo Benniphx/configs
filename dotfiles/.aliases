@@ -83,7 +83,10 @@ alias chgrp='chgrp --preserve-root'
 alias ls='ls --color -h --group-directories-first --time-style="+%d%b%y %H:%M.%S"'
 
 alias l='ls -al'
-alias le='l -XB && echo Ordered by extension'
+alias la='l --author'
+alias lal='la --dereference'
+
+alias le='l -XB && echo Ordered by extension, alphabetically'
 alias lb='l -Sr && echo Ordered by size, biggest last'
 alias lt='l -tr && echo Ordered by date, most recent last'
 alias lu='l -tcr && echo Ordered by change time, most recent last'
