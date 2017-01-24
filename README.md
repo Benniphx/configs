@@ -1,6 +1,6 @@
 # asyrjasalo/configs
 
-## TL;DR
+TL;DR:
 
     git clone git@github.com:asyrjasalo/configs.git && configs/install_cli.sh
 
