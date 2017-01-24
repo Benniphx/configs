@@ -4,7 +4,7 @@ script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 ### Configuration ##############################################################
 
-dotfiles_path="$script_path/dotfiles/.config/xfce4"
+dotfiles_path="$script_path/ui/gnu_linux/xfce4"
 
 ### Parse arguments ############################################################
 
@@ -21,7 +21,7 @@ done
 
 ### Install fonts ##############################################################
 
-"$script_path/fonts/install.sh"
+"$script_path/ui/fonts/install.sh"
 
 ### Symlink XFCE for Linux distributions #####################################
 

@@ -4,7 +4,7 @@ Install CLI features only:
 
     git clone git@github.com:asyrjasalo/configs.git && configs/install_cli.sh
 
-To also install XFCE configs and fonts (on GNU/Linux only):
+To also install Terminus fonts and XFCE configs (the latter on GNU/Linux only):
 
     install_ui.sh
 
