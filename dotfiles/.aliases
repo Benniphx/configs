@@ -154,7 +154,7 @@ alias week='date +%V'
 ### Utilities ##################################################################
 
 # Quick calculator
-c() {
+calc() {
   echo "${1}" | bc -l
 }
 
