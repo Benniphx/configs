@@ -118,7 +118,7 @@ alias u='du -h -c -d 1'
 alias v='pbpaste'
 alias w='which -a'
 alias x='cat --number --show-nonprinting --show-tabs'
-alias y="sudo $(fc -ln -1)"
+alias y="sudo \$(fc -ln -1)"
 alias z='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A'
 
 ### Misc #######################################################################
