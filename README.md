@@ -1,12 +1,16 @@
 # asyrjasalo/configs
 
+## TL;DR
+
+    git clone git@github.com:asyrjasalo/configs.git && configs/install_cli.sh
+
 Note: Run `install_*.sh` `-f` to override the existing paths without confirmation (!)
 
 ## CLI
 
 ### Symlink dotfiles and local bins
 
-    git clone git@github.com:asyrjasalo/configs.git && configs/install_cli.sh
+    ./install_cli.sh
 
 This also installs Tmux plugin manager and Vim plugins using Vundle.
 
@@ -28,11 +32,11 @@ This also sets the brew installed `zsh` as the user's default shell.
 
 Includes `rbenv`, `pyenv`, `nvm` and AWS CLI tools.
 
-## GUI (OS specific)
+## GUI
 
-### Fonts and UI configs
+### Fonts and GUI configs
 
-    ./install_ui.sh
+    ./install_gui.sh
 
 This installs Terminus fonts and XFCE configs (the latter on GNU/Linux only).
 
