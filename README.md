@@ -1,12 +1,16 @@
 # asyrjasalo/configs
 
-Install CLI only:
+Install CLI features only:
 
     git clone git@github.com:asyrjasalo/configs.git && configs/install_cli.sh
 
-To install also XFCE configs and fonts:
+To also install XFCE configs and fonts (on GNU/Linux only):
 
     install_ui.sh
+
+To also install brew and apps:
+
+    install_apps.sh
 
 To also set brew installed zsh as the user's default shell:
 
