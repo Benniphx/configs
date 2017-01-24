@@ -9,7 +9,6 @@ dotfiles_path="$script_path/dotfiles"
 # Do not symlink these paths. Paths are relative to $dotfiles_path.
 do_not_symlink=(
   ".irssi"
-  ".config"
 )
 
 ### Helpers ####################################################################
