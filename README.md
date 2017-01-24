@@ -1,17 +1,27 @@
 # asyrjasalo/configs
 
-Run this:
+Install CLI only:
 
-    git clone git@github.com:asyrjasalo/configs.git && configs/install.sh
+    git clone git@github.com:asyrjasalo/configs.git && configs/install_cli.sh
 
-Run `install.sh` with `-f` to override the existing paths without prompting.
+To install also XFCE configs and fonts:
+
+    install_ui.sh
+
+To also set brew installed zsh as the user's default shell:
+
+    install_zsh.sh
+
+Any `install_*` with `-f` to override the existing paths without prompting.
 
 
 ## Sublime Text
 
 ### OS X and Linux distros
 
-Run `sublime.sh` with `-f` to override the currently installed user packages.
+    install_subl.sh
+
+With `-f` to override the currently installed user packages.
 
 
 ### Windows

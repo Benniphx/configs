@@ -4,7 +4,6 @@ script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 ### Configuration ##############################################################
 
-sublime_version=3
 dotfiles_path="$script_path/sublime"
 
 ### Parse arguments ############################################################
@@ -23,11 +22,10 @@ done
 ### Symlink Sublime User configuration #########################################
 
 if [[ "$OSTYPE" = darwin* ]]; then
-  user_path="$HOME/Library/Application Support/Sublime Text $sublime_version/Packages/User"
+  user_path="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 else
-  user_path="$HOME/.config/sublime-text-$sublime_version/Packages/User"
+  user_path="$HOME/.config/sublime-text-3/Packages/User"
 fi
-
 
 [[ "$ln_args" == 'f' ]] && [[ ! -h "$user_path" ]] && rm -rf "$user_path"
 ln -snvi"$ln_args" "$dotfiles_path" "$user_path"
