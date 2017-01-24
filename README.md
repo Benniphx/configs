@@ -16,7 +16,7 @@ This also installs Tmux plugin manager and Vim plugins using Vundle.
 
 This also installs Homebrew on OS X and Linuxbrew on GNU/Linux.
 
-## Brewed zsh and zplug
+### Brewed zsh and zplug
 
     ./install_zsh.sh
 
