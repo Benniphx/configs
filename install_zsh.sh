@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+if ! which brew >/dev/null; then
+  if [[ "$OSTYPE" = darwin* ]]; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  fi
+fi
+
+brew update
+brew install zsh
+brew install zplug
+brew cleanup
+
 ### Set zsh as the default shell ###############################################
 
 if [[ "$OSTYPE" = darwin* ]]; then

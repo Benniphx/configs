@@ -1,32 +1,34 @@
 # asyrjasalo/configs
 
-Install CLI features only:
+## CLI only
 
     git clone git@github.com:asyrjasalo/configs.git && configs/install_cli.sh
 
-To also install Terminus fonts and XFCE configs (the latter on GNU/Linux only):
+## OS UI specific
 
     install_ui.sh
 
-To also install brew and apps:
+This installs Terminus fonts and XFCE configs (the latter on GNU/Linux only).
+
+## Brew and apps
 
     install_apps.sh
 
-To also set brew installed zsh as the user's default shell:
+This uses Homebrew on OS X and Linuxbrew on GNU/Linux.
+
+## Brewed zsh and zplug
 
     install_zsh.sh
 
-Any `install_*` with `-f` to override the existing paths without prompting.
+This also sets the brew installed `zsh` as the user's default shell.
 
+Use `install_*.sh -f` to override the existing paths without confirmation.
 
-## Sublime Text
-
-### OS X and Linux distros
+## Sublime Text 3
 
     install_subl.sh
 
-With `-f` to override the currently installed user packages.
-
+Using `-f` here will override the currently installed user packages.
 
 ### Windows
 

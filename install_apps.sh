@@ -44,8 +44,6 @@ brew install tmux
 brew install tree
 brew install wdiff --with-gettext
 brew install wget
-brew install zplug
-brew install zsh
 
 # devenv
 brew install pyenv pyenv-virtualenv
