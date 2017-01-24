@@ -99,7 +99,7 @@ alias b='bash'
 alias c='pbcopy'
 alias d='ranger'
 alias e="$EDITOR"
-# f for fast find on functions
+alias f='fuck'
 # g for (scmpuff) git aliases
 alias h='history'
 alias i='lsof -i'
@@ -158,17 +158,6 @@ calc() {
   echo "${1}" | bc -l
 }
 
-# Quick find by file name
-f() {
-  find ${2:-$PWD} -name $1
-}
-
-# Quick password generator
-genpass() {
-  cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | \
-    fold -w $1 | head -n1 | pbcopy
-}
-
 # Quick extract
 ext() {
  if [[ -f $1 ]]; then
@@ -189,4 +178,15 @@ ext() {
  else
    echo "'$1' is not a valid file!"
  fi
+}
+
+# Quick find by file name
+ff() {
+  find ${2:-$PWD} -name $1
+}
+
+# Quick password generator
+genpass() {
+  cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | \
+    fold -w $1 | head -n1 | pbcopy
 }
