@@ -45,16 +45,6 @@ brew install tree
 brew install wdiff --with-gettext
 brew install wget
 
-# devenv
-brew install pyenv pyenv-virtualenv
-brew install rbenv ruby-build
-brew install nvm
-
-# AWS CLI tools
-brew install awscli
-brew install aws-shell
-brew install aws-elasticbeanstalk
-
 # OS X only brews
 if [[ "$OSTYPE" == darwin* ]]; then
   # GNU utils are g-prefixed (but can also be installed --with-default-names)
@@ -75,36 +65,19 @@ if [[ "$OSTYPE" == darwin* ]]; then
   # OS X fix for tmux+pbcopy+pbpaste combination
   brew install reattach-to-user-namespace
 
-  # Set up Homebrew Cask
+  # Homebrew Casks
   brew tap caskroom/cask
   brew tap caskroom/versions
   brew tap buo/cask-upgrade
 
-  # Terminals
   brew cask install iterm2
-
-  # Editors
   brew cask install sublime-text
-
-  # Browsers
   brew cask install google-chrome
-
-  # Sync utilities
   brew cask install google-drive
-
-  # Players
   brew cask install spotify
-
-  # Window managers
   brew cask install amethyst
-
-  # Keyboard remapping tools
   brew cask install ukelele
-
-  # Password managers
   brew cask install keepassx
-
-  # GPG Suite
   brew cask install gpgtools
 
   brew cask cleanup

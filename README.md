@@ -24,6 +24,12 @@ This uses Homebrew on OS X and Linuxbrew on GNU/Linux.
 
 This also sets the brew installed `zsh` as the user's default shell.
 
+## Devenv
+
+    ./install_devenv.sh
+
+Includes `rbenv`, `pyenv`, `nvm` and AWS CLI tools.
+
 ## Sublime Text 3
 
     ./install_subl.sh
