@@ -70,15 +70,17 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew tap caskroom/versions
   brew tap buo/cask-upgrade
 
-  brew cask install iterm2
-  brew cask install sublime-text
+  brew cask install amethyst
   brew cask install google-chrome
   brew cask install google-drive
-  brew cask install spotify
-  brew cask install amethyst
-  brew cask install ukelele
-  brew cask install keepassx
   brew cask install gpgtools
+  brew cask install iterm2
+  brew cask install keepassx
+  brew cask install spotify
+  brew cask install sublime-text
+  brew cask install ukelele
+  brew cask install vagrant
+  brew cask install virtualbox
 
   brew cask cleanup
 fi
