@@ -12,10 +12,10 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # Install OS X software updates
   alias update='sudo softwareupdate --install --all'
 
-  # Recursively delete .DS_Store files from the current path
+  # Recursively delete .DS_Store files in the current path
   alias cleanup='find . -type f -name "*.DS_Store" -ls -delete'
 
-  # Flushes the OS X DNS cache
+  # Flush OS X DNS cache
   alias flush='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 
   # Clean up LaunchServices to remove duplicates in the “Open With” menu
@@ -25,7 +25,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
   alias mute='osascript -e "set volume output muted true"'
   alias blast='osascript -e "set volume output muted false"'
 
-  # Lock the screen
+  # Lock screen
   alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
   # Show or hide hidden files in Finder
