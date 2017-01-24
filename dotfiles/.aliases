@@ -95,7 +95,7 @@ alias lr='l -tur && echo Ordered by access time, most recent last'
 ### Shortcuts ##################################################################
 
 alias a='ag'
-alias b='bash'
+alias b='watch -d -n 5 --color http --verify=no --follow --verbose'
 alias c='pbcopy'
 alias d='ranger'
 alias e="$EDITOR"
