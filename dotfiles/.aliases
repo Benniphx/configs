@@ -123,20 +123,30 @@ alias z='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A'
 
 ### Misc #######################################################################
 
-# Alias 'vim' to 'nvim'
-alias vim='nvim'
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
+# Shortcuts for htop
+alias cpu='htop --sort-key PERCENT_CPU || top -o cpu'
+alias mem='htop --sort-key PERCENT_MEM || top -o rsize'
 
 # Copy the current path to clipboard
 alias cwd='pwd | tr -d "\n" | pbcopy'
 
+# Quick move to downloads
+alias dl="cd ~/Downloads"
+
 # Get the public IP address
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+# Display PATH content
+alias path="echo -e '${PATH//:/\\n}'"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Alias 'vim' to 'nvim'
+alias vim='nvim'
 
 # Get the week number
 alias week='date +%V'
