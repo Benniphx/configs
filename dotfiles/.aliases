@@ -56,11 +56,11 @@ else
   alias dupdate='sudo apt-get update && sudo apt-get dist-upgrade -y && \
     sudo apt-get autoremove -y && sudo apt-get autoclean'
 
-  # Alternatives to the OS X's `pbcopy` and `pbpaste`
+  # Alternatives to `pbcopy` and `pbpaste` in OS X
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
 
-  # Open anything, similar to `open` in OS X
+  # Alternative to `open` in OS X
   alias open='xdg-open'
 fi
 
