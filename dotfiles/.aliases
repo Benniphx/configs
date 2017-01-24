@@ -94,17 +94,32 @@ alias lr='l -tur && echo Ordered by access time, most recent last'
 
 ### Shortcuts ##################################################################
 
+alias a='ag'
+alias b='bash'
+alias c='pbcopy'
+alias d='ranger'
 alias e="$EDITOR"
-alias g='ag'
+# f for fast find on functions
+# g for (scmpuff) git aliases
 alias h='history'
+alias i='lsof -i'
+# j for autojump
 alias k='pkill -i -l'
+# l for ls
+alias m='sudo mtr'
+alias n='sudo netstat -aln'
 alias o='open'
 alias p='pgrep -i -l'
+alias q='clear'
+# r for executing the last command
+# s for sourcing profile
+alias t='tail --follow --verbose --lines=20'
 alias u='du -h -c -d 1'
-alias dl='cd ~/Downloads'
-alias path="echo -e '${PATH//:/\\n}'"
-alias cpu='htop --sort-key PERCENT_CPU || top -o cpu'
-alias mem='htop --sort-key PERCENT_MEM || top -o rsize'
+alias v='pbpaste'
+alias w='which -a'
+alias x='cat --number --show-nonprinting --show-tabs'
+alias y="sudo $(fc -ln -1)"
+alias z='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A'
 
 ### Misc #######################################################################
 
