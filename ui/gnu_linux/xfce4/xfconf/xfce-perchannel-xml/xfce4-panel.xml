@@ -62,19 +62,19 @@
     </property>
     <property name="plugin-10" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="14731099282.desktop"/>
+        <value type="string" value="14858046583.desktop"/>
       </property>
       <property name="show-label" type="bool" value="false"/>
       <property name="disable-tooltips" type="bool" value="false"/>
     </property>
     <property name="plugin-11" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="14731102193.desktop"/>
+        <value type="string" value="14858046401.desktop"/>
       </property>
     </property>
     <property name="plugin-5" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="14731239991.desktop"/>
+        <value type="string" value="14858046492.desktop"/>
       </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
