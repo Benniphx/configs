@@ -18,7 +18,7 @@
         <value type="int" value="4"/>
         <value type="int" value="8"/>
       </property>
-      <property name="background-style" type="uint" value="0"/>
+      <property name="background-style" type="uint" value="1"/>
       <property name="background-alpha" type="uint" value="0"/>
       <property name="size" type="uint" value="128"/>
       <property name="length-adjust" type="bool" value="false"/>
