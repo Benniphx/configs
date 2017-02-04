@@ -104,7 +104,7 @@ alias f='fuck'
 alias h='history'
 alias i='lsof -i'
 alias j='fasd_cd -d -i'
-alias k='pkill -i -l'
+alias k='htop --sort-key PERCENT_CPU || top -o cpu'
 # l for ls
 alias m='sudo mtr'
 alias n='sudo netstat -aln'
@@ -123,10 +123,6 @@ alias z='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A'
 
 
 ### Misc #######################################################################
-
-# Shortcuts for htop
-alias cpu='htop --sort-key PERCENT_CPU || top -o cpu'
-alias mem='htop --sort-key PERCENT_MEM || top -o rsize'
 
 # Copy the current path to clipboard
 alias cwd='pwd | tr -d "\n" | pbcopy'
