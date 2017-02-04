@@ -120,9 +120,13 @@ function chpwd() {
   ls -a --color=auto --group-directories-first
 }
 
-### disable stop (^S) and continue (^Q) flow control signals ###################
+### Disable stop (^S) and continue (^Q) flow control signals ###################
 
 stty -ixon
+
+### Use emacs keymap ###########################################################
+
+bindkey -e
 
 ### Enable aws cli completions #################################################
 
