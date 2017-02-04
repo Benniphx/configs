@@ -103,8 +103,7 @@ alias f='fuck'
 # g for (scmpuff) git aliases
 alias h='history'
 alias i='lsof -i'
-alias j='fasd_cd -d'     # cd, same functionality as j in autojump
-alias jj='fasd_cd -d -i' # cd with interactive selection
+alias j='fasd_cd -d -i'
 alias k='pkill -i -l'
 # l for ls
 alias m='sudo mtr'
