@@ -33,6 +33,7 @@ brew install httpie
 brew install jq
 brew install neovim/neovim/neovim
 brew install p7zip
+brew install pssh
 brew install pstree
 brew install ranger
 brew install scmpuff
