@@ -2,16 +2,26 @@
 
 <channel name="thunar" version="1.0">
   <property name="misc-volume-management" type="empty"/>
-  <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_NORMAL"/>
+  <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_SMALL"/>
   <property name="last-view" type="string" value="ThunarIconView"/>
-  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_NORMAL"/>
+  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_LARGE"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="misc-thumbnail-mode" type="string" value="THUNAR_THUMBNAIL_MODE_ALWAYS"/>
   <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_SHORT"/>
-  <property name="tree-icon-size" type="string" value="THUNAR_ICON_SIZE_NORMAL"/>
+  <property name="tree-icon-size" type="string" value="THUNAR_ICON_SIZE_SMALL"/>
   <property name="shortcuts-icon-emblems" type="bool" value="true"/>
   <property name="misc-middle-click-in-tab" type="bool" value="true"/>
-  <property name="last-window-width" type="int" value="1068"/>
-  <property name="last-window-height" type="int" value="1186"/>
+  <property name="last-window-width" type="int" value="2026"/>
+  <property name="last-window-height" type="int" value="1261"/>
   <property name="last-window-maximized" type="bool" value="false"/>
+  <property name="last-separator-position" type="int" value="325"/>
+  <property name="misc-text-beside-icons" type="bool" value="false"/>
+  <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
+  <property name="tree-icon-emblems" type="bool" value="true"/>
+  <property name="last-location-bar" type="string" value="ThunarLocationEntry"/>
+  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_SMALLER"/>
+  <property name="last-details-view-column-widths" type="string" value="50,1327,50,50,166,50,50,100,100"/>
+  <property name="last-show-hidden" type="bool" value="true"/>
+  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_TYPE"/>
+  <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
 </channel>

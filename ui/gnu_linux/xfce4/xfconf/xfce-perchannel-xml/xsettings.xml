@@ -2,7 +2,7 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="MurrinaFancyCandy"/>
+    <property name="ThemeName" type="string" value="MurrinaVerdeOlivo"/>
     <property name="IconThemeName" type="string" value="elementary-xfce"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
@@ -14,17 +14,17 @@
     <property name="EnableInputFeedbackSounds" type="empty"/>
   </property>
   <property name="Xft" type="empty">
-    <property name="DPI" type="int" value="176"/>
+    <property name="DPI" type="int" value="192"/>
     <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="empty"/>
-    <property name="HintStyle" type="string" value="hintslight"/>
+    <property name="HintStyle" type="string" value="hintfull"/>
     <property name="RGBA" type="string" value="rgb"/>
     <property name="Lcdfilter" type="empty"/>
   </property>
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="FontName" type="string" value="Verdana 10"/>
+    <property name="FontName" type="string" value="Verdana 9"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="string" value="icons"/>
@@ -34,9 +34,10 @@
     <property name="MenuBarAccel" type="empty"/>
     <property name="CursorThemeName" type="string" value="whiteglass"/>
     <property name="CursorThemeSize" type="int" value="48"/>
-    <property name="DecorationLayout" type="empty"/>
+    <property name="DecorationLayout" type="string" value="menu:minimize,maximize,close"/>
+    <property name="ColorScheme" type="string" value="selected_bg_color:#88bb55;selected_fg_color:#eeeeee;"/>
   </property>
   <property name="Xfce" type="empty">
-    <property name="LastCustomDPI" type="int" value="176"/>
+    <property name="LastCustomDPI" type="int" value="192"/>
   </property>
 </channel>

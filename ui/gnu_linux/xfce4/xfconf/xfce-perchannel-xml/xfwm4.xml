@@ -5,7 +5,7 @@
     <property name="activate_action" type="empty"/>
     <property name="box_move" type="bool" value="false"/>
     <property name="box_resize" type="empty"/>
-    <property name="button_layout" type="string" value="O|HMC"/>
+    <property name="button_layout" type="empty"/>
     <property name="button_offset" type="empty"/>
     <property name="button_spacing" type="empty"/>
     <property name="click_to_focus" type="empty"/>
@@ -37,9 +37,9 @@
     <property name="snap_to_border" type="empty"/>
     <property name="snap_to_windows" type="bool" value="true"/>
     <property name="snap_width" type="int" value="50"/>
-    <property name="theme" type="string" value="Numix"/>
+    <property name="theme" type="string" value="Greybird"/>
     <property name="title_alignment" type="string" value="left"/>
-    <property name="title_font" type="string" value="Verdana Bold 9"/>
+    <property name="title_font" type="string" value="Verdana Bold 8"/>
     <property name="title_horizontal_offset" type="empty"/>
     <property name="title_shadow_active" type="empty"/>
     <property name="title_shadow_inactive" type="empty"/>

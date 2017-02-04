@@ -3,7 +3,7 @@
 <channel name="xfce4-panel" version="1.0">
   <property name="panels" type="uint" value="1">
     <property name="panel-0" type="empty">
-      <property name="position" type="string" value="p=10;x=1926;y=2095"/>
+      <property name="position" type="string" value="p=8;x=1920;y=2095"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="plugin-ids" type="array">
@@ -17,8 +17,9 @@
         <value type="int" value="3"/>
         <value type="int" value="4"/>
         <value type="int" value="8"/>
+        <value type="int" value="6"/>
       </property>
-      <property name="background-style" type="uint" value="1"/>
+      <property name="background-style" type="uint" value="0"/>
       <property name="background-alpha" type="uint" value="0"/>
       <property name="size" type="uint" value="128"/>
       <property name="length-adjust" type="bool" value="false"/>
@@ -29,6 +30,12 @@
       <property name="autohide-behavior" type="uint" value="2"/>
       <property name="disable-struts" type="bool" value="true"/>
       <property name="nrows" type="uint" value="1"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="56026"/>
+        <value type="uint" value="54542"/>
+        <value type="uint" value="44718"/>
+        <value type="uint" value="65535"/>
+      </property>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -90,10 +97,13 @@
     </property>
     <property name="plugin-1" type="string" value="applicationsmenu">
       <property name="show-button-title" type="bool" value="false"/>
-      <property name="button-icon" type="string" value="xubuntu-logo-menu"/>
+      <property name="button-icon" type="string" value="applications-puzzles"/>
       <property name="show-tooltips" type="bool" value="false"/>
       <property name="show-menu-icons" type="bool" value="true"/>
+      <property name="custom-menu" type="bool" value="false"/>
+      <property name="show-generic-names" type="bool" value="false"/>
     </property>
+    <property name="plugin-6" type="string" value="thunar-tpa"/>
   </property>
   <property name="configver" type="int" value="2"/>
 </channel>
