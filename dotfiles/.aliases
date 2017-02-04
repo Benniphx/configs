@@ -103,7 +103,8 @@ alias f='fuck'
 # g for (scmpuff) git aliases
 alias h='history'
 alias i='lsof -i'
-# j for autojump
+alias j='fasd_cd -d'     # cd, same functionality as j in autojump
+alias jj='fasd_cd -d -i' # cd with interactive selection
 alias k='pkill -i -l'
 # l for ls
 alias m='sudo mtr'
@@ -111,8 +112,10 @@ alias n='sudo netstat -aln'
 alias o='open'
 alias p='pgrep -i -l'
 alias q='clear'
-# r for executing the last command
-# s for sourcing profile
+alias r=". \"$HOME\"/.$(echo $SHELL | rev | cut -d/ -f1 | rev)rc"
+alias s='fasd -si'       # show / search / select
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
 alias t='tail --follow --verbose --lines=20'
 alias u='du -h -c -d 1'
 alias v='pbpaste'

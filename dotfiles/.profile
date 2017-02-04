@@ -96,11 +96,10 @@ if [[ -d "$jars_path" ]]; then
   export CLASSPATH=$(find "$jars_path" -name '*.jar' | xargs echo | tr ' ' ':')
 fi
 
-### Autojump ###################################################################
+### Fasd #######################################################################
 
-if which brew >/dev/null; then
-  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && \
-    . $(brew --prefix)/etc/profile.d/autojump.sh
+if which fasd >/dev/null; then
+  eval "$(fasd --init auto)"
 fi
 
 ### SCM puff #################################################################
