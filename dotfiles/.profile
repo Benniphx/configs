@@ -102,7 +102,12 @@ if which fasd >/dev/null; then
   eval "$(fasd --init auto)"
 fi
 
-### SCM puff #################################################################
+### Fzf ########################################################################
+
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+### SCM puff ###################################################################
 
 which scmpuff >/dev/null && eval "$(scmpuff init -s)"
 
