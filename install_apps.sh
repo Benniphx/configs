@@ -16,7 +16,7 @@ brew update
 brew install homebrew/dupes/gzip
 #brew install homebrew/dupes/file-formula
 brew install homebrew/dupes/less
-brew install homebrew/dupes/nano
+#brew install homebrew/dupes/nano
 brew install homebrew/dupes/rsync
 brew install homebrew/dupes/screen
 
