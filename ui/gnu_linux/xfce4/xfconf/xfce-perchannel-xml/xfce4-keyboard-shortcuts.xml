@@ -123,11 +123,12 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Alt&gt;Tab" type="string" value="cycle_windows_key"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;ISO_Left_Tab" type="string" value="cycle_reverse_windows_key"/>
-      <property name="&lt;Alt&gt;Up" type="string" value="maximize_window_key"/>
       <property name="&lt;Alt&gt;Down" type="string" value="hide_window_key"/>
-      <property name="&lt;Alt&gt;Return" type="string" value="fullscreen_key"/>
       <property name="&lt;Alt&gt;d" type="string" value="show_desktop_key"/>
       <property name="&lt;Alt&gt;section" type="string" value="switch_window_key"/>
+      <property name="&lt;Alt&gt;Return" type="string" value="maximize_window_key"/>
+      <property name="&lt;Alt&gt;Right" type="string" value="tile_right_key"/>
+      <property name="&lt;Alt&gt;Left" type="string" value="tile_left_key"/>
     </property>
   </property>
   <property name="providers" type="array">

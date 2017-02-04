@@ -4,13 +4,13 @@
   <property name="general" type="empty">
     <property name="activate_action" type="empty"/>
     <property name="box_move" type="bool" value="false"/>
-    <property name="box_resize" type="empty"/>
+    <property name="box_resize" type="bool" value="false"/>
     <property name="button_layout" type="empty"/>
     <property name="button_offset" type="empty"/>
     <property name="button_spacing" type="empty"/>
-    <property name="click_to_focus" type="empty"/>
+    <property name="click_to_focus" type="bool" value="true"/>
     <property name="cycle_apps_only" type="empty"/>
-    <property name="cycle_draw_frame" type="bool" value="true"/>
+    <property name="cycle_draw_frame" type="bool" value="false"/>
     <property name="double_click_distance" type="empty"/>
     <property name="double_click_time" type="empty"/>
     <property name="focus_delay" type="empty"/>
@@ -18,11 +18,11 @@
     <property name="frame_opacity" type="empty"/>
     <property name="full_width_title" type="empty"/>
     <property name="maximized_offset" type="empty"/>
-    <property name="mousewheel_rollup" type="empty"/>
+    <property name="mousewheel_rollup" type="bool" value="false"/>
     <property name="placement_mode" type="empty"/>
     <property name="raise_delay" type="empty"/>
     <property name="raise_on_click" type="empty"/>
-    <property name="raise_on_focus" type="empty"/>
+    <property name="raise_on_focus" type="bool" value="false"/>
     <property name="repeat_urgent_blink" type="empty"/>
     <property name="scroll_workspaces" type="empty"/>
     <property name="shadow_delta_height" type="empty"/>
@@ -36,16 +36,16 @@
     <property name="show_popup_shadow" type="bool" value="true"/>
     <property name="snap_to_border" type="empty"/>
     <property name="snap_to_windows" type="bool" value="true"/>
-    <property name="snap_width" type="int" value="50"/>
-    <property name="theme" type="string" value="Greybird"/>
+    <property name="snap_width" type="int" value="69"/>
+    <property name="theme" type="string" value="Greybird-accessibility"/>
     <property name="title_alignment" type="string" value="left"/>
-    <property name="title_font" type="string" value="Verdana Bold 8"/>
+    <property name="title_font" type="string" value="Verdana Bold 9"/>
     <property name="title_horizontal_offset" type="empty"/>
     <property name="title_shadow_active" type="empty"/>
     <property name="title_shadow_inactive" type="empty"/>
     <property name="title_vertical_offset_active" type="empty"/>
     <property name="title_vertical_offset_inactive" type="empty"/>
-    <property name="urgent_blink" type="bool" value="false"/>
+    <property name="urgent_blink" type="bool" value="true"/>
     <property name="use_compositing" type="bool" value="false"/>
     <property name="workspace_count" type="empty"/>
     <property name="workspace_names" type="array">
@@ -54,7 +54,7 @@
       <value type="string" value="3"/>
       <value type="string" value="4"/>
     </property>
-    <property name="wrap_resistance" type="int" value="14"/>
+    <property name="wrap_resistance" type="int" value="24"/>
     <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="empty"/>
     <property name="borderless_maximize" type="bool" value="true"/>
