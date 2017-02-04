@@ -113,10 +113,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-### Shortcut to reload configs #################################################
-
-alias s=". \"$HOME\"/.bashrc"
-
 ### disable stop (^S) and continue (^Q) signals ################################
 
 stty -ixon
