@@ -35,6 +35,8 @@ PROMPT_COMMAND="history -a; history -c; history -r;"
 if which brew >/dev/null; then
   bash_completion_path="$(brew --prefix)/etc/bash_completion"
   [[ -f "$bash_completion_path" ]] && . "$bash_completion_path"
+
+  complete -C "$(brew --prefix)/bin/aws_completer" aws
 fi
 
 # add tab completion for hostnames based on ~/.ssh/config, ignoring wildcards

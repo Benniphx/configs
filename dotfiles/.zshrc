@@ -124,6 +124,12 @@ function chpwd() {
 
 stty -ixon
 
+### Enable aws cli completions #################################################
+
+if which brew >/dev/null; then
+  . "$(brew --prefix)/bin/aws_zsh_completer.sh"
+fi
+
 ### Load iTerm2 shell addons ###################################################
 
 iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
