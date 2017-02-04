@@ -21,19 +21,18 @@ brew install homebrew/dupes/rsync
 brew install homebrew/dupes/screen
 
 # homebrew-core
-brew install autojump
 brew install bash
 brew install bash-completion
 brew install colordiff
 brew install ctags
-brew install curl
+brew install fasd
+brew install fzf
 brew install git
 brew install htop
 brew install httpie
 brew install jq
 brew install neovim/neovim/neovim
 brew install p7zip
-brew install peco
 brew install pstree
 brew install ranger
 brew install scmpuff
@@ -43,7 +42,6 @@ brew install tig
 brew install tmux
 brew install tree
 brew install wdiff --with-gettext
-brew install wget
 
 # OS X only brews
 if [[ "$OSTYPE" == darwin* ]]; then
