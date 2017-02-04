@@ -48,7 +48,7 @@ Using `-f` here will override the currently installed user packages.
 
 ## Windows
 
-Prefer Windows Subsystem for Linux (on Windows 10) if possible - some of the brews actually install even on msys bundled with Git for Windows.
+Prefer Windows Subsystem for Linux (on Windows 10) if possible - some of the Linuxbrew formulas actually work even on msys bundled with Git for Windows.
 
 ### Sublime Text 3
 
