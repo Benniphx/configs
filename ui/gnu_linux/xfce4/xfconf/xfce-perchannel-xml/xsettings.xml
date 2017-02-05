@@ -33,7 +33,7 @@
     <property name="ButtonImages" type="empty"/>
     <property name="MenuBarAccel" type="empty"/>
     <property name="CursorThemeName" type="string" value="whiteglass"/>
-    <property name="CursorThemeSize" type="int" value="48"/>
+    <property name="CursorThemeSize" type="int" value="64"/>
     <property name="DecorationLayout" type="string" value="menu:minimize,maximize,close"/>
     <property name="ColorScheme" type="string" value="selected_bg_color:#88bb55;selected_fg_color:#eeeeee;"/>
   </property>
