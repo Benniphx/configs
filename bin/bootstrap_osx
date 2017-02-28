@@ -140,12 +140,10 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 35
 
 # Set language and text formats
-# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
-# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-#defaults write NSGlobalDomain AppleLanguages -array "en" "fi"
-#defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
-#defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-#defaults write NSGlobalDomain AppleMetricUnits -bool true
+defaults write NSGlobalDomain AppleLanguages -array "en-FI" "fi-FI"
+defaults write NSGlobalDomain AppleLocale -string "en_FI"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 sudo systemsetup -settimezone "Europe/Helsinki" > /dev/null
