@@ -69,7 +69,6 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew tap caskroom/versions
   brew tap buo/cask-upgrade
 
-  brew cask install amethyst
   brew cask install google-chrome
   brew cask install google-drive
   brew cask install gpgtools
