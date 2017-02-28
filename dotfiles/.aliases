@@ -96,7 +96,7 @@ alias lr='l -tur && echo Ordered by access time, most recent last'
 
 alias a='ag'
 alias b='watch -d -n 5 --color http --verify=no --follow --verbose'
-alias c='pbcopy'
+alias c='cat --number --show-nonprinting --show-tabs'
 alias d='ranger'
 alias e="$EDITOR"
 alias f='fuck'
