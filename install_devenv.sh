@@ -20,4 +20,8 @@ brew install awscli
 brew install aws-shell
 brew install aws-elasticbeanstalk
 
+# Utilities
+brew install terraform
+brew install git-secrets
+
 brew cleanup
