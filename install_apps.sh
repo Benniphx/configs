@@ -51,6 +51,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 
   # Additional taps
   brew tap homebrew/command-not-found
+  brew tap homebrew/services
 
   # GNU utils are g-prefixed (but can also be installed --with-default-names)
   brew install coreutils
@@ -70,7 +71,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   # OS X fix for tmux+pbcopy+pbpaste combination
   brew install reattach-to-user-namespace
 
-  # Homebrew Casks
+  # Homebrew Cask taps
   brew tap caskroom/cask
   brew tap caskroom/versions
   brew tap buo/cask-upgrade
