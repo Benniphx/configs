@@ -46,6 +46,10 @@ brew install wdiff --with-gettext
 
 # OS X only brews
 if [[ "$OSTYPE" == darwin* ]]; then
+
+  # Additional taps
+  brew tap homebrew/command-not-found
+
   # GNU utils are g-prefixed (but can also be installed --with-default-names)
   brew install coreutils
   brew install findutils

@@ -37,6 +37,10 @@ if [[ "$OSTYPE" = darwin* ]]; then
     findutils_bin_path="$(brew --prefix findutils)/libexec/gnubin"
     [[ -d "$findutils_bin_path" ]] && export PATH="$findutils_bin_path:$PATH"
   fi
+
+  if brew command command-not-found-init > /dev/null 2>&1; then
+    eval "$(brew command-not-found-init)";
+  fi
 else
   export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 
