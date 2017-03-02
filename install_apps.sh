@@ -10,7 +10,8 @@ fi
 
 brew update
 
-# homebrew-dupes
+### Homebrew dupes #############################################################
+
 #brew install homebrew/dupes/diffutils
 #brew install homebrew/dupes/gpatch
 brew install homebrew/dupes/gzip
@@ -20,7 +21,7 @@ brew install homebrew/dupes/less
 brew install homebrew/dupes/rsync
 brew install homebrew/dupes/screen
 
-# homebrew-core
+### Homebrew core ##############################################################
 brew install bash
 brew install bash-completion
 brew install colordiff
@@ -44,7 +45,8 @@ brew install tmux
 brew install tree
 brew install wdiff --with-gettext
 
-# OS X only brews
+### OS X only brews ############################################################
+
 if [[ "$OSTYPE" == darwin* ]]; then
 
   # Additional taps
