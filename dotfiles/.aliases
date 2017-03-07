@@ -121,6 +121,12 @@ alias x='pkill -f'
 alias y="sudo \$(fc -ln -1)"
 alias z='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A'
 
+### Docker #####################################################################
+
+alias drms='docker stop $(docker ps -a -q)'
+alias drmc='docker rm -f -v $(docker ps -a -q)'
+alias drmi='docker rmi $(docker images -a -q)'
+alias drmv='docker volume rm -f $(docker volume ls -q)'
 
 ### Misc #######################################################################
 
