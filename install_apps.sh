@@ -78,6 +78,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   # Homebrew Cask apps
   # brew cask install cakebrew
   brew cask install cheatsheet
+  brew cask install cocoarestclient
   brew cask install coconutbattery
   brew cask install gitup
   brew cask install google-chrome
