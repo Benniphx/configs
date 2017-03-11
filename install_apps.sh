@@ -45,7 +45,6 @@ brew install wdiff --with-gettext
 ### OS X only brews ############################################################
 
 if [[ "$OSTYPE" == darwin* ]]; then
-
   # Additional taps
   brew tap homebrew/command-not-found
   brew tap homebrew/services
@@ -61,7 +60,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew install homebrew/dupes/grep
   brew install homebrew/dupes/make
 
-  # These are on Linuxbrew's tap but currently compile on OS X only
+  # These are on Linuxbrew's tap but at least currently compile on OS X only
   brew install shellcheck
   brew install watch
 
