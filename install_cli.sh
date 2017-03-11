@@ -73,6 +73,7 @@ git_clone_or_pull https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
 ### Symlink Neovim configs #####################################################
 
+mkdir -p "$HOME/.config"
 ln -s"$ln_args" "$HOME/.vim" "$HOME/.config/nvim"
 ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
