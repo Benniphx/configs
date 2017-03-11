@@ -76,12 +76,12 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew cask install google-chrome
   brew cask install google-drive
   brew cask install gpgtools
+  brew cask install docker
   brew cask install iterm2
   brew cask install keepassx
   brew cask install spotify
   brew cask install sublime-text
   brew cask install ukelele
-  brew cask install docker
 
   brew cask cleanup
 fi
