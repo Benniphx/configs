@@ -91,7 +91,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew cask install soundcleod
   brew cask install spotify
   brew cask install sublime-text
-  # brew cask install the-unarchiver
+  brew cask install the-unarchiver
   brew cask install ukelele
   # brew cask install vimr
 
