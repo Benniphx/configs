@@ -75,12 +75,16 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew tap caskroom/versions
   brew tap buo/cask-upgrade
 
+  # Homebrew Cask apps
+  brew cask install coconutbattery
+  brew cask install gitup
   brew cask install google-chrome
   brew cask install google-drive
   brew cask install gpgtools
   brew cask install docker
   brew cask install iterm2
   brew cask install keepassx
+  brew cask install soundcleod
   brew cask install spotify
   brew cask install sublime-text
   brew cask install ukelele
