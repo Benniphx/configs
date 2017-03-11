@@ -89,6 +89,12 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew cask install sublime-text
   brew cask install ukelele
 
+  # Finder quick look plugins
+  # https://github.com/sindresorhus/quick-look-plugins
+  brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json \
+    qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook \
+    suspicious-package quicklookase qlvideo
+
   brew cask cleanup
 fi
 
