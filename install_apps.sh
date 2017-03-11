@@ -88,6 +88,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew cask install keepassx
   brew cask install launchcontrol
   brew cask install macdown
+  # brew cask install psequel
+  # brew cask install sequel-pro
   brew cask install soundcleod
   brew cask install spotify
   brew cask install sublime-text
