@@ -32,12 +32,12 @@ if [[ -e "$brew_zsh_path" ]]; then
     case "$set_zsh" in
       [yY][eE][sS]|[yY])
         echo "Sudo might be asked..."
+        if ! grep -q "$brew_zsh_path" /etc/shells >/dev/null; then
+          echo "$brew_zsh_path" | sudo tee --append /etc/shells
+        fi
         if [[ "$OSTYPE" = darwin* ]]; then
           sudo dscl . -create "$HOME" UserShell "$brew_zsh_path"
         else
-          if ! grep "$brew_zsh_path" /etc/shells >/dev/null; then
-            echo "$brew_zsh_path" | sudo tee --append /etc/shells
-          fi
           chsh -s "$brew_zsh_path"
          fi
         ;;
