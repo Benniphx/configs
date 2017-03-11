@@ -85,6 +85,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew cask install docker
   brew cask install iterm2
   brew cask install keepassx
+  brew cask install launchcontrol
   brew cask install soundcleod
   brew cask install spotify
   brew cask install sublime-text
