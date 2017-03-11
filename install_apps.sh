@@ -76,6 +76,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew tap buo/cask-upgrade
 
   # Homebrew Cask apps
+  brew cask install cheatsheet
   brew cask install coconutbattery
   brew cask install gitup
   brew cask install google-chrome
