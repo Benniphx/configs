@@ -67,6 +67,9 @@ if [[ "$OSTYPE" == darwin* ]]; then
   # OS X fix for tmux+pbcopy+pbpaste combination
   brew install reattach-to-user-namespace
 
+  # Mac Apple Store command-line client
+  brew install mas
+
   # Homebrew Cask taps
   brew tap caskroom/cask
   brew tap caskroom/versions
