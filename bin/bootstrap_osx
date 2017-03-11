@@ -709,8 +709,14 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
-# Kill affected applications                                                  #
+# Clean-ups                                                                   #
 ###############################################################################
+
+# Remove the removable Apple stock apps
+sudo rm -rf /Applications/Pages.app
+sudo rm -rf /Applications/iMovie.app
+sudo rm -rf /Applications/Keynote.app
+sudo rm -rf /Applications/Numbers.app
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
