@@ -81,8 +81,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew cask install spotify
   brew cask install sublime-text
   brew cask install ukelele
-  brew cask install vagrant
-  brew cask install virtualbox
+  brew cask install docker
 
   brew cask cleanup
 fi
