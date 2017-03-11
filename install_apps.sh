@@ -76,6 +76,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew tap buo/cask-upgrade
 
   # Homebrew Cask apps
+  # brew cask install cakebrew
   brew cask install cheatsheet
   brew cask install coconutbattery
   brew cask install gitup
@@ -89,7 +90,9 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew cask install soundcleod
   brew cask install spotify
   brew cask install sublime-text
+  # brew cask install the-unarchiver
   brew cask install ukelele
+  # brew cask install vimr
 
   # Finder quick look plugins
   # https://github.com/sindresorhus/quick-look-plugins
