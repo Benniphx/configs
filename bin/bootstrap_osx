@@ -140,7 +140,7 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 35
 
 # Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array "en-FI" "fi-FI"
+defaults write NSGlobalDomain AppleLanguages -array "en-FI"
 defaults write NSGlobalDomain AppleLocale -string "en_FI"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
