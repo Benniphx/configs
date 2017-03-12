@@ -713,11 +713,13 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 
 # Remove the removable Apple stock apps
-sudo rm -rf /Applications/Pages.app
+sudo rm -rf "/Applications/Garage Band.app"
 sudo rm -rf /Applications/iMovie.app
 sudo rm -rf /Applications/Keynote.app
 sudo rm -rf /Applications/Numbers.app
+sudo rm -rf /Applications/Pages.app
 
+# Kill the affected apps
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
 	"Photos" "Safari" "SystemUIServer" "Terminal" "iCal"; do
