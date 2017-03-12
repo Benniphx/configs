@@ -94,7 +94,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   brew cask install macdown
   # brew cask install psequel
   # brew cask install sequel-pro
-  brew cask install soundcleod
+  # brew cask install soundcleod
   brew cask install spotify
   brew cask install sublime-text
   brew cask install the-unarchiver
