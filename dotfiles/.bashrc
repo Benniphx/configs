@@ -83,15 +83,14 @@ bakwht='\[\e[47m\]'   # White
 txtrst='\[\e[0m\]'    # Text Reset
 
 parse_git_branch() {
-  git branch --no-color 2> /dev/null | \
-  sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
 }
 
 parse_hg_branch() {
   hg branch 2>/dev/null | sed 's#\(.*\)#\1#'
 }
 
-get_branch_information() {
+get_branch_info() {
   local branch=$(parse_git_branch)
   local scm=''
   if [[ -n "$branch" ]]; then
@@ -103,7 +102,7 @@ get_branch_information() {
   [[ -n "$scm" ]] && echo "($scm:$branch)"
 }
 
-export PS1="$txtblu\u@\h$txtrst:$txtcyn\w$txtgrn\$(get_branch_information)$txtrst\$ "
+export PS1="$txtblu\u@\h$txtrst:$txtcyn\w$txtgrn\$(get_branch_info)$txtrst\$ "
 
 ### Moving around ##############################################################
 
