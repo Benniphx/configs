@@ -102,7 +102,7 @@ alias e="$EDITOR"
 alias f='fuck'
 # g for (scmpuff) git aliases
 alias h='history'
-alias i='lsof -i'
+alias i='sudo lsof -i'
 alias j='fasd_cd -d'
 alias k='htop --sort-key PERCENT_CPU || top -o cpu'
 # l for ls
