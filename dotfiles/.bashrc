@@ -95,12 +95,13 @@ parse_hg_branch() {
 }
 
 get_branch_information() {
-  branch=$(parse_hg_branch)
+  local branch=$(parse_git_branch)
+  local scm=''
   if [[ -n "$branch" ]]; then
-    scm='hg'
+    scm='git'
   else
     branch=$(parse_git_branch)
-    [[ -n "$branch" ]] && scm='git'
+    [[ -n "$branch" ]] && scm='hg'
   fi
   [[ -n "$scm" ]] && echo "($scm:$branch)"
 }
