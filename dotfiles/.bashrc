@@ -3,6 +3,8 @@
 # quit if shell not interactive
 [[ -z "$PS1" ]] && return
 
+alias r=". $HOME/.bashrc"
+
 ### Bash builtins ##############################################################
 
 # have Bash to check if the window size has changed
