@@ -24,7 +24,7 @@ brew install bash-completion
 brew install colordiff
 brew install ctags
 brew install fasd
-brew install fzf
+brew install fzf && yes | "$(brew --prefix fzf)/install" --no-update-rc
 brew install git
 brew install htop
 brew install httpie
