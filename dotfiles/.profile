@@ -53,10 +53,9 @@ fi
 
 ### Nvm ########################################################################
 
-if [[ -d "$HOME/.nvm" ]]; then
-  export NVM_DIR="$HOME/.nvm"
-  [[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh"
-fi
+export NVM_DIR="$HOME/.nvm"
+[[ ! -d "$NVM_DIR" ]] && mkdir -p "$NVM_DIR"
+. "$(brew --prefix nvm)/nvm.sh"
 
 ### Pyenv ######################################################################
 
