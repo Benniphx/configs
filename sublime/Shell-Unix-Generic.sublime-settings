@@ -4,7 +4,8 @@
 		"bash",
 		"com",
 		"sh",
-		"zsh"
+		"zsh",
+		"awsrole"
 	],
-    "tab_size": 2
+	"tab_size": 2
 }
