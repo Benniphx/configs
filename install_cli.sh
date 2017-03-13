@@ -81,4 +81,4 @@ ln -s"$ln_args" "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 git_clone_or_pull https://github.com/VundleVim/Vundle.vim.git \
   "$HOME/.vim/bundle/Vundle.vim"
-echo -ne '\n' | vim +PluginInstall +qall 2>/dev/null
+echo -ne '\n' | nvim +PluginInstall +qall 2>/dev/null
