@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if ! which brew >/dev/null; then
-  if [[ "$OSTYPE" = darwin* ]]; then
+if ! which brew >/dev/null ; then
+  if [[ "$OSTYPE" = darwin* ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"

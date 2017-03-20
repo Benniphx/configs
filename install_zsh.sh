@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if ! which brew >/dev/null; then
-  if [[ "$OSTYPE" = darwin* ]]; then
+if ! which brew >/dev/null ; then
+  if [[ "$OSTYPE" = darwin* ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
@@ -15,7 +15,7 @@ brew cleanup
 
 ### Set zsh as the default shell ###############################################
 
-if [[ "$OSTYPE" = darwin* ]]; then
+if [[ "$OSTYPE" = darwin* ]] ; then
   brew_zsh_path="/usr/local/bin/zsh"
   default_shell=$(dscl . -read "$HOME" UserShell | cut -d' ' -f2)
 else
@@ -23,8 +23,8 @@ else
   default_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
 fi
 
-if [[ -e "$brew_zsh_path" ]]; then
-  if [[ "$default_shell" = "$brew_zsh_path" ]]; then
+if [[ -e "$brew_zsh_path" ]] ; then
+  if [[ "$default_shell" = "$brew_zsh_path" ]] ; then
     echo "Brew ZSH already set to the user's default shell."
   else
     echo ""
@@ -32,10 +32,10 @@ if [[ -e "$brew_zsh_path" ]]; then
     case "$set_zsh" in
       [yY][eE][sS]|[yY])
         echo "Sudo might be asked..."
-        if ! grep -q "$brew_zsh_path" /etc/shells >/dev/null; then
+        if ! grep -q "$brew_zsh_path" /etc/shells >/dev/null ; then
           echo "$brew_zsh_path" | sudo tee --append /etc/shells
         fi
-        if [[ "$OSTYPE" = darwin* ]]; then
+        if [[ "$OSTYPE" = darwin* ]] ; then
           sudo dscl . -create "$HOME" UserShell "$brew_zsh_path"
         else
           chsh -s "$brew_zsh_path"

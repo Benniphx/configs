@@ -8,7 +8,7 @@ dotfiles_path="$script_path/ui/gnu_linux/xfce4"
 
 ### Parse arguments ############################################################
 
-while getopts 'f' arg; do
+while getopts 'f' arg ; do
   case "$arg" in
     f)
       ln_args='f'
@@ -25,9 +25,9 @@ done
 
 ### Symlink XFCE for Linux distributions #####################################
 
-if [[ "$OSTYPE" = linux-gnu* ]]; then
+if [[ "$OSTYPE" = linux-gnu* ]] ; then
   xfce_configs_path="$HOME/.config/xfce4"
-  if [[ ! -L "$xfce_configs_path" ]]; then
+  if [[ ! -L "$xfce_configs_path" ]] ; then
     mv -i "$xfce_configs_path" "${xfce_configs_path}-old"
     ln -snvi"$ln_args" "$dotfiles_path" "$xfce_configs_path"
   fi
