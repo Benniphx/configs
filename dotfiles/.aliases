@@ -117,7 +117,7 @@ alias t='tail --follow --verbose --lines=20'
 alias u='du -h -c -d 1'
 alias v='fasd -f -i -e nvim'
 alias w='which -a'
-alias x='pkill -f'
+alias x='pkill -i -f'
 alias y="sudo \$(fc -ln -1)"
 alias z='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A'
 
