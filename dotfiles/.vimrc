@@ -13,8 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " UI
 Plugin 'bling/vim-airline'
-Plugin 'ayu-theme/ayu-vim'
-
+Plugin 'chriskempson/vim-tomorrow-theme'
 
 " Add-ons
 Plugin 'airblade/vim-gitgutter'
@@ -153,13 +152,10 @@ set autoread
 
 "--- UI ------------------------------------------------------------------------
 set t_Co=256                      " number of colors to use
-set termguicolors                 " enable true colors support
-"let ayucolor="light"             " for light version of theme
-"let ayucolor="mirage"            " for mirage version of theme
-let ayucolor="dark"               " for dark version of theme
-colorscheme ayu
+set background=dark
+colorscheme Tomorrow-Night-Bright " colorscheme to use
 
-" make statusbar great again
+" make the statusbar more informative
 if has("statusline")
   set laststatus=2
   set statusline=\ \ %F%m%r%h%w\ %=[%Y]\ (%{&ff},\ %{&enc})\ \{%v,\ %l/%L\}\ \ %p%%\
@@ -278,8 +274,8 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=DarkBlue ctermbg=232
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=MidnightBlue ctermbg=232
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black   ctermbg=232
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey  ctermbg=232
 
 
 "--- vim-json ------------------------------------------------------------------
