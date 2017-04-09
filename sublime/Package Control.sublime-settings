@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"AdvancedNewFile",
 		"Anaconda",
 		"AppleScript Extensions",
 		"ApplySyntax",
@@ -46,7 +47,6 @@
 		"Terraform",
 		"TrailingSpaces",
 		"VCS Gutter",
-		"View In Browser",
-		"Zen Tabs"
+		"View In Browser"
 	]
 }
