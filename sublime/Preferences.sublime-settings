@@ -79,7 +79,7 @@
 		"*.db"
 	],
 	"find_selected_text": true,
-	"fold_buttons": true,
+	"fold_buttons": false,
 	"folder_exclude_patterns":
 	[
 		".svn",
