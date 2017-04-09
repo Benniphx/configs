@@ -10,7 +10,7 @@
     <property name="button_spacing" type="empty"/>
     <property name="click_to_focus" type="bool" value="true"/>
     <property name="cycle_apps_only" type="empty"/>
-    <property name="cycle_draw_frame" type="bool" value="false"/>
+    <property name="cycle_draw_frame" type="bool" value="true"/>
     <property name="double_click_distance" type="empty"/>
     <property name="double_click_time" type="empty"/>
     <property name="focus_delay" type="empty"/>
@@ -57,7 +57,7 @@
     <property name="wrap_resistance" type="int" value="24"/>
     <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="empty"/>
-    <property name="borderless_maximize" type="bool" value="true"/>
+    <property name="borderless_maximize" type="bool" value="false"/>
     <property name="cycle_hidden" type="bool" value="true"/>
     <property name="cycle_minimum" type="bool" value="true"/>
     <property name="cycle_preview" type="bool" value="true"/>
@@ -77,7 +77,7 @@
     <property name="snap_resist" type="bool" value="false"/>
     <property name="sync_to_vblank" type="bool" value="false"/>
     <property name="tile_on_move" type="bool" value="true"/>
-    <property name="titleless_maximize" type="bool" value="true"/>
+    <property name="titleless_maximize" type="bool" value="false"/>
     <property name="toggle_workspaces" type="bool" value="false"/>
     <property name="unredirect_overlays" type="bool" value="true"/>
     <property name="wrap_cycle" type="bool" value="true"/>

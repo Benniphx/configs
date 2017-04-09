@@ -7,16 +7,16 @@
       <property name="show-home" type="empty"/>
       <property name="show-filesystem" type="empty"/>
       <property name="show-removable" type="empty"/>
-      <property name="show-trash" type="bool" value="false"/>
+      <property name="show-trash" type="bool" value="true"/>
     </property>
-    <property name="icon-size" type="uint" value="128"/>
+    <property name="icon-size" type="uint" value="96"/>
     <property name="tooltip-size" type="empty"/>
-    <property name="show-thumbnails" type="bool" value="false"/>
+    <property name="show-thumbnails" type="bool" value="true"/>
     <property name="use-custom-font-size" type="bool" value="false"/>
     <property name="font-size" type="double" value="9.000000"/>
     <property name="single-click" type="bool" value="false"/>
-    <property name="show-tooltips" type="bool" value="false"/>
-    <property name="show-hidden-files" type="bool" value="false"/>
+    <property name="show-tooltips" type="bool" value="true"/>
+    <property name="show-hidden-files" type="bool" value="true"/>
   </property>
   <property name="backdrop" type="empty">
     <property name="screen0" type="empty">
