@@ -1,4 +1,3 @@
 [
-    { "keys": ["ctrl+left"], "command": "prev_view" },
-    { "keys": ["ctrl+right"], "command": "next_view" }
+  { "keys": ["super+e"], "command": "toggle_side_bar" }
 ]
