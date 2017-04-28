@@ -10,18 +10,12 @@ fi
 
 brew update
 
-### Homebrew dupes #############################################################
-
-brew install homebrew/dupes/diffutils
-brew install homebrew/dupes/gzip
-brew install homebrew/dupes/less
-brew install homebrew/dupes/rsync
-brew install homebrew/dupes/screen
-
 ### Homebrew core ##############################################################
 brew install bash
 brew install bash-completion
 brew install colordiff
+
+brew install diffutils
 brew install ctags
 brew install fasd
 brew install fzf && yes | "$(brew --prefix fzf)/install" --no-update-rc
@@ -29,12 +23,15 @@ brew install git
 brew install htop
 brew install httpie
 brew install jq
+brew install less
 brew install neovim/neovim/neovim
 brew install p7zip
 brew install pssh
 brew install pstree
 brew install ranger
+brew install rsync
 brew install scmpuff
+brew install screen
 brew install thefuck
 brew install the_silver_searcher
 brew install tig
