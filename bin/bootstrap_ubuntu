@@ -45,5 +45,8 @@ sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
 # This fails on Linuxbrew
 sudo apt install -y shellcheck
 
+# GPG tools
+sudo apt install gpa seahorse
+
 sudo apt -y autoremove
 sudo apt autoclean
