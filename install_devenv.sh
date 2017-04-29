@@ -15,6 +15,10 @@ brew install pyenv pyenv-virtualenv
 brew install rbenv ruby-build
 brew install nvm
 
+# Install Pythons from brew though
+brew install python
+brew install python3
+
 # AWS CLI tools
 brew install awscli
 brew install aws-shell
