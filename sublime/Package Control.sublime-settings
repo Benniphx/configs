@@ -46,7 +46,6 @@
 		"TabsExtra",
 		"Terraform",
 		"TrailingSpaces",
-		"VCS Gutter",
-		"View In Browser"
+		"VCS Gutter"
 	]
 }
