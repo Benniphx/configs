@@ -35,7 +35,8 @@ brew install screen
 brew install thefuck
 brew install the_silver_searcher
 brew install tig
-brew install tmux
+# uncomment when 2.4 fixed
+# brew install tmux
 brew install tree
 brew install wdiff --with-gettext
 brew install yank
