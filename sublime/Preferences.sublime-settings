@@ -45,7 +45,7 @@
 	"detect_indentation": true,
 	"detect_slow_plugins": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
-	"dpi_scale": 1.65,
+	"dpi_scale": 2,
 	"drag_text": false,
 	"draw_centered": false,
 	"draw_indent_guides": true,
@@ -88,7 +88,7 @@
 		"CVS"
 	],
 	"font_face": "Terminus (TTF)",
-	"font_size": 18,
+	"font_size": 15,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": true,
