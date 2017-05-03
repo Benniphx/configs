@@ -1,3 +1,4 @@
 [
-  { "keys": ["super+e"], "command": "toggle_side_bar" }
+  { "keys": ["super+e"], "command": "toggle_side_bar" },
+  { "keys": ["super+t"], "command": "toggle_tabs" }
 ]
