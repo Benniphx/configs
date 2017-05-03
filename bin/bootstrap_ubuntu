@@ -33,6 +33,11 @@ sudo sh -c 'echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial ma
 sudo apt update
 sudo apt install -y oracle-java8-installer
 
+# Albert
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install albert
+
 # Microsoft true type core fonts
 sudo apt install -y ttf-mscorefonts-installer
 
