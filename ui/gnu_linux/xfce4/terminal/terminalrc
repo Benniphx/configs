@@ -28,3 +28,6 @@ ColorCursor=#c5c5c8c8c6c6
 TitleMode=TERMINAL_TITLE_REPLACE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.950000
+ScrollingOnKeystroke=FALSE
+ScrollingSingleLine=FALSE
+
