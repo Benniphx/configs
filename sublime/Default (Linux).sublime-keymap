@@ -20,4 +20,6 @@
       "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
     }
   },
+  { "keys": ["ctrl+t"], "command": "toggle_tabs" },
+  { "keys": ["ctrl+m"], "command": "toggle_menu" }
 ]
