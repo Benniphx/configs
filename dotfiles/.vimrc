@@ -173,6 +173,9 @@ vnoremap <silent> <S-Tab> <gv
 nnoremap <silent> <Tab> :bnext<CR>
 nnoremap <silent> <S-Tab> :bprevious<CR>
 
+" clear highlighting on escape in normal mode
+nnoremap <silent> <esc> :noh<return><esc>
+nnoremap <silent> <esc>^[ <esc>^[
 
 "--- vim-tmux-navigator --------------------------------------------------------
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
