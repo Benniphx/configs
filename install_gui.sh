@@ -23,7 +23,7 @@ done
 
 "$script_path/ui/fonts/install.sh"
 
-### Symlink XFCE for Linux distributions #####################################
+### Symlink XFCE for Linux distributions #######################################
 
 if [[ "$OSTYPE" = linux-gnu* ]] ; then
   xfce_configs_path="$HOME/.config/xfce4"
