@@ -62,6 +62,7 @@
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="albert"/>
         <value type="string" value="blueman-applet"/>
+        <value type="string" value="keeweb"/>
       </property>
       <property name="names-hidden" type="array">
       </property>
