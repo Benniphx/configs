@@ -133,7 +133,9 @@ bindkey -e
 ### Enable aws cli completions #################################################
 
 if which brew >/dev/null; then
-  . "$(brew --prefix)/bin/aws_zsh_completer.sh"
+  if [[ -e "$(brew --prefix)/bin/aws_zsh_completer.sh" ]] ; then
+    . "$(brew --prefix)/bin/aws_zsh_completer.sh"
+  fi
 fi
 
 ### Load iTerm2 shell addons ###################################################
