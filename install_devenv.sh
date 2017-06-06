@@ -49,6 +49,8 @@ pip install aws-shell
 pip install saws
 #pip install s3cmd
 
+pyenv global "$python2_version"
+
 ### Rbenv ######################################################################
 
 brew install rbenv ruby-build
@@ -59,10 +61,12 @@ if [[ -d "$HOME/.rbenv" ]]; then
 fi
 
 # Ruby 2.4
-ruby_version="3.6.1"
+ruby_version="2.4.1"
 rbenv install --skip-existing "$ruby_version"
 rbenv shell "$ruby_version"
 gem install bundler
+
+rbenv global "$ruby_version"
 
 ### nvm ########################################################################
 
