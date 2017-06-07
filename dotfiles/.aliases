@@ -50,10 +50,10 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # OS X has no `sha1sum`, use `shasum` as a fallback
   command -v sha1sum > /dev/null || alias sha1sum='shasum'
 else
-  alias update='sudo apt-get update && sudo apt-get upgrade -y && \
+  alias upgrade='sudo apt-get update && sudo apt-get upgrade -y && \
     sudo apt-get autoremove -y && sudo apt-get autoclean'
 
-  alias dupdate='sudo apt-get update && sudo apt-get dist-upgrade -y && \
+  alias dupgrade='sudo apt-get update && sudo apt-get dist-upgrade -y && \
     sudo apt-get autoremove -y && sudo apt-get autoclean'
 
   # Alternatives to `pbcopy` and `pbpaste` in OS X
