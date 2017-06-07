@@ -81,4 +81,6 @@ nvm install v7.7.1
 brew install terraform
 brew install git-secrets
 
+curl https://raw.githubusercontent.com/wallix/awless/master/getawless.sh | bash
+
 brew cleanup
