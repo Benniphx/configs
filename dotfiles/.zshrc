@@ -12,10 +12,13 @@ fi
 
 source "$ZPLUG_HOME/init.zsh"
 
+zplug "plugins/brew", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/pyenv", from:oh-my-zsh
+zplug "plugins/rbenv", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
 zplug "bobsoppe/zsh-ssh-agent", use:ssh-agent.zsh, from:github
 zplug "zsh-users/zsh-syntax-highlighting"
