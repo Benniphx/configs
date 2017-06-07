@@ -49,7 +49,9 @@ fi
 ### awless completion ##########################################################
 
 export PATH="$HOME/.local/bin:$PATH"
-source <(awless completion bash)
+if which awless >/dev/null; then
+  source <(awless completion bash)
+fi
 
 ### Prompt #####################################################################
 

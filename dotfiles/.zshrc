@@ -141,7 +141,9 @@ fi
 ### awless completion ##########################################################
 
 export PATH="$HOME/.local/bin:$PATH"
-source <(awless completion zsh)
+if which awless >/dev/null; then
+  source <(awless completion zsh)
+fi
 
 ### Load other configs #########################################################
 
