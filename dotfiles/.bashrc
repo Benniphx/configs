@@ -46,6 +46,11 @@ fi
   -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" \
     | cut -d ' ' -f2 | tr ' ' '\n')" scp sftp ssh
 
+### awless completion ##########################################################
+
+export PATH="$HOME/.local/bin:$PATH"
+source <(awless completion bash)
+
 ### Prompt #####################################################################
 
 txtblk='\[\e[0;30m\]' # Black - Regular

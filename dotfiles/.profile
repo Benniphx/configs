@@ -114,9 +114,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 which scmpuff >/dev/null && eval "$(scmpuff init -s)"
 
-### Prefer user binaries #######################################################
-
-export PATH="$HOME/.local/bin:$PATH"
 
 ### Dircolors ##################################################################
 

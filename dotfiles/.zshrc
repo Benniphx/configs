@@ -130,7 +130,7 @@ stty -ixon
 
 bindkey -e
 
-### Enable aws cli completions #################################################
+### aws-cli completions #################################################
 
 if which brew >/dev/null; then
   if [[ -e "$(brew --prefix)/bin/aws_zsh_completer.sh" ]] ; then
@@ -138,10 +138,10 @@ if which brew >/dev/null; then
   fi
 fi
 
-### Load iTerm2 shell addons ###################################################
+### awless completion ##########################################################
 
-iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
-[[ -e "$iterm2_addons" ]] && . "$iterm2_addons"
+export PATH="$HOME/.local/bin:$PATH"
+source <(awless completion zsh)
 
 ### Load other configs #########################################################
 
@@ -149,6 +149,11 @@ iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
 [[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
 [[ -f "$HOME/.fzf.zsh" ]] && . "$HOME/.fzf.zsh"
 [[ -f "$HOME/.rclocal" ]] && . "$HOME/.rclocal"
+
+### Load iTerm2 shell addons ###################################################
+
+iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
+[[ -e "$iterm2_addons" ]] && . "$iterm2_addons"
 
 #### Restore tmux ##############################################################
 
