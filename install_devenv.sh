@@ -78,7 +78,6 @@ nvm install v7.7.1
 
 ### utils ######################################################################
 
-brew install s3cmd
 brew install terraform
 brew install git-secrets
 
