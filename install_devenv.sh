@@ -34,7 +34,7 @@ pip install awsebcli
 pip install awslogs
 pip install aws-shell
 pip install saws
-#pip install s3cmd
+pip install s3cmd
 
 # Python 3.6
 python3_version="3.6.1"
@@ -47,7 +47,7 @@ pip install awsebcli
 pip install awslogs
 pip install aws-shell
 pip install saws
-#pip install s3cmd
+# s3cmd is Python 2 only
 
 pyenv global "$python2_version"
 
