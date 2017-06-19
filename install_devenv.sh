@@ -24,7 +24,7 @@ if [[ -d "$HOME/.pyenv" ]]; then
 fi
 
 # Python 2.7
-python2_version="2.7.13"
+python2_version="2.7.12"
 pyenv install --skip-existing "$python2_version"
 pyenv shell "$python2_version"
 pip install --upgrade pip virtualenv
@@ -35,8 +35,8 @@ pip install awslogs
 pip install aws-shell
 pip install s3cmd
 
-# Python 3.6
-python3_version="3.6.1"
+# Python 3.5
+python3_version="3.5.2"
 pyenv install --skip-existing "$python3_version"
 pyenv shell "$python3_version"
 pip install --upgrade pip virtualenv
