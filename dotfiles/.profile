@@ -89,7 +89,7 @@ fi
 
 go_path="$HOME/go"
 if [[ -d "$go_path" ]]; then
-  export PATH="$go_path/bin:$PATH"
+  export GOPATH="$go_path"
 fi
 
 ### Own jars to CLASSPATH ######################################################
