@@ -72,9 +72,6 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   # Mac Apple Store command-line client
   brew install mas
 
-  # Docker-compose
-  brew install docker-compose --without-docker --without-docker-machine
-
   # Homebrew Cask taps
   brew tap caskroom/cask
   brew tap caskroom/versions
