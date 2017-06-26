@@ -29,4 +29,4 @@ ScrollingSingleLine=FALSE
 ColorCursor=#ffffffffffff
 ColorForeground=#ffffffffffff
 ColorBackground=#000000000000
-ColorPalette=#303030303030;#c0c030300000;#b1b1d6d63131;#fefecfcf3535;#424268687070;#6d6d50506d6d;#4b4bb5b5c1c1;#e2e2e2e2e5e5;#5f5f5f5f5f5f;#ffff3a3a7878;#a6a6cdcd0707;#b5b5c8c86565;#4a4a77778181;#ffff3b3b7777;#4b4bb5b5c1c1;#e2e2e2e2e5e5
+ColorPalette=#303030303030;#c0c030300000;#b1b1d6d63131;#fefecfcf3535;#424268687070;#aaaa5959aaaa;#4b4b94949d9d;#e2e2e2e2e5e5;#5f5f5f5f5f5f;#ffff3a3a7878;#a6a6cdcd0707;#b5b5c8c86565;#4a4a77778181;#ffff3b3b7777;#4b4bb5b5c1c1;#e2e2e2e2e5e5
