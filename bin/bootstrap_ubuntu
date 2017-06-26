@@ -36,7 +36,7 @@ sudo apt install -y oracle-java8-installer
 # Albert
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
-sudo apt-get install albert
+sudo apt install -y albert
 
 # Microsoft true type core fonts
 sudo apt install -y ttf-mscorefonts-installer
@@ -51,7 +51,7 @@ sudo apt install -y xmonad xmobar gmrun trayer scrot suckless-tools
 sudo apt install -y shellcheck
 
 # GPG tools
-sudo apt install gpa seahorse
+sudo apt install -y gpa
 
 sudo apt -y autoremove
 sudo apt autoclean
