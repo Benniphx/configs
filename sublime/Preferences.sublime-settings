@@ -85,7 +85,7 @@
 		".svn",
 		".git",
 		".hg",
-		".venv",
+		"*venv",
 		"CVS"
 	],
 	"font_face": "Terminus (TTF)",
