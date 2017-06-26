@@ -119,6 +119,11 @@ BULLETTRAIN_EXEC_TIME_ELAPSED=5
 BULLETTRAIN_EXEC_TIME_BG='cyan'
 BULLETTRAIN_EXEC_TIME_FG='black'
 
+### custom: aws-vault
+BULLETTRAIN_CUSTOM_MSG='$(echo $AWS_VAULT)'
+BULLETTRAIN_CUSTOM_BG='yellow'
+BULLETTRAIN_CUSTOM_FG='black'
+
 ### Automatically list contents when changing directory ########################
 
 function chpwd() {
