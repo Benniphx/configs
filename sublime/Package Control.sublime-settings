@@ -47,6 +47,7 @@
 		"TabsExtra",
 		"Terraform",
 		"TrailingSpaces",
-		"VCS Gutter"
+		"VCS Gutter",
+		"Zen Tabs"
 	]
 }
