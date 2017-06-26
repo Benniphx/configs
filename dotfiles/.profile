@@ -51,11 +51,26 @@ else
   fi
 fi
 
+### Go #########################################################################
+
+go_path="$HOME/go"
+if [[ -d "$go_path" ]]; then
+  export GOPATH="$go_path"
+fi
+
 ### Nvm ########################################################################
 
 export NVM_DIR="$HOME/.nvm"
 [[ ! -d "$NVM_DIR" ]] && mkdir -p "$NVM_DIR"
 . "$(brew --prefix nvm)/nvm.sh"
+
+### Rbenv ######################################################################
+
+if [[ -d "$HOME/.rbenv" ]]; then
+  rbenv_path="$HOME/.rbenv/bin"
+  export PATH="$rbenv_path:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 ### Pyenv ######################################################################
 
@@ -67,29 +82,6 @@ if [[ -d "$HOME/.pyenv" ]]; then
   if which pyenv-virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)"
   fi
-fi
-
-### Rbenv ######################################################################
-
-if [[ -d "$HOME/.rbenv" ]]; then
-  rbenv_path="$HOME/.rbenv/bin"
-  export PATH="$rbenv_path:$PATH"
-  eval "$(rbenv init -)"
-fi
-
-### Jython #####################################################################
-
-jython_path=$(find "$HOME" -maxdepth 1 -name 'jython*' -type d | head -1)
-if [[ -d "$jython_path" ]]; then
-  export JYTHON_HOME="$jython_path"
-  export PATH="$JYTHON_HOME/bin:$PATH"
-fi
-
-### Go #########################################################################
-
-go_path="$HOME/go"
-if [[ -d "$go_path" ]]; then
-  export GOPATH="$go_path"
 fi
 
 ### Own jars to CLASSPATH ######################################################
