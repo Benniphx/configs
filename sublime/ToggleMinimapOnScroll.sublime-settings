@@ -3,7 +3,7 @@
     "toggle_minimap_on_scroll_enabled_by_default": true,
 
     // Duration in seconds of minimap toggle
-    "toggle_minimap_on_scroll_duration_in_seconds": 1,
+    "toggle_minimap_on_scroll_duration_in_seconds": 0.72,
 
     // Samples per second taken to detect scroll
     "toggle_minimap_on_scroll_samples_per_second": 30,
