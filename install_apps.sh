@@ -29,7 +29,6 @@ brew install ranger
 brew install rsync
 brew install scmpuff
 brew install screen
-brew install thefuck
 brew install the_silver_searcher
 brew install tig
 # uncomment when 2.4 fixed
