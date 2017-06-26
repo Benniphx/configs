@@ -99,7 +99,7 @@ alias b='watch -d -n 5 --color http --verify=no --follow --verbose'
 alias c='ccat --bg="dark"'
 alias d='ranger'
 alias e="$EDITOR"
-alias f='fuck'
+alias f='ff'
 # g for (scmpuff) git aliases
 alias h='history'
 alias i='sudo lsof -i'
@@ -185,7 +185,7 @@ ext() {
 
 # Quick find by file name
 ff() {
-  find ${2:-$PWD} -iname $1
+  find ${2:-$PWD} -iname *$1*
 }
 
 # Quick password generator
