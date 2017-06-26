@@ -53,7 +53,6 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   brew install gnu-tar
   brew install gnu-which
   brew install homebrew/dupes/grep
-  brew install homebrew/dupes/make
 
   # These are on Linuxbrew's tap but at least currently compile on OS X only
   brew install shellcheck
