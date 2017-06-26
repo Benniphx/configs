@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Forked from https://mths.be/osx by Mathias Bynens
 # (https://github.com/mathiasbynens/dotfiles)

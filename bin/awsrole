@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Originally forked from:
 # https://github.com/trek10inc/awsume/blob/40a527abea/awsume

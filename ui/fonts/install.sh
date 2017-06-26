@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 fonts_dir=$(cd "$(dirname "$0")" && pwd)
 find_command="find \"$fonts_dir\" \( -name '*.[o,t]tf' -or -name '*.pcf.gz' \) -type f -print0"

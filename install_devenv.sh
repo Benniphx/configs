@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if ! which brew >/dev/null ; then
   if [[ "$OSTYPE" = darwin* ]] ; then
