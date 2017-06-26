@@ -110,7 +110,7 @@
 	"line_numbers": true,
 	"line_padding_bottom": -3,
 	"line_padding_top": -3,
-	"margin": 10,
+	"margin": 4,
 	"match_brackets": true,
 	"match_brackets_angle": false,
 	"match_brackets_braces": true,
