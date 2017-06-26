@@ -33,7 +33,7 @@ pip install awscfncli
 pip install awsebcli
 pip install awslogs
 pip install aws-shell
-pip install s3cmd
+pip install s4cmd
 
 # Python 3.5
 python3_version="3.5.2"
@@ -45,7 +45,7 @@ pip install awscfncli
 pip install awsebcli
 pip install awslogs
 pip install aws-shell
-# s3cmd is Python 2 only
+# s4cmd is Python 2 only
 
 pyenv global "$python2_version"
 
