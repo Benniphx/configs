@@ -1,0 +1,4 @@
+[
+  { "keys": ["ctrl+shift+r"], "command": "zen_tabs_reload"},
+  { "keys": ["ctrl+tab"], "command": "switch_tabs"}
+]
