@@ -49,7 +49,7 @@
 	"drag_text": false,
 	"draw_centered": false,
 	"draw_indent_guides": true,
-	"draw_minimap_border": false,
+	"draw_minimap_border": true,
 	"draw_white_space": "selection",
 	"enable_hexadecimal_encoding": true,
 	"enable_tab_scrolling": false,
