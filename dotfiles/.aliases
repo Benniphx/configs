@@ -94,7 +94,7 @@ alias lr='l -tur && echo Ordered by access time, most recent last'
 
 ### Shortcuts ##################################################################
 
-alias a='ag'
+alias a='ag --all-types --hidden --skip-vcs-ignores --pager="less -MIRFX"'
 alias b='watch -d -n 5 --color http --verify=no --follow --verbose'
 alias c='ccat --bg="dark"'
 alias d='ranger'
