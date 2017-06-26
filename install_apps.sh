@@ -13,6 +13,7 @@ brew update
 ### Homebrew core ##############################################################
 brew install colordiff
 brew install diffutils
+brew install ccat
 brew install ctags
 brew install fasd
 brew install fzf && yes | "$(brew --prefix fzf)/install" --no-update-rc
