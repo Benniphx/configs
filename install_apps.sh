@@ -11,10 +11,7 @@ fi
 brew update
 
 ### Homebrew core ##############################################################
-brew install bash
-brew install bash-completion
 brew install colordiff
-
 brew install diffutils
 brew install ctags
 brew install fasd
