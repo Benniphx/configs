@@ -5,11 +5,11 @@ set -u
 
 ### Configuration ##############################################################
 
-tmux_version="2.4"
+tmux_version='2.4'
 
 ### Tmux #######################################################################
 
-tmux_install_dir=$(mktemp -d)
+tmux_install_dir="$(mktemp -d)"
 pushd "$tmux_install_dir" >/dev/null
 
 # Compile libevent
@@ -25,8 +25,8 @@ popd >/dev/null
 wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz
 tar xzf ncurses-6.0.tar.gz
 pushd ncurses-6.0 >/dev/null
-./configure CPPFLAGS="-P" --prefix="$HOME/local"
-CPPFLAGS="-P" make
+./configure CPPFLAGS='-P' --prefix="$HOME/local"
+CPPFLAGS='-P' make
 make install
 popd >/dev/null
 
