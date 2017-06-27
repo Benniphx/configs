@@ -10,7 +10,9 @@ export EDITOR='nvim'
 export VISUAL="$EDITOR"
 export SVN_EDITOR="$EDITOR"
 
-export TERM='xterm-256color'
+if [[ "$COLORTERM" == "xfce4-terminal" ]]; then
+  export TERM=xterm-256color
+fi
 
 # no clearing of the screen after quitting man
 export PAGER='less'
