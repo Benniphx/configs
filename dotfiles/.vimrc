@@ -232,14 +232,12 @@ endfunction
 function! SyncTree()
   if &modifiable && IsNTOpen() && !IsNTFocused() && strlen(expand('%')) > 0 && !&diff
     NERDTreeFind
+    execute 'normal R'
     wincmd p
   endif
 endfunction
 
 autocmd BufEnter * call SyncTree()
-
-" autorefresh nerdtree
-autocmd BufEnter * if IsNTOpen() | execute 'normal R' | endif
 
 " vim-nerdtree-tabs
 let g:nerdtree_tabs_autofind=1
