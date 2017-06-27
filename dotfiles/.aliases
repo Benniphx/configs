@@ -3,7 +3,7 @@
 ### OS specific ################################################################
 
 # Upgrade Homebrew/Linuxbrew formulas
-alias br='brew update && brew upgrade && brew cleanup && brew prune'
+alias br='brew update && brew upgrade && brew cleanup'
 
 if [[ "$OSTYPE" = darwin* ]]; then
   # Brew cask upgrade
