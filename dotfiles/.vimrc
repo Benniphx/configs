@@ -13,7 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " UI
 Plugin 'bling/vim-airline'
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'noahfrederick/vim-hemisu'
 
 " Add-ons
 Plugin 'airblade/vim-gitgutter'
@@ -141,7 +142,6 @@ set undodir=~/.vim-tmp/undo//
 
 
 " --- Autoreload vim configs after changes -------------------------------------
-
 augroup myvimrc
     au!
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
@@ -151,9 +151,8 @@ set autoread
 
 
 "--- UI ------------------------------------------------------------------------
-set t_Co=256                      " number of colors to use
 set background=dark
-colorscheme Tomorrow-Night-Bright " colorscheme to use
+colorscheme hemisu
 
 " make the statusbar more informative
 if has("statusline")
@@ -177,6 +176,7 @@ nnoremap <silent> <S-Tab> :bprevious<CR>
 nnoremap <silent> <esc> :noh<return><esc>
 nnoremap <silent> <esc>^[ <esc>^[
 
+
 "--- vim-tmux-navigator --------------------------------------------------------
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
@@ -192,6 +192,7 @@ endif
 
 " --- vim-airline --------------------------------------------------------------
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'hybridline'
 let g:airline#extensions#tabline#enabled = 1
 
 
