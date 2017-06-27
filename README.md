@@ -18,12 +18,6 @@ Note: Run `install_*.sh` `-f` to override the existing paths without confirmatio
 
 This also installs Homebrew on OS X and Linuxbrew on GNU/Linux.
 
-### Brewed zsh and zplug
-
-    ./install_zsh.sh
-
-This also sets the brew installed `zsh` as the user's default shell.
-
 ### Devenv
 
     ./install_devenv.sh
@@ -35,6 +29,20 @@ Includes `rbenv`, `pyenv`, `nvm` and AWS CLI tools.
     ./install_nvim.sh
 
 This also installs and updates Vim plugins using Vundle.
+
+## Shell
+
+### Brewed zsh and zplug
+
+    ./install_zsh.sh
+
+This also sets the brew installed `zsh` as the user's default shell.
+
+### Brewed bash and bash-completion
+
+    ./install_bash.sh
+
+This also sets the brew installed `bash` as the user's default shell.
 
 ## GUI
 

@@ -34,10 +34,12 @@ PROMPT_COMMAND="history -a; history -c; history -r;"
 
 ### Additional bash completions ################################################
 
-if [[ -f /usr/share/bash-completion/bash_completion ]]; then
-  source /usr/share/bash-completion/bash_completion
-elif [[ -f /etc/bash_completion ]]; then
-  source /etc/bash_completion
+if which brew >/dev/null && [[ -f "$(brew --prefix)/etc/bash_completion" ]]; then
+  source "$(brew --prefix)/etc/bash_completion"
+elif [[ -f "/usr/share/bash-completion/bash_completion" ]]; then
+  source "/usr/share/bash-completion/bash_completion"
+elif [[ -f "/etc/bash_completion" ]]; then
+  source "/etc/bash_completion"
 fi
 
 # add tab completion for hostnames based on ~/.ssh/config, ignoring wildcards
