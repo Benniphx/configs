@@ -100,29 +100,36 @@ BULLETTRAIN_GIT_COLORIZE_DIRTY='true'
 BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR='white'
 BULLETTRAIN_GIT_COLORIZE_DIRTY_FG_COLOR='red'
 
-### node.js nvm
+# mercurial
+BULLETTRAIN_HG_SHOW='true'
+
+# go
+BULLETTRAIN_GO_BG='blue'
+BULLETTRAIN_GO_FG='black'
+BULLETTRAIN_GO_PREFIX='🐹'
+
+# nvm
 BULLETTRAIN_NVM_SHOW='true'
 BULLETTRAIN_NVM_BG='green'
 BULLETTRAIN_NVM_FG='black'
 
-### pyenv
+# pyenv
 BULLETTRAIN_VIRTUALENV_SHOW='true'
 BULLETTRAIN_VIRTUALENV_BG='yellow'
 BULLETTRAIN_VIRTUALENV_FG='black'
 
-### mercurial
-BULLETTRAIN_HG_SHOW='true'
+# custom: aws credentials
+BULLETTRAIN_CUSTOM_MSG='$(if [[ -n "$AWS_VAULT" ]] ; then ;
+echo "🔓 $AWS_VAULT" ; elif [[ -n "$AWS_PROFILE" ]] ; then ;
+echo "☁️ $AWS_PROFILE" ; fi)'
+BULLETTRAIN_CUSTOM_BG='blue'
+BULLETTRAIN_CUSTOM_FG='white'
 
-### command execution time
+# command execution time
 BULLETTRAIN_EXEC_TIME_SHOW='true'
 BULLETTRAIN_EXEC_TIME_ELAPSED=5
 BULLETTRAIN_EXEC_TIME_BG='black'
 BULLETTRAIN_EXEC_TIME_FG='white'
-
-### custom: aws-vault
-BULLETTRAIN_CUSTOM_MSG='$(echo $AWS_VAULT)'
-BULLETTRAIN_CUSTOM_BG='blue'
-BULLETTRAIN_CUSTOM_FG='black'
 
 ### Automatically list contents when changing directory ########################
 
