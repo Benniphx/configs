@@ -271,7 +271,7 @@ nmap <C-t> :TagbarToggle<CR>
 
 "--- ag.vim --------------------------------------------------------------------
 " uses the silver searcher instead of ack-grep
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --all-types --hidden --skip-vcs-ignores --nogroup --column'
 
 
 "--- vim-indent-guides ---------------------------------------------------------
