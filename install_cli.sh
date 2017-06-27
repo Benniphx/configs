@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -u
+
 script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 ### Configuration ##############################################################
@@ -13,6 +16,7 @@ do_not_symlink=(
 
 ### Parse arguments ############################################################
 
+ln_args=''
 while getopts 'f' arg ; do
   case "$arg" in
     f)

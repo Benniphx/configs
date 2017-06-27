@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -u
+
 if ! which brew >/dev/null ; then
   if [[ "$OSTYPE" = darwin* ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

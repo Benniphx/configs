@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -u
+
 script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 ### Configuration ##############################################################
@@ -8,6 +11,7 @@ dotfiles_path="$script_path/ui/gnu_linux/xfce4"
 
 ### Parse arguments ############################################################
 
+ln_args=''
 while getopts 'f' arg ; do
   case "$arg" in
     f)
