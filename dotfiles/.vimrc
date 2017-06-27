@@ -239,10 +239,10 @@ endfunction
 autocmd BufEnter * call SyncTree()
 
 " autorefresh nerdtree
-"autocmd BufEnter * if IsNTOpen() | execute 'normal R' | endif
+autocmd BufEnter * if IsNTOpen() | execute 'normal R' | endif
 
 " vim-nerdtree-tabs
-"let g:nerdtree_tabs_autofind=1
+let g:nerdtree_tabs_autofind=1
 
 "--- Syntastic -----------------------------------------------------------------
 set statusline+=%#warningmsg#
