@@ -49,7 +49,7 @@ fi
 
 ### awless completion ##########################################################
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
 if which awless >/dev/null; then
   source <(awless completion bash)
 fi
