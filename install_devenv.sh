@@ -23,6 +23,7 @@ pip install awscfncli
 pip install awsebcli
 pip install awslogs
 pip install aws-shell
+pip install docker-compose
 pip install httpie
 pip install s4cmd
 
@@ -36,6 +37,7 @@ pip install awscfncli
 pip install awsebcli
 pip install awslogs
 pip install aws-shell
+pip install docker-compose
 pip install httpie
 # s4cmd is Python 2 only
 
