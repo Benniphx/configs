@@ -12,8 +12,6 @@ Note: Run `install_*.sh` `-f` to override the existing paths without confirmatio
 
     ./install_cli.sh
 
-This also installs Tmux plugin manager and Vim plugins using Vundle.
-
 ### Brew and apps
 
     ./install_apps.sh
@@ -31,6 +29,12 @@ This also sets the brew installed `zsh` as the user's default shell.
     ./install_devenv.sh
 
 Includes `rbenv`, `pyenv`, `nvm` and AWS CLI tools.
+
+### Install neovim
+
+    ./install_nvim.sh
+
+This also installs and updates Vim plugins using Vundle.
 
 ## GUI
 

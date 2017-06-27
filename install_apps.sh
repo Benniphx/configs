@@ -22,7 +22,6 @@ brew install htop
 brew install httpie
 brew install jq
 brew install less
-brew install neovim/neovim/neovim
 brew install p7zip
 brew install pssh
 brew install pstree
@@ -32,11 +31,15 @@ brew install scmpuff
 brew install screen
 brew install the_silver_searcher
 brew install tig
-# uncomment when 2.4 fixed
-# brew install tmux
 brew install tree
 brew install wdiff --with-gettext
 brew install yank
+
+# uncomment when 2.4 fixed
+# brew install tmux
+tpm_url="https://github.com/tmux-plugins/tpm"
+git -C "$tpm_url" pull --rebase 2>/dev/null || \
+  git clone --depth 1 "$tpm_url" "$HOME/.tmux/plugins/tpm" 2>/dev/null
 
 ### OS X only brews ############################################################
 
