@@ -12,7 +12,7 @@ Note: Run `install_*.sh` `-f` to override the existing paths without confirmatio
 
     ./install_cli.sh
 
-### Brew and apps
+### Command-line brew apps
 
     ./install_apps.sh
 
@@ -24,7 +24,7 @@ This also installs Homebrew on OS X and Linuxbrew on GNU/Linux.
 
 Includes `rbenv`, `pyenv`, `nvm` and AWS CLI tools.
 
-### Install neovim
+### Neovim
 
     ./install_nvim.sh
 
