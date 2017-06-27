@@ -23,7 +23,6 @@ brew install httpie
 brew install jq
 brew install less
 brew install p7zip
-brew install pssh
 brew install pstree
 brew install ranger
 brew install rsync
@@ -32,7 +31,7 @@ brew install screen
 brew install the_silver_searcher
 brew install tig
 brew install tree
-brew install wdiff --with-gettext
+brew install wdiff
 brew install yank
 
 # uncomment when 2.4 fixed

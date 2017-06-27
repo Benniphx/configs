@@ -33,6 +33,7 @@ pip install awscfncli
 pip install awsebcli
 pip install awslogs
 pip install aws-shell
+pip install httpie
 pip install s4cmd
 
 # Python 3.5
@@ -45,6 +46,7 @@ pip install awscfncli
 pip install awsebcli
 pip install awslogs
 pip install aws-shell
+pip install httpie
 # s4cmd is Python 2 only
 
 pyenv global "$python2_version"
