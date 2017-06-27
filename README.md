@@ -38,7 +38,7 @@ Includes `rbenv`, `pyenv`, `nvm` and AWS CLI tools.
 
     ./install_gui.sh
 
-This installs Terminus fonts and XFCE configs (the latter on GNU/Linux only).
+This installs fonts and XFCE configs (the latter on GNU/Linux only).
 
 ### Sublime Text 3
 

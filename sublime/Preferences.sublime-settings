@@ -88,7 +88,7 @@
 		"*venv",
 		"CVS"
 	],
-	"font_face": "Terminus (TTF)",
+	"font_face": "TerminessTTF NF",
 	"font_size": 15,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
