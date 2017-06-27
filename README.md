@@ -8,7 +8,7 @@ Run `symlink_dotfiles` with `-f` to override the existing paths without promptin
 
 ## Goodies
 
-### Brew and brew cask apps
+### Brew apps
 
     bin/install_apps
 
@@ -34,13 +34,19 @@ This prompt to set (the brewed) `bash` as the user's default shell.
 
     bin/install_nvim
 
-Installs Neovim and Vundle, and updates the (Neo)vim plugins.
+This installs Neovim and Vundle, and updates the (Neo)vim plugins.
+
+### Tmux
+
+    bin/install_tmux
+
+This installs also tmux plugin manager
 
 ### Sublime Text 3
 
     bin/install_subl
 
-Using `-f` will override the currently installed user packages.
+Running with `-f` will override the currently installed user packages (!).
 
 ### Devenv
 
@@ -48,7 +54,26 @@ Using `-f` will override the currently installed user packages.
 
 Installs `rbenv`, `pyenv`, `nvm` and some AWS CLI tools.
 
-## Windows
+
+## OS X specific
+
+### Install more apps using Brew Cask
+
+    bin/install_apps_osx
+
+### Sensible settings
+
+    bin/sensible_osx
+
+
+## Ubuntu specific
+
+### Install more utilities using `apt`
+
+    bin/install_apps_ubuntu
+
+
+## Windows specific
 
 Prefer Windows Subsystem for Linux (on Windows 10) if possible - some of the Linuxbrew formulas actually work even on msys bundled with Git for Windows.
 
