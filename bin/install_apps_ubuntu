@@ -61,6 +61,3 @@ sudo apt install -y shellcheck
 
 # GPG tools
 sudo apt install -y gpa
-
-sudo apt -y autoremove
-sudo apt autoclean

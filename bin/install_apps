@@ -66,5 +66,3 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   # Mac Apple Store command-line client
   brew install mas
 fi
-
-brew cleanup
