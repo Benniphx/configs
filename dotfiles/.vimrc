@@ -11,11 +11,6 @@ call vundle#begin()
 " Plugin manager
 Plugin 'VundleVim/Vundle.vim'
 
-" UI
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'noahfrederick/vim-hemisu'
-
 " Add-ons
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ap/vim-css-color'
@@ -51,6 +46,12 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
+
+" UI
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'noahfrederick/vim-hemisu'
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 
