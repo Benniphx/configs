@@ -1,20 +1,16 @@
 #!/bin/bash
 
-if ! which brew >/dev/null ; then
-  if [[ "$OSTYPE" = darwin* ]] ; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  else
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-  fi
-fi
-
-brew update
+set -e
 
 ### Pyenv ######################################################################
 
-brew install pyenv pyenv-virtualenv
+pyenv_dir="$HOME/.pyenv"
+git clone https://github.com/pyenv/pyenv.git "$pyenv_dir" || \
+  git -C "$pyenv_dir" pull --rebase origin master
 export PATH="$HOME/.pyenv/bin:$PATH"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+pyenv_ve_dir="$(pyenv root)/plugins/pyenv-virtualenv"
+git clone https://github.com/pyenv/pyenv-virtualenv.git "$pyenv_ve_dir" || \
+  git -C "$pyenv_ve_dir" pull --rebase origin master
 eval "$(pyenv init -)"
 
 # Python 2.7
@@ -47,8 +43,13 @@ pyenv global "$python2_version"
 
 ### Rbenv ######################################################################
 
-brew install rbenv ruby-build
+rbenv_dir="$HOME/.rbenv"
+git clone https://github.com/rbenv/rbenv.git "$rbenv_dir" || \
+  git -C "$rbenv_dir" pull --rebase origin master
 export PATH="$HOME/.rbenv/bin:$PATH"
+ruby_build_dir="$HOME/.rbenv/plugins/ruby-build"
+git clone https://github.com/rbenv/ruby-build.git "$ruby_build_dir" || \
+  git -C "$ruby_build_dir" pull --rebase origin master
 eval "$(rbenv init -)"
 
 # Ruby 2.4
@@ -61,16 +62,25 @@ rbenv global "$ruby_version"
 
 ### nvm ########################################################################
 
-brew install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | \
+  bash
 export NVM_DIR="$HOME/.nvm"
-[[ ! -d "$NVM_DIR" ]] && mkdir -p "$NVM_DIR"
-. "$(brew --prefix nvm)/nvm.sh"
+source "$NVM_DIR/nvm.sh"
 
 # Node LTS
 nvm install v7.7.1
 
 ### utils ######################################################################
 
+if ! which brew >/dev/null ; then
+  if [[ "$OSTYPE" = darwin* ]] ; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  fi
+fi
+
+brew update
 brew install terraform
 brew install git-secrets
 

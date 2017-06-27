@@ -36,9 +36,9 @@ brew install yank
 
 # uncomment when 2.4 fixed
 # brew install tmux
-tpm_url="https://github.com/tmux-plugins/tpm"
-git -C "$tpm_url" pull --rebase 2>/dev/null || \
-  git clone --depth 1 "$tpm_url" "$HOME/.tmux/plugins/tpm" 2>/dev/null
+tpm_dir="$HOME/.tmux/plugins/tpm"
+git clone https://github.com/tmux-plugins/tpm "$tpm_dir" || \
+  git -C "$tpm_dir" pull --rebase origin master
 
 ### OS X only brews ############################################################
 

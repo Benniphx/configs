@@ -19,8 +19,8 @@ ln -sf "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 ### Install Vundle #############################################################
 
-vundle_url="https://github.com/VundleVim/Vundle.vim.git"
-git -C "$vundle_url" pull --rebase 2>/dev/null || \
-  git clone --depth 1 "$vundle_url" "$HOME/.vim/bundle/Vundle.vim" 2>/dev/null
+vundle_dir="$HOME/.vim/bundle/Vundle.vim"
+git clone https://github.com/VundleVim/Vundle.vim.git "$vundle_dir" || \
+  git -C "$vundle_dir" pull --rebase origin master
 
 echo -ne '\n' | nvim +PluginInstall +qall 2>/dev/null

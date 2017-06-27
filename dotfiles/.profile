@@ -56,30 +56,33 @@ fi
 ### Go #########################################################################
 
 go_path="$HOME/go"
-if [[ -d "$go_path" ]]; then
-  export GOPATH="$go_path"
-fi
+[[ -d "$go_path" ]] && export GOPATH="$go_path"
 
 ### Nvm ########################################################################
 
-export NVM_DIR="$HOME/.nvm"
-[[ ! -d "$NVM_DIR" ]] && mkdir -p "$NVM_DIR"
-. "$(brew --prefix nvm)/nvm.sh"
+nvm_path="$HOME/.nvm"
+if [[ -d "$nvm_path" ]]; then
+  export NVM_DIR="$nvm_path"
+  source "$NVM_DIR/nvm.sh"
+  [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
+fi
 
 ### Rbenv ######################################################################
 
-if [[ -x "$HOME/.rbenv/bin/rbenv" ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+rbenv_path="$HOME/.rbenv"
+if [[ -x "$rbenv_path/bin/rbenv" ]]; then
+  export PATH="$rbenv_path/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
 ### Pyenv ######################################################################
 
-if [[ -x "$HOME/.pyenv/bin/pyenv" ]]; then
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+pyenv_path="$HOME/.pyenv"
+if [[ -d "$pyenv_path" ]]; then
+  export PATH="$pyenv_path/bin:$PATH"
   eval "$(pyenv init -)"
   if which pyenv-virtualenv-init > /dev/null; then
+    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     eval "$(pyenv virtualenv-init -)"
   fi
 fi
