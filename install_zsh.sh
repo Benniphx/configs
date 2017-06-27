@@ -11,7 +11,6 @@ fi
 brew update
 brew install zsh
 brew install zplug
-brew cleanup
 
 ### Set zsh as the default shell ###############################################
 
