@@ -27,13 +27,13 @@ fi
 
 if [[ -e "$brew_bash_path" ]] ; then
   if [[ "$default_shell" = "$brew_bash_path" ]] ; then
-    echo "Brew Bash already set to the user's default shell."
+    echo "Brew Bash is already set to the user's default shell."
   else
     echo ""
     read -p "Set brew Bash as the user's default shell [y\N] > " -r set_bash
     case "$set_bash" in
       [yY][eE][sS]|[yY])
-        echo "Sudo might be asked..."
+        echo "Sudo password is likely asked..."
         if ! grep -q "$brew_bash_path" /etc/shells >/dev/null ; then
           echo "$brew_bash_path" | sudo tee --append /etc/shells
         fi
