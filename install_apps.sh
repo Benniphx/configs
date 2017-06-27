@@ -15,9 +15,10 @@ brew install colordiff
 brew install diffutils
 brew install ccat
 brew install ctags
+brew install curl --ignore-dependencies
 brew install fasd
 brew install fzf && yes | "$(brew --prefix fzf)/install" --no-update-rc
-brew install git
+brew install git --ignore-dependencies
 brew install htop
 brew install jq
 brew install less
