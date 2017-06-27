@@ -1,6 +1,13 @@
 #!/bin/bash
 
-fonts_dir=$(cd "$(dirname "$0")" && pwd)
+set -e
+set -u
+
+script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+### Install fonts ##############################################################
+
+fonts_dir="$script_path/ui/fonts"
 find_command="find \"$fonts_dir\" \( -name '*.[o,t]tf' -or -name '*.pcf.gz' \) -type f -print0"
 
 if [[ "$OSTYPE" = darwin* ]]; then

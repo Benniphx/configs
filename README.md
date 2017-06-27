@@ -2,61 +2,51 @@
 
 TL;DR:
 
-    git clone git@github.com:asyrjasalo/configs.git && configs/install_cli.sh
+    git clone git@github.com:asyrjasalo/configs.git && configs/symlink_dotfiles.sh
 
-Note: Run `install_*.sh` `-f` to override the existing paths without confirmation (!)
+Run `symlink_dotfiles.sh` with `-f` to override the existing paths without prompting (!)
 
-## CLI
+## Goodies
 
-### Symlink dotfiles and local bins
-
-    ./install_cli.sh
-
-### Command-line brew apps
+### Brew and brew cask apps
 
     ./install_apps.sh
 
-This also installs Homebrew on OS X and Linuxbrew on GNU/Linux.
-
-### Devenv
-
-    ./install_devenv.sh
-
-Includes `rbenv`, `pyenv`, `nvm` and AWS CLI tools.
-
-### Neovim
-
-    ./install_nvim.sh
-
-This also installs and updates Vim plugins using Vundle.
-
-## Shell
+Uses Homebrew and Cask on OS X, and Linuxbrew on GNU/Linux.
 
 ### Brewed zsh and zplug
 
     ./install_zsh.sh
 
-This also sets the brew installed `zsh` as the user's default shell.
+This prompts to set (the brewed) `zsh` as the user's default shell.
 
 ### Brewed bash and bash-completion
 
     ./install_bash.sh
 
-This also sets the brew installed `bash` as the user's default shell.
+This prompt to set (the brewed) `bash` as the user's default shell.
 
-## GUI
+### Fonts
 
-### Fonts and GUI configs
+    ./install_fonts.sh
 
-    ./install_gui.sh
+### Neovim
 
-This installs fonts and XFCE configs (the latter on GNU/Linux only).
+    ./install_nvim.sh
+
+Installs Neovim and Vundle, and updates the (Neo)vim plugins.
 
 ### Sublime Text 3
 
     ./install_subl.sh
 
-Using `-f` here will override the currently installed user packages.
+Using `-f` will override the currently installed user packages.
+
+### Devenv
+
+    ./install_devenv.sh
+
+Installs `rbenv`, `pyenv`, `nvm` and some AWS CLI tools.
 
 ## Windows
 
