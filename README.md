@@ -2,49 +2,49 @@
 
 TL;DR:
 
-    git clone git@github.com:asyrjasalo/configs.git && configs/symlink_dotfiles.sh
+    git clone git@github.com:asyrjasalo/configs.git && configs/symlink_dotfiles
 
-Run `symlink_dotfiles.sh` with `-f` to override the existing paths without prompting (!)
+Run `symlink_dotfiles` with `-f` to override the existing paths without prompting (!).
 
 ## Goodies
 
 ### Brew and brew cask apps
 
-    ./install_apps.sh
+    bin/install_apps
 
 Uses Homebrew and Cask on OS X, and Linuxbrew on GNU/Linux.
 
 ### Brewed zsh and zplug
 
-    ./install_zsh.sh
+    bin/install_zsh
 
 This prompts to set (the brewed) `zsh` as the user's default shell.
 
 ### Brewed bash and bash-completion
 
-    ./install_bash.sh
+    bin/install_bash
 
 This prompt to set (the brewed) `bash` as the user's default shell.
 
 ### Fonts
 
-    ./install_fonts.sh
+    bin/install_fonts
 
 ### Neovim
 
-    ./install_nvim.sh
+    bin/install_nvim
 
 Installs Neovim and Vundle, and updates the (Neo)vim plugins.
 
 ### Sublime Text 3
 
-    ./install_subl.sh
+    bin/install_subl
 
 Using `-f` will override the currently installed user packages.
 
 ### Devenv
 
-    ./install_devenv.sh
+    bin/install_devenv
 
 Installs `rbenv`, `pyenv`, `nvm` and some AWS CLI tools.
 
