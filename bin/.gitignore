@@ -1,0 +1,6 @@
+*
+
+!.gitignore
+!awsrole
+!bootstrap_*
+!install_*
