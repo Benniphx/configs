@@ -19,7 +19,6 @@ brew install fasd
 brew install fzf && yes | "$(brew --prefix fzf)/install" --no-update-rc
 brew install git
 brew install htop
-brew install httpie
 brew install jq
 brew install less
 brew install p7zip
