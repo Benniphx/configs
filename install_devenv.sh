@@ -13,15 +13,9 @@ brew update
 ### Pyenv ######################################################################
 
 brew install pyenv pyenv-virtualenv
-if [[ -d "$HOME/.pyenv" ]]; then
-  pyenv_path="$HOME/.pyenv/bin"
-  export PATH="$pyenv_path:$PATH"
-  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-  eval "$(pyenv init -)"
-  if which pyenv-virtualenv-init > /dev/null; then
-    eval "$(pyenv virtualenv-init -)"
-  fi
-fi
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+eval "$(pyenv init -)"
 
 # Python 2.7
 python2_version="2.7.12"
@@ -54,11 +48,8 @@ pyenv global "$python2_version"
 ### Rbenv ######################################################################
 
 brew install rbenv ruby-build
-if [[ -d "$HOME/.rbenv" ]]; then
-  rbenv_path="$HOME/.rbenv/bin"
-  export PATH="$rbenv_path:$PATH"
-  eval "$(rbenv init -)"
-fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Ruby 2.4
 ruby_version="2.4.1"

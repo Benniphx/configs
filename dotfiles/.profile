@@ -68,17 +68,15 @@ export NVM_DIR="$HOME/.nvm"
 
 ### Rbenv ######################################################################
 
-if [[ -d "$HOME/.rbenv" ]]; then
-  rbenv_path="$HOME/.rbenv/bin"
-  export PATH="$rbenv_path:$PATH"
+if [[ -x "$HOME/.rbenv/bin/rbenv" ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
 ### Pyenv ######################################################################
 
-if [[ -d "$HOME/.pyenv" ]]; then
-  pyenv_path="$HOME/.pyenv/bin"
-  export PATH="$pyenv_path:$PATH"
+if [[ -x "$HOME/.pyenv/bin/pyenv" ]]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
   export PYENV_VIRTUALENV_DISABLE_PROMPT=1
   eval "$(pyenv init -)"
   if which pyenv-virtualenv-init > /dev/null; then
