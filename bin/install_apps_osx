@@ -8,12 +8,12 @@ if [[ "$OSTYPE" = darwin* ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  brew update
-
   # Homebrew Cask taps
   brew tap caskroom/cask
   brew tap caskroom/versions
   brew tap buo/cask-upgrade
+
+  brew update
 
   # Homebrew Cask apps
   # brew cask install cakebrew
