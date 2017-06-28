@@ -12,7 +12,7 @@ if ! which brew >/dev/null ; then
 fi
 
 brew update
-brew install neovim/neovim/neovim
+brew install neovim/neovim/neovim || true   # fails on linuxbrew
 
 ### Symlink Neovim configs #####################################################
 
