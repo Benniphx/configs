@@ -1,6 +1,7 @@
 *
 
+!aws-sts
+!aws-sts-role
 !.gitignore
-!awsrole
 !sensible_*
 !install_*
