@@ -1,16 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Originally forked from:
-# https://github.com/trek10inc/awsume/blob/40a527abea/awsume
+### Settings ###################################################################
+
+duration_secs=$((15*60))
 
 ### Helpers ####################################################################
 
+
 exit_print_usage() {
-  echo "Usage: awsrole <profile> <role_to_assume> [mfa_token]"
+  echo "Execute in a subshell to export session envvars in the current:
+
+\`$0 <profile> [mfa_token]\`"
   exit 64
 }
 
-get_user_details() {
+get_user() {
   local profile_name="$1"
 
   local identity_json=$(aws sts get-caller-identity --profile "$profile_name")
@@ -24,20 +28,17 @@ print(" ".join(creds[_] for _ in ("Account","Arn")))')
 
 get_sts_for_user() {
   local profile_name="$1"
-  local role_name="$2"
 
-  if [[ -n "$3" ]] ; then
-    local username=$(echo "$user_arn" | cut -d '/' -f2)
-    local mfa_num="--serial-number arn:aws:iam::$account_id:mfa/$username"
-    local mfa_token="--token $3"
+  if [[ -n "$2" ]] ; then
+    username=$(echo "$user_arn" | cut -d '/' -f2)
+    local mfa_serial="--serial-number arn:aws:iam::$account_id:mfa/$username"
+    local mfa_token="--token-code $2"
   fi
 
-  local sts_token_json=$(aws sts assume-role \
-    --duration-seconds 900 \
+  local sts_token_json=$(aws sts get-session-token \
+    --duration-seconds "$duration_secs" \
     --profile "$profile_name" \
-    --role-session-name "${profile_name}-via-sts" \
-    --role-arn "arn:aws:iam::$account_id:role/$role_name" \
-    $mfa_num $mfa_token)
+    $mfa_serial $mfa_token)
   [[ -z "$sts_token_json" ]] && exit 1
 
   read token key id <<< $(echo "$sts_token_json" | python -c '
@@ -52,17 +53,15 @@ print(" ".join(creds[_] for _ in values))')
 }
 
 print_session_env() {
-  echo -e "Execute in your current shell:\n"
   echo "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
   echo "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
   echo "export AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN"
-  echo "export AWS_SECURITY_TOKEN=$AWS_SESSION_TOKEN"  # for boto
 }
 
 ### Main #######################################################################
 
-[[ $# -lt 2 ]] && exit_print_usage
+[[ $# -lt 1 ]] && exit_print_usage
 
-get_user_details "$1"
+get_user "$1"
 get_sts_for_user "$1" "$2" "$3"
 print_session_env
