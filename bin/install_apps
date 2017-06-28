@@ -65,4 +65,7 @@ if [[ "$OSTYPE" = darwin* ]] ; then
 
   # Mac Apple Store command-line client
   brew install mas
+else
+  # https://github.com/athrunsun/homebrew-linuxbinary
+  brew tap athrunsun/linuxbinary
 fi
