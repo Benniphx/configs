@@ -214,7 +214,7 @@ let g:NERDTreeMouseMode=3
 let g:NERDTreeShowHidden=1
 let g:NERDTreeChDirMode=2
 
-nnoremap <C-e> :NERDTreeToggle<CR>
+nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 
 " open nerdtree on startup if no files were specified
 autocmd StdinReadPre * let s:std_in=1
@@ -232,7 +232,7 @@ endfunction
 function! SyncTree()
   if &modifiable && IsNTOpen() && !IsNTFocused() && strlen(expand('%')) > 0 && !&diff
     NERDTreeFind
-    execute 'normal R'
+    silent execute 'normal R'
     wincmd p
   endif
 endfunction
@@ -264,7 +264,7 @@ autocmd User Node
 
 
 "--- tagbar --------------------------------------------------------------------
-nmap <C-t> :TagbarToggle<CR>
+nmap <silent> <C-t> :TagbarToggle<CR>
 
 
 "--- ag.vim --------------------------------------------------------------------
