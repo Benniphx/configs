@@ -27,6 +27,7 @@ brew install jq
 brew install less
 brew install p7zip
 brew install pstree
+brew install pv
 brew install ranger
 brew install rsync
 brew install scmpuff
