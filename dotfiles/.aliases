@@ -66,6 +66,8 @@ fi
 
 ### More sensible defaults #####################################################
 
+alias subl='subl --new-window --add $PWD'
+
 alias grep='grep --color'
 alias fgrep='fgrep --color'
 alias egrep='egrep --color'
@@ -112,7 +114,7 @@ alias o='open'
 alias p='pstree -g 2 -s'
 alias q='clear'
 # r is for reload shell rc
-alias s='fasd -f -i -e subl'
+alias s='fasd -f -i -e subl --new-window'
 alias t='tail --follow --verbose --lines=20'
 alias u='du -h -c -d 1'
 alias v='fasd -f -i -e nvim'
