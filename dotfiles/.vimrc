@@ -95,7 +95,7 @@ set wildmode=longest:full,full
 set wildignore+=*.log,*.obj,*.o,*.jpg,*.png,*.gif,*.swp,vendor/rails/**
 
 set nostartofline               " don't jump to the first column when scrolling
-set scrolloff=5                 " keep n lines around cursor when scrolling vertically
+set scrolloff=20                " keep n lines around cursor when scrolling vertically
 set sidescrolloff=10            " keep n columns around cursor when scrolling horizontally
 
 set tabstop=2                   " number of spaces for a tab
