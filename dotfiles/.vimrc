@@ -202,6 +202,8 @@ let g:gitgutter_avoid_cmd_prompt_on_windows = 0
 
 
 "--- ctrlp.vim -----------------------------------------------------------------
+let g:ctrlp_match_window = 'top,order:btt,min:10,max:10,results:10'
+
 let g:ctrlp_show_hidden = 1
 
 " search in MRU, files and buffers at the same time
