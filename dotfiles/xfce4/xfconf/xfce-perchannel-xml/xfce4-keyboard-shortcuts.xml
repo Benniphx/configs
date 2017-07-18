@@ -123,10 +123,10 @@
       <property name="&lt;Alt&gt;d" type="string" value="show_desktop_key"/>
       <property name="&lt;Alt&gt;q" type="string" value="close_window_key"/>
       <property name="&lt;Alt&gt;Return" type="string" value="fullscreen_key"/>
-      <property name="&lt;Alt&gt;space" type="string" value="popup_menu_key"/>
-      <property name="&lt;Alt&gt;Up" type="string" value="switch_application_key"/>
-      <property name="&lt;Alt&gt;Down" type="string" value="switch_window_key"/>
+      <property name="&lt;Super&gt;Tab" type="string" value="switch_application_key"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;ISO_Left_Tab" type="string" value="cycle_reverse_windows_key"/>
+      <property name="&lt;Alt&gt;section" type="string" value="switch_window_key"/>
+      <property name="&lt;Alt&gt;space" type="string" value="popup_menu_key"/>
     </property>
   </property>
   <property name="providers" type="array">
