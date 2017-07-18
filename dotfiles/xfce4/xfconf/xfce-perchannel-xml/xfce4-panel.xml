@@ -3,7 +3,7 @@
 <channel name="xfce4-panel" version="1.0">
   <property name="panels" type="uint" value="1">
     <property name="panel-0" type="empty">
-      <property name="position" type="string" value="p=12;x=2054;y=2095"/>
+      <property name="position" type="string" value="p=5;x=1920;y=2083"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="false"/>
       <property name="plugin-ids" type="array">
@@ -57,12 +57,13 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="64"/>
       <property name="names-visible" type="array">
-        <value type="string" value="network"/>
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="albert"/>
-        <value type="string" value="blueman-applet"/>
         <value type="string" value="keeweb"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="albert"/>
+        <value type="string" value="network"/>
+        <value type="string" value="blueman-applet"/>
+        <value type="string" value="task manager"/>
+        <value type="string" value="xfce4-power-manager"/>
       </property>
       <property name="names-hidden" type="array">
       </property>

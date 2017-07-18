@@ -3,7 +3,7 @@
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
     <property name="ThemeName" type="string" value="MurrinaVerdeOlivo"/>
-    <property name="IconThemeName" type="string" value="elementary-xfce"/>
+    <property name="IconThemeName" type="string" value="Adwaita"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
@@ -18,7 +18,7 @@
     <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="empty"/>
     <property name="HintStyle" type="string" value="hintfull"/>
-    <property name="RGBA" type="string" value="rgb"/>
+    <property name="RGBA" type="string" value="none"/>
     <property name="Lcdfilter" type="empty"/>
   </property>
   <property name="Gtk" type="empty">
