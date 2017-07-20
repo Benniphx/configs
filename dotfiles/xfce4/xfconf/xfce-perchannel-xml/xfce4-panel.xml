@@ -57,7 +57,6 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="64"/>
       <property name="names-visible" type="array">
-        <value type="string" value="keeweb"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="albert"/>
         <value type="string" value="network"/>
