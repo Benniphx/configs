@@ -21,5 +21,6 @@
     }
   },
   { "keys": ["ctrl+t"], "command": "toggle_tabs" },
-  { "keys": ["ctrl+m"], "command": "toggle_menu" }
+  { "keys": ["ctrl+m"], "command": "toggle_menu" },
+  { "keys": ["alt+q"], "command": "close_window" }
 ]
