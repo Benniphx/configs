@@ -81,5 +81,8 @@ if ! which brew >/dev/null ; then
 fi
 
 brew update
-brew install terraform
 brew install git-secrets
+brew install terraform
+
+brew tap wata727/tflint
+brew install tflint
