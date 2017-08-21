@@ -57,6 +57,7 @@ ruby_version="2.4.1"
 rbenv install --skip-existing "$ruby_version"
 rbenv shell "$ruby_version"
 gem install bundler
+gem install terraform_landscape terraforming
 
 rbenv global "$ruby_version"
 
