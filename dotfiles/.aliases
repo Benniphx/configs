@@ -191,7 +191,7 @@ ext() {
 
 # Quick find by file name
 ff() {
-  find ${2:-$PWD} -iname *$1*
+  find ${2:-$PWD} -iname "*$1*"
 }
 
 # Quick password generator
