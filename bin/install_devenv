@@ -83,6 +83,7 @@ fi
 brew update
 brew install git-secrets
 brew install terraform terragrunt
+brew install kubernetes-cli
 brew install openshift-cli
 brew install rancher-cli rancher-compose
 brew tap wata727/tflint
