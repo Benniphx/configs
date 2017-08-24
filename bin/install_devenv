@@ -82,7 +82,11 @@ fi
 
 brew update
 brew install git-secrets
-
 brew install terraform terragrunt
 brew tap wata727/tflint
 brew install tflint
+
+ocw_dir="$HOME/oc-cluster-wrapper"
+git clone https://github.com/openshift-evangelists/oc-cluster-wrapper.git \
+  "$ocw_dir" || git -C "$ocw_dir" pull --rebase origin master
+export PATH="$ocw_dir:$PATH"

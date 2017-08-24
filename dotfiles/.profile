@@ -109,7 +109,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 which scmpuff >/dev/null && eval "$(scmpuff init -s)"
 
-
 ### Dircolors ##################################################################
 
 which dircolors >/dev/null && eval "$(dircolors -b "$HOME"/.dir_colors)"
@@ -117,3 +116,8 @@ which dircolors >/dev/null && eval "$(dircolors -b "$HOME"/.dir_colors)"
 ### Thefuck ####################################################################
 
 which thefuck >/dev/null && eval "$(thefuck --alias)"
+
+### oc-cluster-wrapper #########################################################
+
+ocw_path="$HOME/oc-cluster-wrapper"
+[[ -d "$ocw_path" ]] && export PATH="$ocw_path:$PATH"
