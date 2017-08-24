@@ -119,7 +119,7 @@ alias q='clear'
 # r is for reload shell rc
 alias s='fasd -f -i -e subl --new-window'
 alias t='tail --follow --verbose --lines=20'
-alias u='du -h -c -d 1'
+alias u='du --block-size=MiB --max-depth=1 path | sort -n'
 alias v='fasd -f -i -e nvim'
 alias w='which -a'
 alias x='pkill -i -f'
