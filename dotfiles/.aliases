@@ -72,7 +72,6 @@ alias grep='grep --color'
 alias fgrep='fgrep --color'
 alias egrep='egrep --color'
 alias ping='ping -c 99999'
-alias mount='mount | column -t'
 
 ### Safer defaults #############################################################
 
