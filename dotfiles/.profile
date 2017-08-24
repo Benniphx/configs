@@ -56,7 +56,10 @@ fi
 ### Go #########################################################################
 
 go_path="$HOME/go"
-[[ -d "$go_path" ]] && export GOPATH="$go_path"
+if [[ -d "$go_path" ]]; then
+  export GOPATH="$go_path"
+  export PATH="$go_path/bin:$PATH"
+fi
 
 ### Nvm ########################################################################
 
