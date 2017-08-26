@@ -21,9 +21,6 @@ done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
-
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
@@ -98,8 +95,11 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 ###############################################################################
-# SSD-specific tweaks                                                         #
+# Power specific tweaks                                                       #
 ###############################################################################
+
+# Set standby delay to 8 hours (default is 1 hour)
+sudo pmset -a standbydelay 28800
 
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
