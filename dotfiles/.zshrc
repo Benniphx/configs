@@ -160,6 +160,16 @@ if which awless >/dev/null; then
   source <(awless completion zsh)
 fi
 
+### Google Cloud SDK ###########################################################
+
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc"
+fi
+
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/completion.zsh.inc"
+fi
+
 ### Load other configs #########################################################
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
