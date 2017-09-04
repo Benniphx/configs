@@ -6,7 +6,6 @@ duration_secs=$((30*60))
 
 ### Helpers ####################################################################
 
-
 exit_print_usage() {
   echo "Execute in a subshell to export session envvars in the current:
 
