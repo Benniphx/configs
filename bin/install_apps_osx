@@ -25,6 +25,7 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   brew cask install gpgtools
   brew cask install docker
   brew cask install iterm2
+  brew cask install java
   brew cask install launchcontrol
   brew cask install macdown
   brew cask install slack
