@@ -133,8 +133,10 @@ BULLETTRAIN_EXEC_TIME_FG='white'
 
 ### Automatically list contents when changing directory ########################
 
+[[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
+
 function chpwd() {
-  ls -a --color=auto --group-directories-first
+  ls
 }
 
 ### Disable stop (^S) and continue (^Q) flow control signals ###################
@@ -173,7 +175,6 @@ fi
 ### Load other configs #########################################################
 
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
-[[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
 [[ -f "$HOME/.fzf.zsh" ]] && . "$HOME/.fzf.zsh"
 [[ -f "$HOME/.rclocal" ]] && . "$HOME/.rclocal"
 

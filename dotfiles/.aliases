@@ -82,7 +82,7 @@ alias chgrp='chgrp --preserve-root'
 ### Enhanced ls ################################################################
 
 if [[ "$OSTYPE" = darwin* ]]; then
-  alias ls='ls -C -h --group-directories-first --time-style="+%d-%b-%y %H:%M:%S"'
+  alias ls='gls --color -h --group-directories-first --time-style="+%d-%b-%y %H:%M:%S"'
 else
   alias ls='ls --color -h --group-directories-first --time-style="+%d-%b-%y %H:%M:%S"'
 fi
