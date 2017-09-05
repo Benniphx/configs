@@ -20,6 +20,7 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   brew cask install cheatsheet
   brew cask install coconutbattery
   brew cask install gitup
+  brew cask install google-backup-and-sync
   brew cask install google-chrome
   brew cask install gpgtools
   brew cask install docker
