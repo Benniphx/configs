@@ -21,7 +21,6 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   brew cask install coconutbattery
   brew cask install gitup
   brew cask install google-chrome
-  brew cask install google-drive
   brew cask install gpgtools
   brew cask install docker
   brew cask install iterm2
