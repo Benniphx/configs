@@ -8,7 +8,6 @@ if ! which brew >/dev/null ; then
   fi
 fi
 
-brew update
 brew install bash
 brew install bash-completion
 

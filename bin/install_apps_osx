@@ -10,8 +10,6 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   brew tap caskroom/versions
   brew tap buo/cask-upgrade
 
-  brew update
-
   # Homebrew Cask apps
   brew cask install cakebrew
   brew cask install cheatsheet

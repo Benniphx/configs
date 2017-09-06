@@ -10,7 +10,6 @@ fi
 
 export HOMEBREW_BUILD_FROM_SOURCE=1
 
-brew update
 brew install neovim/neovim/neovim || true   # fails on linuxbrew
 
 ### Symlink Neovim configs #####################################################

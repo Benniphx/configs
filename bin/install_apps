@@ -8,8 +8,6 @@ if ! which brew >/dev/null ; then
   fi
 fi
 
-brew update
-
 ### Homebrew core ##############################################################
 brew install colordiff
 brew install diffutils
