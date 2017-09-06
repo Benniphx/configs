@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-xcode-select --install
-
 ### Pyenv ######################################################################
 
 pyenv_dir="$HOME/.pyenv"
@@ -76,6 +73,8 @@ export NVM_DIR="$HOME/.nvm" && (
 if ! which brew >/dev/null ; then
   if [[ "$OSTYPE" = darwin* ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    xcode-select --install
+    brew tap caskroom/cask
     brew cask install java
   else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
