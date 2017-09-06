@@ -82,7 +82,6 @@ if ! which brew >/dev/null ; then
   fi
 fi
 
-brew update
 brew install git-secrets
 brew install terraform terragrunt
 brew install kubernetes-cli
