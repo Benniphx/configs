@@ -1,8 +1,5 @@
 #!/bin/bash
 
-set -e
-set -u
-
 script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 ### Install fonts ##############################################################
