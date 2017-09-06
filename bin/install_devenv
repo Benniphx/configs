@@ -68,7 +68,8 @@ export NVM_DIR="$HOME/.nvm" && (
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
 ) && . "$NVM_DIR/nvm.sh" && nvm install --lts
 
-### utils ######################################################################
+
+### java #######################################################################
 
 if ! which brew >/dev/null ; then
   if [[ "$OSTYPE" = darwin* ]] ; then
@@ -82,6 +83,13 @@ if ! which brew >/dev/null ; then
 fi
 
 brew install maven
+
+brew tap pivotal/tap
+brew install springboot
+brew install spring-completion
+
+### utils ######################################################################
+
 brew install git-secrets
 brew install terraform terragrunt
 brew install kubernetes-cli
