@@ -82,7 +82,8 @@ if ! which brew >/dev/null ; then
   fi
 fi
 
-brew install maven
+brew install maven maven-completion
+brew install gradle gradle-completion
 
 brew tap pivotal/tap
 brew install springboot
