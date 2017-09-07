@@ -185,4 +185,4 @@ iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
 
 #### Restore tmux ##############################################################
 
-[[ -n "$TMUX" ]] || tmux attach -d -t "localhost" || tmux new -s "localhost"
+[[ -n "$TMUX" ]] || tmux attach -t "localhost" || tmux new -s "localhost"
