@@ -123,7 +123,7 @@
 	"overlay_scroll_bars": "enabled",
 	"preview_on_click": true,
 	"remember_full_screen": true,
-	"remember_open_files": true,
+	"remember_open_files": false,
 	"rulers":
 	[
 		80,
