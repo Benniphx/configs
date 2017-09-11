@@ -91,6 +91,7 @@ brew install spring-completion
 
 ### utils ######################################################################
 
+brew install flake8
 brew install git-secrets
 brew install terraform terragrunt
 brew install kubernetes-cli
