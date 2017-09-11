@@ -124,3 +124,8 @@ which thefuck >/dev/null && eval "$(thefuck --alias)"
 
 ocw_path="$HOME/oc-cluster-wrapper"
 [[ -d "$ocw_path" ]] && export PATH="$ocw_path:$PATH"
+
+### android-ndk ###############################################################
+
+android_ndk_path="/usr/local/share/android-ndk"
+[[ -d "$android_ndk_path" ]] && export ANDROID_NDK_HOME="$android_ndk_path"
