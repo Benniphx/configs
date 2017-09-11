@@ -1,9 +1,9 @@
 {
     // Set to false to disable minimap toggle on scroll by default
-    "toggle_minimap_on_scroll_enabled_by_default": true,
+    "toggle_minimap_on_scroll_enabled_by_default": false,
 
     // Duration in seconds of minimap toggle
-    "toggle_minimap_on_scroll_duration_in_seconds": 0.72,
+    "toggle_minimap_on_scroll_duration_in_seconds": 1.00,
 
     // Samples per second taken to detect scroll
     "toggle_minimap_on_scroll_samples_per_second": 10,
@@ -12,5 +12,5 @@
     "toggle_minimap_on_cursor_line_changed": false,
 
     // Set to true to enable minimap toggle on view changes
-    "toggle_minimap_on_view_changed": false
+    "toggle_minimap_on_view_changed": true
 }
