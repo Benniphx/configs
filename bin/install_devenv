@@ -77,7 +77,7 @@ if ! which brew >/dev/null ; then
     xcode-select --install
     brew tap caskroom/cask
     brew cask install java
-    brew cask install android-studio
+    brew cask install android-studio android-sdk android-ndk
   else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
     # install java and android studio manually
