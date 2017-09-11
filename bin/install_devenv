@@ -69,7 +69,7 @@ export NVM_DIR="$HOME/.nvm" && (
 ) && . "$NVM_DIR/nvm.sh" && nvm install --lts
 
 
-### java #######################################################################
+### Android ####################################################################
 
 if ! which brew >/dev/null ; then
   if [[ "$OSTYPE" = darwin* ]] ; then
@@ -77,8 +77,10 @@ if ! which brew >/dev/null ; then
     xcode-select --install
     brew tap caskroom/cask
     brew cask install java
+    brew cask install android-studio
   else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+    # install java and android studio manually
   fi
 fi
 
