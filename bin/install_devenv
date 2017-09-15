@@ -6,10 +6,13 @@ pyenv_dir="$HOME/.pyenv"
 git clone https://github.com/pyenv/pyenv.git "$pyenv_dir" || \
   git -C "$pyenv_dir" pull --rebase origin master
 export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+
 pyenv_ve_dir="$(pyenv root)/plugins/pyenv-virtualenv"
 git clone https://github.com/pyenv/pyenv-virtualenv.git "$pyenv_ve_dir" || \
   git -C "$pyenv_ve_dir" pull --rebase origin master
-eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 
 # Python 2.7
 python2_version="2.7.12"
