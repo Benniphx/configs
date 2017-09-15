@@ -23,7 +23,6 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   brew cask install java
   brew cask install launchcontrol
   brew cask install macdown
-  brew cask install slack
   brew cask install soundcleod
   brew cask install spotify
   brew cask install sublime-text
