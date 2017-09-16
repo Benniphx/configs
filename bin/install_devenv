@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if ! which brew >/dev/null ; then
+  if [[ "$OSTYPE" = darwin* ]] ; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  fi
+fi
+
 ### Pyenv ######################################################################
 
 pyenv_dir="$HOME/.pyenv"
@@ -74,17 +82,11 @@ export NVM_DIR="$HOME/.nvm" && (
 
 ### Android ####################################################################
 
-if ! which brew >/dev/null ; then
-  if [[ "$OSTYPE" = darwin* ]] ; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    xcode-select --install
-    brew tap caskroom/cask
-    brew cask install java
-    brew cask install android-studio android-sdk android-ndk
-  else
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-    # install java and android studio manually
-  fi
+if [[ "$OSTYPE" = darwin* ]] ; then
+  xcode-select --install
+  brew tap caskroom/cask
+  brew cask install java
+  brew cask install android-studio android-sdk android-ndk
 fi
 
 ### utils ######################################################################
