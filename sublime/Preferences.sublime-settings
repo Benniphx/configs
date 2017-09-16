@@ -88,7 +88,7 @@
 		"*venv",
 		"CVS"
 	],
-	"font_face": "TerminessTTF NF",
+	"font_face": "TerminessTTF Nerd Font",
 	"font_options":
 	[
 		"no_round"
