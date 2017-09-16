@@ -89,10 +89,6 @@
 		"CVS"
 	],
 	"font_face": "TerminessTTF Nerd Font",
-	"font_options":
-	[
-		"no_round"
-	],
 	"font_size": 18,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
