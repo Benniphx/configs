@@ -45,7 +45,7 @@
 	"detect_indentation": true,
 	"detect_slow_plugins": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
-	"dpi_scale": 1.9,
+	"dpi_scale": 1.5,
 	"drag_text": false,
 	"draw_centered": false,
 	"draw_indent_guides": true,
@@ -93,7 +93,7 @@
 	[
 		"no_round"
 	],
-	"font_size": 19,
+	"font_size": 18,
 	"gpu_window_buffer": "auto",
 	"gutter": true,
 	"highlight_line": true,
