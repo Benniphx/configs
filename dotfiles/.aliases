@@ -7,7 +7,7 @@ alias br='brew update && brew upgrade --cleanup'
 
 if [[ "$OSTYPE" = darwin* ]]; then
   # Brew cask upgrade
-  alias brc='sudo -v && brew update && brew cask upgrade -f --yes && brew cask cleanup'
+  alias brc='sudo -v && brew update && brew cask upgrade -a --yes && brew cask cleanup'
 
   # Install OS X software updates
   alias update='sudo -v && mas upgrade'
