@@ -10,7 +10,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
   alias brc='sudo -v && brew update && brew cask upgrade -a --yes && brew cask cleanup'
 
   # Install OS X software updates
-  alias update='sudo -v && mas upgrade'
+  alias upgrade='sudo -v && mas upgrade'
 
   # Flush OS X DNS cache
   alias flush='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
