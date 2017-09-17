@@ -12,14 +12,10 @@ fi
 
 source "$ZPLUG_HOME/init.zsh"
 
-zplug "plugins/brew", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/docker-compose", from:oh-my-zsh
-zplug "plugins/pip", from:oh-my-zsh
 zplug "bobsoppe/zsh-ssh-agent", use:ssh-agent.zsh, from:github
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"*.zsh-theme"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+setopt prompt_subst
+zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme, defer:3
 
 zplug check || zplug install
 zplug load
