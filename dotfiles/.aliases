@@ -66,8 +66,6 @@ fi
 
 ### More sensible defaults #####################################################
 
-alias subl='subl --new-window --add $PWD'
-
 alias grep='grep --color'
 alias fgrep='fgrep --color'
 alias egrep='egrep --color'
