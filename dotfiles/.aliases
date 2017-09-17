@@ -123,7 +123,7 @@ alias u='du -m -d 1 | sort -n'
 alias v='fasd -f -i -e nvim'
 alias w='which -a'
 alias x='pkill -i -f'
-alias y="sudo \$(fc -ln -1)"
+# alias y="sudo \$(fc -ln -1)"
 alias z='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A'
 
 ### Docker #####################################################################
