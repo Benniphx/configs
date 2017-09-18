@@ -1,4 +1,5 @@
 [
   { "keys": ["super+e"], "command": "toggle_side_bar" },
-  { "keys": ["super+t"], "command": "toggle_tabs" }
+  { "keys": ["super+t"], "command": "toggle_tabs" },
+    { "keys": ["super+enter"], "command": "toggle_full_screen" }
 ]
