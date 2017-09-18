@@ -206,7 +206,6 @@ npmclear() {
   npm ls -gp --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs npm -g rm
 }
 
-
 # Pip remove all
 pipclear() {
   pip freeze | grep -v "^-e" | xargs pip uninstall -y
