@@ -66,6 +66,7 @@ fi
 
 ### More sensible defaults #####################################################
 
+alias subl='subl -a'
 alias grep='grep --color'
 alias fgrep='fgrep --color'
 alias egrep='egrep --color'
