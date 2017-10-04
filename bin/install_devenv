@@ -77,9 +77,8 @@ export NVM_DIR="$HOME/.nvm" && (
   cd "$NVM_DIR"
   git fetch origin
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-) && . "$NVM_DIR/nvm.sh" && nvm install --lts && nvm alias default lts/*
+) && . "$NVM_DIR/nvm.sh" && nvm install stable && nvm alias default stable
 
-nvm use --lts
 npm -g install yarn
 npm -g install gulp
 
