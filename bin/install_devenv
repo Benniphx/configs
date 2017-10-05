@@ -81,6 +81,8 @@ export NVM_DIR="$HOME/.nvm" && (
 
 npm -g install yarn
 npm -g install gulp
+npm -g install grunt-cli
+npm -g install bower
 
 ### Android ####################################################################
 
