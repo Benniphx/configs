@@ -150,7 +150,6 @@
 
 [push]
   default = current
-  followTags = true
 
 ### URL shorthands #############################################################
 
