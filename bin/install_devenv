@@ -84,6 +84,8 @@ npm -g install gulp
 npm -g install grunt-cli
 npm -g install bower
 
+npm -g install json-server
+
 ### Android ####################################################################
 
 if [[ "$OSTYPE" = darwin* ]] ; then
