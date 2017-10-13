@@ -113,9 +113,8 @@ brew install rancher-cli rancher-compose
 brew tap wata727/tflint
 brew install tflint
 
-ocw_dir="$HOME/oc-cluster-wrapper"
-git clone https://github.com/openshift-evangelists/oc-cluster-wrapper.git \
-  "$ocw_dir" || git -C "$ocw_dir" pull --rebase origin master
-export PATH="$ocw_dir:$PATH"
+#ocw_dir="$HOME/oc-cluster-wrapper"
+#git clone https://github.com/openshift-evangelists/oc-cluster-wrapper.git \
+#  "$ocw_dir" || git -C "$ocw_dir" pull --rebase origin master
 
 brew cleanup
