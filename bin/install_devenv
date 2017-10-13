@@ -21,6 +21,11 @@ git clone https://github.com/pyenv/pyenv-virtualenv.git "$pyenv_ve_dir" || \
   git -C "$pyenv_ve_dir" pull --rebase origin master
 eval "$(pyenv virtualenv-init -)"
 
+# Fixes "Missing the OpenSSL lib?" Python build error on OS X High Sierra
+if [[ "$OSTYPE" = darwin* ]] ; then
+  export CFLAGS="-I$(brew --prefix openssl)/include"
+  export LDFLAGS="-L$(brew --prefix openssl)/lib"
+fi
 
 # Python 2.7
 python2_version="2.7.14"
