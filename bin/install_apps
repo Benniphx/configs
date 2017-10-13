@@ -68,3 +68,5 @@ else
   # https://github.com/athrunsun/homebrew-linuxbinary
   brew tap athrunsun/linuxbinary
 fi
+
+brew cleanup

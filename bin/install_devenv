@@ -93,6 +93,7 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   brew tap caskroom/cask
   brew cask install java
   brew cask install android-studio android-sdk android-ndk
+  brew cask cleanup
 fi
 
 ### utils ######################################################################
@@ -111,3 +112,5 @@ ocw_dir="$HOME/oc-cluster-wrapper"
 git clone https://github.com/openshift-evangelists/oc-cluster-wrapper.git \
   "$ocw_dir" || git -C "$ocw_dir" pull --rebase origin master
 export PATH="$ocw_dir:$PATH"
+
+brew cleanup
