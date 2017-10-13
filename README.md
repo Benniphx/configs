@@ -46,7 +46,7 @@ This installs also tmux plugin manager
 
     bin/install_subl
 
-Running with `-f` will override the currently installed user packages (!).
+Warning: This will remove your existing Sublime packages.
 
 ### Devenv
 
