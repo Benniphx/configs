@@ -1,0 +1,10 @@
+#!/bin/bash
+
+brew install tmux
+brew cleanup
+
+### Tpm ########################################################################
+
+tpm_dir="$HOME/.tmux/plugins/tpm"
+git clone https://github.com/tmux-plugins/tpm "$tpm_dir" || \
+  git -C "$tpm_dir" pull --rebase origin master
