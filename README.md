@@ -46,7 +46,7 @@ This installs also tmux plugin manager
 
     bin/install_subl
 
-Warning: This will remove your existing Sublime packages.
+**Warning:** This will remove your existing Sublime Text packages.
 
 ### Devenv
 
