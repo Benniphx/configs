@@ -3,14 +3,14 @@
 ### OS specific ################################################################
 
 # Upgrade Homebrew/Linuxbrew formulas
-alias br='brew update && brew upgrade && brew cleanup'
+alias br='brew update && brew upgrade ; brew cleanup'
 
 if [[ "$OSTYPE" = darwin* ]]; then
   # Brew cask upgrade
-  alias brc='sudo -v && brew update && brew cask upgrade -a --yes && brew cask cleanup'
+  alias brc='brew update && brew cask upgrade -a --yes ; brew cask cleanup'
 
   # Install OS X software updates
-  alias upgrade='sudo -v && mas upgrade'
+  alias upgrade='mas upgrade'
 
   # Flush OS X DNS cache
   alias flush='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
