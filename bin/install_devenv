@@ -91,11 +91,14 @@ npm -g install bower
 
 npm -g install json-server
 
-### Android ####################################################################
+### OS X only ##################################################################
 
-if [[ "$OSTYPE" = darwin* ]] ; then
+if [[ "$OSTYPE" = darwin* ]]; then
   xcode-select --install
   brew tap caskroom/cask
+
+  brew cask install gitup
+  brew cask install docker
   brew cask install java
   brew cask install android-studio android-sdk android-ndk
   brew cask cleanup
