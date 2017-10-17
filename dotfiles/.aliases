@@ -129,12 +129,12 @@ alias z='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A'
 
 ### Docker #####################################################################
 
-alias dbt='docker build . -t'
-alias drti='docker run -ti -t'
+alias dt='docker stats -a'
 alias drms='docker stop $(docker ps -a -q)'
 alias drmc='docker rm -f -v $(docker ps -a -q)'
 alias drmi='docker rmi -f $(docker images -a -q)'
 alias drmv='docker volume rm -f $(docker volume ls -q)'
+alias dp='docker system prune'
 
 ### Misc #######################################################################
 
