@@ -55,9 +55,6 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   brew install shellcheck
   brew install watch
 
-  # OS X fix for tmux+pbcopy+pbpaste combination
-  brew install reattach-to-user-namespace
-
   # Terminal notifier
   brew install terminal-notifier
 
