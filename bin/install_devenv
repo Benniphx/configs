@@ -100,7 +100,8 @@ if [[ "$OSTYPE" = darwin* ]]; then
   brew cask install gitup
   brew cask install docker
   brew cask install java
-  brew cask install android-studio android-sdk android-ndk
+  brew cask install android-studio android-sdk
+
   brew cask cleanup
 fi
 
