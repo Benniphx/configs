@@ -58,6 +58,7 @@
 	"fallback_encoding": "Western (Windows 1252)",
 	"file_exclude_patterns":
 	[
+		"*.log",
 		"*.pyc",
 		"*.pyo",
 		"*.exe",
@@ -82,6 +83,7 @@
 	"fold_buttons": false,
 	"folder_exclude_patterns":
 	[
+		".log",
 		".svn",
 		".git",
 		".hg",
