@@ -178,19 +178,6 @@ nnoremap <silent> <esc> :noh<return><esc>
 nnoremap <silent> <esc>^[ <esc>^[
 
 
-"--- vim-tmux-navigator --------------------------------------------------------
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
-
-" workaround for https://github.com/neovim/neovim/issues/2048
-if has('nvim')
-  nmap <bs> :<C-u>TmuxNavigateLeft<cr>
-endif
-
-
 " --- vim-airline --------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybridline'
