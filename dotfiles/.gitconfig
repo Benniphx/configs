@@ -15,7 +15,7 @@
   ci = commit -v
   cia = !git add -A && git commit -av
   co = checkout
-  in = pull --rebase --recurse-submodules
+  in = pull --rebase
   out = push -u
   r = remote -v
   rem = reset HEAD
