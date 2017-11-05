@@ -140,7 +140,7 @@ stty -ixon
 
 bindkey -e
 
-### aws-cli completions #################################################
+### aws-cli completions ########################################################
 
 if which brew >/dev/null; then
   if [[ -e "$(brew --prefix)/bin/aws_zsh_completer.sh" ]] ; then
@@ -176,6 +176,6 @@ fi
 iterm2_addons="$HOME/.iterm2_shell_integration.zsh"
 [[ -e "$iterm2_addons" ]] && . "$iterm2_addons"
 
-#### Restore tmux ##############################################################
+### Restore tmux ###############################################################
 
 [[ -n "$TMUX" ]] || tmux attach -t "localhost" || tmux new -s "localhost"
