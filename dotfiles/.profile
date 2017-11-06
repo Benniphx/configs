@@ -90,7 +90,16 @@ if [[ -d "$pyenv_path" ]]; then
   fi
 fi
 
-### Own jars to CLASSPATH ######################################################
+### Java #######################################################################
+
+export JAVA_8_HOME="$(/usr/libexec/java_home -v1.8 &>/dev/null)"
+export JAVA_9_HOME="$(/usr/libexec/java_home -v9 &>/dev/null)"
+
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java9='export JAVA_HOME=$JAVA_9_HOME'
+
+# default
+java8
 
 jars_path="$HOME/jars"
 if [[ -d "$jars_path" ]]; then
