@@ -106,7 +106,7 @@
     /*
         Set those as true if you don't want Sublime Text regular completions
     */
-    "suppress_word_completions": false,
+    "suppress_word_completions": true,
     "suppress_explicit_completions": false,
 
     /*
@@ -116,7 +116,7 @@
         If complete_all_parameters is true, it will add all the possible
         parameters, if it's false, it will add only required parameters
     */
-    "complete_parameters": false,
+    "complete_parameters": true,
     "complete_all_parameters": false,
 
     /*
@@ -234,7 +234,7 @@
     /*
         Set is a false to disable Anaconda Linting totally
     */
-    "anaconda_linting": false,
+    "anaconda_linting": true,
 
     /*
         Sets the linting behaviour for anaconda:
