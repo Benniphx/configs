@@ -94,7 +94,7 @@
 
             "python_interpreter": "tcp://my_remote.machine.com:19360"
     */
-    "python_interpreter": "python",
+    "python_interpreter": "~/.pyenv/shims/python",
 
     /*
         Disable anaconda completion
