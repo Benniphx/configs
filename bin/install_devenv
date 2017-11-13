@@ -89,7 +89,6 @@ export NVM_DIR="$HOME/.nvm" && (
   . "$NVM_DIR/nvm.sh" && \
   nvm install "$node_version" && nvm alias default "$node_version"
 
-npm -g install yarn
 npm -g install gulp
 npm -g install grunt-cli
 
