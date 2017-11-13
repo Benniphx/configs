@@ -1,5 +1,7 @@
 #!/bin/bash
 
+trap "echo -e '\nCaught ^C from user - exiting now' ; exit 130" SIGINT
+
 if ! which brew >/dev/null ; then
   if [[ "$OSTYPE" = darwin* ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
