@@ -202,7 +202,7 @@ genpass() {
     fold -w $1 | head -n1 | pbcopy
 }
 
-# Npm remove all global packages
+# Npm remove all global packages (except npm installed npm)
 npmclear() {
   npm ls -gp --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs npm -g rm
 }
