@@ -211,3 +211,8 @@ npmclear() {
 pipclear() {
   pip freeze | grep -v "^-e" | xargs pip uninstall -y
 }
+
+# Gem remove all
+gemclear() {
+  gem uninstall -aIx
+}
