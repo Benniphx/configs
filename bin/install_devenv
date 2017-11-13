@@ -79,12 +79,15 @@ rbenv global "$ruby_version"
 
 ### nvm ########################################################################
 
+node_version="lts/carbon"
 export NVM_DIR="$HOME/.nvm" && (
   git clone https://github.com/creationix/nvm.git "$NVM_DIR"
   cd "$NVM_DIR"
   git fetch origin
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-) && . "$NVM_DIR/nvm.sh" && nvm install stable && nvm alias default stable
+) && \
+  . "$NVM_DIR/nvm.sh" && \
+  nvm install "$node_version" && nvm alias default "$node_version"
 
 npm -g install yarn
 npm -g install gulp
