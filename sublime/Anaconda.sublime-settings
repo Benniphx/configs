@@ -243,7 +243,7 @@
         "load-save" - Linting works in file load and save only
         "save-only" - Linting works in file save only
     */
-    "anaconda_linting_behaviour": "always",
+    "anaconda_linting_behaviour": "save-only",
 
     /*
         The minimum delay in seconds (fractional seconds are okay) before
