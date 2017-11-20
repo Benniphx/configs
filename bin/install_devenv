@@ -40,6 +40,7 @@ pip install awslogs
 pip install aws-shell
 pip install docker-compose
 pip install httpie
+pip install http-prompt
 pip install s4cmd
 
 # Python 3.6
@@ -53,7 +54,8 @@ pip install awslogs
 pip install aws-shell
 pip install docker-compose
 pip install httpie
-# s4cmd is Python 2 only
+pip install http-prompt
+pip install s3cmd     # s4cmd is Python 2 only
 
 pyenv global "$python3_version"
 
