@@ -46,7 +46,7 @@ if [[ "$OSTYPE" = darwin* ]] ; then
 
   # GNU utils are g-prefixed (but can also be installed --with-default-names)
   brew install coreutils
-  # brew install findutils
+  brew install findutils
   # brew install gawk
   # brew install gnu-indent
   # brew install gnu-sed
