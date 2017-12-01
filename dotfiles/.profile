@@ -92,11 +92,12 @@ fi
 
 ### Java #######################################################################
 
-export JAVA_8_HOME="$(/usr/libexec/java_home -v1.8 &>/dev/null)"
-[[ -n "$JAVA_8_HOME" ]] && alias java8='export JAVA_HOME=$JAVA_8_HOME' && java8
+export JAVA8_HOME="$(/usr/libexec/java_home -v1.8)"
+[[ -n "$JAVA8_HOME" ]] && alias java8='export JAVA_HOME=$JAVA8_HOME'
+java8
 
-export JAVA_9_HOME="$(/usr/libexec/java_home -v9 &>/dev/null)"
-[[ -n "$JAVA_9_HOME" ]] && alias java9='export JAVA_HOME=$JAVA_9_HOME'
+export JAVA9_HOME="$(/usr/libexec/java_home -v9)"
+[[ -n "$JAVA9_HOME" ]] && alias java9='export JAVA_HOME=$JAVA9_HOME'
 
 jars_path="$HOME/jars"
 if [[ -d "$jars_path" ]]; then
