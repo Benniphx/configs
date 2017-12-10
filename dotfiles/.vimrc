@@ -152,6 +152,7 @@ set autoread
 
 
 "--- UI ------------------------------------------------------------------------
+set guicursor=
 set background=dark
 colorscheme hemisu
 
