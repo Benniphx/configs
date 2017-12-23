@@ -42,6 +42,7 @@ pip install awscli
 pip install awscfncli
 pip install awslogs
 pip install aws-shell
+pip install bipython
 pip install docker-compose
 pip install httpie
 pip install http-prompt
