@@ -61,8 +61,7 @@ git clone https://github.com/rbenv/ruby-build.git "$ruby_build_dir" || \
   git -C "$ruby_build_dir" pull --rebase origin master
 eval "$(rbenv init -)"
 
-# Ruby 2.4
-ruby_version="2.4.1"
+ruby_version="2.4.3"
 rbenv install --skip-existing "$ruby_version"
 rbenv shell "$ruby_version"
 gem install bundler
