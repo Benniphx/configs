@@ -29,19 +29,10 @@ if [[ "$OSTYPE" = darwin* ]] ; then
   export LDFLAGS="-L$(brew --prefix openssl)/lib"
 fi
 
-# Python 2.7
-python2_version="2.7.14"
-pyenv install --skip-existing "$python2_version"
-pyenv shell "$python2_version"
-pip install --upgrade pip virtualenv
-pip install awscli
-pip install awscfncli
-pip install awslogs
-pip install aws-shell
-pip install docker-compose
-pip install httpie
-pip install http-prompt
-pip install s4cmd
+# python2_version="2.7.14"
+# pyenv install --skip-existing "$python2_version"
+# pyenv shell "$python2_version"
+# pip install --upgrade pip virtualenv
 
 # Python 3.6
 python3_version="3.6.3"
