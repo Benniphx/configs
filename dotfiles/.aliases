@@ -10,7 +10,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
   alias brc='brew update && brew cu -a --yes ; brew cask cleanup'
 
   # Install OS X software updates
-  alias upgrade='sudo -v && br ; brc ; mas upgrade'
+  alias upgrade='sudo -v && br ; brc ; mas upgrade ; zplug update'
 
   # Flush OS X DNS cache
   alias flush='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
@@ -51,10 +51,10 @@ if [[ "$OSTYPE" = darwin* ]]; then
   command -v sha1sum > /dev/null || alias sha1sum='shasum'
 else
   alias upgrade='sudo apt update && sudo apt upgrade -y && \
-    sudo apt autoremove -y && sudo apt clean'
+    sudo apt autoremove -y && sudo apt clean ; zplug update'
 
   alias dupgrade='sudo apt update && sudo apt dist-upgrade -y && \
-    sudo apt autoremove -y && sudo apt clean'
+    sudo apt autoremove -y && sudo apt clean ; zplug update'
 
   # Alternatives to `pbcopy` and `pbpaste` in OS X
   alias pbcopy='xsel --clipboard --input'
