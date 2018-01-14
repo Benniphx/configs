@@ -1,6 +1,7 @@
 {
 	"extensions":
 	[
-		"Dockerfile_service"
+		"Dockerfile_service",
+		"dev"
 	]
 }
